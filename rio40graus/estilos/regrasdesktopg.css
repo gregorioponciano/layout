@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+
+ /* desktop*/
+
+* {    
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.divimgbrasil { 
+                        background-image: url(../imagens/foto-header.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: bottom bottom;               
+}
+
+.imgbrasil {   
+                        display: block;
+                        margin: auto;
+                        width: 600px;  
+}
+
+header {  
+                        background-color: var(--cor-menu);
+                        padding-top: 5px;
+                        padding-bottom: 3px;         
+}
+
+#itens,h2 { 
+                        display: inline-block;
+                        text-indent: 1em;               
+}
+
+
+.h2brasil {  
+                        text-decoration: none;
+                        color: var(--cor-h2);
+                        display: inline-block;             
+}
+
+
+.h2brasil:hover {
+                        color: var(--cor-hoverh2);
+                        text-shadow: 3px 3px 5px var(--cor-hoverh2);   
+}
+
+#burg {
+                         display: none;  
+}
+
+.menuheader:hover { 
+                        background-color: black;
+                        color: white;                  
+}
+
+.menuheader {                       
+                        text-decoration: none;
+                        color: var(--cor-h2);
+                        padding: 10px 10px 3px 10px;
+                        display: inline;
+                        margin-left: 7vw;
+                        border-radius: 25px;             
+}
+
+.regras {                  
+                        color: white;
+                        text-decoration: none;
+                        text-align: center;      
+}  
+
+.regras:hover {         text-decoration: underline;
+}
+
+#rules {
+                        display: flex;
+                        margin-left: 3vw;
+                        margin-top: 30px;  
+}
+
+.h2regras {                       
+                        color: white; 
+                        text-align: center;           
+}
+
+.regras:hover {
+                        color: yellow;
+}
+
+li:hover {
+                        background-color: rgb(0, 0, 0);
+}
+
+hr {
+                        margin: auto;                             
+                        width: 60px;
+                        text-align: center;
+                        display: block;
+}
+
+ul  {                  
+                        border: 1px solid rgba(255, 255, 255, 0.347);
+                        border-radius: 15px;
+                        background-color: rgba(255, 255, 255, 0.199);       
+                        list-style-position: none;
+                        list-style-type: none;
+                        margin-left: 2vw;
+                        margin-right: 10vw;
+}
+
+li {    
+                        list-style: none;
+                        text-align: center;
+                        margin: 10px;
+                        border-radius: 15px;  
+                        background-color: rgba(0, 0, 0, 0.288);
+                        height: 5vh;
+                        width: 20vw;
+}
+
+#frame {
+                        display: block;
+                        margin: auto;
+                        width: 50vw;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        height: 400px;
+}
+
+.produzido {
+                        padding: 5px;
+}
+
+footer > p {
+                        background-color: black;
+                        color: white;
+                        text-align: center;
+                        padding-bottom: 15px;
+                        padding-top: 15px;
+}

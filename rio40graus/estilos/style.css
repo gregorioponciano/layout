@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+ /* css globais para celular */
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+
+
+* {    
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root { --cor-menu: rgb(34, 51, 242);
+        --cor-body: rgb(0, 0, 0);
+        --cor-h2: rgb(0, 0, 0);
+        --cor-hoverh2: rgb(44, 226, 56);
+}
+
+body { 
+                background-color: var(--cor-body);
+                width: 100vw;
+}
+.headcontainerloja {
+                width: 100vw;
+}
+
+.divimgbrasil { background-image: url(../imagens/foto-header.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center left;
+
+}
+
+.imgbrasil {  display: block;
+              margin: auto;
+              width: 100vw;
+
+}
+
+header { 
+            background-color: var(--cor-menu);
+            margin-top: 1px;
+            margin-bottom: 5px;       
+}
+
+.menuheader:hover {
+                background-color: black;
+                
+}           
+
+h2 > a {  
+          height: 0px;
+          padding: 0px;
+          margin: 0px;                           
+}
+
+.h2brasil { text-decoration: none;
+            color: var(--cor-h2);   
+            display: block;
+            text-shadow: 1px 1px 1px  black;
+            font-family: 'Mynerve', cursive;
+            text-indent: 10px;                            
+}
+
+
+.h2brasil:hover {
+             color: var(--cor-hoverh2);
+             text-shadow: 3px 3px 5px rgb(44, 226, 56);
+    
+}
+
+#burg {          
+                background-color: var(--cor-menu);
+                 display: block;
+                text-align: right;
+                cursor: pointer;
+                padding: 5px 20px 3px 0px;
+                color: black;                                         
+}
+
+#burg:hover {
+                background-color: #18a3ff;
+                color: black;               
+}
+
+.menuheader { 
+              display: block;
+              text-align: center;
+              font-family: 'Mynerve', cursive;
+              text-shadow: 1px 1px 1px  black;
+              padding: 3px;
+              color: var(--cor-h2);
+              text-decoration: none;              
+}
+
+a.menuheader:hover {
+                        color: rgb(44, 226, 56);
+                        text-shadow: 3px 3px 5px rgb(44, 226, 56);
+                        
+}

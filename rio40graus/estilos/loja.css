@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+ /* para mobile */
+
+h3 {
+                                color: white;
+                                text-align: center;       
+}
+
+hr {    
+                                width: 89px;
+                                margin: auto;                                
+}
+#container {                                    
+                                display: flex;
+}
+
+.container1 {
+                                margin-left: 3vw;
+                                margin-top: 20px;
+}
+
+.containerdetalhe{              margin: auto;
+}
+
+.containervip {                 border: 1px solid rgba(255, 255, 255, 0.347);
+                                border-radius: 15px;
+                                background-color: rgba(255, 255, 255, 0.199);
+
+}
+.h1vip {margin-top: 30px;}
+
+li {    
+                                list-style: none;
+                                text-align: center;
+                                margin: 10px;
+                                border-radius: 15px;  
+                                background-color: rgba(0, 0, 0, 0.288);
+                                height: 5vh;
+                                width: 20vw;
+       
+}
+
+.vips {
+                                text-decoration: none;
+                                font-family:  'Mynerve', cursive; 
+                                color: white;
+}
+
+li:hover {                      background-color: black;
+                                cursor: pointer;
+}
+.vips:hover {                   color: #E8BA1C;
+}
+
+.h1vip {
+                                text-align: center;
+                                font-family:  'Mynerve', cursive;
+                                color: green;
+}
+
+.card-img-top {
+                                width: 55vw;
+                                margin: auto;
+}
+
+.card {                               
+                                margin-bottom: 20px;
+                                text-align: center;
+
+}
+
+.btn {  
+                                background-color: rgb(18, 30, 196);
+                                color: white; 
+                                width: 100px;
+                                padding: 5px;
+                                cursor: pointer;
+}
+
+
+.modal {
+                                display: none;
+                                position: fixed;
+                                z-index: 1;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                overflow: auto;
+                                background-color: rgba(0,0,0,0.4);
+}
+      
+.modal-content {
+                                background-color: #fefefe;
+                                margin: 40% auto;
+                                padding: 10px;
+                                border: 1px solid #888;
+                                width: 80%;
+}
+     
+ 
+
+.atençaoaside {
+                                width: 55vw;
+                                margin: auto;
+                                border-radius: 15px;
+                                padding: 10px;
+                                background-color: #485351;
+                                margin-top: 15px;
+}
+
+h4 {                            text-align: center;
+}
+
+.produzido {
+                                padding: 5px;
+    }
+    
+footer > p {
+                                background-color: black;
+                                color: white;
+                                text-align: center;
+                                padding-bottom: 15px;
+                                padding-top: 15px;
+                                margin-top: 20px;    
+}
+

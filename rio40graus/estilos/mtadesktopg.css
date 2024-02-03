@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+
+ /* desktop*/
+
+@media screen and (max-width: 600px) { 
+    body { display: none;}  
+}
+
+* {    
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.divimgbrasil { 
+                        background-image: url(../imagens/foto-header.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: bottom bottom;   
+
+                
+}
+
+.imgbrasil {   
+                        display: block;
+                        margin: auto;
+                        width: 600px;
+  
+}
+
+header {  
+                        background-color: var(--cor-menu);
+                        padding-top: 5px;
+                        padding-bottom: 5px;         
+}
+
+#itens,h2 { 
+                        display: inline-block;
+                        text-indent: 1em;              
+}
+
+.h2brasil {  
+                         text-decoration: none;
+                        color: var(--cor-h2);
+                        display: inline-block;            
+}
+
+.h2brasil:hover {
+                        color: var(--cor-hoverh2);
+                        text-shadow: 3px 3px 5px var(--cor-hoverh2);    
+}
+
+#burg {
+                        display: none;  
+}
+
+.menuheader {                       
+                        text-decoration: none;
+                        color: var(--cor-h2);
+                        padding: 10px 10px 4px 10px;
+                        display: inline;
+                        margin-left: 7vw;
+                        border-radius: 25px;             
+}
+
+.imgarticle {
+    
+                        margin: auto;
+                        display: block;
+                        margin-top: 30px;
+                        margin-bottom: 10px;
+                        height: 80vh;
+                        width: 43vw;
+                        border-radius: 25px;   
+}
+
+.video { 
+                        margin: auto;
+                        width: 70vw; 
+                        height: 500px;     
+                        display: block;
+                        margin-bottom: 25px;
+                        margin-top: 25px;   
+}
+
+.contatos {
+                        color: white;
+                        width: 50vw;
+                        margin: auto;
+                        display: flex;
+                        justify-content: space-around;            
+}
+
+.p-contato {    
+                        padding-bottom: 10px;
+                        padding: 10px;
+                        text-align: center;
+                        filter: contrast(0%);
+}
+
+.p-contato:hover {
+                        filter: contrast(100%)
+}
+
+.img-contato {
+                        text-align: center;
+                        width: 30px; 
+                        
+}
+
+.produzido {
+                         padding: 5px;
+}
+
+footer > p {
+                        background-color: black;
+                        color: white;
+                        text-align: center;
+                        padding-bottom: 15px;
+                        padding-top: 15px;
+}

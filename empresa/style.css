@@ -1,0 +1,356 @@
+@charset "UTF-8";
+
+*{
+                                            margin: 0px;
+                                            padding: 0px;
+                                            box-sizing: border-box;
+}
+
+body{
+                                            background-color: #8EBFE6;
+}
+
+@media screen and (max-width: 1920px){
+
+        /* HEADER*/   
+    .cabeça{     
+                        background-image: url(imagens/menu.png);
+                        background-size: 55vw;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        height: 500px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        justify-content: center;
+    }           
+
+    .h1-cabeça{
+                        text-align: center;
+                        color: orange;
+                        padding: 30px;
+                        text-shadow: 1px 1px 3px black;
+                        display: inline-flex;
+                        margin-left: 60px;
+    }
+
+    .li-cabeça{
+                        list-style-type: none;
+                        margin: 10px;
+                        padding: 5px;
+                        display: inline;
+                        align-items: center;
+                        justify-content: center;
+    }
+
+    .a-cabeça {
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        color: white;
+                        display: inline;
+                
+    }
+
+    .a-cabeça:hover {
+                        color: blue;
+    }
+
+    .container {
+                        display: none;
+    }
+
+
+
+    /*DIV*/  /*DIV*/ /*DIV*/ /*DIV*/
+    .content{
+                        width: 55vw;
+                        margin: 10px auto;
+                        background-color: rgba(255, 255, 255, 0.568);
+                        padding: 10px;
+
+    }
+
+    .h1-content {
+                        text-align: center;
+                        margin: 15px;
+                        color: red;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+    }
+
+    .h2-content {
+                        color: yellow;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+                        text-align: center;
+    }
+    .h2-content-black {
+                        color: black;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+                        text-align: center;
+    }
+
+    .p-content {
+                        color: rgb(4, 43, 4);
+                        text-align: justify;
+                        line-height: 1.5em;
+                        text-indent: 1.5em;
+                        margin: 0px 10px;
+    }
+
+    .image-container{   
+                        height: 400px;
+                        margin: auto;
+                        display: block;
+                        text-align: center;
+    }
+
+    .responsive-image{
+                        height: 400px;
+                        min-width: 0vw;
+                        max-width: 100vw;
+    }
+
+
+
+
+
+    /*SECTION*//*SECTION*/   /*SECTION*/
+    .section-horarios{
+                        background-color: rgba(255, 255, 255, 0.568);
+                        width: 55vw;
+                        margin: auto;
+    }
+
+    .h2-horarios{
+                        text-align: center;
+                        padding: 20px;
+                        margin-top: 10px;
+    }
+
+    .p-horarios, .p-endereço{
+                        text-align: center;
+                        padding-bottom: 20px;
+    }
+
+    .status-loja {
+                        text-align: center;                                            
+    }
+
+    .footer-contatos {
+                        background-color: rgba(255, 255, 255, 0.568);
+                        width: 55vw;
+                        margin: auto;
+    }
+
+    .h3-footer{
+                        text-align: center;
+                        margin: 10px;
+
+    }
+
+    .p-footer {
+                        text-align: center;
+                        padding: 5px;
+    }
+
+    .li-footer {
+                        list-style-type: none;
+    }
+
+    .a-footer{
+                        text-align: center;                                
+                        display: block;
+                        text-decoration: none;
+                        color: blueviolet;
+    }
+
+    .ult-p-footer {
+                        color: white;
+                        background-color: black;
+                        padding: 10px;
+                        text-align: center;
+                        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+                     /* HEADER*/   
+    .cabeça{     
+                        background-image: url(imagens/menu.png);
+                        background-size: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        height: 300px;
+    }  
+    
+    .container {
+                        width: 100%;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        display: block;
+      }
+      
+    .main {
+                        width: 70%;
+                        margin: 0 auto;
+      }
+      
+      .menu-lateral {
+                        width: 30%;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        z-index: 100;
+                        background-color: #ffffff;
+                        border-right: 1px solid #000;
+      }
+      
+      .ul-menu {
+                        display: none;
+      }
+      
+      ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+      }
+      
+      li {
+                       padding: 10px 0;
+      }
+      
+      a {
+                      color: #000;
+                      font-size: 16px;
+      }
+      
+      a:hover {
+                      color: #333;
+      }
+    
+      .toggle-menu {
+                      position: fixed;
+                      top: 0;
+                      right: 0;
+                      z-index: 1;
+                      width: 40px;
+                      height: 40px;
+                      cursor: pointer;
+      }
+
+
+
+        /*DIV*/  /*DIV*/ /*DIV*/ /*DIV*/
+    .content{
+                                width: 90vw;
+                                margin: 10px auto;
+                                border-radius: 5px;
+                                border: 1px solid black;
+                                background-color: rgba(255, 255, 255, 0.568);
+                                padding: 10PX;
+
+    }
+
+    .h1-content {
+                                text-align: center;
+                                margin: 15px;
+                                color: red;
+                                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+    }
+
+    .h2-content {
+                                color: yellow;
+                                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+    }
+    .h2-content-black {
+                                color: black;
+                                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.534);
+    }
+
+    .p-content {
+                                color: rgb(4, 43, 4);
+                                text-align: justify;
+                                line-height: 1.5em;
+                                text-indent: 1.5em;
+                                margin: 0px 10px;
+    }
+
+    .image-container{   
+                                height: 400px;
+                                margin: auto;
+                                display: block;
+                                text-align: center;
+    }
+
+    .responsive-image{
+                                height: 400px;
+                                min-width: 0vw;
+                                max-width: 100vw;
+    }
+
+
+
+
+
+          /*SECTION*//*SECTION*/   /*SECTION*/
+    .section-horarios{
+                                background-color: rgba(255, 255, 255, 0.568);
+                                width: 90vw;
+                                margin: auto;
+    }
+
+    .h2-horarios{
+                                text-align: center;
+                                padding: 20px;
+                                margin-top: 10px;
+    }
+
+    .p-horarios, .p-endereço{
+                                text-align: center;
+                                padding-bottom: 20px;
+    }
+
+    .status-loja {
+                                text-align: center;
+                                                               
+    }
+
+    .footer-contatos {
+                                background-color: rgba(255, 255, 255, 0.568);
+                                width: 90vw;
+                                margin: auto;
+    }
+
+    .h3-footer{
+                                text-align: center;
+                                margin: 10px;
+
+    }
+
+    .p-footer {
+                                text-align: center;
+                                padding: 5px;
+    }
+
+    .li-footer {
+                                list-style-type: none;
+    }
+
+    .a-footer{
+                                text-align: center;                                
+                                display: block;
+                                text-decoration: none;
+                                color: blueviolet;
+    }
+
+    .ult-p-footer {
+                                color: white;
+                                background-color: black;
+                                padding: 10px;
+                                text-align: center;
+                                margin-top: 5px;
+    }
+
+}
