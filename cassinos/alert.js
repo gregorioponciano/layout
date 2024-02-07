@@ -1,5 +1,5 @@
 // Exibe uma mensagem de boas-vindas ao jogador
-function showWelcomeMessage() {
+//function showWelcomeMessage() {
     alert("Bem-vindo ao Cassino Online!");
   }
   https://www.kto.com/pt/registro/
