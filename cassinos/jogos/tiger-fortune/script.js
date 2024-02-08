@@ -90,7 +90,7 @@ function checkWin(result, betAmount) {
   if (win) {
     resultText.innerText = "Parabéns! Você ganhou!";
     resultText.style.color = "green";
-    playerChips += betAmount * 10; // Exemplo: ganha o dobro da aposta
+    playerChips += betAmount * 100; // Exemplo: ganha o dobro da aposta
   } else {
     resultText.innerText = "Você perdeu! Tente novamente.";
     resultText.style.color = "red";
