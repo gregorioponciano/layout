@@ -1,18 +1,18 @@
-const symbols = ["1", "2", "3", "4", "5", "6", "7"];
+const symbols = ["🟠", "🔔", "🃏", "💰", "🎁", "💎", "7"];
 const numReels = 3; //quantidade de linha do jogo horizontal
-const numRows = 3; //quantidade de linha do jogo vertical
+const numRows = 133; //quantidade de linha do jogo vertical
 
 let playerChips = 100; //quantidade de fichas de um usuario
 let selectedBet = 1;
 
 // Combinações vencedoras
 const winningCombinations = [
-  ["1", "1", "1"],
-  ["2", "2", "2"],
-  ["3", "3", "3"],
-  ["4", "4", "4"],
-  ["5", "5", "5"],
-  ["6", "6", "6"],
+  ["🟠", "🟠", "🟠"],
+  ["🔔", "🔔", "🔔"],
+  ["🃏", "🃏", "🃏"],
+  ["💰", "💰", "💰"],
+  ["🎁", "🎁", "🎁"],
+  ["💎", "💎", "💎"],
   ["7", "7", "7"]
 
 ];
@@ -61,7 +61,7 @@ function displayResult(result, betAmount) {
   setTimeout(() => {
     stopSpinning();
     checkWin(result, betAmount);
-  }, 3000); // Tempo de girar (em milissegundos)
+  }, 1500); // Tempo de girar (em milissegundos)
 }
 
 function stopSpinning() {
@@ -90,7 +90,7 @@ function checkWin(result, betAmount) {
   if (win) {
     resultText.innerText = "Parabéns! Você ganhou!";
     resultText.style.color = "green";
-    playerChips += betAmount * 100; // Exemplo: ganha o dobro da aposta
+    playerChips += betAmount * 20; // Exemplo: ganha o dobro da aposta
   } else {
     resultText.innerText = "Você perdeu! Tente novamente.";
     resultText.style.color = "red";

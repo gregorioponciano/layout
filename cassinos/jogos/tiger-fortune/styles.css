@@ -17,7 +17,7 @@ body {
   
   .reel {
     width: 80px;
-    height: 200px;
+    height: 140px;
     border: 2px solid black;
     margin: 0 10px;
     display: flex;
@@ -40,12 +40,12 @@ body {
     text-align: center;
     font-size: 36px;
     font-weight: bold;
-    animation: spin 0.2s  linear;
+    animation: spin 3s ease-in-out infinite; /* Ajuste a duração conforme necessário */
   }
   
-  @keyframes fast-spin {
-    0% { transform: translateY(-100%) rotate(0deg); }
-    100% { transform: translateY(100%) rotate(720deg); } /* Gire 720 graus (duas voltas completas) */
+  @keyframes spin {
+    0% { transform: translateY(-500vh); }
+    100% { transform: translateY(1vh); }
   }
   
   
