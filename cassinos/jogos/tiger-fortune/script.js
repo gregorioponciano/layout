@@ -98,12 +98,12 @@ function checkWin(result, betAmount) {
 
   let resultText = document.getElementById('result');
   if (win) {
-    resultText.innerText = "Parabéns! Você ganhou!";
+    resultText.innerText = "Parabéns! Você ganhou 20x!";
     resultText.style.color = "green";
     playerChips += betAmount * 20; // Exemplo: ganha o dobro da aposta
   } else {
-    resultText.innerText = "Você perdeu! Tente novamente.";
-    resultText.style.color = "red";
+    resultText.innerText = "0";
+    resultText.style.color = "blue";
   }
   updatePlayerChips();
 }

@@ -8,6 +8,12 @@ body {
     font-family: Arial, sans-serif;
   }
 
+h4, #clock {
+                color: white;
+                padding: 10px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.698);
+}
+
   .hora{
           display: flex;
           justify-content: space-between;
@@ -17,7 +23,7 @@ body {
   .container {
     text-align: center;
     margin: auto;
-    background-color: rgb(255, 149, 161);
+    background-color: rgb(250, 95, 113);
     width: 57vw;
     height: 100vh;
   }
