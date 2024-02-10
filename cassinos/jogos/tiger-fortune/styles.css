@@ -94,7 +94,7 @@ h4, #clock {
   }
   
   .rotate-fast {
-    animation: rotateFast 2s linear infinite;
+    animation: rotateFast 4s linear infinite;
   }
   
   @keyframes rotateFast {
