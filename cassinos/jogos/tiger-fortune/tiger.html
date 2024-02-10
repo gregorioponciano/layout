@@ -23,7 +23,12 @@
       <div class="controls">
       <p>Fichas: <span id="player-chips">100</span></p>
       <label for="bet-amount"></label>
-      <img src="imagens/spin.png" alt="spin" onclick="placeBet()" id="img-spin">
+
+      <div class="container">
+        <img src="imagens/spin.png" onclick="placeBet()" class="rotate-image" id="image">
+      </div>   
+      <audio id="click-sound" src="audio/spin.mp3"></audio>
+
       <select id="bet-amount">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -40,5 +45,6 @@
   </div>
   <script src="script.js"></script>
   <script src="hora.js"></script>
+  <script src="controls.js"></script>
 </body>
 </html>
