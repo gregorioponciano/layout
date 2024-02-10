@@ -151,10 +151,29 @@ button {
 }
 
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
+
+    .slider-container {
+        width: 90vw;
+        height: 50vh;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slider {
+        width: 90vw;
+        height: 100%;
+
+    }
 
         input {
                         width: 100px;
         }
+
+        .nav-sessao {
+            width: 80vw;
+            margin: 50px auto;
+}
 }
 
