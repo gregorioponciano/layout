@@ -1,10 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+  }
+
+  .hora{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 100px;
   }
   
   .container {
     text-align: center;
-    margin-top: 50px;
+    margin: auto;
+    background-color: rgb(255, 149, 161);
+    width: 57vw;
+    height: 100vh;
   }
   
   .slot-machine {
@@ -16,36 +31,37 @@ body {
 
   
   .reel {
-    width: 80px;
+    width: 50px;
     height: 140px;
     border: 2px solid black;
     margin: 0 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow: hidden;
+    overflow: hidden; /* esconde o symbols atraz*/
+    background-color: rgb(225, 202, 202);
   }
   
   .reels {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180px; /* Altura do slot */
+    height: 170px; /* Altura do slot */
     border: 2px solid black;
-    overflow: hidden;
+
   }
   
   .symbol {
     width: 100%;
     text-align: center;
-    font-size: 36px;
+    font-size: 27px;
+    padding-top: 10px;
     font-weight: bold;
     animation: spin 3s ease-in-out infinite; /* Ajuste a duração conforme necessário */
   }
   
   @keyframes spin {
-    0% { transform: translateY(-500vh); }
-    100% { transform: translateY(1vh); }
+    0% { transform: translateY(-200vh); }
+    100% { transform: translateY(10vh); }
   }
   
   
@@ -54,5 +70,20 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  .controls {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+
+      width: 100vw;
+
+    }
+
   }
   

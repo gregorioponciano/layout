@@ -1,9 +1,19 @@
 const symbols = ["🟠", "🔔", "🃏", "💰", "🎁", "💎", "7"];
+const symbolsValue = {
+"🟠": 12,
+"🔔": 20,
+"🃏": 32,
+"💰": 40,
+"🎁": 75,
+"💎": 100,
+"7": 200
+};
 const numReels = 3; //quantidade de linha do jogo horizontal
 const numRows = 133; //quantidade de linha do jogo vertical
 
 let playerChips = 100; //quantidade de fichas de um usuario
 let selectedBet = 1;
+
 
 // Combinações vencedoras
 const winningCombinations = [
@@ -61,7 +71,7 @@ function displayResult(result, betAmount) {
   setTimeout(() => {
     stopSpinning();
     checkWin(result, betAmount);
-  }, 1500); // Tempo de girar (em milissegundos)
+  }, 2000); // Tempo de girar (em milissegundos)
 }
 
 function stopSpinning() {
