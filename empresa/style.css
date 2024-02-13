@@ -10,15 +10,14 @@ body{
                                             background-color: #8EBFE6;
 }
 
-@media screen and (max-width: 1920px){
 
         /* HEADER*/   
     .cabeça{     
-                        background-image: url(imagens/menu.png);
+                        background-image: url(imagens/logo-slack.jpg);
                         background-size: 55vw;
                         background-repeat: no-repeat;
                         background-position: center center;
-                        height: 500px;
+                        height: 300px;
                         display: flex;
                         flex-direction: row;
                         align-items: flex-end;
@@ -102,12 +101,13 @@ body{
                         margin: auto;
                         display: block;
                         text-align: center;
+                        width: 60vw;
     }
 
     .responsive-image{
                         height: 400px;
-                        min-width: 0vw;
-                        max-width: 100vw;
+                        min-width: 55vw;
+
     }
 
 
@@ -171,21 +171,20 @@ body{
                         text-align: center;
                         margin-top: 5px;
     }
-}
 
 @media screen and (max-width: 768px){
 
                      /* HEADER*/   
     .cabeça{     
-                        background-image: url(imagens/menu.png);
-                        background-size: 100%;
+  
+                        background-size: 90%;
                         background-repeat: no-repeat;
                         background-position: center center;
                         height: 300px;
     }  
     
     .container {
-                        width: 100%;
+                        width: 90%;
                         max-width: 1200px;
                         margin: 0 auto;
                         display: block;
@@ -279,15 +278,13 @@ body{
 
     .image-container{   
                                 height: 400px;
-                                margin: auto;
-                                display: block;
-                                text-align: center;
+                                width: 80vw;
     }
 
     .responsive-image{
                                 height: 400px;
                                 min-width: 0vw;
-                                max-width: 100vw;
+                                max-width: 85vw;
     }
 
 
