@@ -71,21 +71,22 @@ p {
 }
 
 img {
-                                          width: 80vw;
+                                          width: 80%;
 }
 
 
 .footer-contatos {
-                                      width: 80vw;
-                                      margin: 20px auto;
+                                      
                                       text-align: center;
-                                      background-color: rgb(38, 195, 142);
-                                      padding: 20px;
-
+                                      width: 100%;
+                                      margin-top: 20px;
 }
 
-.contatos-footer {
-                      
+.footer-contatos1 {
+                                    width: 81%;
+                                    background-color: rgb(38, 195, 142);
+                                    margin: auto;
+                                    padding: 10px;
 }
 
 
@@ -125,5 +126,16 @@ img {
   .conteudo {
                             width: 100vw;
   }
+
+  img {
+                            width: 80vw;
+  }
+
+
+.footer-contatos1 {
+
+  background-color: rgb(38, 195, 142);
+
+}
 }
 
