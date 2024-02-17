@@ -193,17 +193,26 @@ aside {
   }
   
   .div-img {
-    display: flex;
-    flex-direction: column;
-    width: calc(33.33% - 20px); /* Distribui as imagens em 3 colunas com espaçamento */
-    text-align: center;
+                                display: flex;
+                                flex-direction: column;
+                                width: calc(33.33% - 20px); /* Distribui as imagens em 3 colunas com espaçamento */
+                                text-align: center;
   }
   
-  .container-jogos section {
+.container-jogos section {
                                 display: flex;
                                 flex-wrap: wrap;
                                 justify-content: space-between; /* Distribui as seções uniformemente na linha */
-  }
+}
+
+.link-jogar {
+                                text-decoration: none;
+                               background-color: rgb(13, 126, 254);
+                               color: white;
+                               padding: 10px;
+                               margin-bottom: 10px;
+                                
+}
   
 
 footer {
@@ -213,7 +222,8 @@ footer {
                                 padding: 7px 0px;
                                 color: white;
                                 text-align: center;
-                                margin-bottom: 130px;
+                                margin-bottom: 70px;
+                                margin-top: 10px;
 }
   
       /*screen and (max-width: 480px)*/
