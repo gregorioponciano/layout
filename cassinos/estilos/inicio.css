@@ -114,6 +114,30 @@ menu {
                                 text-align: center;
 }
 
+aside {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-direction: row;
+
+                                align-items: center;
+                                
+}
+
+
+#img-buscar {
+                                width: 20px;
+                                background-color: white;
+
+                                
+}
+
+#input-buscar {
+                               outline: none;
+                               padding:6px 0px;
+                               width: 30vw;
+                               margin-bottom: 20px;
+}
+
 .div-but-pag {
                                 text-align: right;
                                 margin: 15px 5px;

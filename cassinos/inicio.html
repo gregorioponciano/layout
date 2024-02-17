@@ -48,17 +48,20 @@
             <p>Cadastre-se no Cassino Online hoje e ganhe um bônus de boas-vindas de 100% até R$100.</p>           
         </nav>
 
-        <div class="burcar">
-            <label for="buscar"><img src="" alt=""></label>
-            <input type="text" name="burcar" class="input-buscar" id="input-nuscar">
-        </div>
-        <div class="div-but-pag">
-            <button onclick="showSection(1)" class="but-pag">1</button>
-            <button onclick="showSection(2)" class="but-pag">2</button>
-            <button onclick="showSection(3)" class="but-pag">3</button>
-            <button onclick="showSection(4)" class="but-pag">4</button>
-            <button onclick="showSection(5)" class="but-pag">5</button>
-        </div>
+        <aside>
+            <div class="burcar">
+
+                
+                <label for="input-buscar"><img src="imagens/buscar.png" alt="buscar" id="img-buscar"><input type="text" class="input-buscar" id="input-buscar" name="input-buscar" placeholder="Procure Jogos"></label>
+            </div>
+            <div class="div-but-pag">
+                <button onclick="showSection(1)" class="but-pag">1</button>
+                <button onclick="showSection(2)" class="but-pag">2</button>
+                <button onclick="showSection(3)" class="but-pag">3</button>
+                <button onclick="showSection(4)" class="but-pag">4</button>
+                <button onclick="showSection(5)" class="but-pag">5</button>
+            </div>
+        </aside>
 
         <nav class="container-jogos">
             <section id="section1" class="active">
@@ -122,7 +125,6 @@
             <p class="p-footer">&copy;Copyright 2024 Cassino Online</p>
         </footer>
     
-    <script src="modal.js" defer></script>
     <script src="slide.js"></script>
     <script src="paginas.js"></script>
     <script src="alert.js"></script>
