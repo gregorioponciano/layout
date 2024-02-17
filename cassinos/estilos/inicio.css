@@ -5,7 +5,6 @@ body, html {
                                 padding: 0px;
                                 width: 95vw;
                                 margin: auto;
-                                box-sizing: border-box;
                                 background-color: rgb(105, 98, 98);  
                                 font-family: Arial, Helvetica, sans-serif;        
 }
@@ -30,7 +29,17 @@ menu {
 }
 
 .link-header:hover {
-                                color: yellow;
+                                color: yellowgreen;
+}
+
+#link-entrar {
+                      background-color: firebrick;
+                      padding: 5px;
+                      border-radius: 5px;
+}
+
+#link-entrar:hover {
+                    background-color: red;
 }
 
 
@@ -98,52 +107,69 @@ menu {
 }
 
 .nav-sessao {
-                            background-color: black;
-                            color: white;
-                            width: 100%;
-                            margin: 20px auto;
-                            text-align: center;
+                                background-color: black;
+                                color: white;
+                                width: 100%;
+                                margin: 20px auto;
+                                text-align: center;
 }
 
 .div-but-pag {
-                            text-align: right;
-                            margin: 15px 5px;
+                                text-align: right;
+                                margin: 15px 5px;
+                                transition: .35s;
+                                cursor: pointer;
+}
+
+.but-pag {
+
+                                padding: 5px 8px;
+}
+
+.but-pag:hover {
+                                opacity: .4;
+                                transform: scale(0.9);
 }
 
 .container-jogos {
-    width: 100%; /* Largura de 95% da largura da viewport */
-    margin: 0 auto; /* Centraliza horizontalmente o conteúdo */
+                                width: 100%; /* Largura de 95% da largura da viewport */
+                                margin: 0 auto; /* Centraliza horizontalmente o conteúdo */
   }
   
   .container-jogos section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Distribui as seções uniformemente na linha */
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between; /* Distribui as seções uniformemente na linha */
   }
   
   .img-jogos {
-    width: calc(20% - 10px); /* 30% da largura da seção menos a margem entre as imagens */
-    margin-bottom: 20px; /* Espaçamento entre as linhas */
+                                width: calc(20% - 10px); /* 30% da largura da seção menos a margem entre as imagens */
+                                margin-bottom: 20px; /* Espaçamento entre as linhas */
   }
-  
-  @media screen and (max-width: 768px) {
-    .img-jogos {
-      width: calc(30%); /* 45% da largura da seção menos a margem entre as imagens para telas menores */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .img-jogos {
-      width: calc(33%); /* 100% da largura da seção menos a margem entre as imagens para dispositivos móveis */
-    }
-  }
-  
-  footer {
+
+footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px;
+}
+  
+
+
+  @media screen and (max-width: 768px) {
+                      .img-jogos {
+                        width: calc(30%); /* 45% da largura da seção menos a margem entre as imagens para telas menores */
+                      }
   }
+  
+
+
+  @media screen and (max-width: 480px) {
+            .img-jogos {
+              width: calc(33%); /* 100% da largura da seção menos a margem entre as imagens para dispositivos móveis */
+            }
+  }
+  
 
 
 
