@@ -192,16 +192,19 @@ aside {
                                 margin: 0 auto; /* Centraliza horizontalmente o conteúdo */
   }
   
+  .div-img {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.33% - 20px); /* Distribui as imagens em 3 colunas com espaçamento */
+    text-align: center;
+  }
+  
   .container-jogos section {
                                 display: flex;
                                 flex-wrap: wrap;
                                 justify-content: space-between; /* Distribui as seções uniformemente na linha */
   }
   
-  .img-jogos {
-                                width: calc(20% - 5px); /* 30% da largura da seção menos a margem entre as imagens */
-                                margin-bottom: 10px; /* Espaçamento entre as linhas */
-  }
 
 footer {
                                 background-color: black;
@@ -256,9 +259,12 @@ footer {
     }
 
     
-    .img-jogos {
-                        width: calc(30%); /* 45% da largura da seção menos a margem entre as imagens para telas menores */
-    }
+    .div-img {
+        display: flex;
+        flex-direction: column;
+        width: calc(33.33% - 20px); /* Distribui as imagens em 3 colunas com espaçamento */
+        text-align: center;
+      }
 }
 
         /*screen and (max-width: 480px)*/
@@ -304,9 +310,12 @@ ul {
       list-style: none;
 }
 
-    .img-jogos {
-          width: calc(33%); /* 100% da largura da seção menos a margem entre as imagens para dispositivos móveis */
-    }
+.div-img {
+        display: flex;
+        flex-direction: column;
+        width: calc(33.33% - 20px); /* Distribui as imagens em 3 colunas com espaçamento */
+        text-align: center;
+  }
   }
   
 
