@@ -84,6 +84,11 @@ h2 > a {
                 color: black;               
 }
 
+#fechar { display: none;
+            text-align: right;
+            margin-right: 4vw;
+}
+
 .menuheader { 
               display: block;
               text-align: center;
