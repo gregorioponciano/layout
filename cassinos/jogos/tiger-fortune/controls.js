@@ -1,3 +1,7 @@
+const audio = ("audio");
+
+
+audio.play();
 
 
 const image = document.getElementById('image');
