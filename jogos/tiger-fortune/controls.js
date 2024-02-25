@@ -1,8 +1,3 @@
-const audio = ("audio");
-
-
-audio.play();
-
 
 const image = document.getElementById('image');
 const clickSound = document.getElementById('click-sound');
