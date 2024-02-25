@@ -1,5 +1,4 @@
-const audio = document.getElementById("musica");
-audio.play(); // Inicia a reprodução do áudio
+
 
 const image = document.getElementById('image');
 const clickSound = document.getElementById('click-sound');
