@@ -3,47 +3,37 @@
 * {     
                         margin: 0px;
                         padding: 0px;
-}
-
-audio {
-                        display: none;
+                        box-sizing: border-box;
+                        overflow: hidden;
 }
 
 .container {
-    max-width: 550px;
-    margin: auto;                      
+                        max-width: 550px;
+                        margin: auto;                      
 }
 
 .container1 {
-background-image: url(imagens/carregamento-jogo.jpg);
-height: 100vh;
-background-size: contain;
-background-repeat: no-repeat;
+                        background-image: url(imagens/carregamento-jogo.jpg);
+                        height: 100vh;
+                        background-size: contain;
+                        background-repeat: no-repeat;
 }
 
-button {
-                position: absolute;
-                top: 80%;
-                left: 48%;
-                transform: translate(-50%, -50%);
-                padding: 10px 50px;
-                border-radius: 8px;
-                background-color: rgb(29, 191, 132);             
+#começar {
+                        position: absolute;
+                        top: 80%;
+                        left: 48%;
+                        transform: translate(-50%, -50%);
+                        padding: 10px 50px;
+                        border-radius: 8px;
+                        background-color: rgb(29, 191, 132);
+                        text-decoration: none;
+                        color: white;
+                        font-weight: bolder;
+                        font-size: 17px;             
 }
-
-a {
-            text-decoration: none;
-            color: white;
-            font-weight: bolder;
-            font-size: 17px;
-}
-
 
 
 @media screen and (max-width: 550px) {
 
-
-button {
-           
-}
 }
