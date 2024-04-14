@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adega Online - Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()" id="spam1">☰</button>
+        
+    <div class="menu">
+        <button class="toggle-btn" onclick="toggleSidebar()" id="spam2">x</button>
+
+        <h2 onclick="toggleOptions('porcoes')">Porções</h2>
+        <ul id="porcoes" style="display: none;">
+            <li onclick="showMenu('Batata Frita', 40)">Batata Frita</li>
+            <li onclick="showMenu('Calabresa', 40)">Calabresa</li>
+            <li onclick="showMenu('Frango a passarinho', 40)">Frango a passarinho</li>
+            <li onclick="showMenu('Onion Rings', 40)">Onion Rings</li>
+        </ul>
+
+        <h2 onclick="toggleOptions('pizza')">Pizza</h2>
+        <ul id="pizza" style="display: none;">
+            <li onclick="showMenu('Margherita', 40)">Margherita</li>
+            <li onclick="showMenu('Calabresa', 40)">Calabresa</li>
+            <li onclick="showMenu('Quatro Queijos', 40)">Quatro Queijos</li>
+            <li onclick="showMenu('Frango com Catupiry', 40)">Frango com Catupiry</li>
+        </ul>
+
+        <h2 onclick="toggleOptions('lanches')">Lanches</h2>
+        <ul id="lanches" style="display: none;">
+            <li onclick="showMenu('X-Burger', 15)">X-Burger</li>
+            <li onclick="showMenu('X-Salada', 18)">X-Salada</li>
+            <li onclick="showMenu('X-Bacon', 20)">X-Bacon</li>
+            <li onclick="showMenu('X-Tudo', 25)">X-Tudo</li>
+        </ul>
+
+        <h2 onclick="toggleOptions('bebidas')">Bebidas</h2>
+        <ul id="bebidas" style="display: none;">
+            <li onclick="showMenu('Cerveja', 10)">Cerveja</li>
+            <li onclick="showMenu('Refrigerante', 10)">Refrigerante</li>
+            <li onclick="showMenu('Água Mineral', 10)">Água Mineral</li>
+            <li onclick="showMenu('Suco Natural', 10)">Suco Natural</li>
+        </ul>
+    </div>
+</div>
+
+
+    <div id="menuOverlay" class="overlay">
+        <div class="menu-popup">
+            <h2 id="selectedItem"></h2>
+            <input id="quantity" value="0" min="1" max="200" required>
+            <button onclick="decrementQuantity()">-</button>
+            <button onclick="incrementQuantity()">+</button>
+            <h3>Adicionais</h3>
+            <p id="p-add">adicionar</p>
+            <button>-</button>
+            <button>+</button><br>
+            <p id="p-add">adicionar</p>
+            <button>-</button>
+            <button>+</button><br>
+            <p id="p-add">adicionar</p>
+            <button>-</button>
+            <button>+</button><br>
+            <p id="p-add">adicionar</p>
+            <button>-</button>
+            <button>+</button><br>
+            <p id="p-add">adicionar</p>
+            <button>-</button>
+            <button>+</button><br>
+            <p id="p-add">adicionar</p>
+            <button>-</button>
+            <button>+</button><br>
+            <button onclick="addToCart()">Adicionar ao Carrinho</button>
+            <button onclick="closeMenu()">Fechar</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>Carrinho</h2>
+        <ul id="cartItems">
+            <!-- Os itens do carrinho serão inseridos aqui -->
+        </ul>
+        <p>Total: R$ <span id="total">0.00</span></p>
+
+        <script src="script.js"></script>
+        <script src="menubar.js"></script>
+    </div>
+
+</body>
+</html>
