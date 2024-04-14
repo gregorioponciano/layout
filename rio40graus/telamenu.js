@@ -1,24 +1,19 @@
 var burg = document.querySelector('#burg')
 var fechar = document.querySelector('#fechar')
+var aparecer = document.querySelector('#section-menu')
 
 function clickMenu() { 
 
-             itens.style.display = 'block'
+             aparecer.style.display = 'block'
              burg.style.display = 'none'
              fechar.style.display = 'block'   
 }
 function closeMenu() {
-    itens.style.display = "none"
-    fechar.style.display = 'none'
-    burg.style.display = 'block'
+            aparecer.style.display = "none"
+            fechar.style.display = 'none'
+            burg.style.display = 'block'
    
 }
 
-function mudouTamanho() {
-            if (window.innerWidth >= 600) {
-                itens.style.display = 'inline-block'
-            } else {
-                itens.style.display = 'none'
-            }
-        }
+
      

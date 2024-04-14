@@ -4,40 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIO 40 Graus</title>
+
     <link rel="shortcut icon" href="./imagens/ico-logo.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="estilos/style.css" media="all">
-    <link rel="stylesheet" href="estilos/lojadesktopg.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="estilos/loja.css" media="screen and (max-width: 768px)">
-
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">  
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
-<body onresize="mudouTamanho()">
-    
-    <div class="headcontainerloja">
-        <div class="divimgbrasil">
-            <img src="imagens/logo.png" alt="Cidade Bela" class="imgbrasil">
+<body>
+    <div class="div-topo">
+        <div class="div-img-topo">
+            <img src="imagens/logo.png" alt="logotipo" class="img-topo">
         </div>
-        <header>
-        
-            <h2><a href="mta.html" class="h2brasil">RIO 40 GRAUS</a></h2>
-        
-               <span id="burg" class="material-symbols-outlined" onclick="clickMenu()">
-                   density_small               <!--menu hambuerguer google icons-->
-               </span>
-                   <menu id="itens">
-                           <a href="loja.html" class="menuheader">VIP'S</a>
-                           <a href="#" class="menuheader">CONTATO</a>
-                           <a href="regras.html" class="menuheader">REGRAS</a>
-                           <a href="login.html" class="menuheader">LOGIN</a>
-                   </menu>
-           
-           </header>
     </div>
 
-      
-   
+    <header>       
+        <section id="section-menu-topo">
+            <a href="inicio.html" class="link-inicio">RIO 40 GRAUS</a>
+               <span id="burg" onclick="clickMenu()">☰</span>
+               <span id="fechar" onclick="closeMenu()" style="display: none;">x</span>
+        </section>
+        <section id="section-menu">
+            <menu id="itens">
+                <a href="loja.html" class="link-menu">VIP</a> <hr>
+                <a href="Termos.html" class="link-menu">Termos</a> <hr>
+                <a href="cadastro.html" class="link-menu">Cadastro</a> <hr>
+                <a href="login.html" class="link-menu">Login</a> <hr>
+            </menu>
+        </section>    
+    </header>
+
     <div id="container">
         <div class="container1">
             <h3>Categorias</h3>
@@ -48,17 +41,12 @@
                 <li><a href="fac.html" class="vips">Facção</a></li>
                 <li><a href="privadovip.html" class="vips">Privados</a></li>
                 <li><a href="outrosvip.html" class="vips">Outros</a></li>
-        
             </ul>
-        
-        
             </div>
-        
+
             <div class="containerdetalhe">
-        
                 <h1 class="h1vip">Vip'S</h1>
-        
-                <div class="row">
+                    <div class="row">
         
                         <!-- Item 1 -->
         
