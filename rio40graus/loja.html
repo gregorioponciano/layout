@@ -6,6 +6,7 @@
     <title>RIO 40 Graus</title>
 
     <link rel="shortcut icon" href="./imagens/ico-logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/loja.css">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
@@ -30,189 +31,48 @@
             </menu>
         </section>    
     </header>
-
-    <div id="container">
-        <div class="container1">
-            <h3>Categorias</h3>
-            <hr>
-            <ul class="containervip">
-                <li><a href="loja.html" class="vips">Vip's</a></li>
-                <li><a href="corp.html" class="vips">Corporações</a></li>
-                <li><a href="fac.html" class="vips">Facção</a></li>
-                <li><a href="privadovip.html" class="vips">Privados</a></li>
-                <li><a href="outrosvip.html" class="vips">Outros</a></li>
+    <h1>Vips</h1>
+    <nav id="container">
+        <aside>
+            <ul id="lista-vip">
+                <li class="li">Premium</li>
+                <li class="li">Money</li>
+                <li class="li">Carros</li>
+                <li class="li">Casas</li>
             </ul>
+        </aside>
+
+        <div class="container-img-vip">
+            <div class="div-vip">
+                <img src="imagens-vip/vips/bronze.jpg" alt="bronze" class="img-vip">
+                <button class="vip-detalhes">Detalhes</button>
             </div>
-
-            <div class="containerdetalhe">
-                <h1 class="h1vip">Vip'S</h1>
-                    <div class="row">
-        
-                        <!-- Item 1 -->
-        
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imagens-vip/vips/bronze.jpg" class="card-img-top" alt="Imagem 1">
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
-                                        Detalhes
-                                    </button>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Item 2 -->
-        
-                    <div class="col-md-3">
-                    <div class="card">
-                        <img src="imagens-vip/vips/prata.jpg" class="card-img-top" alt="Imagem 2">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
-                                    Detalhes
-                                </button>
-                            </div>
-                    </div>
-                    </div>
-        
-                    <!-- Item 3 -->
-        
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imagens-vip/vips/ouro.jpg" class="card-img-top" alt="Imagem 3">
-                                <div class="card-body">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
-                                    Detalhes
-                                </button>
-                                </div>
-                        </div>
-                    </div>
-        
-                        <!-- Item 4 -->
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img src="imagens-vip/vips/platina.jpg" class="card-img-top" alt="Imagem 4">
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">
-                                        Detalhes
-                                    </button>
-                                </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 5 -->
-                    <div class="col-md-3">
-                    <div class="card">
-                        <img src="imagens-vip/vips/diamante.jpg" class="card-img-top" alt="Imagem 5">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">
-                                    Detalhes
-                                </button>
-                            </div>
-                    </div>
-                    </div> 
-
-                    <aside class="atençaoaside">
-                        <h4> Atenção</h4>
-                        <p>EM CASO DE ALGUMA COMPRA ESTONADANA O PRODUTO NAO</p>
-                    </aside>
-
-                </div>
+            <div class="div-vip">
+                <img src="imagens-vip/vips/prata.jpg" alt="bronze" class="img-vip">
+                <button class="vip-detalhes">Detalhes</button>
             </div>
-    </div>
-
-                                <!-- Modais de Detalhes -->
-
-    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Bronze</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>• Carro Vip.</p>
-                    <p>• Salario de 1.200 por hora.</p>
-                    <p>• Spotify.</p>                
-                </div>
+            <div class="div-vip">
+                <img src="imagens-vip/vips/ouro.jpg" alt="bronze" class="img-vip">
+                <button class="vip-detalhes">Detalhes</button>
+            </div>
+            <div class="div-vip">
+                <img src="imagens-vip/vips/platina.jpg" alt="bronze" class="img-vip">
+                <button class="vip-detalhes">Detalhes</button>
+            </div>
+            <div class="div-vip">
+                <img src="imagens-vip/vips/diamante.jpg" alt="bronze" class="img-vip">
+                <button class="vip-detalhes">Detalhes</button>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel2">Prata</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                
-                
-                </div>
-                <div class="modal-body">
-                    <p>• Carro Vip.</p>
-                    <p>• Salario de 2.400 por hora.</p>
-                    <p>• Spotify.</p>
-                </div>
-            </div>
-        </div>
+    <div class="contatos">
+        <a href="#"><img src="img-contatos/logo-discord.png" alt="Discord" class="img-contato"></a>
+        <a href="https://instagram.com/salmoneusoficial?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img src="img-contatos/instagram-logo.png" alt="Instagram" class="img-contato"></a>
+        <a href="#"><img src="img-contatos/ico-whatzap.png" alt="Whatzapp" class="img-contato"></a>   
+        <a href="#"><img src="img-contatos/youtube-logo.png" alt="youtube" class="img-contato"></a>
+        <a href="#"><img src="img-contatos/facebook-logo.png" alt="facebook" class="img-contato"></a>
     </div>
-
-    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">      
-        <div class="modal-dialog">          
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel3">Ouro</h5>                   
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
-                </button>
-                </div>              
-                <div class="modal-body">
-                    <p>• Carro Vip.</p>
-                    <p>• Salario de 4.800 por hora.</p>
-                    <p>• Spotify.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel4">Platina</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>                                
-            </div>
-                <div class="modal-body">
-                    <p>• Carro Vip. </p>
-                    <p>• Casa.</p>
-                    <p>• Salario de 9200 por hora. </p>
-                    <p>• Spotify.</p>
-                </div>
-            </div>       
-    </div>
-    </div>
-
-    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel5">Diamante</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>                                
-            </div>
-                <div class="modal-body">
-                    <p>• Carro Vip. </p>
-                    <p>• Casa.</p>
-                    <p>• Mansão (OBS:VERIFICAR NO DISCORD)</p>
-                    <p>• Salario de 18400 por hora. </p>
-                    <p>• Spotify.</p>
-                </div>
-            </div>
-        
-        
-    </div>
-    </div>
-
-    <section class="sectionnave">
-        
-    </section>
 
     <footer>
         <p id="produzido">© 2024 | RIO40GRAUS - Todos os Direitos Reservados.</p>

@@ -78,6 +78,22 @@ hr {
                             
 }
 
+.contatos {
+                            display: flex;
+                            justify-content: space-evenly;
+}
+
+.img-contato {
+                            width: 30px;
+}
+
+footer {
+                            color: white;
+                            background-color: black;
+                            text-align: center;
+                            padding: 15px;
+}
+
 @media screen and (max-width: 768px) {
     header { 
                     display: block;      

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+#container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 10px;
+}
+
+h1 {
+                        text-align: center;
+                        margin: 10px;
+}
+
+#lista-vip {
+                        list-style-type: none;
+                        position: fixed;
+
+                        color: white;
+                     
+                       
+}
+
+.li {
+                       margin-top: 10px;
+                       padding: 10px;
+                       text-align: center;
+                       background-color: black;
+                       cursor: pointer;
+}
+
+.li:hover {
+                        color: black;
+                        background-color: white;
+                        transform: scale(1.09);
+}
+
+.div-vip {
+                        margin: 10px;
+}
+
+.img-vip {
+                        width: 200px;
+}
+
+.vip-detalhes {
+                        margin: auto;
+                        display: block;
+                        background-color: rgb(199, 176, 176);
+                        color: blue;
+                        padding: 5px 10px;
+}
+
+.vip-detalhes:hover {
+                        background-color: rgba(199, 176, 176, 0.776);
+                        transform: scale(1.09);
+}
