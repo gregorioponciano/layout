@@ -23,12 +23,16 @@ body {
                             background-image: url(../imagens/foto-header.jpg);
                             background-size: cover;
                             background-repeat: no-repeat;
-                            background-position: center left;
+                            background-position: center top;
+                            height: 200px;
 }
 
 .img-topo {  
                             
-                            width: 100vw;
+                            width: 300px;
+                            margin: auto;
+                            text-align: center;
+                            display: block;
 }
 
 header { 
@@ -95,6 +99,15 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+
+    .div-topo {     
+
+        background-size: cover;
+
+        background-position: center top;
+        height: 200px;
+}
+
     header { 
                     display: block;      
 }
