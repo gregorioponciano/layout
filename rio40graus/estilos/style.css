@@ -65,20 +65,29 @@ header {
                             flex-direction: row;
 }
 
+.div-menu {
+                            padding: 7px;
+                            transition: 0.5s;
+}
+
+.div-menu:hover {
+                            background-color: rgba(0, 0, 0, 0.558);
+}
+
 .link-menu { 
                             font-family: 'Mynerve', cursive;
                             color: black;
                             padding: 7px;
-                            text-decoration: none;         
+                            text-decoration: none;        
 }
 
 .link-menu:hover {
-                            background-color: black;
                             color: white;
 }
 
 hr {
                             border: 1px solid rgba(0, 0, 0, 0.414);
+                            margin-right: 3vw;
                             
 }
 
@@ -144,8 +153,11 @@ footer {
                     text-align: center;
     }
 
-    .link-menu:hover {
-                    transform: scale(1.32);
+    .div-menu:hover {
+                    transform: scale(1.16);
+                    width: 90%;
+                    margin: auto;
+                    text-align: center;
 }
     hr {
                     border: 1px solid rgba(0, 0, 0, 0.414);
