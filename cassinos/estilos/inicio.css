@@ -83,7 +83,6 @@ menu {
                                         margin: 76px auto;
                                         text-align: center;
                                         background-color: rgba(0, 0, 0, 0.584);
-                                        overflow: hidden;
 }
      
 .content-open {
@@ -288,6 +287,12 @@ menu {
       color: #fff;
       padding: 0px 10px 0px 0px;
       margin: 0px;
+}
+
+.content {
+
+        margin: 60px auto;
+
 }
 
 .nav-sessao {
