@@ -15,7 +15,6 @@ body, html {
                                         left: 50%;
                                         transform: translate(-50%, 0%);
                                         width: 600px;
-                                        padding: 0px 1px;
                                         background-color: #333;
                                         color: #fff;
                                         z-index: 100;
@@ -239,13 +238,13 @@ menu {
 }
 
 .img-logo {
-        width: 100px;
+        width: 117px;
 
 }
 
 .link-header {
       text-decoration: none;                              
-      padding: 10px;
+      padding: 0px 10px 0px 0px;
       color: black;                               
 }
 
@@ -281,8 +280,8 @@ menu {
 .menu-inferior a {
       text-decoration: none;
       color: #fff;
-      padding: 10px;
-      margin: 0 5px;
+      padding: 0px 10px 0px 0px;
+      margin: 0px;
 }
 
 .nav-sessao {
