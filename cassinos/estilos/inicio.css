@@ -64,9 +64,9 @@ menu {
                                         z-index: 100;
 }
 
-ul {
+.menu-ul-inferior {
                                         display: flex;
-                                        justify-content: space-between;
+                                        justify-content: space-around;
                                         list-style: none;
 }
 
@@ -277,12 +277,6 @@ menu {
                 background-color: #333;
                 color: #fff;
                 z-index: 100;
-}
-
-ul {
-                display: flex;
-                justify-content: space-between;
-                list-style: none;
 }
 
 .menu-inferior a {
@@ -496,12 +490,6 @@ menu {
         background-color: #333;
         color: #fff;
         z-index: 100;
-}
-
-ul {
-      display: flex;
-      justify-content: space-between;
-      list-style: none;
 }
 
 .menu-inferior a {
