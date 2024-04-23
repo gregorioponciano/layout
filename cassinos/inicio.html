@@ -29,15 +29,18 @@
     </header>
 
 
-        <div class="slider-container">
-            <div class="slider">
-                <img src="imagens/ofertas/rabbit-20-cadastro.jpg" alt="Imagem 1" class="active">
-                <img src="imagens/ofertas/55-rodadas-gratis.jpg" alt="Imagem 2">
-                <img src="imagens/ofertas/rabbit-desconto.jpg" alt="Imagem 3">
+    <div id="content" class="content">
+        <div class="carousel">    
+            <div class="carousel-images">
+                <img src="imagens/cashback.png" alt="cashback" class="img-carousel">
+                <img src="imagens/afiliados.png" alt="afiliado" class="img-carousel">
+                <img src="imagens/bonus100.png" alt="bonus100" class="img-carousel">
+                <img src="imagens/bonus30.png" alt="bonus30" class="img-carousel">
+                <img src="imagens/chuva-dinheiro.png" alt="chuva-de-dinheiro" class="img-carousel">
             </div>
-            <button class="btn-prev" onclick="slidePrev()">◀️</button>
-            <button class="btn-next" onclick="slideNext()">▶️</button>
-        </div>
+        <button class="prev" onclick="moveCarousel(-1)">Anterior</button>
+        <button class="next" onclick="moveCarousel(1)">Próxima</button>
+    </div>
 
 
         <nav class="nav-sessao">

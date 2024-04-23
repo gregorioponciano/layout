@@ -1,46 +1,35 @@
-let currentSlide = 0;
+let currentIndex = 0;
+let intervalId;
 
-setInterval(() => {
-    if (currentSlide === 2) {
-        currentSlide = 0;
-    } else {
-        currentSlide++;
-    }
-    updateSlide();
-}, 5000);
+function moveCarousel(direction) {
+    const carouselImages = document.querySelector('.carousel-images');
+    const totalImages = carouselImages.children.length;
+    const imageWidth = carouselImages.children[0].offsetWidth;
+    const moveAmount = imageWidth * direction;
 
-function slidePrev() {
-    if (currentSlide === 0) {
-        currentSlide = 2;
-    } else {
-        currentSlide--;
-    }
-    updateSlide();
+    currentIndex = (currentIndex + totalImages + direction) % totalImages;
+
+    carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
 }
 
-function slideNext() {
-    if (currentSlide === 2) {
-        currentSlide = 0;
-    } else {
-        currentSlide++;
-    }
-    updateSlide();
+function startAutoScroll() {
+    intervalId = setInterval(() => {
+        moveCarousel(1);
+    }, 3000); // 3 segundos
 }
 
-function updateSlide() {
-    let slider = document.querySelector(".slider");
-    let imgs = slider.querySelectorAll("img");
-
-    // Desativar a imagem anterior
-    if (currentSlide !== 0) {
-        imgs[currentSlide - 1].classList.remove("active");
-    }
-
-    // Ativar a imagem atual
-    imgs[currentSlide].classList.add("active");
-
-    // Desativar a próxima imagem
-    if (currentSlide !== imgs.length - 1) {
-        imgs[currentSlide + 1].classList.remove("active");
-    }
+function stopAutoScroll() {
+    clearInterval(intervalId);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    startAutoScroll();
+});
+
+document.querySelector('.carousel').addEventListener('mouseenter', () => {
+    stopAutoScroll();
+});
+
+document.querySelector('.carousel').addEventListener('mouseleave', () => {
+    startAutoScroll();
+});

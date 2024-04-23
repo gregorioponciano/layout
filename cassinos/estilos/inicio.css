@@ -80,69 +80,67 @@ ul {
                               margin: 0 5px;
 }
 
-     /* slide de imagens*/
-.slider-container {
-                                width: 99%;
-                                height: 40vh;
-                                margin: auto;
-                                margin-top: 70px;
-                                position: relative;
-                                overflow: hidden;
-}
+.content {
+        transition: margin-left 0.3s ease;
+        padding: 20px;
+        margin: 76px auto;
+        text-align: center;
+        background-color: antiquewhite;
+        overflow: hidden;
+    }
     
-.slider {
-                                width: 100%;
-                                height: 100%;
-                                position: absolute;
-                                animation: slide 5s infinite linear;
-}
-
-.slider img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-}
-
-.slider img.active {
-                                z-index: 1;
-}
-
-@keyframes slide {
-            0% {
-                left: 100%;
-            }
-            20% {
-                left: 0;
-            }
-            80% {
-                left: 0;
-            }
-            100% {
-                left: -100%;
-            }
-            }
-
-.btn-prev, .btn-next {
-                                position: absolute;
-                                top: 50%;
-                                transform: translateY(-50%);
-                                z-index: 1;
-                                font-size: 7vw;
-                                background-color: transparent;
-                                border: none;
-                                cursor: pointer;
-}
-
-.btn-prev {
-                                left: 0;
-}
-
-.btn-next {
-                                right: 0;
-}
+    
+    
+    .content-open {
+        margin-left: 250px;
+    }
+    
+    .toggleMenu {
+                    z-index: 10;
+    }
+    
+    
+    .carousel {
+        position: relative;
+        max-width: 99%;
+        margin: 0 auto;
+        overflow: hidden;
+        
+    }
+    
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .carousel-images img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .next:hover {           background-color: #1D2129;}
+    .prev:hover {           background-color: #1D2129;}
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
 
 .nav-sessao {
                                 background-color: black;
