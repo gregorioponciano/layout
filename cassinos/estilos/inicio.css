@@ -160,7 +160,7 @@ label {
 #img-buscar {
                                         width: 17px;
                                         cursor: pointer;
-                                        background-color: white;
+                                        border: 1px solid black;
                                         height: 17px;                             
 }
 
