@@ -43,8 +43,11 @@ body {
     z-index: 999;
 }
 
-#spam1 {    
-            
+#quantity {
+                outline: none;
+                border: none;
+                text-align: right;
+                background-color: #ccc;
 }
 
 #spam2 {
@@ -102,7 +105,7 @@ body {
 }
 
 .cart {
-    width: 50vw;
+    width: 50vw; 
     margin: 20px auto;
     padding: 0 20px;
     background-color: #fff;
