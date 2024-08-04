@@ -1,4 +1,4 @@
-//modal perfil
+                        //modal perfil
 function openModal() {
     document.getElementById('myModal').style.display = 'block';
 }
@@ -14,7 +14,7 @@ window.onclick = function(event) {
     }
 }
 
-//modal fullscreen afiliado
+                        //modal fullscreen afiliado
 
         function openFullscreenModal() {
             const modalScreen = document.getElementById('fullscreenModal');

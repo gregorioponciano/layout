@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-                                overflow: hidden; /* Evita o scroll da página quando o modal está aberto */
+                                 /* Evita o scroll da página quando o modal está aberto */
 }
                     /*modal perfil*/
 .modal {
@@ -104,7 +104,7 @@ ul {
                                 width: 599px;
                                 height: 100%;
                                 background-color: rgba(0, 0, 0, 0.8);
-                                overflow: hidden; /* Evita o scroll da página quando o modal está aberto */
+
 }
 .fullscreen-modal-content {
                                 background-color: white;
@@ -153,14 +153,13 @@ ul {
 }
 .gray-modal-content {
                                 background-color: #24262b;
+                                overflow: scroll;
                                 width: 100%;
-                                height: 100%;
+                                height: 200%;
                                 position: absolute;
                                 top: 0;
                                 left: -100%;
                                 transition: left 0.5s ease;
-
-
                                 box-sizing: border-box;
 }
 .gray-close {
@@ -198,24 +197,59 @@ ul {
                                 padding: 10px 30px;
                                 margin: 0px 10px;
                                 background-color: #151618;
-                                border-radius: 10px;
+                                border-radius: 5px;
 }
 
 .div-input {
                                 display: flex;
+                                width: 80%;
+                                border-radius: 3px;
+                                margin: 30px auto;
                                 justify-content: space-around;
-                                margin: 20px;
                                 background-color: #151618;
 }
 
 .input {
                                 background-color: transparent;
                                 border: none;
-                                ov
+                                outline: none;
+                                font-size: 20px;
+                                color: white;                              
 }
+            /*remove scroll do input*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;}
 
 .div-quantidade {
                                 display: flex;
+                                justify-content: space-around;
+                                width: 84%;
+                                margin: 10px auto;
+                                
+
+}
+
+.quantidade {
+                                background-color: #525761;
+                                margin: 5px 10px;
+                                padding: 5px 30px;
+                                border-radius: 15px;
+}
+
+.depositar-agora {
+                                background-color: #01a759;
+                                width: 80%;
+                                margin: 30px auto;
+                                padding: 8px;
+                                border-radius: 4px;
+}
+
+.div-paragrafo-deposito {
+                                width: 80%;
+                                margin: auto;
+                                text-indent: 1.6em;
 }
 @media screen and (max-width: 768px) {
                 /*Modal perfil*/
