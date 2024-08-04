@@ -224,16 +224,40 @@
             <ul class="menu-ul-inferior">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Deposito</a></li>
-                <li><a href="#">Afiliado</a></li>
+                <li><button onclick="openFullscreenModal()">Afiliado</button></li>
                 <li><a href="#">Esportes</a></li>
                 <li><button onclick="openModal()">Perfil</button></li>
             </ul>
         </div>
 
+        
+
+        <div id="fullscreenModal" class="fullscreen-modal">
+            <div class="fullscreen-modal-content">
+                <span class="fullscreen-close" onclick="closeFullscreenModal()">&times;</span>
+                <p>Este é um modal de tela cheia com animação.</p>
+            </div>
+        </div>
+
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <p>Este é um modal simples.</p>
+                <div>
+                    <img src="" alt="ft">
+                    <p>Mudar Senha</p>
+                </div>
+                <div>
+                    <div><h3>deposito</h3></div>
+                    <div><h3>sacar</h3></div>
+                </div>
+                <div>
+                    <p>Receba R$ 100 de graça</p>
+                    <p>Cashback 25%</p>
+                    <p>Afiliado - Ganhe até R$10000 por dia</p>
+                    <ul>
+
+                    </ul>
+                </div>
             </div>
         </div>
     
