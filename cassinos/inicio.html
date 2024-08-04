@@ -223,7 +223,7 @@
         <div class="menu-inferior">
             <ul class="menu-ul-inferior">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Deposito</a></li>
+                <li><button onclick="openGrayModal()">Deposito</button></li>
                 <li><button onclick="openFullscreenModal()">Afiliado</button></li>
                 <li><a href="#">Esportes</a></li>
                 <li><button onclick="openModal()">Perfil</button></li>
@@ -231,6 +231,13 @@
         </div>
 
         
+
+        <div id="grayModal" class="gray-modal">
+            <div class="gray-modal-content">
+                <span class="gray-close" onclick="closeGrayModal()">&times;</span>
+                <p>Este é um modal de tela cheia com fundo cinza.</p>
+            </div>
+        </div>
 
         <div id="fullscreenModal" class="fullscreen-modal">
             <div class="fullscreen-modal-content">
