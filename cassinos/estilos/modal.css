@@ -184,9 +184,39 @@ ul {
                                 /*conteudo modal deposito */
 .div-header-deposito {
                                 display: flex;
-}                               
+                                padding-left: 10px;
+                                align-items: center;
+                                background-color: black;
+}     
 
+.div-pix {
+                                display: flex;
+                                justify-content: space-evenly;               
+}
 
+.pix {
+                                padding: 10px 30px;
+                                margin: 0px 10px;
+                                background-color: #151618;
+                                border-radius: 10px;
+}
+
+.div-input {
+                                display: flex;
+                                justify-content: space-around;
+                                margin: 20px;
+                                background-color: #151618;
+}
+
+.input {
+                                background-color: transparent;
+                                border: none;
+                                ov
+}
+
+.div-quantidade {
+                                display: flex;
+}
 @media screen and (max-width: 768px) {
                 /*Modal perfil*/
     .modal-content {
