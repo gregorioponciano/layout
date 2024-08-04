@@ -279,7 +279,7 @@ menu {
         height: 70px;
         background-color: #333;
         color: #fff;
-        z-index: 1000;
+        z-index: 100;
 }
 
 .menu-inferior a {
