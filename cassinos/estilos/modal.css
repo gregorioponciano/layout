@@ -126,7 +126,7 @@ ul {
 }
 .fullscreen-close:hover,
 .fullscreen-close:focus {
-                                color: black;
+                                color: rgb(255, 255, 255);
                                 text-decoration: none;
                                 cursor: pointer;
 }
@@ -219,7 +219,7 @@ hr {
 }
 .gray-close:hover,
 .gray-close:focus {
-                                color: black;
+                                color: rgb(255, 255, 255);
                                 text-decoration: none;
                                 cursor: pointer;
 }
