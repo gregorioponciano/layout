@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="estilos/inicio.css">
+    <link rel="stylesheet" href="estilos/modal.css">
     <title>Inicio</title>
 </head>
 <body>
@@ -225,13 +226,20 @@
                 <li><a href="#">Deposito</a></li>
                 <li><a href="#">Afiliado</a></li>
                 <li><a href="#">Esportes</a></li>
-                <li><a href="#">Perfil</a></li>
+                <li><button onclick="openModal()">Perfil</button></li>
             </ul>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Este é um modal simples.</p>
+            </div>
         </div>
     
     <script src="slide.js"></script>
     <script src="paginas.js"></script>
-    <script src="alert.js"></script>
+    <script src="modal.js"></script>
 
 
 </body>
