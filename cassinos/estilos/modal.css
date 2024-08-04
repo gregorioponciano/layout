@@ -1,97 +1,234 @@
 @charset "UTF-8";
 
 body {
-    overflow: hidden; /* Evita o scroll da página quando o modal está aberto */
+                                overflow: hidden; /* Evita o scroll da página quando o modal está aberto */
 }
-
+                    /*modal perfil*/
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+                                display: none;
+                                position: fixed;
+                                z-index: 1000;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                overflow: auto;
+                                background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
-    text-align: center;
+                                background-color: white;
+                                margin: 100px auto;
+                                padding: 20px;
+                                border: 1px solid #888;
+                                width: 562px;
+                                text-align: center;
 }
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+                                color: #aaa;
+                                float: right;
+                                font-size: 28px;
+                                font-weight: bold;
 }
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+                                color: black;
+                                text-decoration: none;
+                                cursor: pointer;
 }
 
-/*modal afiliado*/
+                /*conteudo modal perfil*/ 
+.div-header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 0px 30px 0px 20px;
+}
+
+.img-perfil-modal { 
+                                border-radius: 50%;
+                                background-color: rgb(115, 115, 131);
+                                width: 50px;
+                                height: 50px;
+}
+
+.div-deposito {
+                                display: flex;
+                                justify-content: space-around;
+}
+
+.div-deposito-h3 {
+                                background-color: #01a759;
+                                border-radius: 5px;
+                                padding: 0px 15px;
+                                margin: 20px;
+}
+
+h3 {
+                                color: white;
+}
+
+.container-grande {
+                                background-color: #888;
+                                width: 90%;
+                                padding: 10px;
+                                justify-content: left;
+                                text-align: justify;
+}
+
+.container {
+                                display: flex;
+                                justify-content: space-between;
+                                
+}
+
+.column {
+                                flex: 1;
+
+}
+
+ul {
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+}
+
+                    /*modal afiliado*/
 
 .fullscreen-modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 65%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: hidden; /* Evita o scroll da página quando o modal está aberto */
+                                display: none;
+                                position: fixed;
+                                z-index: 100;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 65%;
+                                height: 100%;
+                                background-color: rgba(0, 0, 0, 0.8);
+                                overflow: hidden; /* Evita o scroll da página quando o modal está aberto */
 }
 .fullscreen-modal-content {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -100%;
-    transition: right 0.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
+                                background-color: white;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                right: -100%;
+                                transition: right 0.5s ease;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                box-sizing: border-box;
 }
 .fullscreen-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+                                position: absolute;
+                                top: 10px;
+                                right: 20px;
+                                color: #aaa;
+                                font-size: 28px;
+                                font-weight: bold;
 }
 .fullscreen-close:hover,
 .fullscreen-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+                                color: black;
+                                text-decoration: none;
+                                cursor: pointer;
 }
 .fullscreen-modal.show .fullscreen-modal-content {
-    right: 0;
+                                right: 0;
 }
 
 /*modal deposito*/
 
 .gray-modal {
+                                display: none;
+                                position: absolute;
+                                z-index: 10;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 65%;
+                                height: 100%;
+                                background-color: rgba(128, 128, 128, 0.8); /* Fundo cinza */
+}
+.gray-modal-content {
+                                background-color: white;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: -100%;
+                                transition: left 0.5s ease;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                box-sizing: border-box;
+}
+.gray-close {
+                                position: absolute;
+                                top: 10px;
+                                right: 20px;
+                                color: #aaa;
+                                font-size: 28px;
+                                font-weight: bold;
+}
+.gray-close:hover,
+.gray-close:focus {
+                                color: black;
+                                text-decoration: none;
+                                cursor: pointer;
+}
+.gray-modal.show .gray-modal-content {
+                                left: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 80px auto;
+  
+        border: 1px solid #888;
+        width: 90%;
+        text-align: center;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+}
+.close:hover,
+.close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+}
+
+
+/*modal deposito*/
+
+.gray-modal {
     display: none;
-    position: absolute;
-    z-index: 10;
-    left: 50%;
+    position: fixed;
+    z-index: 100;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 65%;
+    width: 100%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0.8); /* Fundo cinza */
 }
@@ -109,20 +246,9 @@ body {
     text-align: center;
     box-sizing: border-box;
 }
-.gray-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+    
+
 }
-.gray-close:hover,
-.gray-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-.gray-modal.show .gray-modal-content {
-    left: 0;
-}
+
+
+
