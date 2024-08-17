@@ -19,16 +19,42 @@
     <body">
 
     <header class="menu-superior">
-        <menu>
-                
+        <menu>          
             <img src="imagens/salmoneus-logo1.png" alt="" class="img-logo">
-                <div class="link-header">
-                    <a href="#" id="link-cadastrar" class="link-header">Cadastrar</a>
-                    <a href="#" id="link-entrar" class="link-header">Entrar</a>
-                </div>
-            </menu>
+            <div class="link-header">
+                <button id="abrirCadastro">Cadastrar</button>
+                <button id="abrirEntrarDireto">Entrar</button>
+            </div>
+        </menu>
     </header>
 
+        <div id="modalCadastro" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" id="fecharCadastro">&times;</span>
+                <h2>Cadastro</h2>
+                <label for="email">email</label>
+                <input type="text" name="email" id="email" class="email" placeholder="Email / Tel">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" class="senha" placeholder="Senha"> 
+                <label for="senha1">Repetir Senha</label>
+                <input type="password" name="senha1" id="senha1" class="senha1" placeholder="Repetir Senha"> <br> <br>
+                <button>Cadastrar</button>
+                <button id="abrirEntrar">Entrar</button>
+            </div>
+        </div>
+    
+        <div id="modalEntrar" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" id="fecharEntrar">&times;</span>
+                <h2>Entrar</h2>
+                <label for="email">email</label>
+                <input type="text" name="email" id="email" class="email" placeholder="Email / Tel">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" class="senha" placeholder="Senha"> <br> <br>
+                <button>Entrar</button>
+                <button id="voltarParaCadastro">Cadastro</button>
+            </div>
+        </div>
 
     <div id="content" class="content">
         <div class="carousel">    
@@ -42,7 +68,6 @@
             <button class="prev" onclick="moveCarousel(-1)">Anterior</button>
             <button class="next" onclick="moveCarousel(1)">Próxima</button>
         </div>
-
 
         <nav class="nav-sessao">
             <h2>Bem-vindo ao Cassino Online</h2>

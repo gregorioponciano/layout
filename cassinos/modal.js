@@ -1,4 +1,56 @@
-                        //modal perfil
+                                //modal login e cadastro
+
+const modalCadastro = document.getElementById("modalCadastro");
+const modalEntrar = document.getElementById("modalEntrar");
+
+const abrirCadastro = document.getElementById("abrirCadastro");
+const abrirEntrar = document.getElementById("abrirEntrar");
+const abrirEntrarDireto = document.getElementById("abrirEntrarDireto");
+
+const fecharCadastro = document.getElementById("fecharCadastro");
+const fecharEntrar = document.getElementById("fecharEntrar");
+
+const voltarParaCadastro = document.getElementById("voltarParaCadastro");
+
+abrirCadastro.onclick = function() {
+    modalCadastro.style.display = "block";
+};
+
+abrirEntrar.onclick = function() {
+    modalEntrar.style.display = "block";
+};
+
+abrirEntrarDireto.onclick = function() {
+    modalEntrar.style.display = "block";
+    modalCadastro.style.display = "none"; // Garante que o modal Cadastro não está aberto
+};
+
+fecharCadastro.onclick = function() {
+    fecharAmbosOsModais();
+};
+
+fecharEntrar.onclick = function() {
+    fecharAmbosOsModais();
+};
+
+voltarParaCadastro.onclick = function() {
+    modalEntrar.style.display = "none";
+    modalCadastro.style.display = "block";
+};
+
+function fecharAmbosOsModais() {
+    modalCadastro.style.display = "none";
+    modalEntrar.style.display = "none";
+}
+
+// Previne fechamento dos modais ao clicar fora deles
+window.onclick = function(event) {
+    if (event.target == modalCadastro || event.target == modalEntrar) {
+        fecharAmbosOsModais();
+    }
+};
+                        
+                        //modal Perfil
 function openModal() {
     document.getElementById('myModal').style.display = 'block';
 }

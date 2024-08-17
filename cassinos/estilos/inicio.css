@@ -24,32 +24,33 @@ menu {
                                         display: flex;
                                         justify-content: space-between;                            
 }
+
+#abrirCadastro {
+                                        background-color: transparent;
+                                        border: none;
+                                        color: white;
+}
+
+#abrirEntrarDireto {
+                                        background-color: #0D7EFE;
+                                        padding: 3px 10px;
+                                        margin-right: 10px;
+                                        border: none;
+                                        
+}
+#abrirCadastro:hover {                  color: #FFCE00;
+                                        cursor: pointer;}
+#abrirEntrarDireto:hover {
+                                        color: white;
+                                        cursor: pointer;
+}
+
+
 .img-logo {
                                         width: 200px;
 
 }
 
-.link-header {
-                                        text-decoration: none;                              
-                                        padding: 10px;
-                                        color: black;                               
-}
-
-.link-header:hover {
-                                        color: white;
-}
-
-#link-entrar {
-                                        background-color: #0078D7;
-                                        padding: 5px;
-                                        opacity: 0.8;
-                                        border-radius: 5px;
-}
-
-#link-entrar:hover {
-
-                                        opacity: 1;
-}
 
             /* Menu inferior */
 .menu-inferior {                             
@@ -77,6 +78,40 @@ menu {
                                         margin: 0 5px;
 }
 
+          /*modal cadastro e login*/ 
+.modal-conteudo {
+                                                        
+                                        background-color: #fefefe;
+                                        text-align: center;
+                                        position: absolute;
+                                        z-index: 1;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        margin: auto;
+                                        padding: 20px;
+                                        border: 1px solid #888;
+                                        width: 500px;
+                                        height: 50%;
+                                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+.fechar {
+                                        color: #aaa;
+                                        float: right;
+                                        font-size: 28px;
+                                        font-weight: bold;
+                                        cursor: pointer;
+}
+    
+.fechar:hover,
+.fechar:focus {
+                                        color: rgb(255, 0, 0);
+                                        text-decoration: none;
+                                        cursor: pointer;
+    }
+
+         /*conteudo do site*/
 .content {
                                         transition: margin-left 0.3s ease;
                                         padding: 20px;
@@ -241,32 +276,14 @@ footer {
         z-index: 97;
 }
 
-menu {
-        display: flex;
-        justify-content: space-between;
-        
-}
-
 .img-logo {
         width: 117px;
 
 }
 
-.link-header {
-      text-decoration: none;                              
-      padding: 0px 10px 0px 0px;
-      color: black;                               
-}
-
-.link-header:hover {
-        color: white;
-}
-
-#link-entrar {
-        background-color: #0078D7;
-        padding: 5px;
-        opacity: 0.8;
-        border-radius: 5px;
+.modal-conteudo {
+        width: 70%;
+        height: 50%;
 }
 
 /* Menu inferior */
