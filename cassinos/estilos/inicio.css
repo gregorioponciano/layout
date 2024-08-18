@@ -33,7 +33,7 @@ menu {
 
 #abrirEntrarDireto {
                                         background-color: #0D7EFE;
-                                        padding: 3px 10px;
+                                        padding: 3px 3px;
                                         margin-right: 10px;
                                         border: none;
                                         
@@ -47,10 +47,8 @@ menu {
 
 
 .img-logo {
-                                        width: 200px;
-
+                                        width: 210px;
 }
-
 
             /* Menu inferior */
 .menu-inferior {                             
@@ -257,7 +255,7 @@ footer {
 }
 
         /*screen and (max-width: 768px)*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 
     body, html {
         margin: 0px;
@@ -277,8 +275,15 @@ footer {
 }
 
 .img-logo {
-        width: 117px;
+        width: 127px;
 
+}
+
+#abrirEntrarDireto {
+
+        margin-right: 20px;
+
+        
 }
 
 .modal-conteudo {
