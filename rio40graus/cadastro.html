@@ -7,6 +7,7 @@
 
     <link rel="shortcut icon" href="./imagens/ico-logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/cadastro.css">
 </head>
 <body>
     <div class="div-topo">
@@ -23,12 +24,46 @@
         </section>
         <section id="section-menu">
             <menu id="itens">
-                <a href="loja.html" class="link-menu">VIP</a> <hr>
-                <a href="termos" class="link-menu">Termos</a> <hr>
-                <a href="cadastro.html" class="link-menu">Cadastro</a> <hr>
-                <a href="login.html" class="link-menu">Login</a> <hr>
+                <a href="loja.html" class="link-menu">VIP</a> 
+                <a href="Termos.html" class="link-menu">Termos</a> 
+                <a href="cadastro.html" class="link-menu">Cadastro</a> 
+                <a href="login.html" class="link-menu">Login</a> 
             </menu>
         </section>    
     </header>
+
+    <div class="form-container">
+        <h2>Cadastro</h2>
+        <form action="#" method="POST">
+            <label for="username">ID de Usuário</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu ID" required>
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+            <label for="confirm-password">Repetir Senha</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita sua senha" required>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+
+        <div class="login-link">
+            <a href="#">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+
+    <div class="contatos">
+        <a href="#"><img src="img-contatos/logo-discord.png" alt="Discord" class="img-contato"></a>
+        <a href="https://instagram.com/salmoneusoficial?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img src="img-contatos/instagram-logo.png" alt="Instagram" class="img-contato"></a>
+        <a href="#"><img src="img-contatos/ico-whatzap.png" alt="Whatzapp" class="img-contato"></a>   
+        <a href="#"><img src="img-contatos/youtube-logo.png" alt="youtube" class="img-contato"></a>
+        <a href="#"><img src="img-contatos/facebook-logo.png" alt="facebook" class="img-contato"></a>
+    </div>
+
+    <footer>
+        <p>© 2024 | RIO40GRAUS - Todos os Direitos Reservados.</p>
+    </footer> 
+
+    <script src="telamenu.js"></script>
 </body>
 </html>

@@ -15,5 +15,13 @@ function closeMenu() {
    
 }
 
+function showContent(contentNumber) {
+    const contents = document.querySelectorAll('.content-container');
+    contents.forEach(content => {
+        content.classList.remove('active');
+    });
+    document.getElementById('content' + contentNumber).classList.add('active');
+}
+
 
      

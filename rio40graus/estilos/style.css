@@ -37,16 +37,16 @@ body {
 
 header { 
                             background-color: rgba(15, 15, 107, 0.665);
-                            border: 1px solid white;
-                            padding: 10px;
+                            border: 1px solid rgba(0, 0, 0, 0.644);
+                            padding: 0px 10px;
                             display: flex;
                             flex-direction: row;
-                            justify-content: space-between;
-                            gap: 3em;      
+                            justify-content: space-between;   
 }
 
 .link-inicio { 
                             text-decoration: none;
+                            align-items: center;
                             color: black;  
                             font-size: 23px;
                             font-family: 'Mynerve', cursive;                            
@@ -63,12 +63,10 @@ header {
 #itens {
                             display: flex;
                             flex-direction: row;
+                            align-items: center;
 }
 
-.div-menu {
-                            padding: 7px;
-                            transition: 0.5s;
-}
+
 
 .div-menu:hover {
                             background-color: rgba(0, 0, 0, 0.558);
@@ -78,22 +76,21 @@ header {
                             font-family: 'Mynerve', cursive;
                             color: black;
                             padding: 7px;
-                            text-decoration: none;        
+                            text-decoration: underline;  
+                            margin: 0px 5px;     
 }
 
 .link-menu:hover {
                             color: white;
 }
 
-hr {
-                            border: 1px solid rgba(0, 0, 0, 0.414);
-                            margin-right: 3vw;
-                            
-}
+
 
 .contatos {
+                            margin: 20px;
                             display: flex;
-                            justify-content: space-evenly;
+                            justify-content: space-around;
+                            flex-flow: row nowrap;
 }
 
 .img-contato {
@@ -151,6 +148,7 @@ footer {
     .link-menu  {
                     width: 100vw;
                     text-align: center;
+                    border: 1px solid black;
     }
 
     .div-menu:hover {
@@ -159,9 +157,6 @@ footer {
                     margin: auto;
                     text-align: center;
 }
-    hr {
-                    border: 1px solid rgba(0, 0, 0, 0.414);
-                    width: 96vw;
-}
+
 
 }

@@ -7,6 +7,7 @@
 
     <link rel="shortcut icon" href="./imagens/ico-logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/login.css">
     
 </head>
 <body>
@@ -24,43 +25,41 @@
         </section>
         <section id="section-menu">
             <menu id="itens">
-                <a href="loja.html" class="link-menu">VIP</a> <hr>
-                <a href="Termos.html" class="link-menu">Termos</a> <hr>
-                <a href="cadastro.html" class="link-menu">Cadastro</a> <hr>
-                <a href="login.html" class="link-menu">Login</a> <hr>
+                <a href="loja.html" class="link-menu">VIP</a> 
+                <a href="Termos.html" class="link-menu">Termos</a> 
+                <a href="cadastro.html" class="link-menu">Cadastro</a> 
+                <a href="login.html" class="link-menu">Login</a> 
             </menu>
         </section>    
     </header>
   
-    <main>
-        
-        <section id="login">
-                <div id="imagem">
-                
-                </div>
-                <div id="formulario">
-                    <h1><a href="#">Login</a>/<a href="#">cadastrar</a></h1>
-                    <p id="plogin">Seja bem-vindo(a) novamente. Faça login para continuar.</p>
-                    <form action="login.php" method="post">
-                        <section class="imagemlogin">
-                <label for="username"><img src="imagem-login/usuario.png" alt="iD" id="iconeslogin"></label>
-                <input type="text" id="username" name="username" maxlength="10" placeholder="username">
-            </section><br><br>
-            <section class="imagemlogin">
-                <label for="password"><img src="imagem-login/chave.png" alt="senha" id="iconeslogin"></label>
-                <input type="password" id="password" name="password" maxlength="8" required placeholder="passoword">
-            </section><br>
-            <input type="submit" value="Entrar" id="botoes">
-            <button>esqueceu a senha?</button>
-                    </form>
-                </div>
-        </section>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <label for="username">ID de Usuário</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu ID" required>
 
-    </main>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+            <input type="submit" value="Entrar">
+        </form>
+
+        <div class="forgot-password">
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+    </div>
+    <div class="contatos">
+        <a href="#"><img src="img-contatos/logo-discord.png" alt="Discord" class="img-contato"></a>
+        <a href="https://instagram.com/salmoneusoficial?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><img src="img-contatos/instagram-logo.png" alt="Instagram" class="img-contato"></a>
+        <a href="#"><img src="img-contatos/ico-whatzap.png" alt="Whatzapp" class="img-contato"></a>   
+        <a href="#"><img src="img-contatos/youtube-logo.png" alt="youtube" class="img-contato"></a>
+        <a href="#"><img src="img-contatos/facebook-logo.png" alt="facebook" class="img-contato"></a>
+    </div>
 
     <footer>
         <p>© 2024 | RIO40GRAUS - Todos os Direitos Reservados.</p>
-     </footer>
+    </footer> 
     
      <script src="telamenu.js"></script>
 </body>

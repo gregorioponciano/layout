@@ -24,47 +24,63 @@
         </section>
         <section id="section-menu">
             <menu id="itens">
-                <a href="loja.html" class="link-menu">VIP</a> <hr>
-                <a href="Termos.html" class="link-menu">Termos</a> <hr>
-                <a href="cadastro.html" class="link-menu">Cadastro</a> <hr>
-                <a href="login.html" class="link-menu">Login</a> <hr>
+                <a href="loja.html" class="link-menu">VIP</a> 
+                <a href="Termos.html" class="link-menu">Termos</a> 
+                <a href="cadastro.html" class="link-menu">Cadastro</a> 
+                <a href="login.html" class="link-menu">Login</a> 
             </menu>
         </section>    
     </header>
-    <h1>Vips</h1>
-    <nav id="container">
-        <aside>
-            <ul id="lista-vip">
-                <li class="li">Premium</li>
-                <li class="li">Money</li>
-                <li class="li">Carros</li>
-                <li class="li">Casas</li>
-            </ul>
-        </aside>
+    <div class="button-container">
+        <button onclick="showContent(1)">Vip</button>
+        <button onclick="showContent(2)">Facção</button>
+        <button onclick="showContent(3)">Corporações</button>
+        <button onclick="showContent(4)">Outros</button>
+    </div>
 
-        <div class="container-img-vip">
-            <div class="div-vip">
-                <img src="imagens-vip/vips/bronze.jpg" alt="bronze" class="img-vip">
-                <button class="vip-detalhes">Detalhes</button>
-            </div>
-            <div class="div-vip">
-                <img src="imagens-vip/vips/prata.jpg" alt="bronze" class="img-vip">
-                <button class="vip-detalhes">Detalhes</button>
-            </div>
-            <div class="div-vip">
-                <img src="imagens-vip/vips/ouro.jpg" alt="bronze" class="img-vip">
-                <button class="vip-detalhes">Detalhes</button>
-            </div>
-            <div class="div-vip">
-                <img src="imagens-vip/vips/platina.jpg" alt="bronze" class="img-vip">
-                <button class="vip-detalhes">Detalhes</button>
-            </div>
-            <div class="div-vip">
-                <img src="imagens-vip/vips/diamante.jpg" alt="bronze" class="img-vip">
-                <button class="vip-detalhes">Detalhes</button>
-            </div>
+    <div id="content1" class="content-container active">
+        <div class="images">
+            <img src="imagens-vip/vips/bronze.jpg" alt="Imagem 1">
+            <img src="imagens-vip/vips/prata.jpg" alt="Imagem 2">
+            <img src="imagens-vip/vips/ouro.jpg" alt="Imagem 3">
+            <img src="imagens-vip/vips/platina.jpg" alt="Imagem 4">
+            <img src="imagens-vip/vips/diamante.jpg" alt="Imagem 5">
+            <img src="imagens-vip/outros/cliente-premium.jpg" alt="Imagem 6">
         </div>
-    </nav>
+    </div>
+
+    <div id="content2" class="content-container">
+        <div class="images">
+            <img src="imagens-vip/facçoes/bahamas.jpg" alt="Imagem 7">
+            <img src="imagens-vip/facçoes/egito.jpg" alt="Imagem 8">
+            <img src="imagens-vip/facçoes/yakuza.jpg" alt="Imagem 9">
+            <img src="imagens-vip/facçoes/turquia.jpg" alt="Imagem 10">
+            <img src="imagens-vip/facçoes/pcc.jpg" alt="Imagem 11">
+            <img src="imagens-vip/facçoes/grota.jpg" alt="Imagem 12">
+        </div>
+    </div>
+
+    <div id="content3" class="content-container">
+        <div class="images">
+            <img src="imagens-vip/corporaçoes/federal.jpg" alt="Imagem 13">
+            <img src="imagens-vip/corporaçoes/choque.jpg" alt="Imagem 14">
+            <img src="imagens-vip/corporaçoes/força-tatica.jpg" alt="Imagem 15">
+            <img src="imagens-vip/corporaçoes/militar.jpg" alt="Imagem 16">
+            <img src="imagens-vip/corporaçoes/rota.jpg" alt="Imagem 17">
+            <img src="imagens-vip/corporaçoes/" alt="Imagem 18">
+        </div>
+    </div>
+
+    <div id="content4" class="content-container">
+        <div class="images">
+            <img src="imagens-vip/privados/trocar-id.jpg" alt="Imagem 19">
+            <img src="imagens-vip/privados/trocar-tag.jpg" alt="Imagem 20">
+            <img src="imagens-vip/privados/skin-veiculo.jpg" alt="Imagem 21">
+            <img src="imagens-vip/outros/set-money.jpg" alt="Imagem 22">
+            <img src="imagens-vip/privados/trocar-tag.jpg" alt="Imagem 23">
+            <img src="imagens-vip/privados/trocar -mods.jpg" alt="Imagem 24">
+        </div>
+    </div>
 
     <div class="contatos">
         <a href="#"><img src="img-contatos/logo-discord.png" alt="Discord" class="img-contato"></a>
@@ -80,7 +96,7 @@
 
                     <!-- Inclua os scripts do Bootstrap (JavaScript) -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 <script src="telamenu.js"></script>
 
 </body>
