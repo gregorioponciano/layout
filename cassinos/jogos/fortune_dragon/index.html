@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Dragon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/App_Icons/fortune-dragon_icon_1024_rounded.png" type="image/x-icon">
+
+</head>
+<body>
+
+    <!-- Tela de carregamento com o botão "Começar" -->
+    <div class="loading-screen" id="loading-screen">
+        <button id="start-button">Começar</button>
+    </div>
+
+    <div class="fundo">
+        <div class="container-grande">
+            <div class="horario"><h3>Fortune Dragon</h3> <p class="hora">00:00</p></div>
+            
+            <div class="slot-machine" id="slot-machine">
+                <!-- Colunas com as imagens fixas -->
+                <div class="column">
+                    <div class="images-container" id="coluna1">
+                        <img src="imagens/Symbols/fortune-dragon_h6_ingot.png" alt="ingot">
+                        <img src="imagens/Symbols/fortune-dragon_h6_ingot.png" alt="ingot">
+                        <img src="imagens/Symbols/fortune-dragon_h3_firecracker.png" alt="firecracker">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="images-container" id="coluna2">
+                        <img src="imagens/Symbols/fortune-dragon_h4_lantern.png" alt="lantern">
+                        <img src="imagens/Symbols/fortune-dragon_h4_lantern.png" alt="lantern">
+                        <img src="imagens/Symbols/fortune-dragon_h4_lantern.png" alt="lantern">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="images-container" id="coluna3">
+                        <img src="imagens/Symbols/fortune-dragon_h2_ribbon.png" alt="ribbon">
+                        <img src="imagens/Symbols/fortune-dragon_h5_angbao.png" alt="angbao">
+                        <img src="imagens/Symbols/fortune-dragon_h5_angbao.png" alt="angbao">
+                    </div>
+                </div>
+            </div>
+
+            <div class="marquee-container">
+                <div class="marquee-wrapper">
+                    <div class="marquee-text">A Funcionalidade dragão da fortuna pode ser premiada.</div>
+                    <div class="marquee-text">8 Rodadas da fortuna com cilindro multiplicador.</div>
+                    <div class="marquee-text">Ganhe até 2500x!</div>
+                    <div class="marquee-text">O cilindro multiplicador pode revelar 2x 5x e 10x.</div>
+                </div>
+            </div>
+            
+            <div class="div-controles">
+                <div class="banca">
+                    <div class="div-banca" id="carteira">R$0,16</div>
+                    <div class="div-banca" id="aposta">R$0,40</div>
+                    <div class="div-banca" id="ganho">R$0,00</div>
+                </div>
+                <div class="controles">
+                    <img src="imagens/controles/turbo.png" alt="turbo" class="turbo">
+                    <img src="imagens/controles/amount-less.png" alt="-" class="amount-less">
+                    <img src="imagens/controles/spin.png" alt="spin" class="spin">
+                    <img src="imagens/controles/amount-more.png" alt="+" class="amount-more">
+                    <img src="imagens/controles/auto.png" alt="auto" class="auto">
+
+
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
