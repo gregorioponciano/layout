@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="estilos/inicio.css">
     <link rel="stylesheet" href="estilos/modal.css">
     <title>Salmoneus.bet</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 
@@ -244,11 +246,16 @@
 
         <div class="menu-inferior">
             <ul class="menu-ul-inferior">
-                <li><a href="#">Inicio</a></li>
-                <li><button onclick="openGrayModal()">Deposito</button></li>
-                <li><button onclick="openFullscreenModal()">Afiliado</button></li>
-                <li><a href="#">Esportes</a></li>
-                <li><button onclick="openModal()">Perfil</button></li>
+                    <!--home-->
+                <li class="li-menu-inferio"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
+                <!--carteira-->
+                <li class="li-menu-inferio" onclick="openGrayModal()"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
+                <!--afilado-->
+                <li class="li-menu-inferio" onclick="openFullscreenModal()"><span class="material-symbols-outlined">reset_shadow <div class="p-span">Afiliado</div></span></li>
+                <!--promoção-->
+                <li class="li-menu-inferio"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
+                <!--perfil-->
+                <li class="li-menu-inferio" onclick="openModal()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
             </ul>
         </div>
 
