@@ -23,8 +23,9 @@ body {
                             background-image: url(../imagens/foto-header.jpg);
                             background-size: cover;
                             background-repeat: no-repeat;
-                            background-position: center top;
+                            background-position: center center;
                             height: 200px;
+                            width: 100vw;
 }
 
 .img-topo {  
@@ -87,7 +88,7 @@ header {
 
 
 .contatos {
-                            margin: 20px;
+                            margin: 14px;
                             display: flex;
                             justify-content: space-around;
                             flex-flow: row nowrap;
