@@ -86,6 +86,7 @@ menu {
 
 .img-afiliado-menu-inferior {
                                         width: 90px; 
+                                        margin-top: 10px;
                                         transition: transform 0.5s ease-in-out; /* Suaviza a rotação */
 }
              
@@ -135,14 +136,7 @@ menu {
                                         background-color: rgba(0, 0, 0, 0.584);
 }
      
-.content-open {
-                                        margin-left: 250px;
-}
-    
-.toggleMenu {
-                                        z-index: 10;
-}
-       
+  
 .carousel {
                                         position: relative;
                                         max-width: 99%;
@@ -321,10 +315,10 @@ footer {
         z-index: 100;
 }
 
-.menu-inferior a {
-      text-decoration: none;
-      padding: 0px 10px 0px 0px;
-      margin: 0px;
+.img-afiliado-menu-inferior {
+        width: 90px; 
+        margin-bottom: 10px;
+
 }
 
 .content {
@@ -381,26 +375,6 @@ section {
         text-align: center;
 }
 
-.link-jogar {
-        text-decoration: none;
-       background-color: rgb(13, 126, 254);
-       color: white;
-       padding: 10px;
-       margin-bottom: 10px;
-        
-}
-
-
-footer {
-        background-color: black;
-        width: 99%;
-        margin: auto;
-        padding: 7px 0px;
-        color: white;
-        text-align: center;
-        margin-bottom: 70px;
-        margin-top: 10px;
-}
   }
   
 
