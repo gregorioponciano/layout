@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+
+
+body {
+                                            font-family: Arial, sans-serif;
+                                            margin: 0;
+                                            padding: 0;
+                                            background-color: #33333377;
+                                            overflow-x: hidden;
+}
+
+/* Menus */
+.menu-superior, .menu-inferior {
+                                            position: fixed;                                         
+                                            padding: 10px ;
+                                            background-color: #333;
+                                            color: white;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            z-index: 10;
+                                            box-sizing: border-box;
+}
+
+.carousel {
+                                            position: relative;
+                                            max-width: 95%;
+                                            margin: 0 auto;
+                                            overflow: hidden;    
+}
+
+.carousel-images {
+                                            display: flex;
+                                            transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+                                            max-width: 100%;
+                                            height: auto;
+}
+
+
+.prev,
+.next {
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            background-color: rgba(0, 0, 0, 0.637);
+                                            color: white;
+                                            padding: 10px 20px;
+                                            border: none;
+                                            cursor: pointer;
+}
+
+.next:hover {                               background-color: #1D2129;}
+.prev:hover {                               background-color: #1D2129;}
+.prev {                                     left: 10px;}
+.next {                                     right: 10px;}
+
+.nav-sessao {
+                                            background-color: black;
+                                            color: white;
+                                            width: 95%;
+                                            margin: auto;
+                                            text-align: center;
+}
+
+aside {
+                                            display: flex;
+                                            width: 100%;
+                                            justify-content: center;                                   
+                                            align-items: center;
+                                            margin: 0px 10px;
+                                            justify-content: space-between;
+}
+
+#img-buscar {
+                                            width: 15px;
+}
+#input-buscar {
+                                            width: 100px;
+}
+
+.div-but-pag {
+                                            
+                                            
+                                            margin: 20px;
+                                            cursor: pointer;
+}
+
+
+
+.container-jogos {
+                                            width: 95%; /* Largura de 95% da largura da viewport */
+                                            margin: 0 auto; /* Centraliza horizontalmente o conteúdo */
+}
+
+section {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            justify-content: space-between; /* Distribui as seções uniformemente na linha */
+}
+
+.div-img {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: calc(33% - 20px); /* Distribui as imagens em 3 colunas com espaçamento */
+                                            text-align: center;
+}
+
+.link-jogar {
+                                            text-decoration: none;
+                                            background-color: rgb(13, 126, 254);
+                                            color: white;
+                                            padding: 10px;
+                                            margin-bottom: 10px;
+
+}
+
+.menu-inferior {
+                                            bottom: 0;
+                                            text-align: center;
+}
+
+.menu-ul-inferior {
+                                            display: flex;
+                                            flex-flow: row nowrap;
+                                            width: 100%;
+                                            align-items: center;
+                                            justify-content: space-around;
+                                            list-style: none;
+}
+
+.li-menu-inferior {
+                                            display: flex;
+                                            flex-flow: column nowrap;
+                                            
+                                            
+}
+
+.p-span {
+                                            font-size: 17px;
+                                            font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-superior img {
+                                            height: 40px;
+}
+.img-afiliado-menu-inferior {
+                                            width: 70px; 
+                                            margin-top: 10px;
+                                            transition: transform 0.5s ease-in-out; /* Suaviza a rotação */
+}
+
+.img-afiliado-menu-inferior:hover {
+                                            transform: rotate(360deg); 
+}
+
+.menu-superior .links {
+                                            display: flex;
+                                            gap: 20px;
+}
+
+.menu-superior a, .menu-inferior a {
+                                            color: white;
+                                            text-decoration: none;
+                                            font-weight: bold;
+}
+
+.menu-superior a:hover, .menu-inferior a:hover {
+                                            text-decoration: underline;
+}
+
+                    /* Estilos dos Modais */
+.modal {
+                                            position: fixed;
+                                            top: 50%;
+                                            left: 50%;
+                                            width: 600px;
+                                            height: 600px;
+                                            background-color: white;
+                                            border-radius: 10px;
+                                            padding: 20px;
+                                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                                            opacity: 0;
+                                            transform: translate(-50%, -50%) scale(0.7);
+                                            visibility: hidden;
+                                            transition: all 0.5s ease-in-out;
+                                            z-index: 20;
+}
+
+.modal.active {
+                                            opacity: 1;
+                                            transform: translate(-50%, -50%) scale(1);
+                                            visibility: visible;
+}
+
+.modal.small {
+                                            width: 400px;
+                                            height: 300px;
+}
+
+.modal.fullscreen {
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 0;
+}
+
+/* Botões de Fechar */
+.close-btn {
+                                            position: absolute;
+                                            top: 10px;
+                                            right: 10px;
+                                            cursor: pointer;
+                                            font-weight: bold;
+                                            font-size: 24px;
+}
+
+/* Animações de entrada dos modais */
+.modal-2.active {
+                                            animation: slide-in-left 0.5s forwards;
+}
+
+.modal-4.active {
+                                            animation: slide-in-right 0.5s forwards;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translate(-100%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translate(100%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+footer {
+    background-color: black;
+    width: 99%;
+    margin: auto;
+    padding: 7px 0px;
+    color: white;
+    text-align: center;
+    margin-bottom: 70px;
+
+}
+
+/* Estilos para telas maiores que 600px */
+@media (min-width: 600px) {
+    .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .content {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        background-color: #333333da;
+        padding-top: 70px;
+    }
+
+    .menu-superior, .menu-inferior {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .modal {
+        width: 600px;
+        height: 600px;
+    }
+
+    .modal.small {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+/* Estilos para telas menores que 600px */
+@media (max-width: 599px) {
+    .menu-superior, .menu-inferior {
+        width: 100%;
+    }
+
+    .content{
+            padding-top: 73px;
+    }
+
+    .modal {
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 0) scale(1);
+    }
+
+    .modal.small {
+        width: 90%;
+        height: 80%;
+    }
+}

@@ -1,61 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="estilos/inicio.css">
-    <link rel="stylesheet" href="estilos/modal.css">
-    <title>Salmoneus.bet</title>
+    <title>Modais com Menu Superior e Inferior</title>
+    <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 </head>
 <body>
 
-    <body">
 
-    <header class="menu-superior">
-        <menu>          
-            <picture>
-                <source media="(max-width: 600px)" srcset="imagens/salmoneus-bet1.png">
-                <img src="imagens/salmoneus-bet.png" alt="irina-blok" class="img-logo">
-                </picture>
-            <div class="link-header">
-                <button id="abrirCadastro">Cadastrar</button>
-                <button id="abrirEntrarDireto">Entrar</button>
-            </div>
-        </menu>
-    </header>
-
-        <div id="modalCadastro" class="modal">
-            <div class="modal-conteudo">
-                <span class="fechar" id="fecharCadastro">&times;</span>
-                <h2>Cadastro</h2>
-                <label for="email">email</label>
-                <input type="text" name="email" id="email" class="email" placeholder="Email / Tel">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" class="senha" placeholder="Senha"> 
-                <label for="senha1">Repetir Senha</label>
-                <input type="password" name="senha1" id="senha1" class="senha1" placeholder="Repetir Senha"> <br> <br>
-                <button>Cadastrar</button>
-                <button id="abrirEntrar">Entrar</button>
+    <div class="container">
+        <div class="menu-superior">
+                <img src="imagens/afilado-menu-inferior.png" alt="irina-blok" class="img-logo">         
+            <div class="links">
+                <a href="#" onclick="openModal('cadastro')">Cadastro</a>
+                <a href="#" onclick="openModal('login')">Entrar</a>
             </div>
         </div>
+
+        <div class="menu-inferior">
+            <ul class="menu-ul-inferior">
+                    <!--home-->
+                <li class="li-menu-inferior" onclick="returnToBody()"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
+                <!--carteira-->
+                <li class="li-menu-inferior" onclick="openModal(2)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
+                <!--afilado-->
+                <li class="li-menu-inferior" onclick="openFullscreenModal()"><div class="p-span"><img src="imagens/afilado-menu-inferior.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
+                <!--promoção-->
+                <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
+                <!--perfil-->
+                <li class="li-menu-inferior" onclick="openModal()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
+            </ul>
+        </div>
+
+        <!-- Modal Cadastro -->
+        <div id="modal-cadastro" class="modal small">
+            <span class="close-btn" onclick="closeModal('cadastro')">X</span>
+            <h2>Cadastro</h2>
+            <p>Preencha seus dados para se cadastrar.</p>
+            <a href="#" onclick="openModal('login')">Já tem uma conta? Entre aqui</a>
+        </div>
+
+        <!-- Modal Login -->
+        <div id="modal-login" class="modal small">
+            <span class="close-btn" onclick="closeModal('login')">X</span>
+            <h2>Login</h2>
+            <p>Insira seus dados para entrar.</p>
+            <a href="#" onclick="openModal('cadastro')">Não tem uma conta? Cadastre-se aqui</a>
+        </div>
+
+        <!-- Modal Depósito (Vindo da Esquerda) -->
+        <div id="modal-2" class="modal modal-2">
+            <span class="close-btn" onclick="closeModal(2)">X</span>
+            <h2>Depósito</h2>
+            <p>Esse modal vem da esquerda.</p>
+        </div>
+
+        <!-- Modal Promoção (Vindo da Direita) -->
+        <div id="modal-4" class="modal modal-4">
+            
+            <div class="header">
+                <h2>Promoção</h2>
+                <span class="close-btn" onclick="closeModal(4)">X</span>
+            </div>
+            <p>Esse modal vem da direita.</p>
+        </div>
+
+        <!-- Modal Fullscreen -->
+        <div id="modal-fullscreen" class="modal fullscreen">
+            <span class="close-btn" onclick="closeModal('fullscreen')">X</span>
+            <h2>Modal Fullscreen</h2>
+            <p>Este é um modal que ocupa a tela inteira.</p>
+        </div>
+    </div>
+ 
     
-        <div id="modalEntrar" class="modal">
-            <div class="modal-conteudo">
-                <span class="fechar" id="fecharEntrar">&times;</span>
-                <h2>Entrar</h2>
-                <label for="email">email</label>
-                <input type="text" name="email" id="email" class="email" placeholder="Email / Tel">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" class="senha" placeholder="Senha"> <br> <br>
-                <button>Entrar</button>
-                <button id="voltarParaCadastro">Cadastro</button>
-            </div>
-        </div>
 
-    <div id="content" class="content">
+        <div id="content" class="content">
         <div class="carousel">    
             <div class="carousel-images">
                 <img src="imagens/cashback.png" alt="cashback" class="img-carousel">
@@ -237,165 +261,17 @@
                 <a href="#" class="link-jogar">jogar</a>
             </div>
           </section>
-    
-        </nav>
-
-        <footer>
+          <footer>
             <p class="p-footer">&copy;Copyright 2024 Cassino Online</p>
         </footer>
-
-        <div class="menu-inferior">
-            <ul class="menu-ul-inferior">
-                    <!--home-->
-                <li class="li-menu-inferio"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
-                <!--carteira-->
-                <li class="li-menu-inferio" onclick="openGrayModal()"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
-                <!--afilado-->
-                <li class="li-menu-inferio" onclick="openFullscreenModal()"><div class="p-span"><img src="imagens/afilado-menu-inferior.png" alt="foto" class="img-afiliado-menu-inferior"></div></li>
-                <!--promoção-->
-                <li class="li-menu-inferio"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
-                <!--perfil-->
-                <li class="li-menu-inferio" onclick="openModal()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
-            </ul>
-        </div>
-
-        
-                                    <!--Modal Deposito-->
-        <div id="grayModal" class="gray-modal">
-            <div class="gray-modal-content">
-                
-                <div class="div-header-deposito">
-                    <h3>Depósito</h3>
-                    <span class="gray-close" onclick="closeGrayModal()">&times;</span>
-                </div>
-                <div>
-                    <h3>formas de pagamento</h3>
-                    <div class="div-pix">
-                        <div class="pix ">pix 1</div>
-                        <div class="pix ">pix 2</div>
-                        <div class="pix ">pix 3</div>
-                    </div>
-                </div>
-            
-                    <div class="div-input">
-                        <h3>Quantia (BRL)</h3>
-                        <input type="number" placeholder="Min. 10" class="input">
-                    </div>
-                    <div class="div-quantidade">
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                    </div>
-                    <div class="div-quantidade">
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                    </div>
-                    <div class="div-quantidade">
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                        <div class="quantidade">r$ 20 <p>+100 Bônus</p></div>
-                    </div>
-                    <div class="depositar-agora">
-                        <h3>Depósitar Agora</h3>
-                    </div>
-                    <div class="div-paragrafo-deposito">
-                        <p class="p-deposito">1. Se você perder dinheiro real ao jogar o jogo, a Samoneus.bet oferece um <strong>Cashback em dinheiro de 25% toda semana.</strong></p>
-                        <p class="p-deposito">2. O período sobre o qual é calculado o cashback semanal vai de segunda-feira às 00:00 a domingo às 23:59.</p>
-                        <p class="p-deposito">3. Horário de solicitação do cashback: De segunda-feira da próxima semana 6:00 a sexta-feira 23:59, expirará se não for resgatado.</p>
-                        <p class="p-deposito">4. Ao recarregar, certifique-se de vincular oCPF para garantir a segurança dos fundo pessoais e evitar riscos</p>
-                    </div>
-                    
-                </div>
-            
-        </div>
-                                    <!--Modal Afiliado--> 
-        <div id="fullscreenModal" class="fullscreen-modal">
-            <div class="fullscreen-modal-content">
-                
-                <div class="div-header-afiliado">
-                    <h3 class="h3.afiliado">Afiliado -Ganhe até R$ 10000 por dia</h3>
-                    <span class="fullscreen-close" onclick="closeFullscreenModal()">&times;</span>
-                </div>
-                <ul class="ul-afiliado">
-                    <li class="li-afiliado">PAINEL</li>
-                    <li class="li-afiliado">REFERÊNCIAS</li>
-                    <li class="li-afiliado">RELATÓRIO</li>
-                    <li class="li-afiliado">PAGAMENTOS</li>
-                    <li class="li-afiliado">FAQ</li>
-                    <li class="li-afiliado">TUTORIAL</li>
-                </ul>
-                <div class="div-afiliado">
-                    <h3 id="h3-afiliado">Hoje</h3> <hr>  
-                    <div class="div-afiliado1">
-                        <div><p>0</p><p>inscrições</p></div>
-                        <div><p>0</p><p>Novos jogadores</p></div>
-                        <div><p>0</p><p>Apostas válidas</p></div>
-                        <div><p>0</p><p>comissão</p></div>
-                    </div>
-                </div>
-                <div class="div-afiliado">
-                    <h3 id="h3-afiliado">Total</h3> <hr>  
-                    <div class="div-afiliado1">
-                        <div><p>0</p><p>inscrições</p></div>
-                        <div><p>0</p><p>Novos jogadores</p></div>
-                        <div><p>0</p><p>Apostas válidas</p></div>
-                        <div><p>0</p><p>comissão</p></div>
-                    </div>
-                </div>
-                <div class="div-afiliado">
-                    <h3 id="h3-afiliado">Comissão</h3> <hr>  
+        </nav>
+</div>
+<br><br><br>
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
-                                    <!--Modal perfil-->
-
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div class="div-header">
-                    <img src="" alt="ft" class="img-perfil-modal">
-                    <p> 🔑 Mudar Senha</p>
-                </div>
-                <div class="div-deposito">
-                    <div class="div-deposito-h3"><h3>💼 Deposito</h3></div>
-                    <div class="div-deposito-h3"><h3>💳 Sacar</h3></div>
-                </div>
-                <div class="container-grande">
-                    <p>🍀 Receba R$ 100 de graça</p>
-                    <p>💲 Cashback 25%</p>
-                    <p onclick="openFullscreenModal()">🔗 Afiliado - Ganhe até R$10000 por dia</p>
-                    <ul>
-                        <div class="container">
-                            <div class="column">
-                                <ul>
-                                    <li>💸 Minhas Aposta de Jogo</li>
-                                    <li>❓ Ajuda</li>
-                                    <li>🙋 Contate-nos</li>
-
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <ul>
-                                    <li>💱 Transações</li>
-                                    <li>💬 Mensagem</li>
-                                    <li>💥 Promoções</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    
-    <script src="slide.js"></script>
+    <script src="script.js"></script>
     <script src="paginas.js"></script>
-    <script src="modal.js"></script>
-
+    <script src="slide.js"></script>
 
 </body>
 </html>
