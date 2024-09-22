@@ -148,7 +148,7 @@ section {
                                             height: 40px;
 }
 .img-afiliado-menu-inferior {
-                                            width: 70px; 
+                                            width: 55px; 
                                             margin-top: 10px;
                                             transition: transform 0.5s ease-in-out; /* Suaviza a rotação */
 }
