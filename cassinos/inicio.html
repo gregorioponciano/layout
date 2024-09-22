@@ -41,6 +41,12 @@
             <span class="close-btn" onclick="closeModal('cadastro')">X</span>
             <h2>Cadastro</h2>
             <p>Preencha seus dados para se cadastrar.</p>
+            <form action="php/cadastro.php" method="POST">
+                <input type="text" name="nome" placeholder="Nome" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="password" name="senha" placeholder="Senha" required><br>
+                <button type="submit">Cadastrar</button>
+            </form>
             <a href="#" onclick="openModal('login')">Já tem uma conta? Entre aqui</a>
         </div>
 
@@ -49,6 +55,11 @@
             <span class="close-btn" onclick="closeModal('login')">X</span>
             <h2>Login</h2>
             <p>Insira seus dados para entrar.</p>
+            <form action="php/login.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="password" name="senha" placeholder="Senha" required><br>
+                <button type="submit">Login</button>
+            </form>
             <a href="#" onclick="openModal('cadastro')">Não tem uma conta? Cadastre-se aqui</a>
         </div>
 
