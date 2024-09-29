@@ -16,21 +16,23 @@
 body { 
                             padding: 0px;
                             margin: 0px;
-                            background-color: rgba(0, 0, 255, 0.759);                   
+                            background-color: rgba(0, 0, 255, 0.759);
+                            font-family: Arial, Helvetica, sans-serif;                   
 }
 
 .div-topo {     
-                            background-image: url(../imagens/foto-header.jpg);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            background-position: center center;
-                            height: 200px;
+                            background-color: black;
+                            height: 300px;
                             width: 100vw;
+}
+
+.div-img-topo {
+                            height: 300px;
 }
 
 .img-topo {  
                             
-                            width: 300px;
+                            width: 200px;
                             margin: auto;
                             text-align: center;
                             display: block;
