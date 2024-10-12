@@ -1,94 +1,461 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adega Online - Cardápio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Food Delivery - Site Completo</title>
+    <style>
+        /* Estilo básico da página */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Estilo do cabeçalho fixo */
+        header {
+            background-color: #ff5252;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: fixed; /* Fixa o cabeçalho no topo */
+            width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
+            top: 0; /* Coloca o cabeçalho no topo */
+            z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Menu interativo com dropdown */
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li:hover a {
+            background-color: #ff7961;
+        }
+
+        nav ul li ul {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #ff7961;
+            display: none;
+            padding: 0;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        /* Estilo das seções principais */
+        main {
+            padding: 100px 20px; /* Adiciona espaço no topo para não cobrir conteúdo */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .product button {
+            background-color: #ff5252;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #ff7961;
+        }
+
+        /* Modal genérico */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+        }
+
+        .close-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff5252;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Animação de transição do modal */
+        .modal.fade-in {
+            animation: fadeIn 0.3s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Cabeçalho com menu interativo -->
+    <header>
+        <h1>Food Delivery</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categorias</a>
+                    <ul>
+                        <li><a href="#lanches">Lanches</a></li>
+                        <li><a href="#pizzas">Pizzas</a></li>
+                        <li><a href="#bebidas">Bebidas</a></li>
+                        <li><a href="#sobremesas">Sobremesas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="openModal('cartModal')">Carrinho</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()" id="spam1">☰</button>
-        
-    <div class="menu">
-        <button class="toggle-btn" onclick="toggleSidebar()" id="spam2">x</button>
-
-        <h2 onclick="toggleOptions('porcoes')">Porções</h2>
-        <ul id="porcoes" style="display: none;">
-            <li onclick="showMenu('Batata Frita', 40)">Batata Frita</li>
-            <li onclick="showMenu('Calabresa', 40)">Calabresa</li>
-            <li onclick="showMenu('Frango a passarinho', 40)">Frango a passarinho</li>
-            <li onclick="showMenu('Onion Rings', 40)">Onion Rings</li>
-        </ul>
-
-        <h2 onclick="toggleOptions('pizza')">Pizza</h2>
-        <ul id="pizza" style="display: none;">
-            <li onclick="showMenu('Margherita', 40)">Margherita</li>
-            <li onclick="showMenu('Calabresa', 40)">Calabresa</li>
-            <li onclick="showMenu('Quatro Queijos', 40)">Quatro Queijos</li>
-            <li onclick="showMenu('Frango com Catupiry', 40)">Frango com Catupiry</li>
-        </ul>
-
-        <h2 onclick="toggleOptions('lanches')">Lanches</h2>
-        <ul id="lanches" style="display: none;">
-            <li onclick="showMenu('X-Burger', 15)">X-Burger</li>
-            <li onclick="showMenu('X-Salada', 18)">X-Salada</li>
-            <li onclick="showMenu('X-Bacon', 20)">X-Bacon</li>
-            <li onclick="showMenu('X-Tudo', 25)">X-Tudo</li>
-        </ul>
-
-        <h2 onclick="toggleOptions('bebidas')">Bebidas</h2>
-        <ul id="bebidas" style="display: none;">
-            <li onclick="showMenu('Cerveja', 10)">Cerveja</li>
-            <li onclick="showMenu('Refrigerante', 10)">Refrigerante</li>
-            <li onclick="showMenu('Água Mineral', 10)">Água Mineral</li>
-            <li onclick="showMenu('Suco Natural', 10)">Suco Natural</li>
-        </ul>
+    <!-- Seções principais -->
+    <main>
+        <!-- Seção de Lanches -->
+        <section id="lanches">
+            <h2>Lanches</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Hambúrguer">
+                    <h3>Hambúrguer</h3>
+                    <p>R$15,00</p>
+                    <button onclick="confirmAddToCart('Hambúrguer', 15)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="X-Tudo">
+                    <h3>X-Salada</h3>
+                    <p>R$20,00</p>
+                    <button onclick="confirmAddToCart('X-Tudo', 20)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="X-Tudo">
+                    <h3>X-Burguer</h3>
+                    <p>R$10,00</p>
+                    <button onclick="confirmAddToCart('X-Tudo', 10)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="X-Tudo">
+                    <h3>X-Bacon</h3>
+                    <p>R$20,00</p>
+                    <button onclick="confirmAddToCart('X-Tudo', 20)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="X-Tudo">
+                    <h3>X-Tudo</h3>
+                    <p>R$20,00</p>
+                    <button onclick="confirmAddToCart('X-Tudo', 20)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+            <!-- Formulário de Login -->
+<div id="loginModal" class="loginModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Login</h2>
+            <button class="close-btn" onclick="closeModal('loginModal')">X</button>
+        </div>
+        <form action="login.php" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>Ainda não tem uma conta? <a href="#" onclick="openModal('registerModal')">Cadastre-se aqui</a></p>
     </div>
 </div>
 
-
-    <div id="menuOverlay" class="overlay">
-        <div class="menu-popup">
-            <h2 id="selectedItem"></h2>
-            <input id="quantity" value="0" min="1" max="200" required>
-            <button onclick="decrementQuantity()">-</button>
-            <button onclick="incrementQuantity()">+</button>
-            <h3>Adicionais</h3>
-            <p id="p-add">adicionar</p>
-            <button>-</button>
-            <button>+</button><br>
-            <p id="p-add">adicionar</p>
-            <button>-</button>
-            <button>+</button><br>
-            <p id="p-add">adicionar</p>
-            <button>-</button>
-            <button>+</button><br>
-            <p id="p-add">adicionar</p>
-            <button>-</button>
-            <button>+</button><br>
-            <p id="p-add">adicionar</p>
-            <button>-</button>
-            <button>+</button><br>
-            <p id="p-add">adicionar</p>
-            <button>-</button>
-            <button>+</button><br>
-            <button onclick="addToCart()">Adicionar ao Carrinho</button>
-            <button onclick="closeMenu()">Fechar</button>
+<!-- Formulário de Cadastro -->
+<div id="registerModal" class="resisterModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cadastro</h2>
+            <button class="close-btn" onclick="closeModal('registerModal')">X</button>
         </div>
+        <form action="register.php" method="POST">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
     </div>
+</div>
 
-    <div class="cart">
-        <h2>Carrinho</h2>
-        <ul id="cartItems">
-            <!-- Os itens do carrinho serão inseridos aqui -->
-        </ul>
-        <p>Total: R$ <span id="total">0.00</span></p>
+        <!-- Seção de Pizzas -->
+        <section id="pizzas">
+            <h2>Pizzas</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Pizza Calabresa">
+                    <h3>Pizza Calabresa</h3>
+                    <p>R$30,00</p>
+                    <button onclick="confirmAddToCart('Pizza Calabresa', 30)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Pizza Portuguesa">
+                    <h3>Pizza Portuguesa</h3>
+                    <p>R$35,00</p>
+                    <button onclick="confirmAddToCart('Pizza Portuguesa', 35)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Pizza Portuguesa">
+                    <h3>Pizza 4 Queijos</h3>
+                    <p>R$39,00</p>
+                    <button onclick="confirmAddToCart('Pizza Portuguesa', 39)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Pizza Portuguesa">
+                    <h3>Pizza Frango ao Bacon</h3>
+                    <p>R$55,00</p>
+                    <button onclick="confirmAddToCart('Pizza Portuguesa', 55)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Pizza Portuguesa">
+                    <h3>Pizza Frango Catupiry</h3>
+                    <p>R$45,00</p>
+                    <button onclick="confirmAddToCart('Pizza Portuguesa', 45)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
 
-        <script src="script.js"></script>
-        <script src="menubar.js"></script>
-    </div>
+        <!-- Seção de Bebidas -->
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Coca-Cola">
+                    <h3>Coca-Cola</h3>
+                    <p>R$5,00</p>
+                    <button onclick="confirmAddToCart('Coca-Cola', 5)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Suco Natural">
+                    <h3>Suco Natural</h3>
+                    <p>R$7,00</p>
+                    <button onclick="confirmAddToCart('Suco Natural', 7)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
 
+        <!-- Seção de Sobremesas -->
+        <section id="sobremesas">
+            <h2>Sobremesas</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Bolo de Chocolate">
+                    <h3>Bolo de Chocolate</h3>
+                    <p>R$10,00</p>
+                    <button onclick="confirmAddToCart('Bolo de Chocolate', 10)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250" alt="Pudim">
+                    <h3>Pudim</h3>
+                    <p>R$8,00</p>
+                    <button onclick="confirmAddToCart('Pudim', 8)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal do Carrinho -->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Carrinho de Compras</h2>
+                    <button class="close-btn" onclick="closeModal('cartModal')">X</button>
+                </div>
+                <div id="cartItems">
+                    <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+                    <p>Seu carrinho está vazio.</p>
+                </div>
+                <div id="totalPrice">
+                    <h3>Total: R$0,00</h3>
+                </div>
+                <button onclick="checkout()">Finalizar Pedido</button>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Food Delivery - Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Variáveis globais para armazenar itens do carrinho
+        let cart = [];
+        let total = 0;
+
+        // Função para abrir o modal do carrinho
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.getElementById(modalId).classList.add('fade-in');
+        }
+
+        // Função para fechar o modal do carrinho
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Função para confirmar a adição ao carrinho
+        function confirmAddToCart(name, price) {
+            const confirmed = confirm(`Você deseja adicionar ${name} ao carrinho por R$${price.toFixed(2)}?`);
+            if (confirmed) {
+                addToCart(name, price);
+            }
+        }
+
+        // Função para adicionar item ao carrinho
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            total += price;
+
+            // Atualiza o carrinho na interface
+            updateCart();
+        }
+
+        // Função para remover item do carrinho
+        function removeFromCart(index) {
+            total -= cart[index].price; // Remove o preço do total
+            cart.splice(index, 1); // Remove o item do carrinho
+            updateCart(); // Atualiza o carrinho na interface
+        }
+
+        // Função para atualizar a visualização do carrinho
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = ''; // Limpa itens atuais
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Seu carrinho está vazio.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.innerHTML = `${item.name} - R$${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">Remover</button>`;
+                    cartItems.appendChild(itemElement);
+                });
+            }
+
+            // Atualiza o total
+            document.getElementById('totalPrice').innerHTML = `<h3>Total: R$${total.toFixed(2)}</h3>`;
+        }
+
+        // Função para finalizar o pedido
+        function checkout() {
+            alert('Pedido finalizado! Total: R$' + total.toFixed(2));
+            // Reseta o carrinho
+            cart = [];
+            total = 0;
+            updateCart();
+            closeModal('cartModal');
+        }
+    </script>
 </body>
 </html>
