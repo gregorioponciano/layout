@@ -416,7 +416,7 @@ var reset = function () {
   started = false;
   paused = false;
   game_over = false;
-  lives = 3;
+  lives = 5;
   rock_group = [];
   score = 0;
 };
