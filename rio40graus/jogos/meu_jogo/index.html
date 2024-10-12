@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Caça ao Tesouro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Jogo de Caça ao Tesouro!</h1>
+        <p>Encontre o tesouro escondido no mapa.</p>
+        <button id="startGameButton">Iniciar Jogo</button>
+    </div>
+
+    <script>
+        document.getElementById('startGameButton').addEventListener('click', function() {
+            window.location.href = 'game.html';  // Leva para a página do jogo
+        });
+    </script>
+</body>
+</html>
