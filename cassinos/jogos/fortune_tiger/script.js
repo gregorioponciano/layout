@@ -1,26 +1,3 @@
-
-// som do jogo
-const audio = document.getElementById('audio');
-const playButtons = document.querySelectorAll('.playButton');
-const muteButton = document.querySelector('.muteButton');
-
-playButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        audio.play();
-    });
-});
-
-// Função para alternar o estado de mudo do áudio
-muteButton.addEventListener('click', () => {
-    if (audio.muted) {
-        audio.muted = false;
-        muteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Ícone de som
-    } else {
-        audio.muted = true;
-        muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Ícone de mudo
-    }
-});
-
 // Lista de símbolos
 const simbolos = [
     "imagens/Symbols/fortune-dragon_h1_coins.png",

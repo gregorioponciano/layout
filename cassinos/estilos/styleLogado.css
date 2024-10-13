@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 body {
                                             font-family: Arial, sans-serif;
                                             margin: 0;
@@ -14,7 +12,6 @@ body {
 .menu-superior, .menu-inferior {
                                             position: fixed;                                         
                                             padding: 10px ;
-                                            height: 70px;
                                             background-color: #333;
                                             color: white;
                                             display: flex;
@@ -22,6 +19,10 @@ body {
                                             align-items: center;
                                             z-index: 10;
                                             box-sizing: border-box;
+}
+
+.img-logo {
+                                            height: 120px;
 }
 
 .carousel {
@@ -121,8 +122,8 @@ section {
 
 .menu-inferior {
                                             bottom: 0;
-                                            text-align: center;
                                             height: 70px;
+                                            text-align: center;
 }
 
 .menu-ul-inferior {
@@ -150,9 +151,9 @@ section {
                                             height: 40px;
 }
 .img-afiliado-menu-inferior {
-                                            width: 40px; 
-                                            margin-top: 10px;
-                                            transition: transform 0.5s ease-in-out; /* Suaviza a rotação */
+                                            width: 120px; 
+                                            margin-bottom: 10px;
+                                            transition: transform 0.2s ease-in-out; /* Suaviza a rotação */
 }
 
 .img-afiliado-menu-inferior:hover {
@@ -175,6 +176,25 @@ section {
 }
 
                     /* Estilos dos Modais */
+
+                    /*modal perfil*/
+
+.modal-perfil {
+                                            height: 60vh;
+                                            width: 600px;
+                                            background-color: white;
+                                            margin-top: 70px;
+                                            z-index: 9;
+                                            position: absolute;
+                                            top: 0;
+                                            
+}
+
+.perfil {
+                                            display: flex;
+}
+
+
 .modal {
                                             position: fixed;
                                             top: 50%;
@@ -221,11 +241,11 @@ section {
 
 /* Animações de entrada dos modais */
 .modal-2.active {
-                                            animation: slide-in-left 0.5s forwards;
+                                            animation: slide-in-left 0.7s forwards;
 }
 
 .modal-4.active {
-                                            animation: slide-in-right 0.5s forwards;
+                                            animation: slide-in-right 0.7s forwards;
 }
 
 @keyframes slide-in-left {
@@ -279,6 +299,9 @@ footer {
         margin: 0 auto;
     }
 
+    
+
+
     .modal {
         width: 600px;
         height: 600px;
@@ -294,11 +317,17 @@ footer {
 @media (max-width: 599px) {
     .menu-superior, .menu-inferior {
         width: 100%;
-        height: 70px;
     }
 
     .content{
             padding-top: 73px;
+    }
+
+    .modal-perfil {
+        height: 60vh;
+        width:  100vw;
+       
+    
     }
 
     .modal {
