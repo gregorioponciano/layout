@@ -44,9 +44,11 @@ body {
         }
         /* Estilo do botão "X" para fechar o modal */
         .close-btn-roleta {
+
             position: absolute;
-            top: 30%; /* Ajuste de distância do topo da roleta */
-            right: 23%; /* Ajuste de distância do lado direito da roleta */
+            top: 0%;
+            left: 100%;
+            transform: translate(-50%, -70%);
             background-color: red;
             color: white;
             border: none;
@@ -64,6 +66,7 @@ body {
                     transform: translate(-50%, -50%);
                     display: flex;
                     justify-content: center;
+                    background-color: #a0f;
                     align-items: center;
 
                 }
