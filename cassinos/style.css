@@ -24,6 +24,98 @@ body {
                                             box-sizing: border-box;
 }
 
+
+        /* Estilo da sobreposição (modal) da roleta */
+        .overlay {
+            position: fixed; /* Fixa no topo da página */
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Prioridade máxima de sobreposição */
+            pointer-events: none; /* Permite interação com o site atrás */
+        }
+        
+        /* Ajustes para garantir que a roleta e seus elementos recebam cliques */
+        .overlay-content {
+            pointer-events: auto; /* Permite que a roleta receba cliques */
+        }
+        /* Estilo do botão "X" para fechar o modal */
+        .close-btn-roleta {
+            position: fixed;
+            top: 29%; /* Ajuste de distância do topo da roleta */
+            right: 33%; /* Ajuste de distância do lado direito da roleta */
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%; /* Faz o botão ser circular */
+            z-index: 0; /* Garante que o botão apareça acima da roleta */
+        }
+                /* Container da roleta para centralizar */
+                .roleta-container {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #0f0;
+                }
+                /* Estilo da roleta em si */
+                .roleta {
+                    position: relative;
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%; /* Forma circular */
+                    border: 5px solid #333;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /* Definição do gradiente para simular os diferentes prêmios */
+                    background: conic-gradient(#f00 0% 12.5%, #0f0 12.5% 25%, #00f 25% 37.5%, #ff0 37.5% 50%, #0ff 50% 62.5%, #f0f 62.5% 75%, #fa0 75% 87.5%, #a0f 87.5% 100%);
+                    transition: transform 4s ease-out; /* Transição suave ao rodar */
+                }
+                /* Estilo do botão "Rodar" no centro da roleta */
+                .spin-btn {
+                    position: absolute;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%; /* Botão circular */
+                    background-color: #333;
+                    color: white;
+                    border: none;
+                    font-size: 18px;
+                    cursor: pointer;
+                    z-index: 10; /* Certifica que fica acima da roleta */
+                }
+                /* Estilo para desabilitar o botão após rodar */
+                .disabled {
+                    background-color: gray;
+                    cursor: not-allowed; /* Cursor indica que o botão está desabilitado */
+                }
+                /* Estilo da área onde o resultado do prêmio será mostrado */
+                .result {
+                    margin-top: 20px;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #333;
+                }
+                /* Estilo do conteúdo principal do site, inicialmente oculto */
+                .main-site {
+                    padding: 20px;
+                    text-align: center;
+                }
+                /* Classe para esconder elementos (usada para ocultar site ou roleta) */
+                .hidden {
+                    display: none;
+                }
+
 .carousel {
                                             position: relative;
                                             max-width: 95%;

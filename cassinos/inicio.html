@@ -23,7 +23,7 @@
         <div class="menu-inferior">
             <ul class="menu-ul-inferior">
                     <!--home-->
-                <li class="li-menu-inferior" onclick="returnToBody()"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
+                <li class="li-menu-inferior" onclick="returnToBody(); openRoleta();"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
                 <!--carteira-->
                 <li class="li-menu-inferior" onclick="openModal(2)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
                 <!--afilado-->
@@ -34,6 +34,24 @@
                 <li class="li-menu-inferior" onclick="openModal()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
             </ul>
         </div>
+
+            <!-- Roleta de prêmios com o botão X -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <div class="roleta-container">
+                <!-- Div que representa a roleta -->
+                <div class="roleta" id="roleta"></div>
+                <!-- Botão no centro da roleta que inicia a rotação -->
+                <button id="spinBtn" class="spin-btn" onclick="spin()">Rodar (1)</button>
+            </div>
+            <!-- Botão para fechar a roleta -->
+            <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
+            <!-- Exibição do resultado do prêmio -->
+            <div id="resultado" class="result"></div>
+        </div>
+    </div>
+
+        
 
         <!-- Modal Cadastro -->
         <div id="modal-cadastro" class="modal small">
@@ -61,6 +79,7 @@
             </form>
             <a href="#" onclick="openModal('cadastro')">Não tem uma conta? Cadastre-se aqui</a>
         </div>
+        
 
         <!-- Modal Depósito (Vindo da Esquerda) -->
         <div id="modal-2" class="modal modal-2">
@@ -280,6 +299,7 @@
     <script src="script.js"></script>
     <script src="paginas.js"></script>
     <script src="slide.js"></script>
+    <script src="roleta.js"></script>
 
 </body>
 </html>
