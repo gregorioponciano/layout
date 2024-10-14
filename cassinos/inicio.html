@@ -38,6 +38,7 @@
             <!-- Roleta de prêmios com o botão X -->
     <div id="overlay" class="overlay">
         <div class="overlay-content">
+            <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
             <div class="roleta-container">
                 <!-- Div que representa a roleta -->
                 <div class="roleta" id="roleta"></div>
@@ -45,7 +46,7 @@
                 <button id="spinBtn" class="spin-btn" onclick="spin()">Rodar (1)</button>
             </div>
             <!-- Botão para fechar a roleta -->
-            <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
+           
             <!-- Exibição do resultado do prêmio -->
             <div id="resultado" class="result"></div>
         </div>

@@ -28,14 +28,14 @@ body {
         /* Estilo da sobreposição (modal) da roleta */
         .overlay {
             position: fixed; /* Fixa no topo da página */
-            width: 100%;
+            width: 600px;
             height: 100%;
-            background: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
+            background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000; /* Prioridade máxima de sobreposição */
-            pointer-events: none; /* Permite interação com o site atrás */
+         /* pointer-events: none;  Permite interação com o site atrás */
         }
         
         /* Ajustes para garantir que a roleta e seus elementos recebam cliques */
@@ -44,9 +44,9 @@ body {
         }
         /* Estilo do botão "X" para fechar o modal */
         .close-btn-roleta {
-            position: fixed;
-            top: 29%; /* Ajuste de distância do topo da roleta */
-            right: 33%; /* Ajuste de distância do lado direito da roleta */
+            position: absolute;
+            top: 30%; /* Ajuste de distância do topo da roleta */
+            right: 23%; /* Ajuste de distância do lado direito da roleta */
             background-color: red;
             color: white;
             border: none;
@@ -65,7 +65,7 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: #0f0;
+
                 }
                 /* Estilo da roleta em si */
                 .roleta {
@@ -101,10 +101,14 @@ body {
                 }
                 /* Estilo da área onde o resultado do prêmio será mostrado */
                 .result {
-                    margin-top: 20px;
-                    font-size: 24px;
-                    font-weight: bold;
-                    color: #333;
+
+                    position: fixed;
+                    top: 70%;
+                    left: 50%;
+                    transform: translate(-50%, -30%);
+                    font-size: 16px;
+
+                    color: #ffffff;
                 }
                 /* Estilo do conteúdo principal do site, inicialmente oculto */
                 .main-site {
@@ -215,6 +219,7 @@ section {
                                             bottom: 0;
                                             text-align: center;
                                             height: 70px;
+                                            z-index: 100;
 }
 
 .menu-ul-inferior {
