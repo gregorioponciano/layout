@@ -23,10 +23,48 @@
                     </ul>
                 </li>
                 <li><a href="#" onclick="openModal('cartModal')">Carrinho</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#" id="login-link">Login</a>
+                <ul>
+                    <li><a href="#" id="cadastro-link">Cadastro</a></li>
+                </ul>
+                </li>
             </ul>
         </nav>
     </header>
+
+        <!-- Modal de Login -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <form action="" method="get" class="form">
+                    <h1>Login</h1>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password">
+                    <input type="submit" value="Logar">
+                </form>
+                <a href="#" onclick="toggleModal('cadastro-modal')">Cadastro</a>
+                
+            </div>
+        </div>
+    
+        <!-- Modal de Cadastro -->
+        <div id="cadastro-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <form action="" method="get" class="form">
+                    <label for="nome-cad">Nome:</label>
+                    <input type="text" name="nome-cad" id="nome-cad">
+                    <label for="email-cad">Email:</label>
+                    <input type="email" name="email-cad" id="email-cad">
+                    <label for="password-cad">Password:</label>
+                    <input type="password" name="password-cad" id="password-cad">
+                    <input type="submit" value="Cadastrar">
+                </form>
+                <a href="#" onclick="toggleModal('login-modal')">Já tem conta?</a>
+            </div>
+        </div>
 
     <!-- Seções principais -->
     <main>
@@ -66,37 +104,7 @@
                 </div>
             </div>
         </section>
-            Formulário de Login 
-<div id="loginModal" class="loginModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Login</h2>
-            <button class="close-btn" onclick="closeModal('loginModal')">X</button>
-        </div>
-        <form action="login.php" method="POST">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-        <p>Ainda não tem uma conta? <a href="#" onclick="openModal('registerModal')">Cadastre-se aqui</a></p>
-    </div>
-</div>
 
- Formulário de Cadastro 
-<div id="registerModal" class="resisterModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Cadastro</h2>
-            <button class="close-btn" onclick="closeModal('registerModal')">X</button>
-        </div>
-        <form action="register.php" method="POST">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
-        </form>
-    </div>
-</div> 
 
         <!-- Seção de Pizzas -->
         <section id="pizzas">
@@ -198,5 +206,6 @@
     </main>
 
         <script src="js/carrinho.js"></script>
+        <script src="js/ModalCadLogin.js"></script>
 </body>
 </html>
