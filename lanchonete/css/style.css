@@ -37,6 +37,7 @@
             list-style: none;
             margin: 0px 20px 0px 0px;
             padding: 0;
+            gap: 3em;
             display: flex;
         }
 
@@ -46,7 +47,7 @@
 
         nav ul li a {
             color: white;
-            padding: 10px 20px;
+            padding: 10px 10px;
             text-decoration: none;
             display: block;
         }
@@ -208,5 +209,11 @@
             }
             to {
                 opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            nav ul {
+                gap: 0;
             }
         }
