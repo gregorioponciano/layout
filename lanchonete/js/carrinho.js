@@ -9,7 +9,7 @@
  }
 
  // Função para fechar o modal do carrinho
- function closeModal(modalId) {
+ function closeModalCarrinho(modalId) {
      document.getElementById(modalId).style.display = 'none';
  }
 
@@ -63,5 +63,5 @@
      cart = [];
      total = 0;
      updateCart();
-     closeModal('cartModal');
+     closeModalCarrinho('cartModal');
  }

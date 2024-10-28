@@ -75,6 +75,12 @@
                     align-items: center;
         }
 
+        .close {
+            cursor: pointer;
+            float: right;
+            font-size: 24px;
+        }
+
         input {
                     width: 30%;
                     

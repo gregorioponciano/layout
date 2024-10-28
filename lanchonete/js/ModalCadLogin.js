@@ -5,12 +5,12 @@ function openModal(modalId) {
 
 // Função para alternar entre os modais
 function toggleModal(modalId) {
-    closeModal(); // Fecha o modal atual
+    closeModalCadLogin(); // Fecha o modal atual
     openModal(modalId); // Abre o novo modal
 }
 
 // Função para fechar qualquer modal aberto
-function closeModal() {
+function closeModalCadLogin() {
     document.getElementById("login-modal").style.display = "none";
     document.getElementById("cadastro-modal").style.display = "none";
 }
@@ -18,7 +18,7 @@ function closeModal() {
 // Adiciona evento para fechar o modal ao clicar fora dele
 window.onclick = function(event) {
     if (event.target.classList.contains("modal")) {
-        closeModal();
+        closeModalCadLogin();
     }
 }
 
