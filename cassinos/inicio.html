@@ -25,11 +25,11 @@
                     <!--home-->
                 <li class="li-menu-inferior" onclick="returnToBody(); openRoleta();"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
                 <!--carteira-->
-                <li class="li-menu-inferior" onclick="openModal(2)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(1)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
                 <!--afilado-->
                 <li class="li-menu-inferior" onclick="openFullscreenModal()"><div class="p-span"><img src="imagens/mariobet.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
                 <!--promoção-->
-                <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(2)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
                 <!--perfil-->
                 <li class="li-menu-inferior" onclick="openModalPerfil()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
             </ul>
@@ -53,6 +53,7 @@
             </div>
         </div>
 
+            <!-- Modal perfil X -->
         <div class="modal-perfil" id="modal-perfil">
             <span class="close-perfil" onclick="closeModalPerfil()">&times;</span>
             <div class="perfil">
@@ -134,26 +135,26 @@
         </div>
         
 
-        <!-- Modal Depósito (Vindo da Esquerda) -->
-        <div id="modal-2" class="modal modal-2">
-            <span class="close-btn" onclick="closeModal(2)">X</span>
+        <!-- Modal Depósito (Vindo da Deposito) -->
+        <div id="modal-1" class="modal modal-1">
+            <span class="close-btn" onclick="closeModal(1)">X</span>
             <h2>Depósito</h2>
             <p>Esse modal vem da esquerda.</p>
         </div>
 
-        <!-- Modal Promoção (Vindo da Direita) -->
-        <div id="modal-4" class="modal modal-4">
+        <!-- Modal Promoção (Vindo da Promoçao) -->
+        <div id="modal-2" class="modal modal-2">
             
             <div class="header">
                 <h2>Promoção</h2>
-                <span class="close-btn" onclick="closeModal(4)">X</span>
+                <span class="close-btn" onclick="closeModal(2)">X</span>
             </div>
             <p>Esse modal vem da direita.</p>
         </div>
 
         <!-- Modal Fullscreen -->
-        <div id="modal-fullscreen" class="modal fullscreen">
-            <span class="close-btn" onclick="closeModal('fullscreen')">X</span>
+        <div id="modal-3" class="modal modal-3">
+            <span class="close-btn" onclick="closeModal(3)">X</span>
             <h2>Modal Fullscreen</h2>
             <p>Este é um modal que ocupa a tela inteira.</p>
         </div>

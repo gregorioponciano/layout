@@ -403,12 +403,6 @@ section {
                                             height: 300px;
 }
 
-.modal.fullscreen {
-                                            width: 100%;
-                                            height: 100%;
-                                            border-radius: 0;
-}
-
 /* Botões de Fechar */
 .close-btn {
                                             position: absolute;
