@@ -5,13 +5,13 @@
 @charset "UTF-8";
 
 :root {
-                                                        --body: #121212;
+                                                        --body: #33333377;
                                                         --header-content: #1e1e1f;
-                                                        --menu: #282829;
+                                                        --menu: #333;
                                                         --div: #232224;
                                                         --color-a-hover-menu: #ffffff;
                                                         --a-menu: #FEC800; 
-                                                        --color-p-content: #ffffff;
+                                                        --color-green: #55c242;
 }
 
 * {
@@ -25,7 +25,7 @@ body {
                                                         font-family: Arial, sans-serif;
                                                         margin: 0;
                                                         padding: 0;
-                                                        background-color: #33333377;
+                                                        background-color: var(--body);
                                                         overflow-x: hidden;
 }
 
@@ -51,7 +51,7 @@ strong {
                                             position: fixed;                                         
                                             padding: 10px ;
                                             height: 70px;
-                                            background-color: #333;
+                                            background-color: var(--menu);
                                             color: white;
                                             display: flex;
                                             justify-content: space-between;
@@ -67,7 +67,7 @@ strong {
                                             width: 600px;
                                             height: 100%;
                                             background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
-                                            display: flex;
+                                            display: none;
                                             justify-content: center;
                                             align-items: center;
                                             z-index: 1000; /* Prioridade máxima de sobreposição */
@@ -338,6 +338,10 @@ section {
                                             width: 80%;
                                             height: 60vh;
                                             text-align: center;
+}
+
+input {
+                                            outline: none;
 }
 
 /* Botões de Fechar */

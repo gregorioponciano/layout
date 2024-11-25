@@ -59,9 +59,12 @@
             <h2>Cadastro</h2>
             <p>Preencha seus dados para se cadastrar.</p>
             <form action="php/cadastro.php" method="POST">
-                <input type="text" name="nome" placeholder="Nome" required><br>
-                <input type="email" name="email" placeholder="Email" required><br>
-                <input type="password" name="senha" placeholder="Senha" required><br>
+                <label for="nome-cad">Nome</label>
+                <input type="text" id="nome-cad" name="nome-cad" class="input" placeholder="Nome" required><br>
+                <label for="email-cad">Email</label>
+                <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required><br>
+                <label for="senha-cad">Senha</label>
+                <input type="password" id="senha-cad" name="senha-cad" class="input" placeholder="Senha" required><br>
                 <button type="submit">Cadastrar</button>
             </form>
             <a href="#" onclick="openModal('login')">Já tem uma conta? Entre aqui</a>
@@ -73,8 +76,10 @@
             <h2>Login</h2>
             <p>Insira seus dados para entrar.</p>
             <form action="php/login.php" method="POST">
-                <input type="email" name="email" placeholder="Email" required><br>
-                <input type="password" name="senha" placeholder="Senha" required><br>
+                <label for="email-login">Email</label>
+                <input type="email" id="email-login" name="email-login" placeholder="Email" class="input" required><br>
+                <label for="senha-login">Senha</label>
+                <input type="password" id="senha-login" name="senha-login" placeholder="Senha" class="input" required><br>
                 <button type="submit">Login</button>
             </form>
             <a href="#" onclick="openModal('cadastro')">Não tem uma conta? Cadastre-se aqui</a>
