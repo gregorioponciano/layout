@@ -10,6 +10,11 @@ body {
                                             overflow-x: hidden;
 }
 
+strong {
+                                                color: #00a85a;
+                                                font-size: 22px;
+}
+
 /* Menus */
 .menu-superior, .menu-inferior {
                                             position: fixed;                                         
@@ -122,6 +127,101 @@ body {
                 .hidden {
                     display: none;
                 }
+
+                                    /*modal perfil*/
+
+.modal-perfil {
+
+    width: 600px;
+    background-color: white;
+    margin-top: 70px;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    
+}
+
+#modal-perfil {
+    display: none;
+}
+
+.perfil {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.close-perfil {
+    color: red;
+    font-size: 25px;
+    padding: 15px;
+    text-align: right;
+}
+
+.div-img-perfil {
+    display: flex;
+    align-items: center;
+}
+
+#img-perfil {
+    width: 50px;
+    height: 50px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.perfil-deposito {
+    display: flex;
+    justify-content: space-around;                                        
+}
+
+.deposito, .sacar {
+    background-color: #00a85a;
+    padding: 10px 25px;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.nav-modal-perfil {
+    background-color: #e4f1eb;
+    width: 88%;
+    margin: auto;
+    text-indent: 1.5em;
+    border-radius: 3px;
+}
+
+.div-transacoes {               
+   
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    align-items: center;
+}
+
+.transacoes {
+    width: calc(50%);
+    display: flex;
+    flex-flow: column nowrap; 
+}
+
+.link-transacoes {
+    margin: 12px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
 
 .carousel {
                                             position: relative;
@@ -395,6 +495,10 @@ footer {
     .menu-superior, .menu-inferior {
         width: 100%;
         height: 70px;
+    }
+
+    .modal-perfil {
+        width: 100%;   
     }
 
     .content{
