@@ -20,16 +20,3 @@
         function returnToBody() {
             closeAllModals();
         }
-
-
-                        // Função para abrir o modal perfil
-                        function openModalPerfil() {
-                            const modal = document.getElementById('modal-perfil');
-                            modal.style.display = 'flex'; // Exibe o modal
-                        }
-                
-                        // Função para fechar o modal perfil
-                        function closeModalPerfil() {
-                            const modal = document.getElementById('modal-perfil');
-                            modal.style.display = 'none'; // Esconde o modal
-                        }

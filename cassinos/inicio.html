@@ -27,11 +27,11 @@
                 <!--carteira-->
                 <li class="li-menu-inferior" onclick="openModal(1)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
                 <!--afilado-->
-                <li class="li-menu-inferior" onclick="openFullscreenModal()"><div class="p-span"><img src="imagens/mariobet.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
+                <li class="li-menu-inferior" onclick="openModal(2)"><div class="p-span"><img src="imagens/mariobet.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
                 <!--promoção-->
-                <li class="li-menu-inferior" onclick="openModal(2)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(3)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
                 <!--perfil-->
-                <li class="li-menu-inferior" onclick="openModalPerfil()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
             </ul>
         </div>
 
@@ -51,60 +51,6 @@
                 <!-- Exibição do resultado do prêmio -->
                 <div id="resultado" class="result"></div>
             </div>
-        </div>
-
-            <!-- Modal perfil X -->
-        <div class="modal-perfil" id="modal-perfil">
-            <span class="close-perfil" onclick="closeModalPerfil()">&times;</span>
-            <div class="perfil">
-                
-                <div class="div-img-perfil">
-                    <img src="imagens/user.jpg" id="img-perfil" alt="foto">
-
-                </div>
-                <div class="mudar-senha">Mudar Senha</div>
-            </div>
-            <div class="modal-header">
-                <div class="saldo">
-                    <p>$Saldo</p>
-                    <p>R$ 0.04</p>
-                </div>
-                
-                <div class="bonus">
-                    <p>Bonus</p>
-                    <p>R$ 0.95</p>
-                </div>
-            </div>
-            <div class="perfil-deposito">
-                <div class="deposito">Deposito</div>
-                <div class="sacar">Sacar</div>
-            </div>
-            <div class="nav-modal-perfil">
-                <div class="nav-perfil">
-                    <p> <strong>❖</strong> Receba R$ 100 de graça</p>
-                    <p> <strong>☘︎</strong> Cashback 25%</p>
-                    <p> <strong>↻</strong> Afiliado - Ganha até 10000 por dia</p>
-                </div>
-                <div class="div-transacoes">
-                    <div class="transacoes">
-                        <a class="link-transacoes">💵 Minhas apostas</a>
-                        <a class="link-transacoes">❓ Ajuda</a>
-                        <a class="link-transacoes">📞 Contate-nos</a>
-                    </div>
-
-                    <div class="transacoes">
-                            <a class="link-transacoes">💶 Transações</a>
-                            <a class="link-transacoes">💌 Mensagens</a>
-                            <a class="link-transacoes">🔥 Promoções</a>
-                    </div>    
-                </div>
-                <div class="modal-footer">
-                    <div class="sair">Entrar</div>
-                    <div class="baixe-app">+R$10-50 BAIXE O APP</div>
-                    <p  onclick="closeModalPerfil()">fechar&times;</p>
-                </div>   
-            </div>
-
         </div>
 
         <!-- Modal Cadastro -->
@@ -135,14 +81,13 @@
         </div>
         
 
-        <!-- Modal Depósito (Vindo da Deposito) -->
+        <!-- Modal Depósito -->
         <div id="modal-1" class="modal modal-1">
             <span class="close-btn" onclick="closeModal(1)">X</span>
             <h2>Depósito</h2>
             <p>Esse modal vem da esquerda.</p>
         </div>
-
-        <!-- Modal Promoção (Vindo da Promoçao) -->
+        <!-- Modal Afiliado -->
         <div id="modal-2" class="modal modal-2">
             
             <div class="header">
@@ -151,12 +96,64 @@
             </div>
             <p>Esse modal vem da direita.</p>
         </div>
-
-        <!-- Modal Fullscreen -->
+        <!-- Modal Promoçao -->
         <div id="modal-3" class="modal modal-3">
             <span class="close-btn" onclick="closeModal(3)">X</span>
             <h2>Modal Fullscreen</h2>
             <p>Este é um modal que ocupa a tela inteira.</p>
+        </div>
+        <!-- Modal perfil -->
+        <div id="modal-4" class="modal modal-4">
+
+                <span class="close-btn" onclick="closeModal(4)">&times;</span>
+                <div class="perfil">         
+                    <div class="div-img-perfil">
+                        <img src="imagens/user.jpg" id="img-perfil" alt="foto">
+                    </div>
+                    <div class="mudar-senha">Mudar Senha</div>
+                </div>
+
+                <div class="modal-header">
+                    <div class="saldo">
+                        <p>$Saldo</p>
+                        <p>R$ 0.04</p>
+                    </div>
+                    <div class="bonus">
+                        <p>Bonus</p>
+                        <p>R$ 0.95</p>
+                    </div>
+                </div>
+
+                <div class="perfil-deposito">
+                    <div class="deposito">Deposito</div>
+                    <div class="sacar">Sacar</div>
+                </div>
+
+                <div class="nav-modal-perfil">
+                    <div class="nav-perfil">
+                        <p> <strong>❖</strong> Receba R$ 100 de graça</p>
+                        <p> <strong>☘︎</strong> Cashback 25%</p>
+                        <p> <strong>↻</strong> Afiliado - Ganha até 10000 por dia</p>
+                    </div>
+                    <div class="div-transacoes">
+                        <div class="transacoes">
+                            <a class="link-transacoes">💵 Minhas apostas</a>
+                            <a class="link-transacoes">❓ Ajuda</a>
+                            <a class="link-transacoes">📞 Contate-nos</a>
+                        </div>
+    
+                        <div class="transacoes">
+                                <a class="link-transacoes">💶 Transações</a>
+                                <a class="link-transacoes">💌 Mensagens</a>
+                                <a class="link-transacoes">🔥 Promoções</a>
+                        </div>    
+                    </div>
+                    <div class="modal-footer">
+                        <div class="sair">Entrar</div>
+                        <div class="baixe-app">+R$10-50 BAIXE O APP</div>
+                        <p  onclick="closeModal(4)">fechar&times;</p>
+                    </div>   
+                </div>   
         </div>
     </div>
  
