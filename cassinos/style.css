@@ -6,9 +6,9 @@
 
 :root {
                                                         --body: #33333377;
-                                                        --header-content: #1e1e1f;
+                                                        --header-content: #333333da;
                                                         --menu: #333;
-                                                        --div: #232224;
+                                                        --modal-cad-login: #2a0f44;
                                                         --color-a-hover-menu: #ffffff;
                                                         --a-menu: #FEC800; 
                                                         --color-green: #55c242;
@@ -32,14 +32,12 @@ body {
 
 
 a {
-                                                        text-decoration: none;
+                                                        text-decoration: none;                                                  
 }
 
 li {
                                                         list-style: none;
 }
-
-
 
 strong {
                                                         color: #00a85a;
@@ -338,10 +336,26 @@ section {
                                             width: 80%;
                                             height: 60vh;
                                             text-align: center;
+                                            background-color: var(--modal-cad-login);
+                                            color: white;
 }
 
-input {
+.input {
                                             outline: none;
+                                            padding: 7px;
+                                            margin: 10px;
+}
+
+.botao-cad-login {
+                                            background-color: var(--color-green);
+                                            width: 100%;
+                                            padding: 10px 0px;
+                                            margin: 5px 0px;
+
+}
+
+.link-cad-login {
+                                            color: white;
 }
 
 /* Botões de Fechar */
@@ -469,7 +483,7 @@ footer {
                                 width: 100%;
                                 max-width: 600px;
                                 margin: auto;
-                                background-color: #333333da;
+                                background-color: var(--header-content);
                                 padding-top: 70px;
     }
 
