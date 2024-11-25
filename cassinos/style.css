@@ -342,6 +342,7 @@ section {
 .close-btn {
                                             position: absolute;
                                             top: 10px;
+                                            padding: 10px 10px 0px 0px;
                                             right: 10px;
                                             cursor: pointer;
                                             font-weight: bold;
