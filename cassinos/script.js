@@ -18,5 +18,5 @@
 
         // Função para voltar ao conteúdo principal do body
         function returnToBody() {
-
+            closeAllModals()
         }
