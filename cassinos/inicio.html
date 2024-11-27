@@ -88,9 +88,40 @@
 
         <!-- Modal Depósito -->
         <div id="modal-1" class="modal modal-1">
-            <span class="close-btn" onclick="closeModal(1)">X</span>
-            <h2>Depósito</h2>
-            <p>Esse modal vem da esquerda.</p>
+            <div class="header-deposito">
+                <h2>Depósito</h2>
+                <span class="close-btn" onclick="closeModal(1)">X</span>
+            </div>
+            <form>
+                <div class="div-input">
+                    <input type="text" id="nome" name="nome" placeholder="Nome" class="input-deposito" required>
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" class="input-deposito" required>
+                    <input type="number" id="valor" class="input-deposito" placeholder="Quantia (BRL)" required min="10" max="10000">
+                </div>
+
+                <div class="botoes">
+                    <button type="button" class="valor-botao">R$ 20 </button>
+                    <button type="button" class="valor-botao">R$ 50 </button>
+                    <button type="button" class="valor-botao">R$ 100 </button>
+                </div>
+                <div class="botoes">
+                    <button type="button" class="valor-botao">R$ 200 </button>
+                    <button type="button" class="valor-botao">R$ 500 </button>
+                    <button type="button" class="valor-botao">R$ 1000 </button>
+                </div>
+                <div class="botoes">
+                    <button type="button" class="valor-botao">R$ 2000 </button>
+                    <button type="button" class="valor-botao">R$ 5000 </button>
+                    <button type="button" class="valor-botao">R$ 10000 </button>
+                </div>
+                <button type="submit" class="botao-submit">Depositar Agora</button>
+            </form>
+            <section class="cashback-info">
+                <p>1. Se você perder dinheiro real ao jogar o jogo, a 8pg oferece um <strong>cashback em dinheiro de 28% toda semana</strong>.</p> <br>
+                <p>2. O periodo sobre qual é calculado o cashback semanal é calculado de segunda-feira às 00:00 até domingo às 23:59.</p> <br>
+                <p>3. Você pode solicitar seu cashback de segunda-feira da próxima semana às 06:00 até sexta-feira às 23:59. Após esse período, o valor expirará.</p> <br>
+                <p>4. Ao recarregar, certifique-se de vincular seu CPF para garantir a segurança dos seus fundos e evitar riscos.</p> <br>
+            </section>
         </div>
         <!-- Modal Afiliado -->
         <div id="modal-2" class="modal modal-2">

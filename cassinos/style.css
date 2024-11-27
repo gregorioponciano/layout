@@ -462,6 +462,93 @@ section {
                                             margin: 20px 0px;
 }
 
+                            /*modal Deposito*/
+
+.modal-1 {
+                                            background-color: #333;
+
+
+}                            
+
+form {
+                                margin: 0 auto;
+                                padding: 20px;
+                                background-color: #333;
+                            }
+
+.input-deposito[type="number"]::-webkit-outer-spin-button,  /*para remover as setas do input number*/
+.input-deposito[type="number"]::-webkit-inner-spin-button {
+                                                -webkit-appearance: none;
+                                                margin: 0;
+}        
+
+.div-input {
+                                            display: flex;
+                                            flex-flow: column nowrap;
+                                            width: 100%;
+}
+                            .input-deposito 
+                             {
+                                outline: none;
+                                font-size: 20px;
+                                padding: 15px 10px;
+                                margin-bottom: 15px;
+                                border: none;
+                                background-color: #1a1c20;
+                                color: #fff;
+                            }
+
+
+                            
+                            .botoes {
+                                display: flex;
+                                flex-wrap: nowrap;
+                                justify-content: center;
+                            }
+                            
+                            .valor-botao {
+                                width: 100%;
+                                font-size: 20px;
+                                background-color: #4CAF50;
+                                color: #fff;
+                                border: none;
+                                padding: 15px 0px;
+                                margin: 5px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+
+.botao-submit {
+                                background-color: #325e34;
+                                padding: 15px 0px;
+                                margin: 10px 0px;
+                                color: rgba(255, 255, 255, 0.678);
+                                font-size: 20px;
+                                width: 100%;
+                                border: none;
+                                border-radius: 3px;
+}  
+
+.cashback-info {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.cashback-info h2 {
+    color: #333;
+}
+
+.cashback-info p {
+    line-height: 1.5;
+    color: white;
+}
+
+strong {
+    color: #00ff55;
+}
+                      
+
 footer {
                                             background-color: black;
                                             width: 99%;
