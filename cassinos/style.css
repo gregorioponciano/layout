@@ -536,8 +536,9 @@ form {
 
 .cashback-info {
     background-color: #333;
-    padding: 20px;
+
     border-radius: 5px;
+
 }
 
 .cashback-info h2 {
@@ -545,12 +546,15 @@ form {
 }
 
 .cashback-info p {
-    line-height: 1.5;
     color: white;
 }
 
 strong {
     color: #00ff55;
+}
+
+.p-cashback-footer {
+                                            padding-bottom: 40px;
 }
                       
 
