@@ -479,15 +479,15 @@ section {
 }
 
 form {
-                                margin: 0 auto;
-                                padding: 20px;
-                                background-color: #333;
-                            }
+                                            margin: 0 auto;
+                                            padding: 20px;
+                                            background-color: #333;
+}
 
 .input-deposito[type="number"]::-webkit-outer-spin-button,  /*para remover as setas do input number*/
 .input-deposito[type="number"]::-webkit-inner-spin-button {
-                                                -webkit-appearance: none;
-                                                margin: 0;
+                                            -webkit-appearance: none;
+                                            margin: 0;
 }        
 
 .div-input {
@@ -495,62 +495,58 @@ form {
                                             flex-flow: column nowrap;
                                             width: 100%;
 }
-                            .input-deposito 
-                             {
-                                outline: none;
-                                font-size: 20px;
-                                padding: 15px 10px;
-                                margin-bottom: 15px;
-                                border: none;
-                                background-color: #1a1c20;
-                                color: #fff;
-                            }
-
-
-                            
-                            .botoes {
-                                display: flex;
-                                flex-wrap: nowrap;
-                                justify-content: center;
-                            }
-                            
-                            .valor-botao {
-                                width: 100%;
-                                font-size: 20px;
-                                background-color: #4CAF50;
-                                color: #fff;
-                                border: none;
-                                padding: 15px 0px;
-                                margin: 5px;
-                                border-radius: 5px;
-                                cursor: pointer;
-                            }
-
-.botao-submit {
-                                background-color: #325e34;
-                                padding: 15px 0px;
-                                margin: 10px 0px;
-                                color: rgba(255, 255, 255, 0.678);
-                                font-size: 20px;
-                                width: 100%;
-                                border: none;
-                                border-radius: 3px;
-}  
-
-.cashback-info {
-    background-color: #333;
-
-    border-radius: 5px;
-
+.input-deposito {
+                                            outline: none;
+                                            font-size: 20px;
+                                            padding: 15px 10px;
+                                            margin-bottom: 15px;
+                                            border: none;
+                                            background-color: #1a1c20;
+                                            color: #fff;
 }
 
-.cashback-info h2 {
-    color: #333;
+.botoes {
+                                            display: flex;
+                                            flex-wrap: nowrap;
+                                            justify-content: center;
 }
 
-strong {
-    color: #00ff55;
+.valor-botao {
+                                            width: 100%;
+                                            font-size: 20px;
+                                            background-color: #494949;
+                                            color: #fff;
+                                            border: none;
+                                            padding: 15px 0px;
+                                            margin: 5px;
+                                            border-radius: 5px;
+                                            cursor: pointer;
 }
+
+#submitButton {
+                                            background-color: #325e34;
+                                            padding: 15px 0px;
+                                            margin: 10px 0px;
+                                            color: rgba(255, 255, 255, 0.678);
+                                            font-size: 20px;
+                                            width: 100%;
+                                            border: none;
+                                            border-radius: 3px;
+                                            cursor: no-drop;
+                                            transition: background-color 0.3s ease, cursor 0.3s ease;
+} 
+
+
+#submitButton.enabled {
+                                            background-color: #4cb741;
+                                            cursor: pointer;
+                                            color: white;
+  }
+
+.strong-deposito-cashback{
+                                            color: #00ff55;
+}
+
 .p-cashback {
                                             color: white;
                                             margin-bottom: 20px;
@@ -561,6 +557,53 @@ strong {
                                             height: 100px;
                                             margin-top: 40px;
 }
+
+                /*Modal PIX*/
+
+    /* Estilo do aviso de erro */
+    .error-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffdddd;
+      color: #333;
+      padding: 20px;
+      border: 1px solid #ff5c5c;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    /* Estilo do segundo modal */
+    .modal-pix {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 1001;
+    }
+
+   
+          
                       
 
 footer {
