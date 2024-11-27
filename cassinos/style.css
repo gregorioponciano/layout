@@ -20,13 +20,15 @@
                                                         box-sizing: border-box;
 }
 
+/* Classe que desativa o scroll do body */
+
 body {
                                                         justify-content: center;
                                                         font-family: Arial, sans-serif;
                                                         margin: 0;
                                                         padding: 0;
                                                         background-color: var(--body);
-                                                        overflow-x: hidden;
+                                                        
 }
 
 
@@ -586,7 +588,7 @@ footer {
                                 padding-top: 70px;
     }
 
-    .menu-superior, .menu-inferior {
+   .menu-superior, .menu-inferior {
                                 width: 100%;
                                 max-width: 600px;
                                 margin: 0 auto;
