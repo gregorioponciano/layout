@@ -66,7 +66,7 @@ strong {
                                             position: fixed; /* Fixa no topo da página */
                                             width: 600px;
                                             height: 100%;
-                                            background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+                                            background: rgba(0, 0, 0, 0.253); /* Fundo semi-transparente */
                                             display: flex;
                                             justify-content: center;
                                             align-items: center;
@@ -194,8 +194,9 @@ strong {
 .next {
                                             position: absolute;
                                             top: 50%;
+                                            font-size: 20px;
                                             transform: translateY(-50%);
-                                            background-color: rgba(0, 0, 0, 0.637);
+                                            background-color: rgba(0, 0, 0, 0.877);
                                             color: white;
                                             padding: 10px 20px;
                                             border: none;
@@ -224,18 +225,29 @@ aside {
                                             justify-content: space-between;
 }
 
-#img-buscar {
-                                            width: 15px;
+.buscar {
+                                            background-color: white;
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            flex-flow: row nowrap;
 }
 #input-buscar {
                                             width: 100px;
+                                            padding: 5px 2px;
+                                            border: none;
+                                            outline: none;
 }
 
 .div-but-pag {
-                                            
-                                            
+                                            display: flex;
+                                            flex-flow: row nowrap;                                             
                                             margin: 20px;
                                             cursor: pointer;
+}
+
+.but-pag {
+                                            padding: 5px;
 }
 
 
