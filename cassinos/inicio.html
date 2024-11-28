@@ -35,23 +35,29 @@
             </ul>
         </div>
 
-            <!-- Roleta de prêmios com o botão X -->
-        <div id="overlay" class="overlay">
-            <div class="overlay-content">
-
-                <div class="roleta-container">
-                    <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
-                    <!-- Div que representa a roleta -->
-                    <div class="roleta" id="roleta"></div>
-                    <!-- Botão no centro da roleta que inicia a rotação -->
-                    <button id="spinBtn" class="spin-btn" onclick="spin()">Rodar (1)</button>
-                </div>
-                <!-- Botão para fechar a roleta -->
-            
-                <!-- Exibição do resultado do prêmio -->
-                <div id="resultado" class="result"></div>
+<!-- Roleta de prêmios com o botão X -->
+<div id="overlay" class="overlay">
+    <div class="overlay-content">
+        <div class="roleta-container">
+            <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
+            <!-- Div que representa a roleta -->
+            <div class="roleta" id="roleta">
+                <!-- Seções de prêmios, cada uma posicionada no lugar correto -->
+                <div class="prize" style="transform: rotate(0deg) translateY(-150px) rotate(0deg)">1</div>
+                <div class="prize" style="transform: rotate(51.43deg) translateY(-150px) rotate(-51.43deg)">2</div>
+                <div class="prize" style="transform: rotate(102.86deg) translateY(-150px) rotate(-102.86deg)">3</div>
+                <div class="prize" style="transform: rotate(154.29deg) translateY(-150px) rotate(-154.29deg)">4</div>
+                <div class="prize" style="transform: rotate(205.71deg) translateY(-150px) rotate(-205.71deg)">5</div>
+                <div class="prize" style="transform: rotate(257.14deg) translateY(-150px) rotate(-257.14deg)">6</div>
+                <div class="prize" style="transform: rotate(308.57deg) translateY(-150px) rotate(-308.57deg)">7</div>
             </div>
+            <!-- Botão no centro da roleta que inicia a rotação -->
+            <button id="spinBtn" class="spin-btn" onclick="spin()">Rodar (1)</button>
         </div>
+        <!-- Exibição do resultado do prêmio -->
+        <div id="resultado" class="result"></div>
+    </div>
+</div>
 
         <!-- Modal Cadastro -->
         <div id="modal-cadastro" class="modal small">

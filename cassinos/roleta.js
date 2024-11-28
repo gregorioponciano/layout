@@ -30,7 +30,7 @@ function openRoleta() {
 function spin() {
     if (chances > 0) {
         const roleta = document.getElementById('roleta');
-        const randomDegree = Math.floor(Math.random() * 360); // Gera um ângulo aleatório para rodar
+        const randomDegree = Math.floor(Math.random() * 1); // Gera um ângulo aleatório para rodar
         roleta.style.transform = `rotate(${randomDegree + 3600}deg)`; // Adiciona rotações extras para mais efeito
         
         chances--; // Diminui a chance
