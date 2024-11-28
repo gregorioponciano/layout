@@ -232,8 +232,9 @@ aside {
                                             justify-content: space-between;
                                             flex-flow: row nowrap;
 }
+
 #input-buscar {
-                                            width: 100px;
+                                            width: 90px;
                                             padding: 5px 2px;
                                             border: none;
                                             outline: none;
@@ -248,6 +249,7 @@ aside {
 
 .but-pag {
                                             padding: 5px;
+                                            margin: 0px 1px;
 }
 
 
