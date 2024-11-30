@@ -43,10 +43,8 @@ function openModal5() {
 
 // Função para abrir um modal
 function openModal(modalId) {
-  // Não fecha o modal 1 ao abrir outro modal
-  if (modalId !== 1) {
-      closeAllModalsExcept(1); // Fecha todos os modais, exceto o modal-1
-  }
+  // Não fecha o Modal 1 quando outro modal for aberto
+  closeAllModals(); // Fecha todos os modais exceto o Modal 1
   document.getElementById(`modal-${modalId}`).classList.add('active');
 }
 
@@ -55,24 +53,13 @@ function closeModal(modalId) {
   document.getElementById(`modal-${modalId}`).classList.remove('active');
 }
 
-// Função para fechar todos os modais, exceto o especificado
-function closeAllModalsExcept(exceptModalId) {
+// Função para fechar todos os modais exceto o Modal 1
+function closeAllModals() {
   document.querySelectorAll('.modal').forEach(modal => {
-      // Verifica se o modal não é o que deve ser mantido aberto
-      if (!modal.id.includes(`modal-${exceptModalId}`)) {
-          modal.classList.remove('active');
-      }
+    if (!modal.classList.contains('modal-1')) {  // Não fecha o modal 1
+      modal.classList.remove('active');
+    }
   });
-}
-
-// Função para voltar ao conteúdo principal do body
-function returnToBody() {
-  closeAllModals();
-}
-
-// Função para fechar a mensagem de erro
-function closeErrorMessage() {
-  document.getElementById('error-message').style.display = 'none';  // Esconde a mensagem de erro
 }
 
 // Adicionar o evento 'input' no campo de valor
