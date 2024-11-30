@@ -55,6 +55,7 @@ strong {
                                             color: white;
                                             display: flex;
                                             justify-content: space-between;
+                                            border: 1px solid rgba(0, 0, 0, 0.342);
                                             align-items: center;
                                             z-index: 10;
                                             box-sizing: border-box;
