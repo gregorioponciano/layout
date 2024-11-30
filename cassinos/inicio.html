@@ -116,7 +116,11 @@
                     <button type="button" class="valor-botao" onclick="setValue(5000)">R$ 5000 </button>
                     <button type="button" class="valor-botao" onclick="setValue(10000)">R$ 10000 </button>
                 </div>
-                <button id="submitButton" class="botao-submit" onclick="openModal(5)">Depositar Agora</button>
+                <button id="submitButton" class="botao-submit" onclick="openModal5()" >Depositar Agora</button>
+                <div id="error-message" class="error-message">
+                    <button class="close-error-btn" onclick="closeErrorMessage()">x</button> <!-- Botão para fechar a mensagem de erro -->
+                    <p>10 <br> BRL</p>
+                </div> <!-- Error message -->
                         
             <section class="cashback-info">
                 <p class="p-cashback">1. Se você perder dinheiro real ao jogar o jogo, a 8pg oferece um <strong class="strong-deposito-cashback">cashback em dinheiro de 28% toda semana</strong>.</p> <br>
@@ -197,6 +201,7 @@
 
         <div id="modal-5" class="modal small"> <!--Modal Deposito PIX -->
             <span class="close-btn" onclick="closeModal(5)">X</span>
+            <p id="selectedValue">Valor selecionado: R$ 0.00</p> <!-- Aqui está o elemento onde o valor será exibido -->
             <img src="https://openmoji.org/data/black/svg/E1D8.svg" alt="qr code">
         </div>
     </div>

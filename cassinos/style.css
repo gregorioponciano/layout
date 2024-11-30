@@ -569,7 +569,13 @@ form {
                                             background-color: #4cb741;
                                             cursor: pointer;
                                             color: white;
-  }
+}
+
+#submitButton:disabled {
+    background-color: #325e34;
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.6);
+}
 
 .strong-deposito-cashback{
                                             color: #00ff55;
@@ -586,53 +592,27 @@ form {
                                             margin-top: 40px;
 }
 
-                /*Modal PIX*/
+                /*Modal PIX*/    
+/* Estilo para a mensagem de erro */
+#error-message {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(189, 29, 29);
+    border: 1px solid rgba(0, 0, 0, 0.363);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1000;
+}                         
+/* Estilos básicos para os modais */
 
-    /* Estilo do aviso de erro */
-    .error-message {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #ffdddd;
-      color: #333;
-      padding: 20px;
-      border: 1px solid #ff5c5c;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: none;
-      text-align: center;
-      z-index: 1000;
-    }
 
-    .modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-      z-index: 999;
-    }
-
-    /* Estilo do segundo modal */
-    .modal-pix {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: none;
-      z-index: 1001;
-    }
-
-   
-          
-                      
 
 footer {
                                             background-color: black;

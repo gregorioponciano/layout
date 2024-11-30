@@ -1,55 +1,79 @@
-const input = document.getElementById('valueInput');
-const button = document.getElementById('submitButton');
-const errorMessage = document.getElementById('errorMessage');
-const newModal = document.getElementById('newModal');
-
-// Define valor no input quando botão é clicado
-function setValue(value) {
-  input.value = value;
-  updateButtonState();
-}
-
-// Atualiza o estado do botão com base no valor
-function updateButtonState() {
-  const value = parseInt(input.value, 10);
-  if (value >= 10) {
-    button.classList.add('enabled');
+// Função para verificar se o valor do input é válido
+function checkInputValue() {
+  const value = parseFloat(document.getElementById('valueInput').value);  // Pegando o valor inserido
+  const submitButton = document.getElementById('submitButton');
+  const errorMessage = document.getElementById('error-message');
+  
+  // Verificar se o valor é numérico e habilitar o botão se o valor for maior que 0
+  if (!isNaN(value) && value > 0) {
+      submitButton.disabled = false;
+      submitButton.classList.add('enabled');
   } else {
-    button.classList.remove('enabled');
+      submitButton.disabled = true;
+      submitButton.classList.remove('enabled');
+  }
+
+  // Ocultar a mensagem de erro enquanto o botão não for clicado
+  errorMessage.style.display = 'none';
+}
+
+// Função para definir um valor fixo no input
+function setValue(amount) {
+  document.getElementById('valueInput').value = amount;
+  checkInputValue(); // Revalida o valor ao clicar nos botões de valor fixo
+}
+
+// Função específica para abrir o modal 5 com validação
+function openModal5() {
+  const value = parseFloat(document.getElementById('valueInput').value);
+  const errorMessage = document.getElementById('error-message');
+  
+  // Verificar se o valor está entre 10 e 10000
+  if (value >= 10 && value <= 10000) {
+      // Atualiza o valor no modal 5
+      document.getElementById('selectedValue').textContent = `Valor selecionado: R$ ${value.toFixed(2)}`;
+      // Chama a função para abrir o modal 5
+      openModal(5); 
+      errorMessage.style.display = 'none'; // Esconde a mensagem de erro se o valor for válido
+  } else {
+      // Exibe a mensagem de erro se o valor for inválido
+      errorMessage.style.display = 'block';
   }
 }
 
-// Habilita ou desabilita o botão conforme o valor do input
-input.addEventListener('input', updateButtonState);
-
-// Clique no botão
-button.addEventListener('click', () => {
-  const value = parseInt(input.value, 10);
-
-  if (value < 10 && value >= 1) {
-    // Exibe mensagem de erro
-    errorMessage.style.display = 'block';
-  } else if (value >= 10) {
-    // Abre novo modal
-    openNewModal();
+// Função para abrir um modal
+function openModal(modalId) {
+  // Não fecha o modal 1 ao abrir outro modal
+  if (modalId !== 1) {
+      closeAllModalsExcept(1); // Fecha todos os modais, exceto o modal-1
   }
-});
-
-// Fecha a mensagem de erro ou modal ao clicar fora
-window.addEventListener('click', (e) => {
-  // Certifica-se de que o clique não foi dentro do modal ou da mensagem de erro
-  if (!errorMessage.contains(e.target) && !newModal.contains(e.target)) {
-    errorMessage.style.display = 'none';
-    newModal.style.display = 'none';
-  }
-});
-
-// Função para abrir o novo modal
-function openNewModal() {
-  newModal.style.display = 'block';
+  document.getElementById(`modal-${modalId}`).classList.add('active');
 }
 
-// Função para fechar o novo modal
-function closeNewModal() {
-  newModal.style.display = 'none';
+// Função para fechar um modal específico
+function closeModal(modalId) {
+  document.getElementById(`modal-${modalId}`).classList.remove('active');
 }
+
+// Função para fechar todos os modais, exceto o especificado
+function closeAllModalsExcept(exceptModalId) {
+  document.querySelectorAll('.modal').forEach(modal => {
+      // Verifica se o modal não é o que deve ser mantido aberto
+      if (!modal.id.includes(`modal-${exceptModalId}`)) {
+          modal.classList.remove('active');
+      }
+  });
+}
+
+// Função para voltar ao conteúdo principal do body
+function returnToBody() {
+  closeAllModals();
+}
+
+// Função para fechar a mensagem de erro
+function closeErrorMessage() {
+  document.getElementById('error-message').style.display = 'none';  // Esconde a mensagem de erro
+}
+
+// Adicionar o evento 'input' no campo de valor
+document.getElementById('valueInput').addEventListener('input', checkInputValue);
