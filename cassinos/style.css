@@ -42,6 +42,11 @@ strong {
                                                         font-size: 22px;
 }
 
+.content {
+                                                        background-color: var(--header-content);
+
+}
+
          /* Menus */
 .menu-superior, .menu-inferior {
                                                         position: fixed;                                         
@@ -644,7 +649,6 @@ footer {
                                 width: 100%;
                                 max-width: 600px;
                                 margin: auto;
-                                background-color: var(--header-content);
                                 padding-top: 70px;
     }
 
