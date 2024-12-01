@@ -1,50 +1,76 @@
-let chances = 1; // Variável que controla o número de chances para rodar a roleta
-let roletaFechada = false; // Variável para verificar se a roleta foi fechada
+// Função para voltar para a "home" e abrir a roleta
+function returnToBody() {
+    // Fecha todos os modais abertos
+    closeModal(1); 
+    closeModal(2);
+    closeModal(3);
+    closeModal(4);
 
-// Função para fechar a roleta
-function closeRoleta() {
-    roletaFechada = true; // Marca que a roleta foi fechada
-    document.getElementById('overlay').classList.add('hidden'); // Esconde o modal da roleta
+    // Exibe a roleta
+    openRoleta();
 }
 
-// Função para abrir a roleta novamente
+// Função para abrir a roleta
 function openRoleta() {
-    roletaFechada = false; // Marca que a roleta não foi fechada
-    const spinBtn = document.getElementById('spinBtn');
-
-    if (chances <= 0) { // Se o usuário já tiver rodado a roleta
-        spinBtn.textContent = `Rodar (0)`; // Atualiza o texto do botão para "Rodar (0)"
-        spinBtn.classList.add('disabled'); // Adiciona a classe "disabled" para desativar o botão
-        spinBtn.disabled = true; // Desabilita o botão para garantir que não pode ser clicado
-    } else {
-        spinBtn.textContent = `Rodar (${chances})`; // Atualiza o texto do botão com as chances restantes
-    }
-
-    document.getElementById('roleta').style.transform = 'rotate(0deg)';  // Reseta a rotação da roleta
-    document.getElementById('resultado').textContent = '';  // Limpa o resultado anterior
-
-    document.getElementById('overlay').classList.remove('hidden'); // Mostra a roleta
+    // Torna a roleta visível
+    document.getElementById('overlay').style.display = 'flex'; // Usamos 'flex' para centralizar a roleta
 }
 
-// Função para rodar a roleta
-function spin() {
-    if (chances > 0) {
-        const roleta = document.getElementById('roleta');
-        const randomDegree = Math.floor(Math.random() * 1); // Gera um ângulo aleatório para rodar
-        roleta.style.transform = `rotate(${randomDegree + 3600}deg)`; // Adiciona rotações extras para mais efeito
-        
-        chances--; // Diminui a chance
-        const spinBtn = document.getElementById('spinBtn');
-        spinBtn.textContent = `Rodar (${chances})`; // Atualiza o botão com o número de chances
-        spinBtn.classList.add('disabled'); // Desabilita o botão após o uso
-        spinBtn.disabled = true;
-
-        // Definindo os prêmios
-        const premios = ["Prêmio 1", "Prêmio 2", "Prêmio 3", "Prêmio 4", "Prêmio 5", "Prêmio 6", "Prêmio 7"];
-        const premioIndex = Math.floor(randomDegree / (360 / premios.length)); // Calcula qual prêmio foi ganho com base no ângulo
-
-        setTimeout(() => {
-            document.getElementById('resultado').textContent = `Você ganhou: ${premios[premioIndex]}`; // Exibe o prêmio
-        }, 4000); // Exibe o resultado após a rotação parar
-    }
+// Função para fechar a roleta (caso o usuário clique no 'X')
+function closeRoleta() {
+    document.getElementById('overlay').style.display = 'none'; // Esconde a roleta
 }
+
+// Função para abrir o modal (caso necessário)
+function openModal(id) {
+    document.getElementById('modal' + id).style.display = 'block';
+}
+
+// Função para fechar o modal (caso necessário)
+function closeModal(id) {
+    document.getElementById('modal' + id).style.display = 'none';
+}
+
+// Lógica de roleta e spin
+let canSpin = true; // Variável para controlar se o usuário pode girar ou não
+
+document.getElementById('spin').addEventListener('click', function() {
+    if (!canSpin) return; // Se não pode girar, não faz nada
+
+    // Desabilita o botão para que o usuário não possa clicar novamente
+    this.disabled = true;
+    canSpin = false;
+
+    // Atualiza a mensagem de status
+    document.getElementById('status-message').textContent = "0"; // Atualiza o status durante o giro
+
+    // Gira a roleta
+    let roleta = document.querySelector('.roleta');
+    let randomDegree = Math.floor(Math.random() * 360) + 3600; // Gira um número aleatório + múltiplos de 360 para dar várias voltas
+    roleta.style.transform = `rotate(${randomDegree}deg)`; // Aplica a rotação
+
+    // Espera 5 segundos (duração da rotação) para mostrar o resultado
+    setTimeout(function() {
+        // Gerar um número aleatório entre 95.00 e 98.15
+        let result = 95.00;
+
+        // Exibir o valor inicial
+        let resultSpan = document.getElementById('result-value');
+        resultSpan.textContent = "Carregando..."; // Mensagem inicial de carregamento
+        resultSpan.style.padding = '20px'
+
+        // Aumentar o valor de 3 em 3 até alcançar o valor final
+        let finalResult = (Math.random() * (98.15 - 95.00) + 95.00).toFixed(2);
+
+        // Para uma animação de carregamento mais lenta, vamos usar um intervalo maior
+        let interval = setInterval(function() {
+            if (result >= finalResult) {
+                clearInterval(interval); // Para a animação quando atingir o valor final
+                resultSpan.textContent = finalResult; // Atualiza o valor exibido
+            } else {
+                result += 0.27; // Aumenta o valor de 0.05 para um carregamento muito lento
+                resultSpan.textContent = result.toFixed(2); // Atualiza o valor exibido
+            }
+        }, 100); // Aumenta o intervalo para 300ms para um carregamento mais lento
+    }, 3000); // 5000ms = 5 segundos, tempo suficiente para a roleta girar
+});

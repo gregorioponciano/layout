@@ -23,8 +23,8 @@
 
         <div class="menu-inferior"> <!--Menu Inferior-->
             <ul class="menu-ul-inferior">
-                    <!--home-->
-                <li class="li-menu-inferior" onclick="returnToBody(); openRoleta(); closeModal(1);"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
+                <!--home-->
+                <li class="li-menu-inferior" onclick="returnToBody(); openRoleta(); closeModal(5);"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
                 <!--carteira-->
                 <li class="li-menu-inferior" onclick="openModal(1)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
                 <!--afilado-->
@@ -35,27 +35,31 @@
                 <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
             </ul>
         </div>
-
-        <div id="overlay" class="overlay"> <!-- Roleta de prêmios com o botão X -->
+        
+        <!--Overlay para roleta -->
+        <div id="overlay" class="overlay">
             <div class="overlay-content">
-                <div class="roleta-container">
-                    <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
-                    <!-- Div que representa a roleta -->
-                    <div class="roleta" id="roleta">
-                        <!-- Seções de prêmios, cada uma posicionada no lugar correto -->
-                        <div class="prize" style="transform: rotate(0deg) translateY(-150px) rotate(0deg)">1</div>
-                        <div class="prize" style="transform: rotate(51.43deg) translateY(-150px) rotate(-51.43deg)">2</div>
-                        <div class="prize" style="transform: rotate(102.86deg) translateY(-150px) rotate(-102.86deg)">3</div>
-                        <div class="prize" style="transform: rotate(154.29deg) translateY(-150px) rotate(-154.29deg)">4</div>
-                        <div class="prize" style="transform: rotate(205.71deg) translateY(-150px) rotate(-205.71deg)">5</div>
-                        <div class="prize" style="transform: rotate(257.14deg) translateY(-150px) rotate(-257.14deg)">6</div>
-                        <div class="prize" style="transform: rotate(308.57deg) translateY(-150px) rotate(-308.57deg)">7</div>
-                    </div>
-                    <!-- Botão no centro da roleta que inicia a rotação -->
-                    <button id="spinBtn" class="spin-btn" onclick="spin()">Rodar (1)</button>
+                <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
+                <!-- Div que representa a roleta -->
+                <div class="roleta">
+                    <div class="one">1</div>
+                    <div class="two">2</div>
+                    <div class="three">3</div>
+                    <div class="four">4</div>
+                    <div class="five">5</div>
+                    <div class="six">6</div>
+                    <div class="seven">7</div>
+                    <div class="eight">8</div>
+                </div>
+                <!-- Botão no centro da roleta que inicia a rotação -->
+                <div class="div-spin">
+                    <button id="spin" class="spin" onclick="spin()">Spin <span id="status-message">1</span></button>
+                    
                 </div>
                 <!-- Exibição do resultado do prêmio -->
-                <div id="resultado" class="result"></div>
+                <div class="result">
+                    <span id="result-value"></span>
+                </div>
             </div>
         </div>
 
