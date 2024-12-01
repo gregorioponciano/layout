@@ -640,80 +640,81 @@ footer {
 
                         /* Estilos para telas maiores que 600px */
 @media (min-width: 600px) {
-    .container {
-                                width: 100%;
-                                max-width: 600px;
-                                margin: 0 auto;
-    }
-    .content {
-                                width: 100%;
-                                max-width: 600px;
-                                margin: auto;
-                                padding-top: 70px;
-    }
+                    .container {
+                                                width: 100%;
+                                                max-width: 600px;
+                                                margin: 0 auto;
+                    }
+                    .content {
+                                                width: 100%;
+                                                max-width: 600px;
+                                                margin: auto;
+                                                padding-top: 70px;
+                    }
 
-   .menu-superior, .menu-inferior {
-                                width: 100%;
-                                max-width: 600px;
-                                margin: 0 auto;
-    }
+                .menu-superior, .menu-inferior {
+                                                width: 100%;
+                                                max-width: 600px;
+                                                margin: 0 auto;
+                    }
 
-    .modal {
-                                width: 90%;
-                                max-width: 600px;
-                                height: 99%;
+                    .modal {
+                                                width: 90%;
+                                                max-width: 600px;
+                                                height: 99%;
 
-    }
+                    }
 
 }
 
                 /* Estilos para telas menores que 600px */
 @media (max-width: 599px) {
-    .menu-superior, .menu-inferior {
-                        width: 100%;
-                        height: 70px;
-    }
+    
+        .menu-superior, .menu-inferior {
+                            width: 100%;
+                            height: 70px;
+        }
 
-    .overlay {
-                        width: 100%;
-                        height: 100%;
-    }
+        .overlay {
+                            width: 100%;
+                            height: 100%;
+        }
 
-    .roleta {
-        width: 300px;  /* Reduz para 300px em telas pequenas */
-        height: 300px; /* Reduz para 300px em telas pequenas */
-        border-width: 10px; /* Ajusta a borda para o novo tamanho */
-    }
+        .roleta {
+            width: 300px;  /* Reduz para 300px em telas pequenas */
+            height: 300px; /* Reduz para 300px em telas pequenas */
+            border-width: 10px; /* Ajusta a borda para o novo tamanho */
+        }
 
-    .roleta div {
-        width: 120px; /* Ajuste proporcional para os setores da roleta */
-        font-size: 14px; /* Ajuste do tamanho da fonte */
-        left: calc(50% - 60px); /* Centraliza as seções proporcionalmente */
-    }
+        .roleta div {
+            width: 120px; /* Ajuste proporcional para os setores da roleta */
+            font-size: 14px; /* Ajuste do tamanho da fonte */
+            left: calc(50% - 60px); /* Centraliza as seções proporcionalmente */
+        }
 
-    .close-btn-roleta {
-        position: absolute;
-        top: 35%;
-        left: 85%;
-        transform: translate(-50%, -70%);
-    }
+        .close-btn-roleta {
+            position: absolute;
+            top: 35%;
+            left: 85%;
+            transform: translate(-50%, -70%);
+        }
 
-    .modal-perfil {
-                        width: 100%;
-                        height: 100%;   
-    }
+        .modal-perfil {
+                            width: 100%;
+                            height: 100%;   
+        }
 
-    .content{
-                        padding-top: 73px;
-    }
+        .content{
+                            padding-top: 73px;
+        }
 
-    .modal {
-                        width: 90%;
-                        height: 99%;
-    }
+        .modal {
+                            width: 90%;
+                            height: 99%;
+        }
 
-    .modal.small {
-                        width: 90%;
-                        height: 80%;
-    }
+        .modal.small {
+                            width: 90%;
+                            height: 80%;
+        }
 }
