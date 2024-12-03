@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-
-
-@charset "UTF-8";
-
 :root {
                                                         --body: #33333377;
                                                         --header-content: #333333da;
@@ -402,7 +398,7 @@ transform: translate(-50%, -50%);
                                                         margin: 20px 0px;
 }
 
-/*modal Deposito*/
+                        /*modal Deposito*/
 .modal-1 {
                                                         background-color: #333;
                                                         overflow: scroll;
