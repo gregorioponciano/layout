@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modais com Menu Superior e Inferior</title>
-
-    <link rel="stylesheet" href="../estilos/styleLogado.css">
+    <link rel="stylesheet" href="../public/estilos/styleLogado.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
@@ -13,298 +12,403 @@
 <body>
 
     <div class="container">
-        <div class="menu-superior">
-                <img src="../imagens/mariobet.png" alt="logo" class="img-logo">         
+
+        <div class="menu-superior"> <!--Menu Superior-->
+                <img src="../public/imagens/mariobet.png" alt="irina-blok" class="img-logo">         
             <div class="links">
-                <span class="material-symbols-outlined" onclick="openModal(2)">account_balance_wallet </span>
-                <span class="material-symbols-outlined" onclick="verperfil()">person_2</span>
+                <span class="material-symbols-outlined" onclick="openModal(1)">account_balance_wallet </span>
+                <span class="material-symbols-outlined" onclick="openModal(4)">person_2</span>
             </div>
         </div>
 
-        <div class="menu-inferior">
+        <div class="menu-inferior"> <!--Menu Inferior-->
             <ul class="menu-ul-inferior">
-                    <!--home-->
-                <li class="li-menu-inferior" onclick="returnToBody()"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
+                <!--home-->
+                <li class="li-menu-inferior" onclick="returnToBody(); openRoleta(); closeModal(5); closeModal('login'); closeModal('cadastro')"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
                 <!--carteira-->
-                <li class="li-menu-inferior" onclick="openModal(2)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(1)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
                 <!--afilado-->
-                <li class="li-menu-inferior" onclick="openFullscreenModal()"><div class="p-span"><img src="../imagens/mariobet.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
+                <li class="li-menu-inferior" onclick="openModal(2)"><div class="p-span"><img src="../public/imagens/mariobet.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
                 <!--promoção-->
-                <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(3)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
                 <!--perfil-->
-                <li class="li-menu-inferior" onclick="openModal()"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
+                <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
             </ul>
         </div>
-
-        <div class="modal-perfil">
-            <div class="perfil">
-                <div class="img">
-                    <img src="" alt="foto">
-                    <p>5514988765437</p>
+        
+        <!--Overlay para roleta -->
+        <div id="overlay" class="overlay">
+            <div class="overlay-content">
+                <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
+                <!-- Div que representa a roleta -->
+                <div class="roleta">
+                    <div class="one">1</div>
+                    <div class="two">2</div>
+                    <div class="three">3</div>
+                    <div class="four">4</div>
+                    <div class="five">5</div>
+                    <div class="six">6</div>
+                    <div class="seven">7</div>
+                    <div class="eight">8</div>
                 </div>
-                <div class="mudar-senha">Mudar Senha</div>
-            </div>
-            <div class="modal-header">
-                <div class="saldo">
-                    <p>$Saldo</p>
-                    <p>R$ 0.04</p>
+                <!-- Botão no centro da roleta que inicia a rotação -->
+                <div class="div-spin">
+                    <button id="spin" class="spin" onclick="spin()">Spin <span id="status-message">1</span></button>
+                    <audio id="audioElement" src="audio/roleta.mp3"></audio>
+                    
                 </div>
-                <hr>
-                <div class="bonus">
-                    <p>Bonus</p>
-                    <p>R$ 0.95</p>
-                </div>
-            </div>
-            <div class="perfil-deposito">
-                <div class="deposito">Deposito</div>
-                <div class="sacar">Sacar</div>
-            </div>
-            <div class="nav-modal-perfil">
-                <div class="nav-perfil">
-                    <p>Receba R$ 100 de graça</p>
-                    <p>Cashback 25%</p>
-                    <p>Afiliado - Ganha até 10000 por dia</p>
-                </div>
-                <div class="div-transacoes">
-                    <div class="minha-aposta">Minhas aposta de jogo</div>
-                    <div class="transacoes">Transações</div>
-                </div>
-                <div class="div-transacoes">
-                    <div class="minha-aposta">Ajuda</div>
-                    <div class="transacoes">Mensagem</div>
-                </div>
-                <div class="div-contatos">
-                    <div class="ajuda">Contate-nos</div>
-                    <div class="promocao">Promoções</div>
+                <!-- Exibição do resultado do prêmio -->
+                <div class="result">
+                    <span id="result-value"></span>
                 </div>
             </div>
-            <div class="modal-footer">
-                <div class="sair">Sair</div>
-                <div class="baixe-app">+R$10-50 BAIXE O APP</div>
-                <div class="fechar">fechar</div>
-            </div>         
         </div>
 
-
-
-        <!-- Modal Depósito (Vindo da Esquerda) -->
-        <div id="modal-2" class="modal modal-2">
-            <span class="close-btn" onclick="closeModal(2)">X</span>
-            <h2>Depósito</h2>
-            <p>Esse modal vem da esquerda.</p>
+        <div id="modal-cadastro" class="modal small"> <!-- Modal Cadastro -->
+            <span class="close-btn" onclick="closeModal('cadastro')">X</span>
+            <h2>Cadastro</h2>
+            <p>Preencha seus dados para se cadastrar.</p>
+            <form action="php/cadastro.php" method="POST">
+                <label for="nome-cad">Nome</label>
+                <input type="text" id="nome-cad" name="nome-cad" class="input" placeholder="Nome" required><br>
+                <label for="email-cad">Email</label>
+                <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required><br>
+                <label for="senha-cad">Senha</label>
+                <input type="password" id="senha-cad" name="senha-cad" class="input" placeholder="Senha" required><br>
+                <button type="submit" class="botao-cad-login">Cadastrar</button>
+            </form>
+            <a href="#" onclick="openModal('login')" class="link-cad-login">Já tem uma conta? Entre aqui</a>
         </div>
 
-        <!-- Modal Promoção (Vindo da Direita) -->
-        <div id="modal-4" class="modal modal-4">
+        <div id="modal-login" class="modal small"> <!-- Modal Login -->
+            <span class="close-btn" onclick="closeModal('login')">X</span>
+            <h2>Login</h2>
+            <p>Insira seus dados para entrar.</p>
+            <form action="php/login.php" method="POST">
+                <label for="email-login">Email</label>
+                <input type="email" id="email-login" name="email-login" placeholder="Email" class="input" required><br>
+                <label for="senha-login">Senha</label>
+                <input type="password" id="senha-login" name="senha-login" placeholder="Senha" class="input" required><br>
+                <button type="submit" class="botao-cad-login">Login</button>
+            </form>
+            <a href="#" onclick="openModal('cadastro')" class="link-cad-login">Não tem uma conta? Cadastre-se aqui</a>
+        </div>
+        
+        <div id="modal-1" class="modal modal-1"> <!-- Modal Depósito -->
+            <div class="header-deposito">
+                <h2>Depósito</h2>
+                <span class="close-btn" onclick="closeModal(1)">X</span>
+            </div>
+            <form>
+                <div class="div-input">
+                    <input type="text" id="nome" name="nome" placeholder="Nome" class="input-deposito">
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" class="input-deposito">
+                    <input type="number" id="valueInput" class="input-deposito" placeholder="Quantia (BRL)                  Min. 10"  max="10000">
+                </div>
+            </form>
+                <div class="botoes">
+                    <button type="button" class="valor-botao" onclick="setValue(20)">R$ 20 </button>
+                    <button type="button" class="valor-botao" onclick="setValue(50)">R$ 50 </button>
+                    <button type="button" class="valor-botao" onclick="setValue(100)">R$ 100 </button>
+                </div>
+                <div class="botoes">
+                    <button type="button" class="valor-botao" onclick="setValue(200)">R$ 200 </button>
+                    <button type="button" class="valor-botao" onclick="setValue(500)">R$ 500 </button>
+                    <button type="button" class="valor-botao" onclick="setValue(1000)">R$ 1000 </button>
+                </div>
+                <div class="botoes">
+                    <button type="button" class="valor-botao" onclick="setValue(2000)">R$ 2000 </button>
+                    <button type="button" class="valor-botao" onclick="setValue(5000)">R$ 5000 </button>
+                    <button type="button" class="valor-botao" onclick="setValue(10000)">R$ 10000 </button>
+                </div>
+                <button id="submitButton" class="botao-submit" onclick="openModal5()" >Depositar Agora</button>
+                <audio id="audioPix" src="../public/audio/cash.mp3"></audio>
+                <div id="error-message" class="error-message">
+                    <button class="close-error-btn" onclick="closeErrorMessage()">x</button> <!-- Botão para fechar a mensagem de erro -->
+                    <p>10 <br> BRL</p>
+                </div> <!-- Error message -->
+                        
+            <section class="cashback-info">
+                <p class="p-cashback">1. Se você perder dinheiro real ao jogar o jogo, a 8pg oferece um <strong class="strong-deposito-cashback">cashback em dinheiro de 28% toda semana</strong>.</p> <br>
+                <p class="p-cashback">2. O periodo sobre qual é calculado o cashback semanal é calculado de segunda-feira às 00:00 até domingo às 23:59.</p> <br>
+                <p class="p-cashback">3. Você pode solicitar seu cashback de segunda-feira da próxima semana às 06:00 até sexta-feira às 23:59. Após esse período, o valor expirará.</p> <br>
+                <p class="p-cashback">4. Ao recarregar, certifique-se de vincular seu CPF para garantir a segurança dos seus fundos e evitar riscos.</p> <br>
+                <p class="p-cashback-footer"></p> 
+            </section>
+        </div>
+                  
+        <div id="modal-2" class="modal modal-2"> <!-- Modal Afiliado -->
             
             <div class="header">
-                <h2>Promoção</h2>
-                <span class="close-btn" onclick="closeModal(4)">X</span>
+                <h2>Afiliado</h2>
+                <span class="close-btn" onclick="closeModal(2)">X</span>
             </div>
-            <p>Esse modal vem da direita.</p>
+            <p>Manutençao</p>
         </div>
 
-        <!-- Modal Fullscreen -->
-        <div id="modal-fullscreen" class="modal fullscreen">
-            <span class="close-btn" onclick="closeModal('fullscreen')">X</span>
+        <div id="modal-3" class="modal modal-3"> <!-- Modal Promoçao -->
+            <span class="close-btn" onclick="closeModal(3)">X</span>
             <h2>Modal Fullscreen</h2>
             <p>Este é um modal que ocupa a tela inteira.</p>
         </div>
+        
+        <div id="modal-4" class="modal modal-4"> <!-- Modal perfil -->
+
+                <span class="close-btn" onclick="closeModal(4)">&times;</span>
+                <div class="perfil">         
+                    <div class="div-img-perfil">
+                        <img src="imagens/user.jpg" id="img-perfil" alt="foto">
+                    </div>
+                    <div class="mudar-senha">Mudar Senha</div>
+                </div>
+
+                <div class="modal-header">
+                    <div class="saldo">
+                        <p>$Saldo</p>
+                        <p>R$ 0.04</p>
+                    </div>
+                    <div class="bonus">
+                        <p>Bonus</p>
+                        <p>R$ 0.95</p>
+                    </div>
+                </div>
+
+                <div class="perfil-deposito">
+                    <div class="deposito" onclick="openModal(1)">Deposito</div>
+                    <div class="sacar">Sacar</div>
+                </div>
+
+                <div class="nav-modal-perfil">
+                    <div class="nav-perfil">
+                        <p> <strong>❖</strong> Receba R$ 100 de graça</p>
+                        <p> <strong>☘︎</strong> Cashback 25%</p>
+                        <p> <strong>↻</strong> Afiliado - Ganha até 10000 por dia</p>
+                    </div>
+                    <div class="div-transacoes">
+                        <div class="transacoes">
+                            <a class="link-transacoes">💵 Minhas apostas</a>
+                            <a class="link-transacoes">❓ Ajuda</a>
+                            <a class="link-transacoes">📞 Contate-nos</a>
+                        </div>
+    
+                        <div class="transacoes">
+                                <a class="link-transacoes">💶 Transações</a>
+                                <a class="link-transacoes">💌 Mensagens</a>
+                                <a class="link-transacoes">🔥 Promoções</a>
+                        </div>    
+                    </div>
+                    <div class="modal-footer">
+                        <div class="sair" onclick="openModal('login')">Entrar</div>
+                        <div class="baixe-app">+R$10-50 BAIXE O APP</div>
+                        <p  onclick="closeModal(4)">fechar&times;</p>
+                    </div>   
+                </div>   
+        </div>
+
+        <div id="modal-5" class="modal modal-5"> <!--Modal Deposito PIX -->
+            <span class="close-btn" onclick="closeModal(5)">X</span>
+            <p class="p-pix">Por favor abra o seu aplicativo de pagamento e escaneie o código QR abaixo para pagar ou copieo código Pix abaixo e cole em seu app de pagamento para finalizar a compra</p>
+            <p id="selectedValue"></p> <!-- Aqui está o elemento onde o valor será exibido -->
+            <img class="img-qr" src="https://openmoji.org/data/black/svg/E1D8.svg" alt="qr code">
+        </div>
     </div>
  
-        <div id="content" class="content">
-        <div class="carousel">    
-            <div class="carousel-images">
-                <img src="../imagens/cashback.png" alt="cashback" class="img-carousel">
-                <img src="../imagens/afiliados.png" alt="afiliado" class="img-carousel">
-                <img src="../imagens/bonus100.png" alt="bonus100" class="img-carousel">
-                <img src="../imagens/bonus30.png" alt="bonus30" class="img-carousel">
-                <img src="../imagens/chuva-dinheiro.png" alt="chuva-de-dinheiro" class="img-carousel">
-            </div>
-            <button class="prev" onclick="moveCarousel(-1)">Anterior</button>
-            <button class="next" onclick="moveCarousel(1)">Próxima</button>
+    <div id="content" class="content">
+
+        <div class="carousel"> <!--Carousel de imagens-->
+                <div class="carousel-images">
+                    <img src="../public/imagens/carousel/cashback.png" alt="cashback" class="img-carousel">
+                    <img src="../public/imagens/carousel/afiliados.png" alt="afiliado" class="img-carousel">
+                    <img src="../public/imagens/carousel/bonus100.png" alt="bonus100" class="img-carousel">
+                    <img src="../public/imagens/carousel/bonus30.png" alt="bonus30" class="img-carousel">
+                    <img src="../public/imagens/carousel/chuva-dinheiro.png" alt="chuva-de-dinheiro" class="img-carousel">
+                </div>
+                <button class="prev" onclick="moveCarousel(-1)">&lt;</button>
+                <button class="next" onclick="moveCarousel(1)">&gt;</button>
         </div>
 
         <nav class="nav-sessao">
-            <h2>Bem-vindo ao Cassino Online</h2>
-            <p>O Cassino Online oferece uma ampla variedade de jogos para você aproveitar. Jogue caça-níqueis, jogos de mesa, jogos de cartas e muito mais.</p>     
-            <h2>Cadastre-se e ganhe um bônus de boas-vindas</h2>
-            <p>Cadastre-se no Cassino Online hoje e ganhe um bônus de boas-vindas de 100% até R$100.</p>           
+                <h2>Bem-vindo ao Cassino Online</h2>
+                <p>O Cassino Online oferece uma ampla variedade de jogos para você aproveitar. Jogue caça-níqueis, jogos de mesa, jogos de cartas e muito mais.</p>     
+                <h2>Cadastre-se e ganhe um bônus de boas-vindas</h2>
+                <p>Cadastre-se no Cassino Online hoje e ganhe um bônus de boas-vindas de 100% até R$100.</p>           
         </nav>
 
-        <aside>
-            <div class="burcar">       
-                <label for="input-buscar"></label>                   
-                    <input type="text" class="input-buscar" id="input-buscar" name="input-buscar" placeholder="Procure Jogos">  
-                    <img src="../imagens/buscar.png" alt="buscar" id="img-buscar">    
-            </div>
+        <aside> <!--pesquisa de jogos-->
+                <div class="buscar">       
+                    <label for="input-buscar"></label>                   
+                        <input type="text" class="input-buscar" id="input-buscar" name="input-buscar" placeholder="Procure Jogos">                 
+                        <button>pesquisar</button> 
+                </div>
 
-            <div class="div-but-pag">
-                <button onclick="showSection(1)" class="but-pag">1</button>
-                <button onclick="showSection(2)" class="but-pag">2</button>
-                <button onclick="showSection(3)" class="but-pag">3</button>
-                <button onclick="showSection(4)" class="but-pag">4</button>
-                <button onclick="showSection(5)" class="but-pag">5</button>
-            </div>
+                <div class="div-but-pag">
+                    <button onclick="showSection(1)" class="but-pag">1</button>
+                    <button onclick="showSection(2)" class="but-pag">2</button>
+                    <button onclick="showSection(3)" class="but-pag">3</button>
+                    <button onclick="showSection(4)" class="but-pag">4</button>
+                    <button onclick="showSection(5)" class="but-pag">5</button>
+                </div>
         </aside>
 
-        <nav class="container-jogos">
-            <section id="section1" class="active">
-                <div class="div-img"><img src="../imagens/all-cassinos/1.jpg" alt="Image 1" class="img-jogos">
-                    <a href="https://gregorioponciano.github.io/layout/cassinos/jogos/fortune_tiger/index.html" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/2.jpg" alt="Image 2" class="img-jogos">
+        <nav class="container-jogos"> <!--Container de jogos-->
+                <section id="section1" class="active">
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/1.jpg" alt="Image 1" class="img-jogos">
+                        <a href="https://m.pgsoft-games.com/126/index.html?l=pt&ot=82b8b0f88e17ae53611e6dd7f167bc38&btt=2&language=pt-BR&__refer=m.pg-redirect.net&or=static.pgsoft-games.com" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/2.jpg" alt="Image 2" class="img-jogos">
+                        <a href="https://m.pgsoft-games.com/98/index.html?l=pt&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&from=https://pgdemo.asia/&language=pt-BR&__refer=m.pg-redirect.net&or=static.pgsoft-games.com" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/3.jpg" alt="Image 3" class="img-jogos">
+                        <a href="https://m.pgsoft-games.com/68/index.html?ot=82b8b0f88e17ae53611e6dd7f167bc38&btt=2&__refer=m.pg-redirect.com&or=static.pgsoft-games.com#amp=1" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/4.jpg" alt="Image 4" class="img-jogos">
+                        <a href="https://m.pg-demo.com/1695365/index.html?l=pt&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&__refer=m.pg-redirect.net&or=static.pg-demo.com&from=https://www.demoslotsfun.com/&language=pt-PT" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/5.jpg" alt="Image 6" class="img-jogos">
+                        <a href="https://m.pgsoft-games.com/1543462/index.html?l=en&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&from=&language=en-US&__refer=m.pg-redirect.net&or=static.pgsoft-games.com" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/6.jpg" alt="Image 5" class="img-jogos">
+                        <a href="https://aviator-demo.spribegaming.com/?currency=EUR&operator=demo&jurisdiction=CW&lang=PT&return_url=https%3A%2F%2Fslotcatalog.com%2Fen%2F&user=825&token=V9x6rLPfuLBD05XC1J7Lv2Uu7EJlX1D8" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/7.jpg" alt="Image 7" class="img-jogos">
+                        <a href="https://www.cacaniqueisonline.com/wp-content/themes/sumpan-21/slots-iframe.php?url=https%3A%2F%2Fslotsapi.slotjava.com%2Fslots%2FJokers-Jewels%2FPT" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/8.jpg" alt="Image 8" class="img-jogos">
+                        <a href="https://m.pgsoft-games.com/1508783/index.html?l=en&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&from=https://ambsuperslot.app/&language=pt-PT&__refer=m.pg-redirect.net&or=static.pgsoft-games.com" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/9.jpg" alt="Image 9" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                </section>
+                <section id="section2" style="display: none;">
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/10.jpg" alt="Image 10" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/11.jpg" alt="Image 11" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/12.jpg" alt="Image 12" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/13.jpg" alt="Image 13" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/14.jpg" alt="Image 14" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/15.jpg" alt="Image 15" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/16.jpg" alt="Image 16" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/17.jpg" alt="Image 17" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/18.jpg" alt="Image 18" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                </section>
+                <section id="section3" style="display: none;">
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/19.jpg" alt="Image 19" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/20.jpg" alt="Image 20" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/21.jpg" alt="Image 21" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/22.jpg" alt="Image 22" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/23.jpg" alt="Image 23" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/24.jpg" alt="Image 24" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/25.jpg" alt="Image 25" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/26.jpg" alt="Image 26" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/27.jpg" alt="Image 27" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                </section>
+                <section id="section4" style="display: none;">
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/28.jpg" alt="Image 28" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/29.jpg" alt="Image 29" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/30.jpg" alt="Image 30" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/31.jpg" alt="Image 31" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/32.jpg" alt="Image 32" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/33.jpg" alt="Image 33" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/34.jpg" alt="Image 34" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/35.jpg" alt="Image 35" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                    <div class="div-img"><img src="../public/imagens/all-cassinos/36.jpg" alt="Image 36" class="img-jogos">
+                        <a href="#" class="link-jogar">jogar</a>
+                    </div>
+                </section>
+            <section id="section5" style="display: none;">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/37.jpg" alt="Image 37" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/3.jpg" alt="Image 3" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/38.jpg" alt="Image 38" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/fortune_dragon.jpg" alt="Image 4" class="img-jogos">
-                    <a href="https://gregorioponciano.github.io/layout/cassinos/jogos/fortune_dragon/index.html" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/5.jpg" alt="Image 5" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/39.jpg" alt="Image 39" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/6.jpg" alt="Image 6" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/40.jpg" alt="Image 40" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/7.jpg" alt="Image 7" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/41.jpg" alt="Image 41" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/4.jpg" alt="Image 8" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/42.jpg" alt="Image 42" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/9.jpg" alt="Image 9" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/43.jpg" alt="Image 43" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-              </section>
-              <section id="section2" style="display: none;">
-                <div class="div-img"><img src="../imagens/all-cassinos/10.jpg" alt="Image 10" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/44.jpg" alt="Image 44" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/11.jpg" alt="Image 11" class="img-jogos">
+                <div class="div-img"><img src="../public/imagens/all-cassinos/45.jpg" alt="Image 45" class="img-jogos">
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/12.jpg" alt="Image 12" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/13.jpg" alt="Image 13" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/14.jpg" alt="Image 14" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/15.jpg" alt="Image 15" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/16.jpg" alt="Image 16" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/17.jpg" alt="Image 17" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/18.jpg" alt="Image 18" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-              </section>
-              <section id="section3" style="display: none;">
-                <div class="div-img"><img src="../imagens/all-cassinos/19.jpg" alt="Image 19" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/20.jpg" alt="Image 20" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/21.jpg" alt="Image 21" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/22.jpg" alt="Image 22" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/23.jpg" alt="Image 23" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/24.jpg" alt="Image 24" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/25.jpg" alt="Image 25" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/26.jpg" alt="Image 26" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/27.jpg" alt="Image 27" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-              </section>
-              <section id="section4" style="display: none;">
-                <div class="div-img"><img src="../imagens/all-cassinos/28.jpg" alt="Image 28" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/29.jpg" alt="Image 29" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/30.jpg" alt="Image 30" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/31.jpg" alt="Image 31" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/32.jpg" alt="Image 32" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/33.jpg" alt="Image 33" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/34.jpg" alt="Image 34" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/35.jpg" alt="Image 35" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-                <div class="div-img"><img src="../imagens/all-cassinos/36.jpg" alt="Image 36" class="img-jogos">
-                    <a href="#" class="link-jogar">jogar</a>
-                </div>
-              </section>
-          <section id="section5" style="display: none;">
-            <div class="div-img"><img src="../imagens/all-cassinos/37.jpg" alt="Image 37" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/38.jpg" alt="Image 38" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/39.jpg" alt="Image 39" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/40.jpg" alt="Image 40" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/41.jpg" alt="Image 41" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/42.jpg" alt="Image 42" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/43.jpg" alt="Image 43" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/44.jpg" alt="Image 44" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-            <div class="div-img"><img src="../imagens/all-cassinos/45.jpg" alt="Image 45" class="img-jogos">
-                <a href="#" class="link-jogar">jogar</a>
-            </div>
-          </section>
-          <footer>
-            <p class="p-footer">&copy;Copyright 2024 Cassino Online</p>
-        </footer>
+            </section>
+            <footer>
+                <p class="p-footer">&copy;Copyright 2024 Cassino Online</p>
+            </footer>
         </nav>
-</div>
+    </div>
 <br><br><br>
 
 
-    <script src="../script.js"></script>
-    <script src="../paginas.js"></script>
-    <script src="../slide.js"></script>
+    <script src="../public/js/script.js"></script>
+    <script src="../public/js/paginas.js"></script>
+    <script src="../public/js/slide.js"></script>
+    <script src="../public/js/roleta.js"></script>
+    <script src="../public/js/deposito.js"></script>
 
 </body>
 </html>

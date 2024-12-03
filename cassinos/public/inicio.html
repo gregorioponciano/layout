@@ -122,6 +122,7 @@
                     <button type="button" class="valor-botao" onclick="setValue(10000)">R$ 10000 </button>
                 </div>
                 <button id="submitButton" class="botao-submit" onclick="openModal5()" >Depositar Agora</button>
+                <audio id="audioPix" src="audio/cash.mp3"></audio>
                 <div id="error-message" class="error-message">
                     <button class="close-error-btn" onclick="closeErrorMessage()">x</button> <!-- Botão para fechar a mensagem de erro -->
                     <p>10 <br> BRL</p>
@@ -204,10 +205,11 @@
                 </div>   
         </div>
 
-        <div id="modal-5" class="modal small"> <!--Modal Deposito PIX -->
+        <div id="modal-5" class="modal modal-5"> <!--Modal Deposito PIX -->
             <span class="close-btn" onclick="closeModal(5)">X</span>
-            <p id="selectedValue">Valor selecionado: R$ 0.00</p> <!-- Aqui está o elemento onde o valor será exibido -->
-            <img src="https://openmoji.org/data/black/svg/E1D8.svg" alt="qr code">
+            <p class="p-pix">Por favor abra o seu aplicativo de pagamento e escaneie o código QR abaixo para pagar ou copieo código Pix abaixo e cole em seu app de pagamento para finalizar a compra</p>
+            <p id="selectedValue"></p> <!-- Aqui está o elemento onde o valor será exibido -->
+            <img class="img-qr" src="https://openmoji.org/data/black/svg/E1D8.svg" alt="qr code">
         </div>
     </div>
  
@@ -215,11 +217,11 @@
 
         <div class="carousel"> <!--Carousel de imagens-->
                 <div class="carousel-images">
-                    <img src="imagens/cashback.png" alt="cashback" class="img-carousel">
-                    <img src="imagens/afiliados.png" alt="afiliado" class="img-carousel">
-                    <img src="imagens/bonus100.png" alt="bonus100" class="img-carousel">
-                    <img src="imagens/bonus30.png" alt="bonus30" class="img-carousel">
-                    <img src="imagens/chuva-dinheiro.png" alt="chuva-de-dinheiro" class="img-carousel">
+                    <img src="imagens/carousel/cashback.png" alt="cashback" class="img-carousel">
+                    <img src="imagens/carousel/afiliados.png" alt="afiliado" class="img-carousel">
+                    <img src="imagens/carousel/bonus100.png" alt="bonus100" class="img-carousel">
+                    <img src="imagens/carousel/bonus30.png" alt="bonus30" class="img-carousel">
+                    <img src="imagens/carousel/chuva-dinheiro.png" alt="chuva-de-dinheiro" class="img-carousel">
                 </div>
                 <button class="prev" onclick="moveCarousel(-1)">&lt;</button>
                 <button class="next" onclick="moveCarousel(1)">&gt;</button>

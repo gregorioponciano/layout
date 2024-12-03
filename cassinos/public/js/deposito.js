@@ -31,9 +31,12 @@ function openModal5() {
   // Verificar se o valor está entre 10 e 10000
   if (value >= 10 && value <= 10000) {
       // Atualiza o valor no modal 5
-      document.getElementById('selectedValue').textContent = `Valor selecionado: R$ ${value.toFixed(2)}`;
+      document.getElementById('selectedValue').textContent = `Total R$ ${value.toFixed(2)}`;
+      document.getElementById('selectedValue').style.textAlign = 'center'
       // Chama a função para abrir o modal 5
       openModal(5); 
+      const audioElement = document.getElementById('audioPix');
+      audioElement.play(); // Toca o áudio
       errorMessage.style.display = 'none'; // Esconde a mensagem de erro se o valor for válido
   } else {
       // Exibe a mensagem de erro se o valor for inválido

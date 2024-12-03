@@ -610,6 +610,29 @@ form {
                                                         margin-top: 40px;
 }
 
+            /*        Modal pix       */
+.modal-5 {
+                                                        background-color: silver;
+                                                        height: 90%;
+}
+
+.p-pix {
+                                                        width: 70%;
+                                                        text-align: center;
+                                                        margin: 10px auto;
+}
+
+#selectedValue {
+                                                        font-size: 40px;
+}
+
+.img-qr {   
+                                                        width: 300px;
+                                                        margin: auto;
+                                                        display: block;
+                                                        text-align: center;
+}
+
 #error-message {
                                                         display: none;
                                                         position: fixed;
