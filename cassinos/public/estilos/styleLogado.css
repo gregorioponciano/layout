@@ -102,6 +102,11 @@ strong {
 .menu-superior .links {
                                                         display: flex;
                                                         gap: 20px;
+                                                        align-items: center;
+}
+
+.header-saldo {
+                                                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .menu-superior a, .menu-inferior a {
