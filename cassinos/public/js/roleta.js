@@ -21,16 +21,6 @@ function closeRoleta() {
     document.getElementById('overlay').style.display = 'none'; // Esconde a roleta
 }
 
-// Função para abrir o modal (caso necessário)
-function openModal(id) {
-    document.getElementById('modal' + id).style.display = 'block';
-}
-
-// Função para fechar o modal (caso necessário)
-function closeModal(id) {
-    document.getElementById('modal' + id).style.display = 'none';
-}
-
 // Lógica de roleta e spin
 let canSpin = true; // Variável para controlar se o usuário pode girar ou não
 
@@ -40,6 +30,11 @@ document.getElementById('spin').addEventListener('click', function() {
     // Desabilita o botão para que o usuário não possa clicar novamente
     this.disabled = true;
     canSpin = false;
+
+        const audioElement = document.getElementById('audioElement');
+    audioElement.play(); // Toca o áudio
+
+
 
     // Atualiza a mensagem de status
     document.getElementById('status-message').textContent = "0"; // Atualiza o status durante o giro

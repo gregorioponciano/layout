@@ -70,7 +70,7 @@ strong {
                                                         border: 15px solid #0d7efe;
                                                         position: relative;
                                                         overflow: hidden;
-                                                        transition: transform 2.5s ease-out;
+                                                        transition: transform 3s ease-out;
 }
 
 .roleta div {
@@ -158,7 +158,7 @@ strong {
                                                         letter-spacing: 1px; 
                                                         z-index: 10;
 }
-    
+   
 .disabled {
                                                         background-color: gray;
                                                         cursor: not-allowed; 
