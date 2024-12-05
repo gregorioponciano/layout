@@ -343,27 +343,43 @@ transform: translate(-50%, -50%);
 }
 }
 
-                    /*modal perfil*/
+                    /*modal perfil Modal 4*/
+                    #modal-4 {
+                                                        height: 84%;
+}
+
 .perfil {
                                                         display: flex;
-                                                        justify-content: space-around;
+                                                        justify-content: space-between;
                                                         align-items: center;
+                                                        margin: 10px;
 }
 
 .div-img-perfil {
                                                         display: flex;
                                                         align-items: center;
+
 }
 
 #img-perfil {
-                                                        width: 50px;
-                                                        height: 50px;
+                                                        width: 85px;
+                                                        height: 63px;
+}
+
+.div-p-conta {  
+                                                        display: flex;
+                                                        flex-flow: column wrap;
+}
+
+.p-conta{
+                                                        margin-bottom: 8px;
 }
 
 .modal-header {
                                                         display: flex;
                                                         justify-content: space-around;
                                                         align-items: center;
+                                                        margin-bottom: 14px;
 }
 
 .perfil-deposito {
@@ -383,15 +399,15 @@ transform: translate(-50%, -50%);
                                                         background-color: #e4f1eb;
                                                         width: 88%;
                                                         margin: auto;
-                                                        text-indent: 1.5em;
+                                                        padding: 10px 15px;
                                                         border-radius: 3px;
 }
 
 .div-transacoes {               
                                                         display: flex;
-                                                        padding: 20px;
-                                                        margin: 20px;
-                                                        align-items: center;
+
+
+
 }
 
 .transacoes {
@@ -401,7 +417,7 @@ transform: translate(-50%, -50%);
 }
 
 .link-transacoes {
-                                                        margin: 12px;
+                                                        margin: 12px 0px;
 }
 
 .modal-footer {
