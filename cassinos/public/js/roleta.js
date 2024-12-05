@@ -41,7 +41,7 @@ document.getElementById('spin').addEventListener('click', function() {
 
     // Gira a roleta
     let roleta = document.querySelector('.roleta');
-    let randomDegree = Math.floor(Math.random() * 360) + 3600; // Gira um número aleatório + múltiplos de 360 para dar várias voltas
+    let randomDegree = Math.floor(Math.random() * 1) + 3600; // Gira um número aleatório + múltiplos de 360 para dar várias voltas
     roleta.style.transform = `rotate(${randomDegree}deg)`; // Aplica a rotação
 
     // Espera 5 segundos (duração da rotação) para mostrar o resultado

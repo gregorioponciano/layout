@@ -143,14 +143,14 @@ strong {
                                                         left: 135px;
 }
 
-.roleta .one { background-color: #3f51b5; left: 50%; }
-.roleta .two { background-color: #ff9800; transform: rotate(45deg); }
-.roleta .three { background-color: #e91e63; transform: rotate(90deg); }
-.roleta .four { background-color: #4caf50; transform: rotate(135deg); }
-.roleta .five { background-color: #009688; transform: rotate(180deg); }
-.roleta .six { background-color: #795548; transform: rotate(225deg); }
-.roleta .seven { background-color: #9c27b0; transform: rotate(270deg); }
-.roleta .eight { background-color: #f44336; transform: rotate(315deg); }
+.roleta .one { background-color: #ff8900; left: 50%; }
+.roleta .two { background-color: #ffffff; transform: rotate(45deg); color: #c31812; font-family: cursive; }
+.roleta .three { background-color:#ff8900; transform: rotate(90deg); color: #c31812; font-family: cursive; }
+.roleta .four { background-color: #ffffff; transform: rotate(135deg); color: #c31812; font-family: cursive; }
+.roleta .five { background-color: #ff8900; transform: rotate(180deg); color: #c31812; font-family: cursive; }
+.roleta .six { background-color: #ffffff; transform: rotate(225deg); color: #c31812; font-family: cursive; }
+.roleta .seven { background-color: #ff8900; transform: rotate(270deg); color: #0ca286;font-family: Arial, Helvetica, sans-serif; font-size: 22px; text-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.74);}
+.roleta .eight { background-color: #ffffff; transform: rotate(315deg); color: #c31812; font-family: cursive; }
 
 .overlay {
                                                         position: fixed; 
@@ -215,6 +215,11 @@ strong {
 .disabled {
                                                         background-color: gray;
                                                         cursor: not-allowed; 
+}
+
+#status-message {
+                                                        font-size: 45px;
+                                                        font-family: cursive;
 }
 
 .result {
