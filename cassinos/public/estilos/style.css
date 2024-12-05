@@ -121,7 +121,6 @@ strong {
                                                         background-color: #ccc;
                                                         border-radius: 50%;
                                                         border: 15px solid #135a05;
-                                                        box-shadow: 1px -1px 1px 1px rgba(238, 255, 3, 0.418);
                                                         position: relative;
                                                         overflow: hidden;
                                                         transition: transform 3s ease-out;
