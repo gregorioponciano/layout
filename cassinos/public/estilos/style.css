@@ -196,6 +196,7 @@ strong {
                                                         height: 80px;
                                                         font-family: sans-serif;
                                                         border-radius: 50%;
+
                                                         
 }
 
@@ -212,6 +213,7 @@ strong {
                                                         outline: none;
                                                         letter-spacing: 1px; 
                                                         z-index: 10;
+                                                        border: 5px solid #ffab00;
 }
    
 .disabled {

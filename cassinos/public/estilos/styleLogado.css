@@ -215,6 +215,7 @@ strong {
                                                         outline: none;
                                                         letter-spacing: 1px; 
                                                         z-index: 10;
+                                                        border: 5px solid #ffab00;
 }
    
 .disabled {
