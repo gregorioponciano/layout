@@ -125,7 +125,8 @@ strong {
                                                         height: 500px;
                                                         background-color: #ccc;
                                                         border-radius: 50%;
-                                                        border: 15px solid #0d7efe;
+                                                        border: 15px solid #135a05;
+                                                        box-shadow: 1px -1px 1px 1px rgba(238, 255, 3, 0.418);
                                                         position: relative;
                                                         overflow: hidden;
                                                         transition: transform 3s ease-out;
@@ -162,6 +163,7 @@ strong {
                                                         width: 600px;
                                                         height: 100%;
                                                         background: rgba(0, 0, 0, 0.253);
+                                                        background-color: #000000ec;
                                                         display: flex;
                                                         justify-content: center;
                                                         align-items: center;
