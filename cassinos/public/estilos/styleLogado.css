@@ -342,7 +342,7 @@ transform: translate(-50%, -50%);
 }
 
 
-                        /*modal Deposito*/
+                        /*modal Deposito Modal 1*/
 .modal-1 {
                                                         background-color: #333;
                                                         overflow: scroll;
@@ -439,7 +439,7 @@ form {
                                                         margin-top: 40px;
 }
 
-/*        Modal pix       */
+/*        Modal pix  Modal5     */
 .modal-5 {
                                                         background-color: silver;
                                                         height: 90%;
@@ -478,6 +478,65 @@ form {
                                                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                                                         z-index: 1000;
 }     
+            /*Modal afiliado Modal 2*/
+.modal-2 {
+                                                        padding: 0px;
+                                                        background-color: #f4f4f4;
+}                    
+.header-afiliado {
+                                                        background-color: #009d80;
+                                                        padding: 20px;
+                                                        color: #ffe800;
+}
+
+/* Estilo do menu lateral */
+.menu-afiliados {
+    display: flex;
+    justify-content: space-around;
+    overflow-x: auto;
+    flex-flow: row nowrap;
+    background-color: #f4f4f4;
+    padding: 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.menu-afiliados button {
+    background: none;
+    color: #333;
+    border: none;
+    padding: 10px 0px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-afiliados button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #009d80;
+}
+
+/* Estilo do conteúdo do modal */
+.conteudo-afiliados {
+background: #f9f9f9;
+border: 1px solid #ddd;
+padding: 20px;
+border-radius: 5px;
+}
+
+.conteudo-afiliados div {
+display: none; /* Oculta todos os conteúdos por padrão */
+}
+
+#conteudo-painel {
+display: block; /* Exibe o painel por padrão */
+}
 
                     /*modal perfil Modal 4*/
                     #modal-4 {

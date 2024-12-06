@@ -16,7 +16,7 @@
         <div class="menu-superior"> <!--Menu Superior-->
                 <img src="../public/imagens/mariobet.png" alt="fotok" class="img-logo">         
             <div class="links">
-                <p class="header-saldo">R$ 0.98</p>
+                <p class="header-saldo">R$ 100.000</p>
                 <span class="material-symbols-outlined" onclick="openModal(1)">account_balance_wallet </span>
                 <span class="material-symbols-outlined" onclick="openModal(4)">person_2</span>
             </div>
@@ -138,13 +138,48 @@
             </section>
         </div>
                   
-        <div id="modal-2" class="modal modal-2"> <!-- Modal Afiliado -->
-            
-            <div class="header">
-                <h2>Afiliado</h2>
+        <div id="modal-2" class="modal modal-2"> <!-- Modal Afiliado -->          
+            <div class="header-afiliado">
+                <h3>Afiliado - Ganhe até R$ 10000 por dia</h3>
                 <span class="close-btn" onclick="closeModal(2)">X</span>
             </div>
-            <p>Manutençao</p>
+    <!-- Menu com rolagem lateral -->
+    <div class="menu-afiliados">
+        <button id="btn-painel" class="active" onclick="exibirConteudoAfiliados('painel', true)">Painel</button>
+        <button id="btn-referencia" onclick="exibirConteudoAfiliados('referencia')">Referência</button>
+        <button id="btn-relatorio" onclick="exibirConteudoAfiliados('relatorio')">Relatório</button>
+        <button id="btn-pagamento" onclick="exibirConteudoAfiliados('pagamento')">Pagamento</button>
+        <button id="btn-faq" onclick="exibirConteudoAfiliados('faq')">FAQ</button>
+        <button id="btn-tutorial" onclick="exibirConteudoAfiliados('tutorial')">Tutorial</button>
+    </div>
+
+    <!-- Conteúdo dos "modais" -->
+    <div id="conteudo-afiliados" class="conteudo-afiliados">
+        <div id="conteudo-painel">
+            <h2>Painel</h2>
+            <p>Bem-vindo ao painel principal. Aqui você pode acessar as principais funcionalidades.</p>
+        </div>
+        <div id="conteudo-referencia">
+            <h2>Referência</h2>
+            <p>Consulte informações úteis e guias para suporte ao afiliado.</p>
+        </div>
+        <div id="conteudo-relatorio">
+            <h2>Relatório</h2>
+            <p>Veja seus relatórios detalhados e analise o desempenho.</p>
+        </div>
+        <div id="conteudo-pagamento">
+            <h2>Pagamento</h2>
+            <p>Gerencie os métodos de pagamento e acompanhe transações.</p>
+        </div>
+        <div id="conteudo-faq">
+            <h2>FAQ</h2>
+            <p>Respostas para as perguntas mais frequentes sobre o programa.</p>
+        </div>
+        <div id="conteudo-tutorial">
+            <h2>Tutorial</h2>
+            <p>Assista tutoriais e aprenda a usar o sistema de forma eficiente.</p>
+        </div>
+    </div>
         </div>
 
         <div id="modal-3" class="modal modal-3"> <!-- Modal Promoçao -->
@@ -161,7 +196,7 @@
                         <img src="../public/imagens/user.jpg" id="img-perfil" alt="foto">
                         <div class="div-p-conta">
                             <p class="p-conta">conta</p>
-                            <p class="p-conta">551499999999</p>
+                            <p class="p-conta">5514991761256</p>
                         </div>
                     </div>
                     <div class="mudar-senha">🔑 Mudar Senha</div>
@@ -170,11 +205,11 @@
                 <div class="modal-header">
                     <div class="saldo">
                         <p>$Saldo</p>
-                        <p>R$ 0.04</p>
+                        <p>R$ 100.000</p>
                     </div>
                     <div class="bonus">
                         <p>Bonus 🎁</p>
-                        <p>R$ 0.95</p>
+                        <p>R$ 0.00</p>
                     </div>
                 </div>
 
@@ -415,6 +450,7 @@
     <script src="../public/js/slide.js"></script>
     <script src="../public/js/roleta.js"></script>
     <script src="../public/js/deposito.js"></script>
+    <script src="../public/js/afiliado.js"></script>
 
 </body>
 </html>
