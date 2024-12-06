@@ -2,11 +2,10 @@
 
 :root {
                                                         --body: #33333377;
-                                                        --header-content: #333333da;
-                                                        --menu: #333;
-                                                        --modal-cad-login: #2a0f44;
+                                                        --menu: #24262c;
+                                                        --header-content: #1d1e22;
                                                         --color-a-hover-menu: #ffffff;
-                                                        --a-menu: #FEC800; 
+                                                        --input: #1a1c20; 
                                                         --color-green: #55c242;
 }
 
@@ -273,38 +272,103 @@ strong {
                                                         transition: all 0.5s ease-in-out;
                                                         z-index: 20;
 }
-
+            /*Modal cad e login*/
 .modal.active {
                                                         opacity: 1;
                                                         transform: translate(-50%, -50%) scale(1);
                                                         visibility: visible;
                                                         width: 100%;
+                                                        
 }
 
+
 .modal.small {
-                                                        width: 80%;
-                                                        height: 60vh;
-                                                        text-align: center;
-                                                        background-color: var(--modal-cad-login);
-                                                        color: white;
+                                                        background-color: var(--header-content);
 }
+
+#img-logo-cad {
+                                                        width: 50px;
+}
+
+.form-cad {
+                                                        display: flex;
+                                                        flex-flow: column nowrap;
+                                                        width: 100%;
+
+}
+
+.input-cad-login[type="number"]::-webkit-outer-spin-button,  /*para remover as setas do input number*/
+.input-cad-login[type="number"]::-webkit-inner-spin-button {
+                                                        -webkit-appearance: none;
+                                                        margin: 0;
+}        
 
 .input {
                                                         outline: none;
-                                                        padding: 7px;
+                                                        padding: 15px 10px;
                                                         margin: 10px;
+                                                        background-color: var(--input);
+                                                        font-size: 20px;
+                                                        border: none;
+                                                        color: white;
 }
 
 .botao-cad-login {
                                                         background-color: var(--color-green);
-                                                        width: 100%;
-                                                        padding: 10px 0px;
-                                                        margin: 5px 0px;
+                                                        width: 98%;
+                                                        color: white;
+                                                        font-size: 20px;
+                                                        padding: 15px 0px;
+                                                        margin: 5px auto;
 
 }
 
+.p {                                                    text-align: center; color: white; margin: 10px auto;}
+
 .link-cad-login {
+                                                        color: green;
+                                                        text-align: center;
+}
+
+.cad-login-google {
+                                                       
+                                                        width: 100%;
+                                                        display: flex;
+                                                        flex-flow: column nowrap;
+                                                        
+
+}
+
+.div-hr {
+                                                        
+                                                        display: flex;
+                                                        flex-flow:  column nowrap;
+                                                        justify-content: space-between;
+                                                        width: calc(30% - 20px);
+}
+
+.div-google {
+                                                        background-color: #3f6bb3;
+                                                        border-radius: 5px;
+                                                        width: 50%;
+                                                        margin: auto;
+                                                        text-align: center;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
                                                         color: white;
+                                                        padding: 14px 0px;
+}
+
+.img-google{
+                                                        width: 30px;
+                                                        border-radius: 50%;
+                                                        margin-right: 5px;
+}
+
+.p-google {
+                                                    
+                                                      
 }
 
 .close-btn {
@@ -408,9 +472,9 @@ transform: translate(-50%, -50%);
 }
 
                     /*modal Deposito*/
-.modal-1 {
-                                                        background-color: #333;
+.modal-1 {      
                                                         overflow: scroll;
+                                                        background-color: var(--header-content);
 }                            
 
 .header-deposito {
@@ -441,7 +505,7 @@ form {
                                                         padding: 15px 10px;
                                                         margin-bottom: 15px;
                                                         border: none;
-                                                        background-color: #1a1c20;
+                                                        background-color: var(--input);
                                                         color: #fff;
 }
 
@@ -747,8 +811,5 @@ footer {
                             height: 99%;
         }
 
-        .modal.small {
-                            width: 90%;
-                            height: 80%;
-        }
+
 }

@@ -14,7 +14,7 @@
     <div class="container">
 
         <div class="menu-superior"> <!--Menu Superior-->
-                <img src="imagens/mariobet.png" alt="irina-blok" class="img-logo">         
+                <img src="imagens/mariobet.png" alt="foto" class="img-logo">         
             <div class="links">
                 <a href="#" onclick="openModal('cadastro')">Cadastro</a>
                 <a href="#" onclick="openModal('login')">Entrar</a>
@@ -66,24 +66,28 @@
 
         <div id="modal-cadastro" class="modal small"> <!-- Modal Cadastro -->
             <span class="close-btn" onclick="closeModal('cadastro')">X</span>
-            <h2>Cadastro</h2>
-            <p>Preencha seus dados para se cadastrar.</p>
-            <form action="php/cadastro.php" method="POST">
-                <label for="nome-cad">Nome</label>
-                <input type="text" id="nome-cad" name="nome-cad" class="input" placeholder="Nome" required><br>
-                <label for="email-cad">Email</label>
-                <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required><br>
-                <label for="senha-cad">Senha</label>
-                <input type="password" id="senha-cad" name="senha-cad" class="input" placeholder="Senha" required><br>
-                <button type="submit" class="botao-cad-login">Cadastrar</button>
+            <p><strong class="strong-cad"> Bem Vindo ao </strong><img src="imagens/mariobet.png" alt="" id="img-logo-cad"></p>
+            <form action="php/cadastro.php" method="POST" class="form-cad">
+                <input type="number" id="tel-cad" name="tel-cad" class="input" placeholder="Numero de Celular" required>
+                <input type="password" name="senha-cad" id="senha-cad" required placeholder="Senha" class="input">
+                <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required>
+                <input type="password" id="senha-cad" name="senha-cad" class="input" placeholder="Senha" required>
+                <input type="date" name="data" id="data" class="input" placeholder="Data de nascimento required">
+                <button type="submit" class="botao-cad-login">Criar conta</button>
+                <p class="p">Já tem uma conta? <a href="#" onclick="openModal('login')" class="link-cad-login">Clique aqui</a></p>
             </form>
-            <a href="#" onclick="openModal('login')" class="link-cad-login">Já tem uma conta? Entre aqui</a>
+            <div class="cad-login-google">
+                    <p class="p">ou</p>
+                <div class="div-google">
+                    <img src="imagens/google.png" alt="" class="img-google">
+                    <p class="p-google">Registre-se com Google</p>
+                </div>
+            </div>
         </div>
 
         <div id="modal-login" class="modal small"> <!-- Modal Login -->
             <span class="close-btn" onclick="closeModal('login')">X</span>
             <h2>Login</h2>
-            <p>Insira seus dados para entrar.</p>
             <form action="php/login.php" method="POST">
                 <label for="email-login">Email</label>
                 <input type="email" id="email-login" name="email-login" placeholder="Email" class="input" required><br>
