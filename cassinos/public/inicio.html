@@ -66,8 +66,8 @@
 
         <div id="modal-cadastro" class="modal small"> <!-- Modal Cadastro -->
             <span class="close-btn" onclick="closeModal('cadastro')">X</span>
-            <p><strong class="strong-cad"> Bem Vindo ao </strong><img src="imagens/mariobet.png" alt="" id="img-logo-cad"></p>
-            <form action="php/cadastro.php" method="POST" class="form-cad">
+            <p><strong class="strong-cad"> Bem Vindo ao </strong><img src="imagens/mariobet.png" alt="" class="img-logo-cad-login"></p>
+            <form action="php/cadastro.php" method="POST" class="form-cad-login">
                 <input type="number" id="tel-cad" name="tel-cad" class="input" placeholder="Numero de Celular" required>
                 <input type="password" name="senha-cad" id="senha-cad" required placeholder="Senha" class="input">
                 <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required>
@@ -87,15 +87,22 @@
 
         <div id="modal-login" class="modal small"> <!-- Modal Login -->
             <span class="close-btn" onclick="closeModal('login')">X</span>
-            <h2>Login</h2>
-            <form action="php/login.php" method="POST">
-                <label for="email-login">Email</label>
-                <input type="email" id="email-login" name="email-login" placeholder="Email" class="input" required><br>
-                <label for="senha-login">Senha</label>
+            <p><strong class="strong-cad">Login</strong><img src="imagens/mariobet.png" class="img-logo-cad-login" alt=""></p>
+            <form action="php/login.php" method="POST" class="form-cad-login">
+
+                <input type="tel" id="tel-login" name="tel-login" placeholder="Numero de Celular" class="input" required><br>
                 <input type="password" id="senha-login" name="senha-login" placeholder="Senha" class="input" required><br>
                 <button type="submit" class="botao-cad-login">Login</button>
+                <p class="p">Não tem uma conta? <a href="#" onclick="openModal('cadastro')"  class="link-cad-login" >Cadastre-se aqui</a></p>
             </form>
-            <a href="#" onclick="openModal('cadastro')" class="link-cad-login">Não tem uma conta? Cadastre-se aqui</a>
+            <div class="cad-login-google">
+                <p class="p">ou</p>
+            <div class="div-google">
+                <img src="imagens/google.png" alt="" class="img-google">
+                <p class="p-google">Registre-se com Google</p>
+            </div>
+        </div>
+
         </div>
         
         <div id="modal-1" class="modal modal-1"> <!-- Modal Depósito -->

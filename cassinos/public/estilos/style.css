@@ -290,11 +290,11 @@ strong {
                                                         background-color: var(--header-content);
 }
 
-#img-logo-cad {
+.img-logo-cad-login {
                                                         width: 50px;
 }
 
-.form-cad {
+.form-cad-login {
                                                         display: flex;
                                                         flex-flow: column nowrap;
                                                         width: 100%;
