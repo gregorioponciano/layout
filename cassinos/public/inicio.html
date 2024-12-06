@@ -155,10 +155,11 @@
         <div id="modal-2" class="modal modal-2"> <!-- Modal Afiliado -->
             
             <div class="header">
-                <h2>Afiliado</h2>
-                <span class="close-btn" onclick="closeModal(2)">X</span>
+                <div class="header-afiliado">
+                    <h3>Afiliado - Ganhe até R$ 10000 por dia</h3>
+                    <span class="close-btn" onclick="closeModal(2)">X</span>
+                </div>
             </div>
-            <p>Manutençao</p>
         </div>
 
         <div id="modal-3" class="modal modal-3"> <!-- Modal Promoçao -->
@@ -202,7 +203,7 @@
                         </div>    
                     </div>
                     <div class="modal-footer">
-                        <div class="entrar" onclick="openModal('login')">Entrar</div>
+                        <div class="entrar" onclick="openModal('login'); closeModal(1);" >Entrar</div>
                         <div class="baixe-app">+R$10-50 BAIXE O APP</div>
                         <p  onclick="closeModal(4)">Fechar</p>
                     </div>   

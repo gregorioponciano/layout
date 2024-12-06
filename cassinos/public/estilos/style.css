@@ -402,75 +402,7 @@ transform: translate(-50%, -50%);
 }
 }
 
-                    /*modal perfil  Modal 4*/
-#modal-4 {
-                                                        height: 84%;
-}
-
-.perfil {
-                                                        display: flex;
-                                                        justify-content: space-between;
-                                                        align-items: center;
-                                                        margin: 10px;
-}
-
-#img-perfil {
-                                                        width: 85px;
-                                                        height: 63px;
-}
-
-.modal-header {
-                                                        display: flex;
-                                                        justify-content: space-around;
-                                                        align-items: center;
-}
-
-.perfil-deposito {
-                                                        display: flex;
-                                                        justify-content: space-around;
-                                                        margin: 10px 0px;                                        
-}
-
-.deposito, .sacar {
-                                                        background-color: #00a85a;
-                                                        padding: 10px 25px;
-                                                        border-radius: 3px;
-                                                        color: white;
-                                                        margin-bottom: 20px;
-}
-
-.nav-modal-perfil {
-                                                        background-color: #e4f1eb;
-                                                        width: 88%;
-                                                        margin: auto;
-                                                        padding: 10px 15px;
-                                                        border-radius: 3px;
-}
-
-.div-transacoes {               
-                                                        display: flex;
-
-
-
-}
-
-.transacoes {
-                                                        width: calc(50%);
-                                                        display: flex;
-                                                        flex-flow: column nowrap; 
-}
-
-.link-transacoes {
-                                                        margin: 12px 0px;
-}
-
-.modal-footer {
-                                                        display: flex;
-                                                        justify-content: space-around;
-                                                        margin: 20px 0px;
-}
-
-                    /*modal Deposito*/
+                    /* modal Deposito Modal 1 */
 .modal-1 {      
                                                         overflow: scroll;
                                                         background-color: var(--header-content);
@@ -478,7 +410,7 @@ transform: translate(-50%, -50%);
 
 .header-deposito {
                                                         color: white;
-            
+
 }
 
 form {
@@ -489,8 +421,8 @@ form {
 
 .input-deposito[type="number"]::-webkit-outer-spin-button,  /*para remover as setas do input number*/
 .input-deposito[type="number"]::-webkit-inner-spin-button {
-                                                        -webkit-appearance: none;
-                                                        margin: 0;
+                        -webkit-appearance: none;
+                        margin: 0;
 }        
 
 .div-input {
@@ -567,7 +499,7 @@ form {
                                                         margin-top: 40px;
 }
 
-/*        Modal pix       */
+/*        Modal pix Modal 5  */
 .modal-5 {
                                                         background-color: silver;
                                                         height: 90%;
@@ -605,7 +537,88 @@ form {
                                                         text-align: center;
                                                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                                                         z-index: 1000;
-}                         
+}  
+
+                    /*Modal afiliado Modal 2*/
+.modal-2 {
+                                                        padding: 0px;
+}                    
+.header-afiliado {
+                                                        background-color: #009d80;
+                                                        padding: 20px;
+                                                        color: #ffe800;
+}
+
+
+                    /*modal perfil  Modal 4*/
+#modal-4 {
+                                                        height: 84%;
+}
+
+.perfil {
+                                                        display: flex;
+                                                        justify-content: space-between;
+                                                        align-items: center;
+                                                        margin: 10px;
+}
+
+#img-perfil {
+                                                        width: 85px;
+                                                        height: 63px;
+}
+
+.modal-header {
+                                                        display: flex;
+                                                        justify-content: space-around;
+                                                        align-items: center;
+}
+
+.perfil-deposito {
+                                                        display: flex;
+                                                        justify-content: space-around;
+                                                        margin: 10px 0px;                                        
+}
+
+.deposito, .sacar {
+                                                        background-color: #00a85a;
+                                                        padding: 10px 25px;
+                                                        border-radius: 3px;
+                                                        color: white;
+                                                        margin-bottom: 20px;
+}
+
+.nav-modal-perfil {
+                                                        background-color: #e4f1eb;
+                                                        width: 88%;
+                                                        margin: auto;
+                                                        padding: 10px 15px;
+                                                        border-radius: 3px;
+}
+
+.div-transacoes {               
+                                                        display: flex;
+
+
+
+}
+
+.transacoes {
+                                                        width: calc(50%);
+                                                        display: flex;
+                                                        flex-flow: column nowrap; 
+}
+
+.link-transacoes {
+                                                        margin: 12px 0px;
+}
+
+.modal-footer {
+                                                        display: flex;
+                                                        justify-content: space-around;
+                                                        margin: 20px 0px;
+}
+
+                       
 
                 /*   Site    */
 .carousel {
