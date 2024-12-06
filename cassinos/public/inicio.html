@@ -156,14 +156,14 @@
                 <h3>Afiliado - Ganhe até R$ 10000 por dia</h3>
                 <span class="close-btn" onclick="closeModal(2)">X</span>
             </div>
-                <!-- Menu com rolagem lateral -->
-    <div class="menu-lateral-afiliados">
-        <button onclick="alterarConteudoAfiliados('painel')">Painel</button>
-        <button onclick="alterarConteudoAfiliados('referencia')">Referência</button>
-        <button onclick="alterarConteudoAfiliados('relatorio')">Relatório</button>
-        <button onclick="alterarConteudoAfiliados('pagamento')">Pagamento</button>
-        <button onclick="alterarConteudoAfiliados('faq')">FAQ</button>
-        <button onclick="alterarConteudoAfiliados('tutorial')">Tutorial</button>
+    <!-- Menu com rolagem lateral -->
+    <div class="menu-afiliados">
+        <button id="btn-painel" class="active" onclick="exibirConteudoAfiliados('painel')">Painel</button>
+        <button id="btn-referencia" onclick="exibirConteudoAfiliados('referencia')">Referência</button>
+        <button id="btn-relatorio" onclick="exibirConteudoAfiliados('relatorio')">Relatório</button>
+        <button id="btn-pagamento" onclick="exibirConteudoAfiliados('pagamento')">Pagamento</button>
+        <button id="btn-faq" onclick="exibirConteudoAfiliados('faq')">FAQ</button>
+        <button id="btn-tutorial" onclick="exibirConteudoAfiliados('tutorial')">Tutorial</button>
     </div>
 
     <!-- Painel que exibe os conteúdos -->

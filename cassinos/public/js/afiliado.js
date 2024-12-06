@@ -1,10 +1,18 @@
-        // Função para alterar o conteúdo do painel
-        function alterarConteudoAfiliados(modalId) {
-            // Fecha todos os conteúdos
-            document.querySelectorAll('.conteudo-afiliados').forEach(conteudo => {
-                conteudo.classList.remove('active');
+        // Função para exibir o conteúdo correspondente e destacar o botão ativo
+        function exibirConteudoAfiliados(conteudoId) {
+            // Oculta todos os conteúdos
+            document.querySelectorAll('.conteudo-afiliados > div').forEach(div => {
+                div.style.display = 'none';
             });
 
-            // Mostra o conteúdo correspondente
-            document.getElementById(`conteudo-${modalId}`).classList.add('active');
+            // Remove a classe 'active' de todos os botões
+            document.querySelectorAll('.menu-afiliados button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Exibe apenas o conteúdo correspondente
+            document.getElementById(`conteudo-${conteudoId}`).style.display = 'block';
+
+            // Adiciona a classe 'active' ao botão correspondente
+            document.getElementById(`btn-${conteudoId}`).classList.add('active');
         }
