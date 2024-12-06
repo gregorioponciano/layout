@@ -36,8 +36,7 @@
             </ul>
         </div>
         
-        <!--Overlay para roleta -->
-        <div id="overlay" class="overlay">
+        <div id="overlay" class="overlay"> <!--Overlay para roleta -->
             <div class="overlay-content">
                 <button class="close-btn-roleta" onclick="closeRoleta()">X</button>
                 <!-- Div que representa a roleta -->
@@ -152,14 +151,49 @@
             </section>
         </div>
                   
-        <div id="modal-2" class="modal modal-2"> <!-- Modal Afiliado -->
-            
-            <div class="header">
-                <div class="header-afiliado">
-                    <h3>Afiliado - Ganhe até R$ 10000 por dia</h3>
-                    <span class="close-btn" onclick="closeModal(2)">X</span>
-                </div>
+        <div id="modal-2" class="modal modal-2"> <!-- Modal Afiliado -->          
+            <div class="header-afiliado">
+                <h3>Afiliado - Ganhe até R$ 10000 por dia</h3>
+                <span class="close-btn" onclick="closeModal(2)">X</span>
             </div>
+                <!-- Menu com rolagem lateral -->
+    <div class="menu-lateral-afiliados">
+        <button onclick="alterarConteudoAfiliados('painel')">Painel</button>
+        <button onclick="alterarConteudoAfiliados('referencia')">Referência</button>
+        <button onclick="alterarConteudoAfiliados('relatorio')">Relatório</button>
+        <button onclick="alterarConteudoAfiliados('pagamento')">Pagamento</button>
+        <button onclick="alterarConteudoAfiliados('faq')">FAQ</button>
+        <button onclick="alterarConteudoAfiliados('tutorial')">Tutorial</button>
+    </div>
+
+    <!-- Painel que exibe os conteúdos -->
+    <div class="painel-afiliados">
+        <!-- Conteúdos -->
+        <div id="conteudo-painel" class="conteudo-afiliados active">
+            <h2>Painel</h2>
+            <p>Bem-vindo ao painel principal dos afiliados. Aqui você pode gerenciar todas as suas informações.</p>
+        </div>
+        <div id="conteudo-referencia" class="conteudo-afiliados">
+            <h2>Referência</h2>
+            <p>Seção de referência. Veja dicas, materiais e informações úteis para melhorar sua performance.</p>
+        </div>
+        <div id="conteudo-relatorio" class="conteudo-afiliados">
+            <h2>Relatório</h2>
+            <p>Visualize os relatórios detalhados sobre suas atividades e métricas de desempenho.</p>
+        </div>
+        <div id="conteudo-pagamento" class="conteudo-afiliados">
+            <h2>Pagamento</h2>
+            <p>Acompanhe seus pagamentos e veja informações sobre saldo, saques e transações.</p>
+        </div>
+        <div id="conteudo-faq" class="conteudo-afiliados">
+            <h2>FAQ</h2>
+            <p>Perguntas frequentes sobre o programa de afiliados. Encontre respostas rápidas e claras.</p>
+        </div>
+        <div id="conteudo-tutorial" class="conteudo-afiliados">
+            <h2>Tutorial</h2>
+            <p>Assista tutoriais e guias práticos para começar e melhorar no programa de afiliados.</p>
+        </div>
+    </div>
         </div>
 
         <div id="modal-3" class="modal modal-3"> <!-- Modal Promoçao -->
@@ -415,6 +449,7 @@
     <script src="js/slide.js"></script>
     <script src="js/roleta.js"></script>
     <script src="js/deposito.js"></script>
+    <script src="js/afiliado.js"></script>
 
 </body>
 </html>
