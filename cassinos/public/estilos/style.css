@@ -278,9 +278,13 @@ strong {
                                                         transform: translate(-50%, -50%) scale(1);
                                                         visibility: visible;
                                                         width: 100%;
+                                                        color: white;
                                                         
 }
 
+.strong-cad {
+                                                        color: white;
+}
 
 .modal.small {
                                                         background-color: var(--header-content);
