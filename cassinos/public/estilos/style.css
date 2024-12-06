@@ -306,7 +306,7 @@ strong {
                                                         margin: 0;
 }        
 
-.input {
+.input-cad-login {
                                                         outline: none;
                                                         padding: 15px 10px;
                                                         margin: 10px;
@@ -314,6 +314,11 @@ strong {
                                                         font-size: 20px;
                                                         border: none;
                                                         color: white;
+}
+
+.div-checkbox {
+                                                        width: 93%;
+                                                        margin: auto;
 }
 
 .botao-cad-login {
@@ -342,13 +347,7 @@ strong {
 
 }
 
-.div-hr {
-                                                        
-                                                        display: flex;
-                                                        flex-flow:  column nowrap;
-                                                        justify-content: space-between;
-                                                        width: calc(30% - 20px);
-}
+
 
 .div-google {
                                                         background-color: #3f6bb3;
@@ -369,10 +368,6 @@ strong {
                                                         margin-right: 5px;
 }
 
-.p-google {
-                                                    
-                                                      
-}
 
 .close-btn {
                                                         position: absolute;

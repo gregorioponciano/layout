@@ -68,11 +68,15 @@
             <span class="close-btn" onclick="closeModal('cadastro')">X</span>
             <p><strong class="strong-cad"> Bem Vindo ao </strong><img src="imagens/mariobet.png" alt="foto" class="img-logo-cad-login"></p>
             <form action="php/cadastro.php" method="POST" class="form-cad-login">
-                <input type="number" id="tel-cad" name="tel-cad" class="input" placeholder="Numero de Celular" required>
-                <input type="password" name="senha-cad" id="senha-cad" required placeholder="Senha" class="input">
-                <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required>
-                <input type="password" id="senha-cad" name="senha-cad" class="input" placeholder="Senha" required>
-                <input type="date" name="data" id="data" class="input" placeholder="Data de nascimento required">
+                <input type="number" id="tel-cad" name="tel-cad" class="input-cad-login" placeholder="Numero de Celular" required>
+                <input type="password" name="senha-cad" id="senha-cad" required placeholder="Senha" class="input-cad-login">
+                <input type="email" id="email-cad" name="email-cad" class="input-cad-login" placeholder="Email" required>
+                <input type="password" id="senha-cad" name="senha-cad" class="input-cad-login" placeholder="Senha" required>
+                <input type="number" name="data" id="data" class="input-cad-login" placeholder="Data de nascimento"required>
+                <div class="div-checkbox">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Eu concordo com os Acordo Do Usuario e confirmo que tenho pelo menos 18 anos</label>
+                </div>
                 <button type="submit" class="botao-cad-login">Criar conta</button>
                 <p class="p">Já tem uma conta? <a href="#" onclick="openModal('login')" class="link-cad-login">Clique aqui</a></p>
             </form>
@@ -90,8 +94,8 @@
             <p><strong class="strong-cad">Login</strong><img src="imagens/mariobet.png" class="img-logo-cad-login" alt="foto"></p>
             <form action="php/login.php" method="POST" class="form-cad-login">
 
-                <input type="tel" id="tel-login" name="tel-login" placeholder="Numero de Celular" class="input" required><br>
-                <input type="password" id="senha-login" name="senha-login" placeholder="Senha" class="input" required><br>
+                <input type="tel" id="tel-login" name="tel-login" placeholder="Numero de Celular" class="input-cad-login" required><br>
+                <input type="password" id="senha-login" name="senha-login" placeholder="Senha" class="input-cad-login" required><br>
                 <button type="submit" class="botao-cad-login">Login</button>
                 <p class="p">Não tem uma conta? <a href="#" onclick="openModal('cadastro')"  class="link-cad-login" >Cadastre-se aqui</a></p>
             </form>
