@@ -1,8 +1,10 @@
-        // Função para exibir o conteúdo correspondente e destacar o botão ativo
-        function exibirConteudoAfiliados(conteudoId) {
-            // Oculta todos os conteúdos
+        // Função para exibir o conteúdo correspondente
+        function exibirConteudoAfiliados(conteudoId, isPainel = false) {
+            // Oculta todos os conteúdos, exceto o Painel caso seja o padrão inicial
             document.querySelectorAll('.conteudo-afiliados > div').forEach(div => {
-                div.style.display = 'none';
+                if (div.id !== 'conteudo-painel' || !isPainel) {
+                    div.style.display = 'none';
+                }
             });
 
             // Remove a classe 'active' de todos os botões

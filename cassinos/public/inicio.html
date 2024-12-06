@@ -158,7 +158,7 @@
             </div>
     <!-- Menu com rolagem lateral -->
     <div class="menu-afiliados">
-        <button id="btn-painel" class="active" onclick="exibirConteudoAfiliados('painel')">Painel</button>
+        <button id="btn-painel" class="active" onclick="exibirConteudoAfiliados('painel', true)">Painel</button>
         <button id="btn-referencia" onclick="exibirConteudoAfiliados('referencia')">Referência</button>
         <button id="btn-relatorio" onclick="exibirConteudoAfiliados('relatorio')">Relatório</button>
         <button id="btn-pagamento" onclick="exibirConteudoAfiliados('pagamento')">Pagamento</button>
@@ -166,32 +166,31 @@
         <button id="btn-tutorial" onclick="exibirConteudoAfiliados('tutorial')">Tutorial</button>
     </div>
 
-    <!-- Painel que exibe os conteúdos -->
-    <div class="painel-afiliados">
-        <!-- Conteúdos -->
-        <div id="conteudo-painel" class="conteudo-afiliados active">
+    <!-- Conteúdo dos "modais" -->
+    <div id="conteudo-afiliados" class="conteudo-afiliados">
+        <div id="conteudo-painel">
             <h2>Painel</h2>
-            <p>Bem-vindo ao painel principal dos afiliados. Aqui você pode gerenciar todas as suas informações.</p>
+            <p>Bem-vindo ao painel principal. Aqui você pode acessar as principais funcionalidades.</p>
         </div>
-        <div id="conteudo-referencia" class="conteudo-afiliados">
+        <div id="conteudo-referencia">
             <h2>Referência</h2>
-            <p>Seção de referência. Veja dicas, materiais e informações úteis para melhorar sua performance.</p>
+            <p>Consulte informações úteis e guias para suporte ao afiliado.</p>
         </div>
-        <div id="conteudo-relatorio" class="conteudo-afiliados">
+        <div id="conteudo-relatorio">
             <h2>Relatório</h2>
-            <p>Visualize os relatórios detalhados sobre suas atividades e métricas de desempenho.</p>
+            <p>Veja seus relatórios detalhados e analise o desempenho.</p>
         </div>
-        <div id="conteudo-pagamento" class="conteudo-afiliados">
+        <div id="conteudo-pagamento">
             <h2>Pagamento</h2>
-            <p>Acompanhe seus pagamentos e veja informações sobre saldo, saques e transações.</p>
+            <p>Gerencie os métodos de pagamento e acompanhe transações.</p>
         </div>
-        <div id="conteudo-faq" class="conteudo-afiliados">
+        <div id="conteudo-faq">
             <h2>FAQ</h2>
-            <p>Perguntas frequentes sobre o programa de afiliados. Encontre respostas rápidas e claras.</p>
+            <p>Respostas para as perguntas mais frequentes sobre o programa.</p>
         </div>
-        <div id="conteudo-tutorial" class="conteudo-afiliados">
+        <div id="conteudo-tutorial">
             <h2>Tutorial</h2>
-            <p>Assista tutoriais e guias práticos para começar e melhorar no programa de afiliados.</p>
+            <p>Assista tutoriais e aprenda a usar o sistema de forma eficiente.</p>
         </div>
     </div>
         </div>
