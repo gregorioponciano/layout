@@ -597,6 +597,8 @@ form {
 
 #conteudo-painel {
                                                         display: block; /* Exibe o painel por padrão */
+}   
+.conteudo-painel {
                                                         background-color: white;
                                                         margin: 10px 0px;
                                                         padding: 10px;
@@ -634,7 +636,6 @@ form {
 }
 
 .aside-comissao {
-
                                                         display: flex;
                                                         flex-flow: row-reverse wrap;
                                                         justify-content: space-around;
@@ -642,10 +643,7 @@ form {
 
 .nav-comissao {
                                                         
-                                                        background-color: #80808086;
-                                                       
-                                                        
-
+                                                        background-color: #80808086;                                                    
 }
 
 .img-comissao {
