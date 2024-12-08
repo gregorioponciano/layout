@@ -643,15 +643,27 @@ form {
 
 .nav-comissao {
                                                         
-                                                        background-color: #80808086;                                                    
+                                                        background-color: #80808070; 
+                                                        border-radius: 15px;                                                
 }
 
 .img-comissao {
-                                                        width: 100px;
+                                                        width: 88px;
+                                                        padding: 8px;
+                                                        margin: auto;
+                                                        display: block;
+}
+.p-agente {  
+                                                        padding: 5px;
+                                                        color: #009d80;
+}
+
+.p-comissao-pago {
+                                                        color: #808080;;
 }
 
 .nav-botao-comissao {   
-                                                        width: 100%;
+                                                        width: 100%; /* para o botao nao subir no row-reverse*/
                                                         text-align: right;
                                                         margin-right: 50px;
 }
@@ -660,11 +672,15 @@ form {
                                                         padding: 10px;
                                                         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                                                         background-color: transparent;
+                                                        color: #808080;;
                                                         border: 1px solid rgba(0, 0, 0, 0.5);
                                                         border-radius: 7px;
                                                         margin: 10px 0px;
 }
 
+.p-comissao {
+                                                        margin-right: 10px;
+}
 
 
                     /*modal perfil  Modal 4*/
