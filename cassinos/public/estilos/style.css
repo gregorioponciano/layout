@@ -558,8 +558,6 @@ form {
                                                         flex-flow: row nowrap;
                                                         background-color: #f4f4f4;
                                                         padding: 10px 10px;
-                                                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                                                        margin-bottom: 20px;
 }
 
 .menu-afiliados button {
@@ -571,6 +569,7 @@ form {
                                                         font-size: 16px;
                                                         cursor: pointer;
                                                         position: relative;
+                                                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .menu-afiliados button.active::after {
@@ -607,17 +606,68 @@ form {
 .h3-afiliado {
                                                         color: #808080;
                                                         margin-left: 8px;
+                                                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .hr-afiliado {
                                                         margin: 8px;
 }
 
+.aside-hoje, .aside-total {
+                                                        display: flex;
+
+}
+
 .p-afiliado {
                                                         text-align: center;
+                                                        color: #808080;
+                                                        flex: auto;
                                                         width: 50%;
                                                         padding: 0px 2px;
+                                                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.strong-afiliado {
+                                                        color: rgba(0, 0, 0, 0.89);
+                                                        font-family: fantasy;
+                                                        font-weight: 100;
+}
+
+.aside-comissao {
+
+                                                        display: flex;
+                                                        flex-flow: row-reverse wrap;
+                                                        justify-content: space-around;
+}
+
+.nav-comissao {
+                                                        
+                                                        background-color: #80808086;
+                                                       
+                                                        
+
+}
+
+.img-comissao {
+                                                        width: 100px;
+}
+
+.nav-botao-comissao {   
+                                                        width: 100%;
+                                                        text-align: right;
+                                                        margin-right: 50px;
+}
+
+.botao-comissao {
+                                                        padding: 10px;
+                                                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                                                        background-color: transparent;
+                                                        border: 1px solid rgba(0, 0, 0, 0.5);
+                                                        border-radius: 7px;
+                                                        margin: 10px 0px;
+}
+
+
 
                     /*modal perfil  Modal 4*/
 #modal-4 {
