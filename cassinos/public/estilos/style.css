@@ -659,7 +659,8 @@ form {
 }
 
 .p-comissao-pago {
-                                                        color: #808080;;
+                                                        color: #808080;
+                                                        text-align: center;
 }
 
 .nav-botao-comissao {   
