@@ -542,6 +542,7 @@ form {
                     /*Modal afiliado Modal 2*/
 .modal-2 {
                                                         padding: 0px;
+                                                        overflow: scroll;
                                                         background-color: #f4f4f4;
 }                    
 .header-afiliado {
