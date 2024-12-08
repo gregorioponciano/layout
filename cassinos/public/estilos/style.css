@@ -550,7 +550,7 @@ form {
                                                         color: #ffe800;
 }
 
-        /* Estilo do menu lateral */
+        /* menu lateral PAINEL REFERENCIAS RELATORIO .... */
 .menu-afiliados {
                                                         display: flex;
                                                         justify-content: space-around;
@@ -583,20 +583,40 @@ form {
                                                         background: #009d80;
 }
 
-        /* Estilo do conteúdo do modal */
+        /* conteúdo do modais afiliado do modal 2 */
 .conteudo-afiliados {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
+                                                        background: #ededed;
+                                                        border: 1px solid #ddd;
+                                                        padding: 20px;
+                                                        border-radius: 5px;
+                                                        height: 100%;
 }
 
 .conteudo-afiliados div {
-            display: none; /* Oculta todos os conteúdos por padrão */
+                                                        display: none; /* Oculta todos os conteúdos por padrão */
 }
 
 #conteudo-painel {
-            display: block; /* Exibe o painel por padrão */
+                                                        display: block; /* Exibe o painel por padrão */
+                                                        background-color: white;
+                                                        margin: 10px 0px;
+                                                        padding: 10px;
+                                                        border-radius: 10px;
+}
+
+.h3-afiliado {
+                                                        color: #808080;
+                                                        margin-left: 8px;
+}
+
+.hr-afiliado {
+                                                        margin: 8px;
+}
+
+.p-afiliado {
+                                                        text-align: center;
+                                                        width: 50%;
+                                                        padding: 0px 2px;
 }
 
                     /*modal perfil  Modal 4*/
