@@ -260,12 +260,7 @@ strong {
                                                         position: fixed;
                                                         top: 50%;
                                                         left: 50%;
-                                                        width: 600px;
-                                                        height: 600px;
                                                         background-color: white;
-                                                        border-radius: 10px;
-                                                        padding: 20px;
-                                                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                                                         opacity: 0;
                                                         transform: translate(-50%, -50%) scale(0.7);
                                                         visibility: hidden;
@@ -406,17 +401,21 @@ transform: translate(-50%, -50%);
 .modal-1 {      
                                                         overflow: scroll;
                                                         background-color: var(--header-content);
-}                            
+}
 
 .header-deposito {
                                                         color: white;
+                                                        padding: 20px;
+                                                        background-color: var(--header-content);
+                                                        border: 1px solid rgba(255, 255, 255, 0.116);
+                           
 
 }
 
 form {
                                                         margin: 0 auto;
                                                         padding: 20px;
-                                                        background-color: #333;
+
 }
 
 .input-deposito[type="number"]::-webkit-outer-spin-button,  /*para remover as setas do input number*/
@@ -444,6 +443,8 @@ form {
                                                         display: flex;
                                                         flex-wrap: nowrap;
                                                         justify-content: center;
+                                                        width: 95%;
+                                                        margin: auto;
 }
 
 .valor-botao {
@@ -464,7 +465,9 @@ form {
                                                         margin: 10px 0px;
                                                         color: rgba(255, 255, 255, 0.678);
                                                         font-size: 20px;
-                                                        width: 100%;
+                                                        width: 95%;
+                                                        display: block;
+                                                        margin: 10px auto;
                                                         border: none;
                                                         border-radius: 3px;
                                                         cursor: no-drop;
@@ -491,6 +494,7 @@ form {
 .p-cashback {
                                                         color: white;
                                                         margin-bottom: 20px;
+                                                        padding: 0px 0px 0px 20px;
 }
 
 .p-cashback-footer {
@@ -549,6 +553,9 @@ form {
                                                         background-color: #009d80;
                                                         padding: 20px;
                                                         color: #ffe800;
+                                                        position: fixed;
+                                                      
+                                                        width: 100%;
 }
 
         /* menu lateral PAINEL REFERENCIAS RELATORIO .... */
@@ -559,6 +566,7 @@ form {
                                                         flex-flow: row nowrap;
                                                         background-color: #f4f4f4;
                                                         padding: 10px 10px;
+                                                        margin-top: 50px;
 }
 
 .menu-afiliados button {
