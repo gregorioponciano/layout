@@ -38,8 +38,8 @@ strong {
 }
 
 .content {
-                                                        background-color: var(--header-content);
-
+    background-color: var(--header-content);
+    overflow: hidden;
 }
 
          /* Menus */
@@ -542,7 +542,6 @@ form {
                     /*Modal afiliado Modal 2*/
 .modal-2 {
                                                         padding: 0px;
-                                                        overflow: scroll;
                                                         background-color: #f4f4f4;
 }                    
 .header-afiliado {
@@ -943,7 +942,7 @@ footer {
                     .content {
                                                 width: 100%;
                                                 max-width: 600px;
-                                                margin: auto;
+                                                margin: 0 auto;
                                                 padding-top: 70px;
                     }
 
@@ -1006,6 +1005,8 @@ footer {
 
         .content{
                             padding-top: 73px;
+                            width: 100%;
+                            max-width: 600px;
         }
 
         .modal {
