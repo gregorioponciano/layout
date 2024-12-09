@@ -729,14 +729,8 @@ form {
 }
 
 .copied {
-    padding: 30px;
-    color: green;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #1d1e22;
+                                                        color: green;
+                                                        font-size: 20px;
 }
 
 
