@@ -156,31 +156,30 @@
                 <h3>Afiliado - Ganhe até R$ 10000 por dia</h3>
                 <span class="close-btn" onclick="closeModal(2)">X</span>
             </div>
-    <!-- Menu com rolagem lateral -->
-    <div class="menu-afiliados">
-        <button id="btn-painel" class="active" onclick="exibirConteudoAfiliados('painel', true)">Painel</button>
-        <button id="btn-referencia" onclick="exibirConteudoAfiliados('referencia')">Referência</button>
-        <button id="btn-relatorio" onclick="exibirConteudoAfiliados('relatorio')">Relatório</button>
-        <button id="btn-pagamento" onclick="exibirConteudoAfiliados('pagamento')">Pagamento</button>
-        <button id="btn-faq" onclick="exibirConteudoAfiliados('faq')">FAQ</button>
-        <button id="btn-tutorial" onclick="exibirConteudoAfiliados('tutorial')">Tutorial</button>
-    </div>
+        <div class="menu-afiliados"> <!-- Menu lateral afiliados -->
+            <button id="btn-painel" class="active" onclick="exibirConteudoAfiliados('painel', true)">Painel</button>
+            <button id="btn-referencia" onclick="exibirConteudoAfiliados('referencia')">Referência</button>
+            <button id="btn-relatorio" onclick="exibirConteudoAfiliados('relatorio')">Relatório</button>
+            <button id="btn-pagamento" onclick="exibirConteudoAfiliados('pagamento')">Pagamento</button>
+            <button id="btn-faq" onclick="exibirConteudoAfiliados('faq')">FAQ</button>
+            <button id="btn-tutorial" onclick="exibirConteudoAfiliados('tutorial')">Tutorial</button>
+        </div>
 
-    <!-- Conteúdo dos "modais" -->
-    <div id="conteudo-afiliados" class="conteudo-afiliados">
-        <div id="conteudo-painel">
-                    <nav class="conteudo-painel">
-                        <h3 class="h3-afiliado">Hoje</h3>
-                        <hr class="hr-afiliado">
-                        <aside class="aside-hoje">
-                            <p class="p-afiliado"><strong class="strong-afiliado">0</strong> <br>Inscrições</p>
-                            <p class="p-afiliado"><strong class="strong-afiliado">0</strong> <br> Novos jogadores</p>
-                            <p class="p-afiliado"><strong class="strong-afiliado">R$ 0</strong>  <br>Equipe</p>
-                            <p class="p-afiliado"><strong class="strong-afiliado">R$ 0</strong> <br> Comissão</p>
-                        </aside>
-                    </nav>          
-       
-        <nav class="conteudo-painel">    
+    
+        <div id="conteudo-afiliados" class="conteudo-afiliados"> <!-- Conteúdo Afiliados" -->
+
+            <div id="conteudo-painel"> <!--Painel-->
+                <nav class="conteudo-painel">
+                    <h3 class="h3-afiliado">Hoje</h3>
+                    <hr class="hr-afiliado">
+                    <aside class="aside-hoje">
+                        <p class="p-afiliado"><strong class="strong-afiliado">0</strong> <br>Inscrições</p>
+                        <p class="p-afiliado"><strong class="strong-afiliado">0</strong> <br> Novos jogadores</p>
+                        <p class="p-afiliado"><strong class="strong-afiliado">R$ 0</strong>  <br>Equipe</p>
+                        <p class="p-afiliado"><strong class="strong-afiliado">R$ 0</strong> <br> Comissão</p>
+                    </aside>
+                </nav>          
+                <nav class="conteudo-painel">    
                     <h3 class="h3-afiliado">Total</h3>
                     <hr class="hr-afiliado">
                     <aside class="aside-total">
@@ -189,8 +188,8 @@
                         <p class="p-afiliado"><strong class="strong-afiliado">R$ 0</strong>  <br>Equipe</p>
                         <p class="p-afiliado"><strong class="strong-afiliado">R$ 0</strong> <br> Comissão</p>
                     </aside> 
-        </nav>
-        <nav class="conteudo-painel">    
+                </nav>
+                <nav class="conteudo-painel">    
                     <h3 class="h3-afiliado">Comissão</h3>
                     <hr class="hr-afiliado">
                     <aside class="aside-comissao">
@@ -205,50 +204,52 @@
                             <p class="p-comissao">Valor minimo de R$ 10,00</p>
                         </nav>
                     </aside>
-
-        </nav>
-        <nav class="conteudo-painel"> 
-            <h3 class="h3-afiliado">Compartilhe com sua comunidade social</h3>
-            <aside class="aside-img">
-                <nav class="nav-img-afiliados"><img src="imagens/afiliados/facebook.jpg" alt="foto" class="img-afiliados"><p>Facebook</p></nav>
-                <nav class="nav-img-afiliados"><img src="imagens/afiliados/whatsapp.jpg" alt="foto" class="img-afiliados"><p>Whatsapp</p></nav>
-                <nav class="nav-img-afiliados"><img src="imagens/afiliados/telegram.jpg" alt="foto" class="img-afiliados"><p>Telegram</p></nav>
-                <nav class="nav-img-afiliados"><img src="imagens/afiliados/twiter.jpg" alt="foto" class="img-afiliados"><p>Twiter</p></nav>
-                <nav class="nav-img-afiliados"><img src="imagens/afiliados/gmail.jpg" alt="foto" class="img-afiliados"><p>Email</p></nav>
-            </aside>
-            <p>Compartilhe este link de indicação com seu amigos</p>
-            <nav class="nav-copia">
-                <p class="p-link-copia">https://8pg.top/r/xxxxxx</p>
-                <div id="message" class="copied" style="display: none;">Copiado</div>
-                <nav class="copy-text" onclick="copyText(this)" data-text="https://8pg.top/r/xxxxxx">
-                    cópia
                 </nav>
-            </nav>
-            
-        </nav>
-        <nav class="conteudo-painel"> 
-            <h3 class="h3-afiliado">Grupo Telegram de agentes do salmoneusBET</h3>
-            <img src="imagens/afiliados/telegram.jpg" alt="foto" class="img-afiliados">
-        </nav>
+                <nav class="conteudo-painel"> 
+                    <h3 class="h3-afiliado">Compartilhe com sua comunidade social</h3>
+                    <aside class="aside-img">
+                        <nav class="nav-img-afiliados"><img src="imagens/afiliados/facebook.jpg" alt="foto" class="img-afiliados"><p>Facebook</p></nav>
+                        <nav class="nav-img-afiliados"><img src="imagens/afiliados/whatsapp.jpg" alt="foto" class="img-afiliados"><p>Whatsapp</p></nav>
+                        <nav class="nav-img-afiliados"><img src="imagens/afiliados/telegram.jpg" alt="foto" class="img-afiliados"><p>Telegram</p></nav>
+                        <nav class="nav-img-afiliados"><img src="imagens/afiliados/twiter.jpg" alt="foto" class="img-afiliados"><p>Twiter</p></nav>
+                        <nav class="nav-img-afiliados"><img src="imagens/afiliados/gmail.jpg" alt="foto" class="img-afiliados"><p>Email</p></nav>
+                    </aside>
+                    <p>Compartilhe este link de indicação com seu amigos</p>
+                    <nav class="nav-copia">
+                        <p class="p-link-copia">https://8pg.top/r/xxxxxx</p>
+                        <div id="message" class="copied" style="display: none;">Copiado</div>
+                        <nav class="copy-text" onclick="copyText(this)" data-text="https://8pg.top/r/xxxxxx">
+                            cópia
+                        </nav>
+                    </nav>     
+                </nav>
+                <nav class="conteudo-painel"> 
+                    <h3 class="h3-afiliado">Grupo Telegram de agentes do salmoneusBET</h3>
+                    <nav class="nav-grupo-telegram">
+                        <img src="imagens/afiliados/telegram.jpg" alt="foto" class="img-afiliados img-telegram-grupo">
+                        <p class="p-grupo-telegram p-footer">Clique no botão ao lado esquerdo, junte-se ao nosso grupo gratuito do telegram e ter mais informaçoes sobre eventos, promoçoes, dicas e muito mais. </p>
+                    </nav>
+                        <p class="p-grupo-telegram p-grupo-telegram-footer">Se você tem um grande publico e seguidores. Temos condições especiais para você personalizar seu programa de indicaçôes! para mais detalhes, por favor fale com: <a href="#">SalmoneusBET</a></p> 
 
-    </div>
-        <div id="conteudo-referencia">
+                </nav>
+        </div>
+        <div id="conteudo-referencia">  <!--Referencia-->
             <h2>Referência</h2>
             <p>Consulte informações úteis e guias para suporte ao afiliado.</p>
         </div>
-        <div id="conteudo-relatorio">
+        <div id="conteudo-relatorio"> <!--Relatorio-->
             <h2>Relatório</h2>
             <p>Veja seus relatórios detalhados e analise o desempenho.</p>
         </div>
-        <div id="conteudo-pagamento">
+        <div id="conteudo-pagamento"> <!--Pagamento-->
             <h2>Pagamento</h2>
             <p>Gerencie os métodos de pagamento e acompanhe transações.</p>
         </div>
-        <div id="conteudo-faq">
+        <div id="conteudo-faq"> <!--FAQ-->
             <h2>FAQ</h2>
             <p>Respostas para as perguntas mais frequentes sobre o programa.</p>
         </div>
-        <div id="conteudo-tutorial">
+        <div id="conteudo-tutorial"> <!--Tutorial-->
             <h2>Tutorial</h2>
             <p>Assista tutoriais e aprenda a usar o sistema de forma eficiente.</p>
         </div>
