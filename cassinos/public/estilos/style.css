@@ -426,6 +426,7 @@ form {
 
 .div-input {
                                                         display: flex;
+                                                        margin: 10px 0px;
                                                         flex-flow: column nowrap;
                                                         width: 100%;
 }
