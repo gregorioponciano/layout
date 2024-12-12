@@ -407,7 +407,9 @@ transform: translate(-50%, -50%);
                                                         color: white;
                                                         padding: 20px;
                                                         background-color: var(--menu);
-                                                        border: 1px solid rgba(255, 255, 255, 0.116);
+                                                        border: 1px solid rgba(255, 255, 255, 0.041);
+                                                        position: sticky;
+                                                        top: 0;
                            
 
 }
@@ -547,6 +549,7 @@ form {
                     /*Modal afiliado Modal 2*/
 .modal-2 {
                                                         padding: 0px;
+                                                        margin: 0px;
                                                         overflow: scroll;
                                                         background-color: #f4f4f4;
 }                    
@@ -554,8 +557,8 @@ form {
                                                         background-color: #009d80;
                                                         padding: 20px;
                                                         color: #ffe800;
-                                                        position: fixed;
-                                                      
+                                                        position: sticky;
+                                                        top: 0;
                                                         width: 100%;
 }
 
@@ -567,7 +570,6 @@ form {
                                                         flex-flow: row nowrap;
                                                         background-color: #f4f4f4;
                                                         padding: 10px 10px;
-                                                        margin-top: 50px;
 }
 
 .menu-afiliados button {
