@@ -770,10 +770,27 @@ form {
 
                     /*modal afiliado preferencias*/
 .referencia {
-                                                        width: 90%;
+                                                        width: 95%;
                                                         height: 100%;
+                                                        padding: 10px;
                                                         background-color: white;
                                                         margin: auto;
+}
+
+table {
+                                                        width: 100%;
+                                                        text-align: center;
+}
+
+tr {
+                                                        width: 100%;
+                                                        display: flex;
+                                                        flex-flow: row nowrap;
+                                                        justify-content: space-between;
+}
+
+td {
+                                                        text-align: center;
 }
 
                     /*modal perfil  Modal 4*/
