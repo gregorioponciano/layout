@@ -768,6 +768,14 @@ form {
     
 }
 
+                    /*modal afiliado preferencias*/
+.referencia {
+                                                        width: 90%;
+                                                        height: 100%;
+                                                        background-color: white;
+                                                        margin: auto;
+}
+
                     /*modal perfil  Modal 4*/
 #modal-4 {
                                                         height: 84%;
