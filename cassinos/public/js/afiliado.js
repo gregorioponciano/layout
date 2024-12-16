@@ -44,3 +44,22 @@
                 message.style.display = 'none';
             }, 2000);
         }
+
+
+        // INPUT RANGE FAQ
+
+        const rangeInput = document.getElementById("range");
+        const pessoasSpan = document.getElementById("pessoas");
+        const dinheiroSpan = document.getElementById("dinheiro");
+    
+        // Relação entre número de pessoas e dinheiro
+        const dinheiroPorPessoa = 50; // Exemplo: cada pessoa representa 50 unidades de dinheiro
+    
+        rangeInput.addEventListener("input", () => {
+          const pessoas = parseInt(rangeInput.value, 10);
+          const dinheiro = pessoas * dinheiroPorPessoa;
+    
+          // Atualiza os valores na tela
+          pessoasSpan.textContent = pessoas;
+          dinheiroSpan.textContent = dinheiro.toLocaleString("pt-BR");
+        });

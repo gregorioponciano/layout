@@ -235,10 +235,10 @@
         </div>
         <div id="conteudo-referencia">  <!--Referencia-->
             <nav class="referencia">
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date-referencia" >
                 <table>
                     <thead>
-                        <tr>
+                        <tr class="tr-head">
                             <th scope="col">#</th> <!--na mesma coluna-->
                             <th scope="col">Conta</th>
                             <th scope="col">Aposta</th> 
@@ -246,45 +246,88 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
+                        <tr class="tr">
                             <td>0</td>
                             <td>0</td>
                             <td>0</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-            
-                    </tbody>
-            
+                            <td>0</td>
+                        </tr>         
+                    </tbody>      
                     <tfoot>
-                        <tr>
-                            <th scope="row"></th> <!--na mesma linha -->
-                            <td class="num"><strong></strong></td>
-                        </tr>
                     </tfoot>
                 </table>
-
             </nav>
         </div>
         <div id="conteudo-relatorio"> <!--Relatorio-->
-            <h2>Relatório</h2>
-            <p>Veja seus relatórios detalhados e analise o desempenho.</p>
+            <nav class="relatorio">
+                <table>
+                    <thead>
+                        <tr class="tr-head">
+                            <th scope="col">Data</th> <!--na mesma coluna-->
+                            <th scope="col">Aposta</th>
+                            <th scope="col">Nivel de agente</th> 
+                            <th scope="col">Comissão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr">
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>         
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </nav>
         </div>
         <div id="conteudo-pagamento"> <!--Pagamento-->
-            <h2>Pagamento</h2>
-            <p>Gerencie os métodos de pagamento e acompanhe transações.</p>
+            <nav class="pagamentos">
+                <table>
+                    <thead>
+                        <tr class="tr-head">
+                            <th scope="col">Data</th> <!--na mesma coluna-->
+                            <th scope="col">Detalhe</th>
+                            <th scope="col">Comissçao</th> 
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr">
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>         
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </nav>
         </div>
         <div id="conteudo-faq"> <!--FAQ-->
-            <h2>FAQ</h2>
-            <p>Respostas para as perguntas mais frequentes sobre o programa.</p>
+            <nav class="nav-faq">
+                <h3 class="h3-faq">O que é o programa de afiliados SalmoneusBET?</h3><hr>
+                <p class="p-faq">É um programa destinado ao oferecimento de oportunidades de ganhar dinheiro todos os dias aos nossos usuarios. Basta convidar novos usuários para participar do programa e receber comissôes proporcionais aos seus convidados</p>
+                <h3 class="h3-faq">QUANTO CUSTA PARA PARTICIPAR?</h3><hr>
+                <p class="p-faq">Absolutamente nada. É totalmente gratuito</p>
+                <h3 class="h3-faq">Posso obter benefícios mesmo se nao tiver um site?</h3><hr>
+                <p class="p-faq">claro que pode. Podemos fornecer todas as ferramentas de marketing de que voçê precisa para promover a SalmoneusBET offine nas mídis sociais ou por e-mail</p>
+                <h3 class="h3-faq">QUANTO EU GANHO?</h3><hr>
+                <p class="p-faq">Ganhe dinheiro indicando amigos para a SalmoneusBET, voçê ganha sempre que um convidado seu realiza uma aposta!</p>
+                <p><strong>Regras de recompensa da comissâo</strong></p>
+                <p><strong>Regras de cálculo de comissâo</strong></p>
+                <nav class="nav-input-range">
+                    <nav class="numero-indicados">
+                        <p class="p-indicados-faq">Número de indicações > <span id="pessoas">100</span></p>
+                        <p class="p-indicados-faq">Comissão pode ser > R$ <span id="dinheiro">5.000 todo mês!</span></p>
+                    </nav>
+                    <input type="range" id="range" min="100" max="500" value="100" step="1">
+                    <img src="imagens/afiliados/dinheiro.png" alt="foto" class="img-dinheiro-faq"> 
+                </nav>
+                <img src="imagens/afiliados/indicados.png" alt="foto" class="img-indicados">
+            </nav>
         </div>
         <div id="conteudo-tutorial"> <!--Tutorial-->
             <h2>Tutorial</h2>

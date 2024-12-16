@@ -770,29 +770,107 @@ form {
 
                     /*modal afiliado preferencias*/
 .referencia {
-                                                        width: 95%;
+                                                        width: 100%;
                                                         height: 100%;
+                                                        border-radius: 5px;
                                                         padding: 10px;
                                                         background-color: white;
                                                         margin: auto;
 }
 
+#date-referencia {
+                                                        padding: 10px;
+                                                        margin: 10px;
+}
+
 table {
                                                         width: 100%;
-                                                        text-align: center;
+
+                                                       
 }
 
-tr {
+thead {
                                                         width: 100%;
                                                         display: flex;
-                                                        flex-flow: row nowrap;
+
+}
+
+.tr-head {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.tr {
+                                                        width: 100%;
+                                                        display: flex;
+                                                        flex-flow: row wrap;
                                                         justify-content: space-between;
+                                                        
 }
 
-td {
-                                                        text-align: center;
+                    /*relatorio*/
+.relatorio {
+                                                        width: 100%;
+                                                        padding: 10px;
+                                                        margin: auto;
+                                                        background-color: white;
+                                                        border-radius: 5px;
 }
 
+                    /*pagamentos*/
+.pagamentos {
+                                                        width: 100%;
+                                                        padding: 10px;
+                                                        margin: auto;
+                                                        background-color: white;
+                                                        border-radius: 5px;
+}
+                    /*FAQ*/
+.nav-faq {
+                                                        width: 100%;
+                                                        padding: 10px;
+                                                        margin: auto;
+                                                        background-color: white;
+                                                        border-radius: 5px;
+}
+
+.h3-faq {
+                                                        color: #000000;
+                                                        margin-top: 5px;
+                                                        font-size: 23px;
+                                                        font-weight: 100;
+                                                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.p-faq {
+                                                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                                                        color: #5f5a5a;
+                                                        font-size: 20px;
+                                                        margin: 10px 0px;
+}
+
+.nav-input-range {
+                                                        display: flex;
+                                                        margin: 20px;
+                                                        align-items: center;
+                                                        flex-flow: row nowrap;
+}
+
+.img-dinheiro-faq {
+                                                        width: 20%;
+}
+
+.p-indicados-faq {
+                                                        color: red;
+                                                        margin: 10px 10px;
+}
+
+.img-indicados {
+                                                        width: 100%;
+                                                        margin-bottom: 50px;
+}
                     /*modal perfil  Modal 4*/
 #modal-4 {
                                                         height: 84%;
