@@ -24,7 +24,7 @@ body {
 .img-topo {  
                             
                             width: 100vw;
-                            height: 500px;
+                            height: 400px;
                             margin: auto;
                             text-align: center;
                             display: block;
@@ -102,13 +102,13 @@ footer {
 
 @media screen and (max-width: 768px) {
 
-    .div-topo {     
 
-        background-size: cover;
-
-        background-position: center top;
-        height: 200px;
+    .img-topo {  
+                            
+        width: 100vw;
+        height: 300px;
 }
+
 
     header { 
                     display: block;      
