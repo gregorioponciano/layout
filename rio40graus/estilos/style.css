@@ -125,14 +125,14 @@ footer {
                     text-align: right;
                     display: block;
                     cursor: pointer;                         
-                    color: black;
+                    color: white;
                     font-size: 22px;                                         
 }
 
     #fechar { 
                     cursor: pointer;
                     padding: 0px 10px;
-                    color: black;
+                    color: red;
                     font-size: 22px;
 }
 
