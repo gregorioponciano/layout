@@ -1,27 +1,36 @@
-var burg = document.querySelector('#burg')
-var fechar = document.querySelector('#fechar')
-var aparecer = document.querySelector('#section-menu')
+var burg = document.querySelector('#burg');
+var fechar = document.querySelector('#fechar');
+var aparecer = document.querySelector('#section-menu');
 
-function clickMenu() { 
-
-             aparecer.style.display = 'block'
-             burg.style.display = 'none'
-             fechar.style.display = 'block'   
+// Abrir o menu
+function clickMenu() {
+    aparecer.style.display = 'block';
+    burg.style.display = 'none';
+    fechar.style.display = 'block';
 }
+
+// Fechar o menu
 function closeMenu() {
-            aparecer.style.display = "none"
-            fechar.style.display = 'none'
-            burg.style.display = 'block'
-   
+    aparecer.style.display = 'none';
+    fechar.style.display = 'none';
+    burg.style.display = 'block';
 }
 
-function showContent(contentNumber) {
-    const contents = document.querySelectorAll('.content-container');
-    contents.forEach(content => {
-        content.classList.remove('active');
-    });
-    document.getElementById('content' + contentNumber).classList.add('active');
+// Ajustar menu ao redimensionar a tela
+function mudouTamanho() {
+    if (window.innerWidth >= 768) {
+        aparecer.style.display = 'block'; // Mostrar o menu em telas maiores
+        burg.style.display = 'none'; // Esconder o ícone do menu burger
+        fechar.style.display = 'none'; // Esconder o ícone de fechar
+    } else {
+        aparecer.style.display = 'none'; // Esconder o menu em telas menores
+        burg.style.display = 'block'; // Mostrar o ícone do menu burger
+        fechar.style.display = 'none'; // Esconder o ícone de fechar
+    }
 }
 
+// Adicionar listener ao redimensionar a janela
+window.addEventListener('resize', mudouTamanho);
 
-     
+// Garantir que o estado inicial esteja correto
+mudouTamanho();
