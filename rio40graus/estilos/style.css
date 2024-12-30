@@ -40,7 +40,7 @@ header {
 }
 
 .link-inicio { 
-                            text-decoration: none;
+
                             align-items: center;
                             color: rgb(255, 251, 0);  
                             font-size: 23px;
@@ -73,7 +73,8 @@ header {
                             color: #00ff1f;
                             padding: 7px;
                             text-decoration: underline;  
-                            margin: 0px 5px;     
+                            margin: 0px 5px; 
+                            text-decoration: none;    
 }
 
 .link-menu:hover {
