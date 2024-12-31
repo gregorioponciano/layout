@@ -36,7 +36,13 @@ header {
                             padding: 0px 10px;
                             display: flex;
                             flex-direction: row;
-                            justify-content: space-between;   
+                            justify-content: space-between; 
+ 
+                            box-shadow: inset 10px 10px 40px rgb(0, 0, 0);
+}
+
+#section-menu-topo {
+                            padding: 5px;
 }
 
 .link-inicio { 
@@ -116,25 +122,19 @@ footer {
 }
 
     #section-menu-topo {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 5px 10px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
 }
 
     #burg {          
-                    text-align: right;
-                    display: block;
+                   
+ 
                     cursor: pointer;                         
                     color: white;
                     font-size: 22px;                                         
 }
 
-    #fechar { 
-                    cursor: pointer;
-                    padding: 0px 10px;
-                    color: red;
-                    font-size: 22px;
-}
+
 
     #itens { 
                     display: flex;
