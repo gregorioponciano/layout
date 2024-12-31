@@ -10,7 +10,7 @@ body {
     border-radius: 10px;
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
 }
 
 h2 {
@@ -76,23 +76,3 @@ input[type="submit"]:active {
     color: #388e3c;
 }
 
-@media screen and (max-width: 768px) {
-    .form-container {
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 10px;
-        margin: 20px auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 110%;
-    }
-
-    input[type="text"], input[type="password"] {
-        width: 100vw;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: border-color 0.3s ease;
-    }
-}
