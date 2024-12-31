@@ -20,7 +20,6 @@ body {
                             font-family: Arial, Helvetica, sans-serif;                   
 }
 
-
 .img-topo {  
                             
                             width: 100vw;
@@ -37,7 +36,6 @@ header {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between; 
- 
                             box-shadow: inset 10px 10px 40px rgb(0, 0, 0);
 }
 
@@ -46,7 +44,6 @@ header {
 }
 
 .link-inicio { 
-
                             align-items: center;
                             color: rgb(255, 251, 0);  
                             font-size: 23px;
@@ -68,8 +65,6 @@ header {
                             align-items: center;
 }
 
-
-
 .div-menu:hover {
                             background-color: rgba(0, 0, 0, 0.558);
 }
@@ -86,8 +81,6 @@ header {
 .link-menu:hover {
                             color: white;
 }
-
-
 
 .contatos {
                             margin: 14px;
@@ -109,11 +102,9 @@ footer {
 
 @media screen and (max-width: 768px) {
 
-
-    .img-topo {  
-                            
-        width: 100vw;
-        height: 250px;
+    .img-topo {                          
+                    width: 100vw;
+                    height: 250px;
 }
 
 
@@ -127,14 +118,10 @@ footer {
 }
 
     #burg {          
-                   
- 
                     cursor: pointer;                         
                     color: white;
                     font-size: 22px;                                         
 }
-
-
 
     #itens { 
                     display: flex;
