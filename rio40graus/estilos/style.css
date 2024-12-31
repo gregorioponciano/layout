@@ -36,7 +36,7 @@ header {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between; 
-                            box-shadow: inset 10px 10px 40px rgb(0, 0, 0);
+                            box-shadow: inset 0px 0px 70px #210fad;
 }
 
 #section-menu-topo {
