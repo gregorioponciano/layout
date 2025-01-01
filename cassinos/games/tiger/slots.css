@@ -35,9 +35,10 @@ nav {
 }
 
 .div-controles {
-
+  display: grid;
+  grid-template-rows: 1fr;
   background-color: #b41a28;
-  width: 530px;
+
   margin: auto;
 }
 
@@ -51,7 +52,9 @@ nav {
 }
 
 .controles {
-  background-color: #ad2e39;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #2ead39;
 }
 
 .banca {
