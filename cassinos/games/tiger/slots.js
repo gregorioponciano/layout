@@ -352,7 +352,7 @@ function logic_reward() {
 
   payout--; // Diminui o valor da recompensa
   credits++; // Incrementa os créditos
-  cred_p.innerHTML = "Karma (" + credits + ")"; // Atualiza a exibição dos créditos
+  cred_p.innerHTML = credits; // Atualiza saldo a exibição dos créditos
   
    // Acelera as grandes recompensas
   if (payout < reward_grand_threshhold) {
@@ -540,8 +540,8 @@ function spin(line_choice) {
   credits -= line_choice;  // Deduz os créditos da aposta
   playing_lines = line_choice; // Define o número de linhas ativas para a rotação
 
-  cred_p.innerHTML = "Karma (" + credits + ")"; // Atualiza a exibição dos créditos
-  log_p.innerHTML = ""; // Limpa o log de mensagens
+  cred_p.innerHTML =  credits; // Atualiza saldo a exibição dos créditos
+  log_p.innerHTML = "R$0,00"; // Limpa o log de mensagens
 
   game_state = STATE_SPINUP; // Define o estado do jogo como "spinup", que indica que os rolos estão girando
 
@@ -553,10 +553,10 @@ function spin(line_choice) {
 function init() {
   can = document.getElementById("slots"); // Obtém o elemento canvas onde os rolos serão desenhados
   ctx = can.getContext("2d"); // Obtém o contexto de desenho 2D do canvas
-  log_p = document.getElementById("log"); // Obtém o elemento de log para mensagens
+  log_p = document.getElementById("resultado"); // Obtém o elemento de log para mensagens
   cred_p = document.getElementById("credits"); // Obtém o elemento de créditos
 
-  cred_p.innerHTML = "Karma (" + credits + ")" // Exibe os créditos iniciais
+  cred_p.innerHTML =  credits;// Exibe os saldo créditos iniciais
 
   window.addEventListener('keydown', handleKey, true); // Adiciona um ouvinte de eventos para a tecla pressionada
 
