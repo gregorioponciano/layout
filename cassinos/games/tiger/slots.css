@@ -23,7 +23,7 @@ nav {
 }
 
 #slots {
-        width: 100%;
+        width: 100%;  /* tela pequena*/
         height: 72%;
         position: fixed;
         top: 43%;
