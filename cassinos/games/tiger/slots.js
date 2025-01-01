@@ -464,6 +464,9 @@ function calc_reward() {
     payout += partial_payout;
     highlight_line(1);
   }
+  else (
+    log_p.innerHTML = 'R$0,00'
+  );
 
    // Se houver mais de uma linha ativa para jogar (playing_lines > 1), calcula as linhas adicionais
   if (playing_lines > 1) {
@@ -541,7 +544,7 @@ function spin(line_choice) {
   playing_lines = line_choice; // Define o número de linhas ativas para a rotação
 
   cred_p.innerHTML =  credits; // Atualiza saldo a exibição dos créditos
-  log_p.innerHTML = "R$0,00"; // Limpa o log de mensagens
+  log_p.innerHTML = ""; // Limpa o log de mensagens
 
   game_state = STATE_SPINUP; // Define o estado do jogo como "spinup", que indica que os rolos estão girando
 

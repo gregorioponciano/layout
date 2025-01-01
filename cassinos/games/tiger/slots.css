@@ -55,18 +55,20 @@ nav {
 }
 
 .banca {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   color: white;
+  margin: 0px 10px;
+  padding: 0px 10px;
   background-color: #701b20b4;
-  width: 520px;
-  margin: auto;
+
+
 
 }
 
 .div-banca {
   border: 3px solid rgba(77, 27, 27, 0.329);
-  width: 100%;padding: 10px;
+  padding: 10px;
   border-radius: 15px;
   margin: 0px 3px;
 }
@@ -84,7 +86,6 @@ nav {
 #resultado {
   color: #ffffff;
   font-size: 30px;
-  width: 100vw;
 }
 
 .controles {
