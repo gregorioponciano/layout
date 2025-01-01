@@ -352,7 +352,7 @@ function logic_reward() {
 
   payout--; // Diminui o valor da recompensa
   credits++; // Incrementa os créditos
-  cred_p.innerHTML = credits; // Atualiza saldo a exibição dos créditos
+  cred_p.innerHTML = "R$" + credits; // Atualiza saldo a exibição dos créditos
   
    // Acelera as grandes recompensas
   if (payout < reward_grand_threshhold) {
@@ -460,13 +460,10 @@ function calc_reward() {
   // Cada linha é verificada com base na configuração de símbolos (resultados dos rolos)
   partial_payout = calc_line(result[0][1], result[1][1], result[2][1]);
   if (partial_payout > 0) {
-    log_p.innerHTML += "Line 1 pays " + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 1
+    log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 1
     payout += partial_payout;
     highlight_line(1);
   }
-  else (
-    log_p.innerHTML = 'R$0,00' // se nao tiver ganho na linha 1 resultado R$0,00 eu que fiz esse
-  );
 
    // Se houver mais de uma linha ativa para jogar (playing_lines > 1), calcula as linhas adicionais
   if (playing_lines > 1) {
@@ -474,7 +471,7 @@ function calc_reward() {
     // Linha 2: Verifica a recompensa da segunda linha (coluna esquerda)
     partial_payout = calc_line(result[0][0], result[1][0], result[2][0]);
     if (partial_payout > 0) {
-      log_p.innerHTML += "Line 2 pays " + partial_payout + "<br />\n";  // Exibe no log a recompensa da linha 2
+      log_p.innerHTML +=  + partial_payout + "<br />\n";  // Exibe no log a recompensa da linha 2
       payout += partial_payout;
       highlight_line(2);
     }
@@ -482,7 +479,7 @@ function calc_reward() {
     // Linha 3: Verifica a recompensa da terceira linha (coluna direita)
     partial_payout = calc_line(result[0][2], result[1][2], result[2][2]);
     if (partial_payout > 0) {
-      log_p.innerHTML += "Line 3 pays " + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 3
+      log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 3
       payout += partial_payout;
       highlight_line(3);
     }
@@ -494,7 +491,7 @@ function calc_reward() {
      // Linha 4: Verifica a recompensa da linha diagonal (da esquerda superior à direita inferior)
     partial_payout = calc_line(result[0][0], result[1][1], result[2][2]);
     if (partial_payout > 0) {
-      log_p.innerHTML += "Line 4 pays " + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 4
+      log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 4
       payout += partial_payout;
       highlight_line(4);
     }
@@ -502,7 +499,7 @@ function calc_reward() {
     // Line 5
     partial_payout = calc_line(result[0][2], result[1][1], result[2][0]);
     if (partial_payout > 0) {
-      log_p.innerHTML += "Line 5 pays " + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 5
+      log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 5
       payout += partial_payout;
       highlight_line(5);
     }
@@ -543,7 +540,7 @@ function spin(line_choice) {
   credits -= line_choice;  // Deduz os créditos da aposta
   playing_lines = line_choice; // Define o número de linhas ativas para a rotação
 
-  cred_p.innerHTML =  credits; // Atualiza saldo a exibição dos créditos
+  cred_p.innerHTML = "R$" + credits; // Atualiza saldo a exibição dos créditos
   log_p.innerHTML = ""; // Limpa o log de mensagens
 
   game_state = STATE_SPINUP; // Define o estado do jogo como "spinup", que indica que os rolos estão girando
@@ -559,7 +556,7 @@ function init() {
   log_p = document.getElementById("resultado"); // Obtém o elemento de log para mensagens
   cred_p = document.getElementById("credits"); // Obtém o elemento de créditos
 
-  cred_p.innerHTML =  credits;// Exibe os saldo créditos iniciais
+  cred_p.innerHTML =  "R$" + credits;// Exibe os saldo créditos iniciais
 
   window.addEventListener('keydown', handleKey, true); // Adiciona um ouvinte de eventos para a tecla pressionada
 
