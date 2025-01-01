@@ -23,10 +23,10 @@ nav {
 }
 
 #slots {
-        width: 500px;
-        height: 500px;
+        width: 90%;
+        height: 90%;
         position: fixed;
-        top: 50%;
+        top: 43%;
         left: 50%;
         transform: translate(-50%, -50%);
         /*background-image: url("images/background.png");*/
@@ -38,14 +38,14 @@ nav {
 button {
   font-size: 7pt;
   position: fixed;
-  top: 75%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #info {
   position: fixed;
-  top: 70%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100px;
