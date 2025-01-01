@@ -35,16 +35,20 @@ nav {
 }
 
 .div-controles {
-  position: fixed;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
   background-color: #b41a28;
   width: 530px;
   margin: auto;
 }
 
+#info {
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+
+}
 
 .controles {
   background-color: #ad2e39;
