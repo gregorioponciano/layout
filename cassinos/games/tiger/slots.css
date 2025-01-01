@@ -54,7 +54,7 @@ nav {
 .controles {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #2ead39;
+  background-color: #ad2e39;
 }
 
 .banca {
