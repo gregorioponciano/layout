@@ -43,6 +43,9 @@ button {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   padding: 15px;
+  background-color: green;
+  color: white;
+  font-size: 17px;
 }
 
 #info {
