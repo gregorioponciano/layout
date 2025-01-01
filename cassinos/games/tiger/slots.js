@@ -465,7 +465,7 @@ function calc_reward() {
     highlight_line(1);
   }
   else (
-    log_p.innerHTML = 'R$0,00'
+    log_p.innerHTML = 'R$0,00' // se nao tiver ganho na linha 1 resultado R$0,00 eu que fiz esse
   );
 
    // Se houver mais de uma linha ativa para jogar (playing_lines > 1), calcula as linhas adicionais
