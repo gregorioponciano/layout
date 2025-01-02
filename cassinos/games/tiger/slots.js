@@ -67,27 +67,27 @@ var stopping_distance = 528; // Distância de parada dos rolos
 var max_reel_speed = 32; // Velocidade máxima dos rolos
 var spinup_acceleration = 2; // Aceleração do spinup
 var spindown_acceleration = 1; // Aceleração do spindown
-var starting_credits = 500; // Créditos iniciais
+var starting_credits = 1000; // Créditos iniciais
 var reward_delay = 3; // Quantidade de frames entre cada "tick" de recompensa
 var reward_delay_grand = 1; // Delay para prêmios grandes
 var reward_grand_threshhold = 25; // Limite para recompensas grandes
 
 // Payouts para as combinações de símbolos
 var match_payout = new Array(symbol_count);
-match_payout[7] = 4; // 3Down
-match_payout[6] = 6; // 2Down
-match_payout[5] = 8; // 1Down
-match_payout[1] = 10; // 1Up
-match_payout[2] = 15; // 2Up
-match_payout[3] = 20; // 3Up
-match_payout[4] = 25; // OrangeRed
-match_payout[0] = 50; // AlienHead
-match_payout[9] = 75; // Bacon
+match_payout[7] = 2; // 3Down
+match_payout[6] = 2; // 2Down
+match_payout[5] = 2; // 1Down
+match_payout[1] = 5; // 1Up
+match_payout[2] = 5; // 2Up
+match_payout[3] = 5; // 3Up
+match_payout[4] = 10; // OrangeRed
+match_payout[0] = 25; // AlienHead
+match_payout[9] = 200; // Bacon
 match_payout[10] = 100; // Narwhal
-match_payout[8] = 250; // CakeDay
+match_payout[8] = 7; // carta
 
 // Definindo a quantidade de recompensas para combinações de símbolos especiais
-var payout_ups = 6; // Qualquer 3 Ups
+var payout_ups = 5; // Qualquer 3 Ups
 var payout_downs = 2; // Qualquer 3 Downs
 
 // Definições de área dos rolos
@@ -352,7 +352,7 @@ function logic_reward() {
 
   payout--; // Diminui o valor da recompensa
   credits++; // Incrementa os créditos
-  cred_p.innerHTML = "R$" + credits; // Atualiza saldo a exibição dos créditos
+  cred_p.innerHTML = "R$" + credits.toFixed(2); // Atualiza saldo a exibição dos créditos
   
    // Acelera as grandes recompensas
   if (payout < reward_grand_threshhold) {
@@ -453,68 +453,65 @@ function calc_line(s1, s2, s3) {
 // Função que calcula o total da recompensa
 function calc_reward() {
   payout = 0; // Reinicia o pagamento
-  
   var partial_payout;
+  var result_summary = ""; // Variável para armazenar todos os resultados
 
   // Calcula as recompensas para cada linha
-  // Cada linha é verificada com base na configuração de símbolos (resultados dos rolos)
   partial_payout = calc_line(result[0][1], result[1][1], result[2][1]);
   if (partial_payout > 0) {
-    log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 1
+    result_summary // linha 1 Adiciona à variável
     payout += partial_payout;
     highlight_line(1);
   }
 
-   // Se houver mais de uma linha ativa para jogar (playing_lines > 1), calcula as linhas adicionais
   if (playing_lines > 1) {
-
-    // Linha 2: Verifica a recompensa da segunda linha (coluna esquerda)
     partial_payout = calc_line(result[0][0], result[1][0], result[2][0]);
     if (partial_payout > 0) {
-      log_p.innerHTML +=  + partial_payout + "<br />\n";  // Exibe no log a recompensa da linha 2
+      result_summary // linha 2 Adiciona à variável
       payout += partial_payout;
       highlight_line(2);
     }
 
-    // Linha 3: Verifica a recompensa da terceira linha (coluna direita)
     partial_payout = calc_line(result[0][2], result[1][2], result[2][2]);
     if (partial_payout > 0) {
-      log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 3
+      result_summary  // linha 3 Adiciona à variável
       payout += partial_payout;
       highlight_line(3);
     }
   }
 
-  // Se houver mais de 3 linhas ativas para jogar (playing_lines > 3), calcula as linhas diagonais
   if (playing_lines > 3) {
-
-     // Linha 4: Verifica a recompensa da linha diagonal (da esquerda superior à direita inferior)
     partial_payout = calc_line(result[0][0], result[1][1], result[2][2]);
     if (partial_payout > 0) {
-      log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 4
+      result_summary // linha 4 Adiciona à variável
       payout += partial_payout;
       highlight_line(4);
     }
 
-    // Line 5
     partial_payout = calc_line(result[0][2], result[1][1], result[2][0]);
     if (partial_payout > 0) {
-      log_p.innerHTML +=  + partial_payout + "<br />\n"; // Exibe no log a recompensa da linha 5
+      result_summary  // linha 5 Adiciona à variável
       payout += partial_payout;
       highlight_line(5);
     }
   }
 
-  // Se houver algum pagamento (payout > 0), toca o som de vitória
-  if (payout > 0) {
-    try {
-      snd_win.currentTime = 0; // Reinicia o som de vitória
-      snd_win.play(); // Toca o som de vitória
-    }
-    catch(err) {}; // Em caso de erro ao tentar tocar o som (ex: não há som disponível), ignora
+// Se houver algum pagamento, exibe o resultado acumulado e toca o som de vitória
+if (payout > 0) {
+  log_p.innerHTML += result_summary.replace(/\n/g, "<br />") + "R$" + payout.toFixed(2) + "<br />\n"; // Exibe o resultado final com duas casas decimais
+  try {
+    snd_win.currentTime = 0; // Reinicia o som de vitória
+    snd_win.play(); // Toca o som de vitória
+  } catch (err) {
+    // Ignora erros relacionados ao som
   }
+} else {
+  log_p.innerHTML += result_summary.replace(/\n/g, "<br />") + "R$0,00<br />\n"; // Exibe R$0,00 caso não haja ganho
+}
 
 }
+
+
 
 //---- Input Functions ---------------------------------------------
 
@@ -540,7 +537,7 @@ function spin(line_choice) {
   credits -= line_choice;  // Deduz os créditos da aposta
   playing_lines = line_choice; // Define o número de linhas ativas para a rotação
 
-  cred_p.innerHTML = "R$" + credits; // Atualiza saldo a exibição dos créditos
+  cred_p.innerHTML = "R$" + credits.toFixed(2); // Atualiza saldo a exibição dos créditos
   log_p.innerHTML = ""; // Limpa o log de mensagens
 
   game_state = STATE_SPINUP; // Define o estado do jogo como "spinup", que indica que os rolos estão girando
@@ -556,7 +553,7 @@ function init() {
   log_p = document.getElementById("resultado"); // Obtém o elemento de log para mensagens
   cred_p = document.getElementById("credits"); // Obtém o elemento de créditos
 
-  cred_p.innerHTML =  "R$" + credits;// Exibe os saldo créditos iniciais
+  cred_p.innerHTML =  "R$" + credits.toFixed(2);// Exibe os saldo créditos iniciais
 
   window.addEventListener('keydown', handleKey, true); // Adiciona um ouvinte de eventos para a tecla pressionada
 
