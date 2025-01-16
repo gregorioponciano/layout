@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+
+}
+
+nav {
+        width: 100vw;
+        height: 100dvh;
+}
+
+#wrap {
+  width: 300px;
+  height: 240px;
+  
+  
+}
+
+#game {
+  width: 300px;
+  text-align: center;
+}
+
+#slots {
+        width: 100%;  /* tela pequena*/
+        height: 72%;
+        position: fixed;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /*background-image: url("images/background.png");*/
+        background-position: 20px 0px;
+        background-repeat: no-repeat;
+}
+
+.div-controles {
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: #b41a28;
+
+  margin: auto;
+}
+
+#info {
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+
+
+}
+
+.controles {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #ad2e39;
+}
+
+.banca {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: white;
+  background-color: #701b20b4;
+  width: 100%;
+
+}
+
+.div-banca {
+  border: 1px solid rgb(27, 24, 24);
+  padding: 8px 0px;
+  border-radius: 15px;
+  width: 100%;
+}
+
+
+
+#credits {
+  font-size: 20px;
+}
+
+#aposta {
+            font-size: 20px;
+}
+
+#resultado {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.controles {
+  display: flex;
+  justify-content: space-around;                          
+  margin: 20px;
+  align-items: center;
+} 
+
+.turbo {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.amount-less {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.amount-more{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.auto {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.spin{
+  width: 85px; /* Ajuste o tamanho conforme necessário */
+  height: 85px;
+  /* Define a origem da rotação */
+  transform-origin: center;
+  /* Adiciona uma animação contínua */
+  animation: spin 5s linear infinite;
+  cursor: pointer;
+}
+
+button {
+  width: 100px;
+  height: 90px;
+  position: fixed;
+  top: 85%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: transparent;
+  animation: spin 5s linear infinite;
+                                cursor: pointer;
+
+
+  color: white;
+  font-size: 25px;
+}
+
+/* Animação para o spin */
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+  }
+
+
+
+
+
