@@ -6,10 +6,11 @@
 }
 
 .img-nav {
-                    width: 400px;
-                    margin: auto;
-                    text-align: center;
-                    display: block;
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    display: block;
 }
 
 .programas {
