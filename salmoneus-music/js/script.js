@@ -55,58 +55,58 @@ document.addEventListener('DOMContentLoaded', function () {
     const musicLibrary = {
         'Racionais': {
             artist: 'Racionais',
-            cover: '../images/rap/album-racionais.jpg',
+            cover: 'images/rap/album-racionais.jpg',
             tracks: [
-                { name: 'Eu Sou 157', src: '../music/rap/racionais/eusou157.mp3', duration: '3:45' },
+                { name: 'Eu Sou 157', src: 'music/rap/racionais/eusou157.mp3', duration: '3:45' },
                 { name: 'Capítulo 4, Versículo 3', src: '../music/rap/racionais/capitulo4.mp3', duration: '4:20' },
                 { name: 'Diário de Um Detento', src: '../music/rap/racionais/diario.mp3', duration: '5:12' }
             ]
         },
         'Realidade Cruel': {
             artist: 'Realidade Cruel',
-            cover: '../images/rap/album-realidade-cruel.jpg',
+            cover: 'images/rap/album-realidade-cruel.jpg',
             tracks: [
-                { name: 'Quem Sabe Um Dia', src: '../music/rap/realidade-cruel/quem-sabe-um-dia.mp3', duration: '6:04' },
-                { name: 'Depoimento De Um Viciado', src: '../music/rap/realidade-cruel/depoimento-de-um-viciado.mp3', duration: '6:39' },
-                { name: 'O Resgate', src: '../music/rap/realidade-cruel/o-resgate.mp3', duration: '6:55' },
-                { name: 'Vale Da Escuridâo 2', src: '../music/rap/realidade-cruel/vale-da-escuridao.mp3', duration: '6:53' }
+                { name: 'Quem Sabe Um Dia', src: 'music/rap/realidade-cruel/quem-sabe-um-dia.mp3', duration: '6:04' },
+                { name: 'Depoimento De Um Viciado', src: 'music/rap/realidade-cruel/depoimento-de-um-viciado.mp3', duration: '6:39' },
+                { name: 'O Resgate', src: 'music/rap/realidade-cruel/o-resgate.mp3', duration: '6:55' },
+                { name: 'Vale Da Escuridâo 2', src: 'music/rap/realidade-cruel/vale-da-escuridao.mp3', duration: '6:53' }
             ]
         },
         'Faccao-Central': {
             artist: 'Facção Central',
-            cover: '../images/rap/album-facçao-central.jpg',
+            cover: 'images/rap/album-facçao-central.jpg',
             tracks: [
-                { name: 'Assalto A Banco', src: '../music/rap/facçao/assalto-a-banco.mp3', duration: '6:10' },
-                { name: 'Desculpa Mãe', src: '../music/rap/facçao/desculpa-mae.mp3', duration: '5:56' },
-                { name: '12 De Outubro', src: '../music/rap/facçao/12-de-outubro.mp3', duration: '5:23' }
+                { name: 'Assalto A Banco', src: 'music/rap/facçao/assalto-a-banco.mp3', duration: '6:10' },
+                { name: 'Desculpa Mãe', src: 'music/rap/facçao/desculpa-mae.mp3', duration: '5:56' },
+                { name: '12 De Outubro', src: 'music/rap/facçao/12-de-outubro.mp3', duration: '5:23' }
             ]
         },
         'Dexter': {
             artist: 'Dexter',
-            cover: '../images/rap/album-dexter.jpg',
+            cover: 'images/rap/album-dexter.jpg',
             tracks: [
-                { name: 'Saudades Mil', src: '../music/rap/dexter/saudades-mil.mp3', duration: '8:44' },
-                { name: 'Oitavo Anjo', src: '../music/rap/dexter/oitavo-anjo.mp3', duration: '5:27' }
+                { name: 'Saudades Mil', src: 'music/rap/dexter/saudades-mil.mp3', duration: '8:44' },
+                { name: 'Oitavo Anjo', src: 'music/rap/dexter/oitavo-anjo.mp3', duration: '5:27' }
             ]
         },
         'Sabotage': {
             artist: 'Sabotage',
-            cover: '../images/rap/album-sabotage.jpg',
+            cover: 'images/rap/album-sabotage.jpg',
             tracks: [
-                { name: 'Um Bom Lugar', src: '../music/rap/sabotage/um-bom-lugar.mp3', duration: '5:38' },
-                { name: 'Rap É Compromisso', src: '../music/rap/sabotage/rap-e-compromisso.mp3', duration: '4:23' },
-                { name: 'Zona Sul', src: '../music/rap/sabotage/zona-sul.mp3', duration: '5:14' },
-                { name: 'Respeito É Pra Quem Tem', src: '../music/rap/sabotage/respeito-e-pra-quem-tem.mp3', duration: '5:29' },
-                { name: 'No Brooklin', src: '../music/rap/sabotage/no-brooklin.mp3', duration: '5:46' },
-                { name: 'Cocaina', src: '../music/rap/sabotage/cocaina.mp3', duration: '4:58' }
+                { name: 'Um Bom Lugar', src: 'music/rap/sabotage/um-bom-lugar.mp3', duration: '5:38' },
+                { name: 'Rap É Compromisso', src: 'music/rap/sabotage/rap-e-compromisso.mp3', duration: '4:23' },
+                { name: 'Zona Sul', src: 'music/rap/sabotage/zona-sul.mp3', duration: '5:14' },
+                { name: 'Respeito É Pra Quem Tem', src: 'music/rap/sabotage/respeito-e-pra-quem-tem.mp3', duration: '5:29' },
+                { name: 'No Brooklin', src: 'music/rap/sabotage/no-brooklin.mp3', duration: '5:46' },
+                { name: 'Cocaina', src: 'music/rap/sabotage/cocaina.mp3', duration: '4:58' }
             ]
         },
         'Mv Bill': {
             artist: 'Mv Bill',
-            cover: '../images/rap/album-mv-bill.jpg',
+            cover: 'images/rap/album-mv-bill.jpg',
             tracks: [
-                { name: 'Falcao', src: '../music/rap/mv-bill/falcao.mp3', duration: '4:27' },
-                { name: 'Estilo Vagabundo', src: '../music/rap/mv-bill/estilo-vagabundo.mp3', duration: '5:00' }
+                { name: 'Falcao', src: 'music/rap/mv-bill/falcao.mp3', duration: '4:27' },
+                { name: 'Estilo Vagabundo', src: 'music/rap/mv-bill/estilo-vagabundo.mp3', duration: '5:00' }
             ]
         }
     };
