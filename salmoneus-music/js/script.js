@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="${artist.cover}" alt="${artist.artist}">
             <h3>${artist.artist}</h3>
             <p>${artist.artist}</p>
+             <p>${artist.tracks.length} músicas</p>
         `;
         artistCard.addEventListener('click', () => loadArtist(key));
         artistaGrid.appendChild(artistCard);
