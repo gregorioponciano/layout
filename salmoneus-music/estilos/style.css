@@ -1,0 +1,462 @@
+@charset "UTF-8";
+
+* {
+                                    margin: 0;
+                                    padding: 0;
+                                    box-sizing: border-box;
+}
+
+:root {
+                                    --color-background: linear-gradient(135deg, #1db954, #191414);
+                                    --color-menu-link: #1db954;
+                                    --color-card-bg: #282828;
+                                    --color-card-hover: #1db954;
+                                    --color-text: #ffffff;
+                                    --color-subtext: #b3b3b3;
+}
+
+body {
+                                    font-family: Arial, sans-serif;
+                                    background: var(--color-background);
+                                    color: var(--color-text);
+}
+
+.logo {
+                                    background-color: #191414;
+                                    color: var(--color-text);
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 8px;
+                                    position: fixed;
+                                    top: 0;
+                                    width: 100vw;
+                                    z-index: 1000;
+}
+
+img {
+                                    width: 30px;
+                                    cursor: pointer;
+}
+
+.search {
+                                    display: flex;
+                                    align-items: center;
+}
+
+#search {
+                                    padding: 7px;
+                                    border-radius: 50px;
+                                    outline: none;
+                                    border: 1px solid var(--color-menu-link);
+                                    background: #121212;
+                                    color: var(--color-text);
+}
+
+.blibliotecas {
+                                    background-color: #121212;
+                                    padding: 20px;
+                                    height: 100%;
+                                    z-index: 2;
+                                    position: fixed;
+                                    top: 0px;
+                                    left: 0;
+                                    animation-duration: 1s;
+                                    margin-left: -100vw;
+                                    transition: margin-left 0.3s ease;
+                                    width: 300px;
+                                    z-index: 1000;
+}
+
+.div-fechar {
+                                    display: flex;
+                                    justify-content: space-between;         
+}
+
+.fechar {
+                                    text-align: right;
+}
+
+.fa-book {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    background-color: #191414;
+                                    color: var(--color-text);
+                                    padding: 10px;
+                                    margin-top: 20px;
+                                    border-radius: 8px;
+}
+
+.galeria {
+                                    display: flex;
+                                    align-items: center;
+}
+
+.suas-musicas {
+                                    margin-left: 5px;
+}
+
+.playlist {
+                                    background-color: #191414;
+                                    color: var(--color-text);
+                                    padding: 15px;
+                                    border-radius: 8px;
+                                    margin-bottom: 15px;
+                                    text-align: center;
+}
+
+.playlist button {
+                                    background-color: var(--color-menu-link);
+                                    color: var(--color-text);
+                                    border: none;
+                                    padding: 10px 20px;
+                                    border-radius: 50px;
+                                    cursor: pointer;
+                                    transition: background 0.3s ease;
+}
+
+.playlist button:hover {
+                                    background-color: #1ed760;
+}
+
+main {
+                                    margin-top: 60px;
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-flow: row nowrap;
+                                    position: relative;
+                                    width: 100vw;
+                                    z-index: 0;
+                                    padding: 20px;
+}
+
+h2 {
+                                    text-align: center;
+                                    margin-bottom: 20px;
+                                    color: var(--color-text);
+}
+
+/* Estilos para os cards de artista e álbum */
+.artista-card, .album-card {
+                                    background: var(--color-card-bg);
+                                    border-radius: 8px;
+                                    padding: 16px;
+                                    transition: all 0.3s ease;
+                                    cursor: pointer;
+                                    width: 170px;
+                                    margin: 10px;
+                                    text-align: center;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.artista-card:hover, .album-card:hover {
+                                    background: var(--color-card-hover);
+                                    transform: scale(1.05);
+}
+
+.artista-card img, .album-card img {
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.artista-card h3, .album-card h3 {
+                                    font-size: 16px;
+                                    margin: 10px 0 5px;
+                                    color: var(--color-text);
+}
+
+.artista-card p, .album-card p {
+                                    font-size: 14px;
+                                    color: var(--color-subtext);
+                                    margin: 0;
+}
+
+.artista-grid, .album-grid {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: center;
+                                    gap: 20px;
+}
+
+footer {
+                                    position: fixed;
+                                    bottom: 0;
+                                    width: 100vw;
+                                    text-align: center;
+                                    background-color: #191414;
+                                    color: var(--color-text);
+                                    padding: 10px;
+                                    z-index: 1000;
+                                    display: flex;
+                                    justify-content: space-around;
+                                    align-items: center;
+}
+
+
+
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #121212;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #1DB954;
+}
+
+.player-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-modal-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.player-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.player-controls button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+audio {
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+
+/* Estilos do Modal Profissional */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #282828;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #b3b3b3;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+#modal-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+#modal-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+#modal-artist {
+    font-size: 16px;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.player-controls button:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.1);
+}
+
+.player-controls .main-btn {
+    background: white;
+    color: black;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.player-controls .main-btn:hover {
+    transform: scale(1.05);
+    background: #e6e6e6;
+}
+
+.player-controls .active {
+    color: #1DB954;
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #535353;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #b3b3b3;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+/* Mini Player */
+.mini-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #181818;
+    padding: 10px 20px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    border-top: 1px solid #282828;
+}
+
+.mini-player-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 60%;
+}
+
+.mini-player img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.mini-player-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-player-text h4 {
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-player-text p {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-player-controls {
+    display: flex;
+    gap: 15px;
+}
