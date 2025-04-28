@@ -294,9 +294,16 @@ document.addEventListener('DOMContentLoaded', function () {
         durationEl.textContent = formatTime(audioPlayer.duration);
     });
 
-    // Controles globais
-    window.toggleSidebar = function() {
-        const sidebar = document.querySelector('.blibliotecas');
-        sidebar.style.marginLeft = sidebar.style.marginLeft === '-100vw' ? '0' : '-100vw';
-    };
+    // Estado inicial do menu
+let isSidebarOpen = false;
+
+window.toggleSidebar = function () {
+    const sidebar = document.querySelector('.blibliotecas');
+    if (isSidebarOpen) {
+        sidebar.style.marginLeft = '-100vw';
+    } else {
+        sidebar.style.marginLeft = '0';
+    }
+    isSidebarOpen = !isSidebarOpen; // Alterna o estado
+};
 });
