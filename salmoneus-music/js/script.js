@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
             cover: 'images/rap/album-racionais.jpg',
             tracks: [
                 { name: 'Eu Sou 157', src: 'music/rap/racionais/eusou157.mp3', duration: '3:45' },
-                { name: 'Capítulo 4, Versículo 3', src: '../music/rap/racionais/capitulo4.mp3', duration: '4:20' },
-                { name: 'Diário de Um Detento', src: '../music/rap/racionais/diario.mp3', duration: '5:12' }
+                { name: 'Capítulo 4, Versículo 3', src: 'music/rap/racionais/capitulo4.mp3', duration: '4:20' },
+                { name: 'Diário de Um Detento', src: 'music/rap/racionais/diario.mp3', duration: '5:12' }
             ]
         },
         'Realidade Cruel': {
