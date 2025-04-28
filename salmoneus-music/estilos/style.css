@@ -33,9 +33,14 @@ body {
                                     z-index: 1000;
 }
 
-img {
+.img-logo {
                                     width: 30px;
                                     cursor: pointer;
+}
+
+.img-logo:hover {
+                                    transform: scale(1.1);
+                                    transition: transform 0.3s ease;
 }
 
 .search {
@@ -74,8 +79,13 @@ img {
 
 .fechar {
                                     text-align: right;
+                                    cursor: pointer;
 }
 
+.fechar:hover {
+                                    color: var(--color-menu-link);
+                                    transition: color 0.3s ease;
+}
 .fa-book {
                                     display: flex;
                                     align-items: center;
