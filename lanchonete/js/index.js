@@ -1,6 +1,6 @@
- // Dados do Cardápio
- const cardapio = {
-     lanches: [
+// Dados do Cardápio
+const cardapio = {
+    lanches: [
         { 
             id: 1, 
             nome: "X-Salada", 
@@ -15,17 +15,13 @@
         { 
             id: 2, 
             nome: "X-Burger", 
-            descricao: "Pão, hambúrguer, presunto, queijobatata palha, alface e tomate", 
+            descricao: "Pão, hambúrguer, presunto, queijo, batata palha, alface e tomate", 
             preco: 20.00, 
             imagem: "imagens/lanche.jpg",
             adicionais: [
-                { nome: "ovo", preco: 3.00 },
+                { nome: "Ovo", preco: 3.00 },
                 { nome: "Salsicha", preco: 2.00 },
-                { nome: " ", preco: 4.00 },
-                { nome: "Queijo Extra", preco: 4.00 },
-                { nome: "Queijo Extra", preco: 4.00 },
-                { nome: "Queijo Extra", preco: 4.00 },
-                { nome: "Queijo Extra", preco: 4.00 },
+                { nome: "Queijo Extra", preco: 4.00 }
             ]
         },
         { 
@@ -116,6 +112,15 @@
     ]
 };
 
+// Variáveis globais
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartItemsContainer = document.getElementById('cart-items');
+const cartSubtotal = document.getElementById('cart-subtotal');
+const cartTotal = document.getElementById('cart-total');
+const cartCount = document.querySelector('.cart-count');
+const notification = document.getElementById('notification');
+const notificationMessage = document.getElementById('notification-message');
+
 // Renderizar o Cardápio
 function renderizarCardapio() {
     for (const categoria in cardapio) {
@@ -180,36 +185,27 @@ function setupCategoryFilters() {
     
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove a classe active de todos os botões
             categoryButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Adiciona a classe active ao botão clicado
             this.classList.add('active');
             
-            // Esconde todas as seções
             document.querySelectorAll('.menu-section').forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Mostra a seção correspondente
             const sectionId = this.getAttribute('data-section');
             document.getElementById(sectionId).classList.add('active');
         });
     });
 }
 
-// Carrinho de Compras
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+// Atualizar contador do carrinho
 function updateCartCount() {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    document.querySelector('.cart-count').textContent = totalItems;
+    cartCount.textContent = totalItems;
 }
 
+// Mostrar notificação
 function showNotification(message) {
-    const notification = document.getElementById('notification');
-    const notificationMessage = document.getElementById('notification-message');
-    
     notificationMessage.textContent = message;
     notification.classList.add('show');
     
@@ -218,36 +214,38 @@ function showNotification(message) {
     }, 3000);
 }
 
+// Adicionar item ao carrinho com validação de adicionais
 function addToCart(itemId, itemName, basePrice, addOns, quantity) {
+    // Validar adicionais
+    const validatedAddOns = addOns.filter(addon => 
+        addon && addon.name && addon.name.trim() !== "" && !isNaN(addon.price)
+    );
+
     // Verificar se já existe um item igual no carrinho
     const existingItemIndex = cart.findIndex(item => 
         item.itemId === itemId && 
-        JSON.stringify(item.addOns) === JSON.stringify(addOns)
+        JSON.stringify(item.addOns) === JSON.stringify(validatedAddOns)
     );
     
     if (existingItemIndex !== -1) {
-        // Se já existe, apenas aumenta a quantidade
         cart[existingItemIndex].quantity += quantity;
     } else {
-        // Se não existe, adiciona novo item
         cart.push({
             itemId,
             itemName,
             basePrice,
-            addOns,
+            addOns: validatedAddOns,
             quantity
         });
     }
     
-    // Atualizar localStorage e interface
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartDisplay();
     updateCartCount();
-    
-    // Mostrar notificação
     showNotification(`${quantity}x ${itemName} adicionado(s) ao carrinho!`);
 }
 
+// Remover item do carrinho
 function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -255,17 +253,14 @@ function removeFromCart(index) {
     updateCartCount();
 }
 
+// Atualizar exibição do carrinho
 function updateCartDisplay() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartSubtotal = document.getElementById('cart-subtotal');
-    const cartTotal = document.getElementById('cart-total');
-    
     cartItemsContainer.innerHTML = '';
     
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = '<p>Seu carrinho está vazio</p>';
         cartSubtotal.textContent = 'R$ 0,00';
-        cartTotal.textContent = 'R$ 5,00'; // Taxa de entrega mínima
+        cartTotal.textContent = 'R$ 5,00';
         return;
     }
     
@@ -275,12 +270,10 @@ function updateCartDisplay() {
         const cartItemElement = document.createElement('div');
         cartItemElement.className = 'cart-item';
         
-        // Calcular preço do item com adicionais
         const addOnsPrice = item.addOns.reduce((total, addOn) => total + addOn.price, 0);
         const itemTotalPrice = (item.basePrice + addOnsPrice) * item.quantity;
         subtotal += itemTotalPrice;
         
-        // Criar string de adicionais
         let addOnsText = '';
         if (item.addOns.length > 0) {
             addOnsText = item.addOns.map(addOn => addOn.name).join(', ');
@@ -295,7 +288,6 @@ function updateCartDisplay() {
             <div class="cart-item-remove"><i class="fas fa-trash"></i></div>
         `;
         
-        // Adicionar evento de remover item
         cartItemElement.querySelector('.cart-item-remove').addEventListener('click', () => {
             removeFromCart(index);
         });
@@ -303,7 +295,6 @@ function updateCartDisplay() {
         cartItemsContainer.appendChild(cartItemElement);
     });
     
-    // Atualizar totais
     const deliveryFee = 5.00;
     const total = subtotal + deliveryFee;
     
@@ -311,7 +302,7 @@ function updateCartDisplay() {
     cartTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
 
-// Finalizar pedido via WhatsApp
+// Finalizar pedido com validação completa
 function setupCheckout() {
     document.getElementById('checkout-btn').addEventListener('click', function() {
         if (cart.length === 0) {
@@ -324,16 +315,27 @@ function setupCheckout() {
             alert('Você precisa estar logado para finalizar o pedido!');
             return;
         }
-        
+
+        // Validar todos os itens do carrinho
+        const hasInvalidItems = cart.some(item => {
+            return !item.itemId || !item.itemName || isNaN(item.basePrice) || 
+                   !Array.isArray(item.addOns) || item.addOns.some(addon => 
+                       !addon.name || isNaN(addon.price)
+                   );
+        });
+
+        if (hasInvalidItems) {
+            alert('Erro: Alguns itens do carrinho estão inválidos. Por favor, revise seu pedido.');
+            return;
+        }
+
         // Formatando a mensagem para o WhatsApp
         let message = `*NOVO PEDIDO - LANCHONETE DELÍCIA*%0A%0A`;
         message += `*Cliente:*%0A`;
         message += `Nome: ${user.name}%0A`;
         message += `Telefone: ${user.phone}%0A`;
         message += `Endereço: ${user.address}%0A`;
-        if (user.cpf) {
-            message += `CPF: ${user.cpf}%0A`;
-        }
+        if (user.cpf) message += `CPF: ${user.cpf}%0A`;
         
         message += `%0A*Itens do Pedido:*%0A%0A`;
         
@@ -349,7 +351,7 @@ function setupCheckout() {
             if (item.addOns.length > 0) {
                 message += `%0A`;
                 item.addOns.forEach(addOn => {
-                    message += `  - ${addon.name}%0A`;
+                    message += `  - ${addOn.name}%0A`;
                 });
             }
             
@@ -373,40 +375,51 @@ function setupCheckout() {
     });
 }
 
-// Configurar eventos dos botões "Adicionar"
+// Configurar eventos dos botões "Adicionar" com validação
 function setupAddToCartButtons() {
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-to-cart')) {
             const itemId = e.target.getAttribute('data-item-id');
             const itemCard = e.target.closest('.menu-item');
             const itemName = itemCard.querySelector('h3').textContent;
-            const basePrice = parseFloat(itemCard.querySelector('.item-price').textContent.replace('R$ ', '').replace(',', '.'));
+            const priceText = itemCard.querySelector('.item-price').textContent;
+            const basePrice = parseFloat(priceText.replace('R$ ', '').replace(',', '.'));
             
-            // Abrir modal de adicionais
+            if (isNaN(basePrice)) {
+                alert('Erro: Preço do item inválido!');
+                return;
+            }
+
             const addonsModal = document.getElementById(`addons-modal-${itemId}`);
             addonsModal.style.display = 'flex';
             
-            // Configurar botão de confirmar no modal
             const confirmBtn = addonsModal.querySelector('.confirm-addons');
             
             confirmBtn.onclick = function() {
-                // Obter adicionais selecionados
                 const addOns = [];
                 const checkboxes = addonsModal.querySelectorAll('.addon-item input:checked');
+                
                 checkboxes.forEach(checkbox => {
-                    addOns.push({
-                        name: checkbox.nextElementSibling.textContent.replace(/ \(\+R\$\s\d+,\d+\)/, ''),
-                        price: parseFloat(checkbox.dataset.price)
-                    });
+                    const name = checkbox.nextElementSibling.textContent
+                        .replace(/\(\+R\$\s\d+,\d+\)/, '')
+                        .trim();
+                    
+                    const price = parseFloat(checkbox.dataset.price);
+                    
+                    if (name && !isNaN(price)) {
+                        addOns.push({ name, price });
+                    }
                 });
                 
-                // Obter quantidade
-                const quantity = parseInt(addonsModal.querySelector('.qty-input').value);
+                const quantityInput = addonsModal.querySelector('.qty-input');
+                const quantity = parseInt(quantityInput.value) || 1;
                 
-                // Adicionar ao carrinho
+                if (quantity < 1) {
+                    alert('Quantidade deve ser pelo menos 1');
+                    return;
+                }
+
                 addToCart(itemId, itemName, basePrice, addOns, quantity);
-                
-                // Fechar modal
                 addonsModal.style.display = 'none';
             };
         }
@@ -445,7 +458,6 @@ function setupAccountModal() {
     const accountModal = document.getElementById('account-modal');
     const closeAccount = document.querySelector('.close-account');
     
-    // Abrir/fechar modal de conta
     accountSettings.addEventListener('click', function(e) {
         e.preventDefault();
         accountModal.style.display = 'flex';
@@ -456,14 +468,12 @@ function setupAccountModal() {
         accountModal.style.display = 'none';
     });
     
-    // Fechar modal ao clicar fora
     window.addEventListener('click', function(e) {
         if (e.target === accountModal) {
             accountModal.style.display = 'none';
         }
     });
     
-    // Carregar dados da conta
     function loadAccountData() {
         const user = JSON.parse(localStorage.getItem('user')) || {};
         document.getElementById('account-name').value = user.name || '';
@@ -472,7 +482,6 @@ function setupAccountModal() {
         document.getElementById('account-cpf').value = user.cpf || '';
     }
     
-    // Salvar dados da conta
     document.getElementById('account-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -485,18 +494,13 @@ function setupAccountModal() {
             return;
         }
         
-        // Atualizar dados do usuário
         user.phone = document.getElementById('account-phone').value;
         user.address = document.getElementById('account-address').value;
         user.cpf = document.getElementById('account-cpf').value;
         
-        if (newPassword) {
-            user.password = newPassword;
-        }
+        if (newPassword) user.password = newPassword;
         
-        // Simular atualização no banco de dados
         localStorage.setItem('user', JSON.stringify(user));
-        
         alert('Dados atualizados com sucesso!');
         accountModal.style.display = 'none';
     });
@@ -512,11 +516,9 @@ function setupInputMasks() {
             
             if (value.length > 0) {
                 value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-                if (value.length > 10) {
-                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
-                } else {
-                    value = value.replace(/(\d)(\d{3})$/, '$1-$2');
-                }
+                value = value.length > 10 
+                    ? value.replace(/(\d)(\d{4})$/, '$1-$2')
+                    : value.replace(/(\d)(\d{3})$/, '$1-$2');
             }
             
             e.target.value = value;
@@ -566,7 +568,6 @@ function setupCartSidebar() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
-    // Simular usuário logado (para teste)
     if (!localStorage.getItem('user')) {
         localStorage.setItem('user', JSON.stringify({
             name: "Cliente Teste",
@@ -587,7 +588,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupLogout();
     setupCheckout();
     
-    // Inicializar carrinho
     updateCartDisplay();
     updateCartCount();
 });
