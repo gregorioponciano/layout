@@ -98,6 +98,17 @@ const cardapio = {
                 { nome: "Cheddar Extra", preco: 5.00 },
                 { nome: "Bacon Extra", preco: 6.00 }
             ]
+        },
+        { 
+            id: 21, 
+            nome: "Porção de Trilapia", 
+            descricao: "Porção grande com cheddar e bacon", 
+            preco: 25.00, 
+            imagem: "imagens/peixe.jpg",
+            adicionais: [
+                { nome: "Cheddar Extra", preco: 5.00 },
+                { nome: "Bacon Extra", preco: 6.00 }
+            ]
         }
     ],
     promocoes: [
