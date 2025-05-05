@@ -558,7 +558,7 @@ function setupLogout() {
     document.getElementById('logout').addEventListener('click', function(e) {
         e.preventDefault();
         localStorage.removeItem('user');
-        window.location.href = 'index.html';
+        window.location.href = 'inicio.html';
     });
 }
 
@@ -581,9 +581,9 @@ function setupCartSidebar() {
 document.addEventListener('DOMContentLoaded', function() {
     if (!localStorage.getItem('user')) {
         localStorage.setItem('user', JSON.stringify({
-            name: "Cliente Teste",
-            phone: "(11) 99999-9999",
-            address: "Rua Exemplo, 123",
+            name: "Nome do Cliente",
+            phone: "(14) 99999-9999",
+            address: "Bairro e rua",
             cpf: "123.456.789-00"
         }));
     }
