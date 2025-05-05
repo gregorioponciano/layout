@@ -7,10 +7,6 @@ const cardapio = {
             descricao: "Pão, hambúrguer, presunto, queijo, batata palha, alface e tomate", 
             preco: 18.00, 
             imagem: "imagens/lanche.jpg",
-            adicionais: [
-                { nome: "Bacon", preco: 3.00 },
-                { nome: "Ovo", preco: 2.00 }
-            ]
         },
         { 
             id: 2, 
@@ -18,11 +14,6 @@ const cardapio = {
             descricao: "Pão, hambúrguer, presunto, queijo, batata palha, alface e tomate", 
             preco: 20.00, 
             imagem: "imagens/lanche.jpg",
-            adicionais: [
-                { nome: "Ovo", preco: 3.00 },
-                { nome: "Salsicha", preco: 2.00 },
-                { nome: "Queijo Extra", preco: 4.00 }
-            ]
         },
         { 
             id: 3, 
@@ -30,10 +21,6 @@ const cardapio = {
             descricao: "Pão, Frango, presunto, queijo, batata palha, alface e tomate", 
             preco: 20.00, 
             imagem: "imagens/lanche.jpg",
-            adicionais: [
-                { nome: "Cebola Caramelizada", preco: 2.50 },
-                { nome: "Queijo Extra", preco: 4.00 }
-            ]
         },
         { 
             id: 4, 
@@ -41,10 +28,6 @@ const cardapio = {
             descricao: "Pão, hambúrguer, presunto, queijo, batata palha, bacon, alface e tomate", 
             preco: 20.00, 
             imagem: "imagens/lanche.jpg",
-            adicionais: [
-                { nome: "Cebola Caramelizada", preco: 2.50 },
-                { nome: "Queijo Extra", preco: 4.00 }
-            ]
         },
         { 
             id: 5, 
@@ -52,10 +35,6 @@ const cardapio = {
             descricao: "Pão, alcatra, presunto, queijo, batata palha, alface e tomate", 
             preco: 20.00, 
             imagem: "imagens/lanche.jpg",
-            adicionais: [
-                { nome: "Cebola Caramelizada", preco: 2.50 },
-                { nome: "Queijo Extra", preco: 4.00 }
-            ]
         },
         {
             id: 6, 
@@ -63,10 +42,6 @@ const cardapio = {
             descricao: "Pão, hambúrguer, presunto, queijo, bacon e molho especial", 
             preco: 25.00, 
             imagem: "imagens/lanche.jpg",
-            adicionais: [
-                { nome: "Cebola Caramelizada", preco: 2.50 },
-                { nome: "Queijo Extra", preco: 4.00 }
-            ]
         }
     ],
     bebidas: [
@@ -76,7 +51,6 @@ const cardapio = {
             descricao: "350ml - Escolha o sabor", 
             preco: 6.00, 
             imagem: "imagens/coca-lata.png",
-            adicionais: []
         },
         { 
             id: 11, 
@@ -84,7 +58,6 @@ const cardapio = {
             descricao: "500ml - Laranja, Abacaxi ou Maracujá", 
             preco: 8.00, 
             imagem: "imagens/suco.jpg",
-            adicionais: []
         }
     ],
     porcoes: [
@@ -94,21 +67,14 @@ const cardapio = {
             descricao: "Porção grande com cheddar e bacon", 
             preco: 25.00, 
             imagem: "imagens/batata.jpg",
-            adicionais: [
-                { nome: "Cheddar Extra", preco: 5.00 },
-                { nome: "Bacon Extra", preco: 6.00 }
-            ]
+
         },
         { 
             id: 21, 
-            nome: "Porção de Trilapia", 
+            nome: "Porção de Tilapia", 
             descricao: "Porção grande com cheddar e bacon", 
             preco: 25.00, 
             imagem: "imagens/peixe.jpg",
-            adicionais: [
-                { nome: "Cheddar Extra", preco: 5.00 },
-                { nome: "Bacon Extra", preco: 6.00 }
-            ]
         }
     ],
     promocoes: [
@@ -118,25 +84,14 @@ const cardapio = {
             descricao: "2 X-Burger + 1 Batata Grande + 2 Refris", 
             preco: 55.00, 
             imagem: "imagens/combo.jpg",
-            adicionais: []
         }
     ]
 };
-
-// Variáveis globais
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const cartItemsContainer = document.getElementById('cart-items');
-const cartSubtotal = document.getElementById('cart-subtotal');
-const cartTotal = document.getElementById('cart-total');
-const cartCount = document.querySelector('.cart-count');
-const notification = document.getElementById('notification');
-const notificationMessage = document.getElementById('notification-message');
 
 // Renderizar o Cardápio
 function renderizarCardapio() {
     for (const categoria in cardapio) {
         const section = document.getElementById(categoria);
-        section.innerHTML = '';
         
         cardapio[categoria].forEach(item => {
             const itemElement = document.createElement('div');
@@ -147,46 +102,12 @@ function renderizarCardapio() {
                     <h3>${item.nome}</h3>
                     <p>${item.descricao}</p>
                     <div class="item-price">R$ ${item.preco.toFixed(2).replace('.', ',')}</div>
-                    <button class="btn add-to-cart" data-item-id="${item.id}">Adicionar</button>
-                </div>
-            `;
-            
-            // Modal de Adicionais
-            const modalElement = document.createElement('div');
-            modalElement.className = 'addons-modal';
-            modalElement.id = `addons-modal-${item.id}`;
-            
-            let addonsHTML = '';
-            if (item.adicionais && item.adicionais.length > 0) {
-                addonsHTML = item.adicionais.map((addon, index) => `
-                    <div class="addon-item">
-                        <input type="checkbox" id="addon-${item.id}-${index}" data-price="${addon.preco}">
-                        <label for="addon-${item.id}-${index}">${addon.nome} (+R$ ${addon.preco.toFixed(2).replace('.', ',')})</label>
-                    </div>
-                `).join('');
-            } else {
-                addonsHTML = '<p>Nenhum adicional disponível para este item.</p>';
-            }
-            
-            modalElement.innerHTML = `
-                <div class="modal-content">
-                    <span class="close-addons">&times;</span>
-                    <h3>${item.nome} - Adicionais</h3>
-                    <div class="addons-list">
-                        ${addonsHTML}
-                    </div>
-                    <div class="quantity-control">
-                        <button class="qty-minus">-</button>
-                        <input type="number" value="1" min="1" class="qty-input">
-                        <button class="qty-plus">+</button>
-                    </div>
-                    <button class="btn btn-primary confirm-addons">Confirmar</button>
+                    <button class="btn add-to-cart" data-item-id="">Adicionar</button>
                 </div>
             `;
             
             section.appendChild(itemElement);
-            section.appendChild(modalElement);
-        });
+       });
     }
 }
 
@@ -209,87 +130,12 @@ function setupCategoryFilters() {
     });
 }
 
-
-
-
-// Configurar eventos dos botões "Adicionar" com validação
-function setupAddToCartButtons() {
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('add-to-cart')) {
-            const itemId = e.target.getAttribute('data-item-id');
-            const itemCard = e.target.closest('.menu-item');
-            const itemName = itemCard.querySelector('h3').textContent;
-            const priceText = itemCard.querySelector('.item-price').textContent;
-            const basePrice = parseFloat(priceText.replace('R$ ', '').replace(',', '.'));
-            
-            if (isNaN(basePrice)) {
-                alert('Erro: Preço do item inválido!');
-                return;
-            }
-
-            const addonsModal = document.getElementById(`addons-modal-${itemId}`);
-            addonsModal.style.display = 'flex';
-            
-            const confirmBtn = addonsModal.querySelector('.confirm-addons');
-            
-            confirmBtn.onclick = function() {
-                const addOns = [];
-                const checkboxes = addonsModal.querySelectorAll('.addon-item input:checked');
-                
-                checkboxes.forEach(checkbox => {
-                    const name = checkbox.nextElementSibling.textContent
-                        .replace(/\(\+R\$\s\d+,\d+\)/, '')
-                        .trim();
-                    
-                    const price = parseFloat(checkbox.dataset.price);
-                    
-                    if (name && !isNaN(price)) {
-                        addOns.push({ name, price });
-                    }
-                });
-                
-                const quantityInput = addonsModal.querySelector('.qty-input');
-                const quantity = parseInt(quantityInput.value) || 1;
-                
-                if (quantity < 1) {
-                    alert('Quantidade deve ser pelo menos 1');
-                    return;
-                }
-
-                addToCart(itemId, itemName, basePrice, addOns, quantity);
-                addonsModal.style.display = 'none';
-            };
-        }
-    });
-}
-
-// Fechar modais de adicionais
-function setupCloseAddonsModals() {
-    document.querySelectorAll('.close-addons').forEach(button => {
-        button.addEventListener('click', function() {
-            this.closest('.addons-modal').style.display = 'none';
-        });
-    });
-}
-
-
-
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
       
     renderizarCardapio();
     setupCategoryFilters();
-    setupAddToCartButtons();
-    setupCloseAddonsModals();
-    setupQuantityControls();
-    setupCartSidebar();
-    setupAccountModal();
-    setupInputMasks();
-    setupLogout();
-    setupCheckout();
-    
-    updateCartDisplay();
-    updateCartCount();
+
 });
 
 
