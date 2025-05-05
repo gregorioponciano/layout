@@ -75,7 +75,7 @@ const cardapio = {
             nome: "Refri Lata", 
             descricao: "350ml - Escolha o sabor", 
             preco: 6.00, 
-            imagem: "imagens/refri.jpg",
+            imagem: "imagens/coca-lata.png",
             adicionais: []
         },
         { 
