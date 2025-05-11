@@ -139,9 +139,19 @@
                 position: absolute;
                 top: 10px;
                 right: 10px;
-                font-size: 18px;
-                color: #333;
+                width: 20px;
+                height: 30px;
+                font-size: 20px;
+                font-weight: bolder;
                 cursor: pointer;
+                color: white;
+            }
+
+            .fechar:hover {
+               scale: 1.5;
+                transition: 0.5s;
+                background-color: rgb(235, 72, 43);
+                border-radius: 50%;
             }
     
             /* Estilos para o texto */
@@ -286,9 +296,8 @@
         }
 
         .close-addons {
-            position: absolute;
-            top: 10px;
-            right: 15px;
+            display: flex;
+            justify-content: flex-end;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -447,12 +456,12 @@
         }
 
         .close-account {
-            position: absolute;
-            top: 10px;
-            right: 15px;
+            display: flex;
+            justify-content: flex-end;
             font-size: 1.5rem;
             cursor: pointer;
         }
+
 
         .form-group {
             margin-bottom: 15px;
