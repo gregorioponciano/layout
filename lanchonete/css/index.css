@@ -81,8 +81,9 @@
         .div-status-loja {
                                 display: flex;
                                 justify-content: center;
-                                width: 90vw;
+                                width: 100vw;
                                 margin: auto;
+                                background-color: #d66216
 }
 .status-loja {
                                 text-align: right;
