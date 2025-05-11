@@ -13,7 +13,7 @@
 
         /* Header */
         header {
-            background-color: #d35400;
+           background-image: linear-gradient(to bottom right, #d35400, #d35400e0);
             color: white;
             padding: 15px 20px;
             display: flex;
@@ -77,6 +77,84 @@
             align-items: center;
             font-size: 0.8rem;
         }
+
+        .div-status-loja {
+                                display: flex;
+                                justify-content: center;
+                                width: 90vw;
+                                margin: auto;
+}
+.status-loja {
+                                text-align: right;
+                                margin: 10px;
+                                padding: 5px 15px;
+}
+
+.ver-mais-status {
+                                margin: 10px;
+                                cursor: pointer;
+                                padding: 5px 15px;
+                                color: white;
+                                background-color: #007bff;
+}
+
+        /* Estilos para o botão de abrir o modal */
+        #abrirModal {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+            }
+    
+            /* Estilos para o fundo e contêiner do modal */
+            #modal-horario {
+                display: none; /* Oculto por padrão */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                justify-content: center;
+                align-items: center; 
+                z-index: 10;
+                color: rgb(0, 0, 0);
+            }
+    
+            .modal-conteudo {
+                background-image: linear-gradient(to bottom right, #d35400, #d35400bb);
+                background-size: contain;
+                padding: 20px;
+                width: 300px;
+                border-radius: 8px;
+                text-align: center;
+                position: relative;
+            }
+    
+            /* Estilo para o botão de fechar */
+            .fechar {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 18px;
+                color: #333;
+                cursor: pointer;
+            }
+    
+            /* Estilos para o texto */
+            .modal-titulo {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            
+            .modal-texto {
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+                line-height: 1.5;
+            }
 
         /* Main Content */
         main {
@@ -412,6 +490,26 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }   
+
+        footer p {
+            margin: 0;
+        }
+        footer a {
+            color: #d35400;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: green;
+        }
+
 
         /* Responsividade */
         @media (max-width: 868px) {

@@ -602,3 +602,5 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartDisplay();
     updateCartCount();
 });
+
+
