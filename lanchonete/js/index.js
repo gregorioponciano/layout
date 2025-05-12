@@ -382,7 +382,7 @@ function setupCheckout() {
         
         // Abrir WhatsApp
         const phone = user.phone.replace(/\D/g, '');
-        window.open(`https://wa.me/55${phone}?text=${message}`, '_blank');
+       window.open(`https://wa.me/5514991761256?text=${message}${phone}`, '_blank');
     });
 }
 
