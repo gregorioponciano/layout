@@ -13,7 +13,7 @@
 
         /* Header */
         header {
-           background-image: linear-gradient(to bottom right, #d35400, #d35400e0);
+           background-image: linear-gradient(to bottom right, #d35400, #d35400);
             color: white;
             padding: 15px 20px;
             display: flex;
@@ -79,16 +79,20 @@
         }
 
         .div-status-loja {
+            position: fixed;
+            top: 110px;
+            z-index: 10;
                                 display: flex;
                                 justify-content: center;
                                 width: 100vw;
                                 margin: auto;
-                                background-color: #d66216
+                                    background-image: linear-gradient(to bottom right, #d35400, #d35400);
 }
 .status-loja {
                                 text-align: right;
                                 margin: 10px;
                                 padding: 5px 15px;
+                                background-color: #00000079;
 }
 
 .ver-mais-status {
@@ -96,13 +100,17 @@
                                 cursor: pointer;
                                 padding: 5px 15px;
                                 color: white;
-                                background-color: #007bff;
+                                background-color: 
+}
+
+.ver-mais-status:hover {
+                                color: orange;
 }
 
         /* Estilos para o botão de abrir o modal */
         #abrirModal {
                 padding: 10px 20px;
-                background-color: #007bff;
+                background-color: #fbff00;
                 color: white;
                 border: none;
                 cursor: pointer;
@@ -171,7 +179,7 @@
         main {
             padding: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin-top: 50px;
         }
 
         .menu-categories {
@@ -527,6 +535,15 @@
                 flex-direction: column;
                 padding: 10px;
             }
+
+                    .div-status-loja {
+            position: fixed;
+            top: 148px;
+
+    
+                               
+                        
+}
 
             nav ul {
                 margin: 10px 0;

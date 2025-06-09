@@ -5,12 +5,12 @@ function verificarStatusFuncionamento() {
 
     // Verifica se é sábado ou domingo
     if (diaSemana === 0 || diaSemana === 6) { 
-      if (hora >= 7 && hora < 23) {  // De sabado e domingo
+      if (hora >= 7 && hora < 24) {  // De sabado e domingo
         return 'Aberta';
       } else {
         return 'Fechado';
       }
-    } else if (hora >= 18 && hora < 23) { // De segunda a sexta
+    } else if (hora >= 18 && hora < 24) { // De segunda a sexta
       return 'Aberta';
     } else {
       return 'Fechado';
@@ -22,7 +22,7 @@ function verificarStatusFuncionamento() {
   statusElement.textContent = `${status}`;
 
   if (status === 'Aberta') {
-  statusElement.textContent = '(Aberto)';
+  statusElement.textContent = 'Aberto';
   statusElement.style.color = '#00ff00';
   statusElement.style.textDecoration = 'underline';
 } else {
