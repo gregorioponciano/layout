@@ -128,17 +128,23 @@
                                 justify-content: center;
                                 align-items: center; 
                                 z-index: 10;
-                                color: rgb(0, 0, 0);
 }
     
 .modal-conteudo {
-                                background-image: linear-gradient(to bottom right, #d35400, #d35400bb);
+                                background-image: url(../imagens/fundo-horario.jpg);
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-size: 100%;
                                 padding: 20px;
-                                width: 90vw;
+                                width: 600px;
                                 margin-top: 50px;
                                 border-radius: 8px;
                                 text-align: center;
                                 position: relative;
+}
+
+strong {
+                                color: aliceblue;
 }
     
 /* Estilo para o botão de fechar */
@@ -146,7 +152,7 @@
                                 position: absolute;
                                 top: 10px;
                                 right: 10px;
-                                width: 20px;
+                                width: 30px;
                                 height: 30px;
                                 font-size: 20px;
                                 font-weight: bolder;
@@ -157,7 +163,8 @@
 .fechar:hover {
                                 scale: 1.5;
                                 transition: 0.5s;
-                                background-color: rgb(235, 72, 43);
+                               color: red;
+                               background-color: rgba(0, 0, 0, 0.733);
                                 border-radius: 50%;
 }
     
@@ -166,11 +173,12 @@
                                 font-size: 20px;
                                 font-weight: bold;
                                 margin-bottom: 15px;
+                                color: white;
 }
             
 .modal-texto {
                                 font-size: 20px;
-                                color: rgb(0, 0, 0);
+                                color: rgb(255, 255, 255);
                                 line-height: 1.5;
 }
 
@@ -302,7 +310,7 @@ main {
                                 background-color: white;
                                 padding: 20px;
                                 border-radius: 10px;
-                                width: 90%;
+                                width: 95%;
                                 max-width: 400px;
                                 max-height: 80vh;
                                 overflow-y: auto;
@@ -546,6 +554,12 @@ footer a:hover {
                         top: 148px;
                         padding-top: 20px;                       
         }
+
+        .modal-conteudo {
+
+                                width: 90vw;
+
+}
 
         nav ul {
                         margin: 10px 0;
