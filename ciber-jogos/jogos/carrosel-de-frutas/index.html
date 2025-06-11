@@ -1,48 +1,589 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sloty</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <title>Caça-Níqueis</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --item-height: 100px;
+        }
+
+        body {
+            background-color: #222;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #saldo-display {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        #win-display {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            font-size: 20px;
+            background: rgba(0,200,0,0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .start-button {
+            display: block;
+            margin: 1em auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #f1c40f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .start-button:hover {
+            background: #f39c12;
+        }
+
+        .start-button:disabled {
+            background: #7f8c8d;
+            cursor: not-allowed;
+        }
+
+        #container {
+            background-color: #fd9b03;
+            padding: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+        }
+
+        .window {
+            position: relative;
+            overflow: hidden;
+            height: calc(3 * var(--item-height));
+        }
+
+        .window::before, .window::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            z-index: 4;
+        }
+
+        .window::before {
+            top: 0;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+        }
+
+        .window::after {
+            bottom: 0;
+            background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+        }
+
+        .window-border {
+            padding: 5px;
+            background-image: linear-gradient(to bottom, #fcf8ad, #f8f3cd, #f9e13d);
+            box-shadow: 0 6px 4px -5px #eca654 inset;
+            border-radius: 10px;
+        }
+
+        .icon {
+            width: 80px;
+            height: var(--item-height);
+            display: block;
+            position: relative;
+        }
+
+        .outer-col {
+            overflow-y: hidden;
+            width: 100px;
+            float: left;
+            background-image: linear-gradient(#16013c, #741a5e, #430155, #16013c);
+            height: calc(var(--item-height) * 3);
+        }
+
+        .outer-spacer {
+            width: 8px;
+            height: 100%;
+            float: left;
+            border-right: 2px solid #f7ce6c38;
+            background-image: linear-gradient(#be4d01, #893802);
+        }
+
+        .col {
+            padding: 0 10px;
+            will-change: transform;
+            transform: translateY(calc(-100% + var(--item-height) * 3));
+        }
+
+        .col img {
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .col .icon::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;
+            height: 1px;
+            background-color: white;
+            box-shadow: 0 0 35px 30px rgba(12, 0, 14, 0.69);
+            z-index: 2;
+            border-radius: 100%;
+        }
+
+        #container.spinning .outer-col:nth-of-type(2) .col {
+            animation-delay: 0.1s;
+        }
+
+        #container.spinning .outer-col:nth-of-type(3) .col {
+            animation-delay: 0.2s;
+        }
+
+        #container.spinning .col {
+            animation-name: scroll;
+            animation-iteration-count: 1;
+            animation-timing-function: cubic-bezier(.65, .97, .72, 1);
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #bet-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        #bet-controls button {
+            padding: 8px 15px;
+            font-size: 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #bet-controls button:hover {
+            background: #2980b9;
+        }
+
+        #bet-controls button:disabled {
+            background: #7f8c8d;
+            cursor: not-allowed;
+        }
+
+        #current-bet {
+            font-size: 20px;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .paytable {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 250px;
+        }
+
+        .paytable h3 {
+            margin-top: 0;
+            color: #f1c40f;
+        }
+
+        .paytable table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .paytable th, .paytable td {
+            padding: 5px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        .paytable th {
+            color: #f1c40f;
+        }
+
+        .win-line {
+            position: absolute;
+            background-color: rgba(255, 255, 0, 0.5);
+            z-index: 5;
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <div id="saldo-display">Saldo: R$ 100,00</div>
+    <div id="win-display"></div>
 
-<div id="container">
-    <div class="window-border">
-        <div class="window">
-            <div class="outer-spacer"></div>
-            <div class="outer-col">
-                <div class="col"></div>
-            </div>
-            <div class="outer-spacer"></div>
-            <div class="outer-col">
-                <div class="col"></div>
-            </div>
-            <div class="outer-spacer"></div>
-            <div class="outer-col">
-                <div class="col"></div>
-            </div>
-            <div class="outer-spacer"></div>
-            <div class="outer-col">
-                <div class="col"></div>
-            </div>
-            <div class="outer-spacer"></div>
-            <div class="outer-col">
-                <div class="col"></div>
-            </div>
-            <div class="outer-spacer"></div>
-        </div>
+    <div class="paytable">
+        <h3>Tabela de Pagamentos</h3>
+        <table>
+            <tr>
+                <th>Combinação</th>
+                <th>Pagamento</th>
+            </tr>
+            <tr>
+                <td>3x Big Win</td>
+                <td>100x</td>
+            </tr>
+            <tr>
+                <td>3x Lucky Seven</td>
+                <td>50x</td>
+            </tr>
+            <tr>
+                <td>3x Cherry</td>
+                <td>20x</td>
+            </tr>
+            <tr>
+                <td>3x Watermelon</td>
+                <td>10x</td>
+            </tr>
+            <tr>
+                <td>3x Grapes</td>
+                <td>8x</td>
+            </tr>
+            <tr>
+                <td>3x Strawberry</td>
+                <td>5x</td>
+            </tr>
+            <tr>
+                <td>3x outras frutas</td>
+                <td>2x</td>
+            </tr>
+        </table>
+        <p>Pagamentos válidos para 3+ símbolos iguais em qualquer linha de pagamento.</p>
     </div>
 
-    
-    <div id="bet-controls">
-        <button id="decrease-bet">-</button>
-        <span id="current-bet">0.40</span>
-        <button id="increase-bet">+</button>
-      </div>
-    <input type="button" onclick="spin(this)" class="start-button" value="Spin"/>
-</div>
+    <div id="container">
+        <div class="window-border">
+            <div class="window">
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+            </div>
+        </div>
 
+        <div id="bet-controls">
+            <button id="decrease-bet">-</button>
+            <span id="current-bet">0.40</span>
+            <button id="increase-bet">+</button>
+        </div>
+        <input type="button" onclick="spin(this)" class="start-button" value="Girar"/>
+    </div>
+
+    <!-- Linhas de pagamento (invisíveis por padrão) -->
+    <div class="win-line" id="line1" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, -100px);"></div>
+    <div class="win-line" id="line2" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 0);"></div>
+    <div class="win-line" id="line3" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 100px);"></div>
+    <div class="win-line" id="line4" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 0) rotate(45deg);"></div>
+    <div class="win-line" id="line5" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 0) rotate(-45deg);"></div>
+
+    <script>
+        // Array de ícones
+        const ICONS = [
+            'apple', 'apricot', 'banana', 'big_win', 'cherry', 
+            'grapes', 'lemon', 'lucky_seven', 'orange', 'pear', 
+            'strawberry', 'watermelon'
+        ];
+
+        // Tabela de pagamentos (símbolo: multiplicador)
+        const PAYTABLE = {
+            'big_win': 100,
+            'lucky_seven': 50,
+            'cherry': 20,
+            'watermelon': 10,
+            'grapes': 8,
+            'strawberry': 5,
+            'default': 2
+        };
+
+        // Configurações do jogo
+        const BASE_SPINNING_DURATION = 0.50;
+        const COLUMN_SPINNING_DURATION = 0.50;
+        
+        // Valores de aposta
+        const betValues = [0.40, 1.00, 2.00, 5.00, 10.00];
+        let currentIndex = 0;
+        
+        // Estado do jogo
+        let saldo = 100.00;
+        let lastWin = 0;
+        let cols;
+
+        // Elementos da interface
+        const saldoElement = document.getElementById('saldo-display');
+        const winElement = document.getElementById('win-display');
+        const currentBetElement = document.getElementById('current-bet');
+        const decreaseBetButton = document.getElementById('decrease-bet');
+        const increaseBetButton = document.getElementById('increase-bet');
+
+        // Inicialização do jogo
+        window.addEventListener('DOMContentLoaded', function() {
+            cols = document.querySelectorAll('.col');
+            setInitialItems();
+            updateBetDisplay();
+            atualizarSaldo();
+            
+            // Event listeners para os botões de aposta
+            decreaseBetButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateBetDisplay();
+                }
+            });
+            
+            increaseBetButton.addEventListener('click', () => {
+                if (currentIndex < betValues.length - 1) {
+                    currentIndex++;
+                    updateBetDisplay();
+                }
+            });
+        });
+
+        // Preenche as colunas com ícones iniciais
+        function setInitialItems() {
+            let baseItemAmount = 40;
+            
+            for (let i = 0; i < cols.length; ++i) {
+                let col = cols[i];
+                let amountOfItems = baseItemAmount + (i * 3);
+                let elms = '';
+                let firstThreeElms = '';
+                
+                for (let x = 0; x < amountOfItems; x++) {
+                    let icon = getRandomIcon();
+                    let item = `<div class="icon" data-item="${icon}"><img src="items/${icon}.png" alt="${icon}"></div>`;
+                    elms += item;
+                    
+                    if (x < 3) firstThreeElms += item;
+                }
+                
+                col.innerHTML = elms + firstThreeElms;
+            }
+        }
+
+        // Função principal do giro
+        function spin(elem) {
+            const apostaAtual = betValues[currentIndex];
+            
+            if (saldo < apostaAtual) {
+                alert('Saldo insuficiente para esta aposta!');
+                return;
+            }
+            
+            // Desconta do saldo
+            saldo -= apostaAtual;
+            atualizarSaldo();
+            
+            // Esconde mensagem de vitória anterior
+            winElement.style.display = 'none';
+            
+            // Esconde linhas de pagamento
+            document.querySelectorAll('.win-line').forEach(line => {
+                line.style.display = 'none';
+            });
+            
+            // Configura a animação
+            let duration = BASE_SPINNING_DURATION + randomDuration();
+            
+            for (let col of cols) {
+                duration += COLUMN_SPINNING_DURATION + randomDuration();
+                col.style.animationDuration = duration + "s";
+            }
+            
+            // Desativa o botão durante o giro
+            elem.setAttribute('disabled', true);
+            
+            // Inicia a animação
+            document.getElementById('container').classList.add('spinning');
+            
+            // Define o resultado no meio do giro
+            setTimeout(setResult, BASE_SPINNING_DURATION * 1000 / 2);
+            
+            // Finaliza o giro
+            setTimeout(function() {
+                document.getElementById('container').classList.remove('spinning');
+                elem.removeAttribute('disabled');
+                
+                // Verifica combinações vencedoras
+                checkWins(apostaAtual);
+            }, duration * 1000);
+        }
+
+        // Define o resultado do giro
+        function setResult() {
+            for (let col of cols) {
+                let results = [
+                    getRandomIcon(),
+                    getRandomIcon(),
+                    getRandomIcon()
+                ];
+                
+                let icons = col.querySelectorAll('.icon img');
+                
+                for (let x = 0; x < 3; x++) {
+                    icons[x].setAttribute('src', 'items/' + results[x] + '.png');
+                    icons[x].parentElement.setAttribute('data-item', results[x]);
+                    icons[(icons.length - 3) + x].setAttribute('src', 'items/' + results[x] + '.png');
+                    icons[(icons.length - 3) + x].parentElement.setAttribute('data-item', results[x]);
+                }
+            }
+        }
+
+        // Verifica combinações vencedoras
+        function checkWins(aposta) {
+            // Obtém os símbolos visíveis (3x5 matriz)
+            const visibleSymbols = [];
+            
+            for (let i = 0; i < cols.length; i++) {
+                const col = cols[i];
+                const icons = col.querySelectorAll('.icon');
+                // Os 3 ícones do meio são os visíveis após o giro
+                visibleSymbols.push([
+                    icons[1].getAttribute('data-item'),
+                    icons[2].getAttribute('data-item'),
+                    icons[3].getAttribute('data-item')
+                ]);
+            }
+            
+            // Linhas de pagamento
+            const paylines = [
+                // Linha horizontal superior (índice 0)
+                [visibleSymbols[0][0], visibleSymbols[1][0], visibleSymbols[2][0], visibleSymbols[3][0], visibleSymbols[4][0]],
+                // Linha horizontal central (índice 1)
+                [visibleSymbols[0][1], visibleSymbols[1][1], visibleSymbols[2][1], visibleSymbols[3][1], visibleSymbols[4][1]],
+                // Linha horizontal inferior (índice 2)
+                [visibleSymbols[0][2], visibleSymbols[1][2], visibleSymbols[2][2], visibleSymbols[3][2], visibleSymbols[4][2]],
+                // Linha diagonal ↘ (índice 3)
+                [visibleSymbols[0][0], visibleSymbols[1][1], visibleSymbols[2][2], visibleSymbols[3][1], visibleSymbols[4][0]],
+                // Linha diagonal ↙ (índice 4)
+                [visibleSymbols[0][2], visibleSymbols[1][1], visibleSymbols[2][0], visibleSymbols[3][1], visibleSymbols[4][2]]
+            ];
+            
+            let totalWin = 0;
+            let winningLines = [];
+            
+            // Verifica cada linha de pagamento
+            for (let i = 0; i < paylines.length; i++) {
+                const line = paylines[i];
+                
+                // Verifica sequências de 3+ símbolos iguais
+                for (let j = 0; j <= 2; j++) {
+                    if (line[j] === line[j+1] && line[j] === line[j+2]) {
+                        const symbol = line[j];
+                        const multiplier = PAYTABLE[symbol] || PAYTABLE['default'];
+                        const winAmount = aposta * multiplier;
+                        
+                        totalWin += winAmount;
+                        winningLines.push({lineIndex: i, symbol: symbol, count: 3});
+                        
+                        // Verifica se há mais símbolos iguais (4 ou 5)
+                        if (j <= 1 && line[j] === line[j+3]) {
+                            totalWin += aposta * multiplier;
+                            winningLines[winningLines.length-1].count++;
+                            
+                            if (j === 0 && line[j] === line[j+4]) {
+                                totalWin += aposta * multiplier;
+                                winningLines[winningLines.length-1].count++;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            
+            // Se houve vitória
+            if (totalWin > 0) {
+                lastWin = totalWin;
+                saldo += totalWin;
+                atualizarSaldo();
+                
+                // Mostra mensagem de vitória
+                winElement.textContent = `Ganhou R$ ${totalWin.toFixed(2)}!`;
+                winElement.style.display = 'block';
+                
+                // Destaca as linhas vencedoras
+                winningLines.forEach(win => {
+                    document.getElementById(`line${win.lineIndex+1}`).style.display = 'block';
+                });
+            }
+        }
+
+        // Atualiza o display do saldo
+        function atualizarSaldo() {
+            saldoElement.textContent = `Saldo: R$ ${saldo.toFixed(2)}`;
+        }
+
+        // Atualiza o display da aposta
+        function updateBetDisplay() {
+            currentBetElement.textContent = betValues[currentIndex].toFixed(2);
+        }
+
+        // Retorna um ícone aleatório
+        function getRandomIcon() {
+            return ICONS[Math.floor(Math.random() * ICONS.length)];
+        }
+
+        // Retorna um tempo aleatório para variação da animação
+        function randomDuration() {
+            return Math.floor(Math.random() * 10) / 100;
+        }
+    </script>
 </body>
 </html>
