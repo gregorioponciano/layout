@@ -161,6 +161,34 @@
         </div>
     </div>
 
+        <!-- Modal de Pagamento -->
+<div class="payment-modal" id="payment-modal">
+    <div class="modal-content">
+        <span class="close-payment">&times;</span>
+        <h2>Escolha a Forma de Pagamento</h2>
+        <div class="payment-options">
+            <div class="payment-option" data-type="pix">
+                <i class="fas fa-qrcode"></i>
+                <span>PIX</span>
+            </div>
+            <div class="payment-option" data-type="credit">
+                <i class="fas fa-credit-card"></i>
+                <span>Cartão de Crédito</span>
+            </div>
+            <div class="payment-option" data-type="debit">
+                <i class="fas fa-credit-card"></i>
+                <span>Cartão de Débito</span>
+            </div>
+            <div class="payment-option" data-type="cash">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Dinheiro</span>
+            </div>
+        </div>
+        <div class="payment-details" id="payment-details"></div>
+        <button class="btn btn-primary confirm-payment">Confirmar Pedido</button>
+    </div>
+</div>v
+
     <footer>
         <div class="footer-content">
             <p>&copy; Lanchonete Delícia. Todos os direitos reservados.</p>
@@ -172,6 +200,8 @@
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
+
+
 
    <script src="js/index.js"></script>
    <script src="js/status.js"></script>
