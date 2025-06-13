@@ -560,6 +560,7 @@ function setupPaymentModal() {
             selectedPaymentMethod = this.getAttribute('data-type');
             
             paymentDetails.style.display = 'block';
+            paymentDetails.style.textAlign = 'center';
             switch(selectedPaymentMethod) {
                 case 'pix':
                     paymentDetails.innerHTML = `
@@ -567,10 +568,10 @@ function setupPaymentModal() {
                         <p><strong>Vantagens:</strong> Pagamento instantâneo e sem taxas</p>
                     `;
                     break;
-                case 'credit':
+                case 'local':
                     paymentDetails.innerHTML = `
-                        <p>Será redirecionado para um ambiente seguro de pagamento</p>
-                        <p><strong>Taxa:</strong> 2,99% por parcela</p>
+                        <p>Obrigado pela preferencia.</p>
+                        <p>estamos te <strong>aguardando</strong></p>
                     `;
                     break;
                 case 'debit':

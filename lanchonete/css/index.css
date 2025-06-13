@@ -11,6 +11,11 @@
             color: #333;
         }
         /* Estilos para o modal de pagamento */
+
+
+        strong {
+            color: black;
+        }
 .payment-modal {
     display: none;
     position: fixed;
