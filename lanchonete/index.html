@@ -54,7 +54,15 @@
         </div>
     </div>
 
+
     <main>
+            <!-- Adicione isso no <main>, antes de menu-categories -->
+<section class="search-container">
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Buscar no cardápio...">
+    </div>
+</section>
         <section class="menu-categories">
             <button class="category-btn active" data-section="lanches">Lanches</button>
             <button class="category-btn" data-section="bebidas">Bebidas</button>
@@ -167,5 +175,6 @@
 
    <script src="js/index.js"></script>
    <script src="js/status.js"></script>
+   <script src="js/search.js"></script>
 </body>
 </html>

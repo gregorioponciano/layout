@@ -189,6 +189,54 @@ main {
                                 margin: 60px auto 0 auto; /* Centraliza o conteúdo no meio da tela */
 }
 
+.search-container {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.search-box {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d35400;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+#search-input:focus {
+    border-color: #d35400;
+    outline: none;
+    box-shadow: 0 0 10px rgba(211, 84, 0, 0.2);
+}
+
+/* Estilo para itens destacados na busca */
+.highlight {
+    background-color: #fffacd;
+    font-weight: bold;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #d35400;
+}
+
 .menu-categories {
                                 display: flex;
                                 margin-bottom: 20px;
