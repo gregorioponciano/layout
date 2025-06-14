@@ -560,7 +560,7 @@ function setupPaymentModal() {
             selectedPaymentMethod = this.getAttribute('data-type');
             
             paymentDetails.style.display = 'block';
-            paymentDetails.style.textAlign = 'block';
+            paymentDetails.style.textAlign = 'center';
             switch(selectedPaymentMethod) {
                 case 'pix':
                     paymentDetails.innerHTML = `
@@ -612,42 +612,182 @@ function setupPaymentModal() {
             let addOnsText = item.addOns.map(addOn => addOn.name).join(', ');
             let removedText = item.removedItems ? item.removedItems.map(item => `Sem ${item}`).join(', ') : '';
             
-            cartMessage += `*${item.quantity}x ${item.itemName}* - R$ ${formatMoney(itemTotalPrice)}%0A`;
-            if (addOnsText) cartMessage += `Adicionais: ${addOnsText}%0A`;
-            if (removedText) cartMessage += `Remoções: ${removedText}%0A`;
-            cartMessage += `%0A`;
+            cartMessage += `${item.quantity}x ${item.itemName} - R$ ${formatMoney(itemTotalPrice)}\n`;
+            if (addOnsText) cartMessage += `Adicionais: ${addOnsText}\n`;
+            if (removedText) cartMessage += `Remoções: ${removedText}\n`;
+            cartMessage += `\n`;
         });
 
         const deliveryFee = 5.00;
         const total = subtotal + deliveryFee;
 
         // Construir mensagem completa para WhatsApp
- let message = `*NOVO PEDIDO*\n\n`;
-message += `*DADOS DO CLIENTE*\n`;
-message += `Nome: ${name || 'Não informado'}\n`;
-message += `Telefone: ${phone || 'Não informado'}\n`;
-message += `CPF: ${cpf || 'Não informado'}\n`;
-message += `Endereço: ${address || 'Não informado'}\n\n`;
+        let message = `*NOVO PEDIDO*\n\n`;
+        message += `*DADOS DO CLIENTE*\n`;
+        message += `Nome: ${name || 'Não informado'}\n`;
+        message += `Telefone: ${phone || 'Não informado'}\n`;
+        message += `CPF: ${cpf || 'Não informado'}\n`;
+        message += `Endereço: ${address || 'Não informado'}\n\n`;
 
-message += `*ITENS DO PEDIDO*\n`;
-message += cartMessage;
+        message += `*ITENS DO PEDIDO*\n${cartMessage}`;
+        message += `*TOTAL DO PEDIDO*\n`;
+        message += `Subtotal: R$ ${formatMoney(subtotal)}\n`;
+        message += `Taxa de entrega: R$ ${formatMoney(deliveryFee)}\n`;
+        message += `Total: R$ ${formatMoney(total)}\n\n`;
 
-message += `*TOTAL DO PEDIDO*\n`;
-message += `Subtotal: R$ ${formatMoney(subtotal)}\n`;
-message += `Taxa de entrega: R$ ${formatMoney(deliveryFee)}\n`;
-message += `Total: R$ ${formatMoney(total)}\n\n`;
+        message += `*FORMA DE PAGAMENTO*\n`;
+        message += `Método: ${formatPaymentMethod(selectedPaymentMethod)}\n`;
 
-message += `*FORMA DE PAGAMENTO*\n`;
-message += `Método: ${selectedPaymentMethod.toUpperCase()}\n`;
+        if (selectedPaymentMethod === 'cash') {
+            const changeFor = document.getElementById('cash-change').value;
+            if (changeFor) message += `Troco para: ${changeFor}\n`;
+        }
 
-if (selectedPaymentMethod === 'cash') {
-    const changeFor = document.getElementById('cash-change').value;
-    if (changeFor) message += `Troco para: ${changeFor}\n`;
-}
+        // Função auxiliar para formatar método de pagamento
+        function formatPaymentMethod(method) {
+            const methods = {
+                'pix': 'PIX',
+                'debit': 'Cartão de Débito',
+                'cash': 'Dinheiro',
+                'local': 'Pagamento no Local'
+            };
+            return methods[method] || method.toUpperCase();
+        }
 
-// abrir WhatsApp
-const whatsappNumber = '5514991761256';
-window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        // Codificar e abrir WhatsApp
+        const whatsappNumber = '5514991761256';
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        
+        paymentModal.style.display = 'none';
+    });
+}// Sistema de Pagamento (MODIFICADO para enviar todos os dados)
+function setupPaymentModal() {
+    const paymentModal = document.getElementById('payment-modal');
+    const closePayment = document.querySelector('.close-payment');
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const paymentDetails = document.getElementById('payment-details');
+    const confirmPaymentBtn = document.querySelector('.confirm-payment');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    checkoutBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (cart.length === 0) {
+            alert('Seu carrinho está vazio!');
+            return;
+        }
+        paymentModal.style.display = 'flex';
+    });
+
+    closePayment.addEventListener('click', function() {
+        paymentModal.style.display = 'none';
+    });
+
+    paymentOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            paymentOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+            selectedPaymentMethod = this.getAttribute('data-type');
+            
+            paymentDetails.style.display = 'block';
+            paymentDetails.style.textAlign = 'center';
+            switch(selectedPaymentMethod) {
+                case 'pix':
+                    paymentDetails.innerHTML = `
+                        <p>Você receberá um QR Code para pagamento via PIX</p>
+                        <p><strong>Vantagens:</strong> Pagamento instantâneo e sem taxas</p>
+                    `;
+                    break;
+                case 'local':
+                    paymentDetails.innerHTML = `
+                        <p>Obrigado pela preferencia.</p>
+                        <p>estamos te <strong>aguardando</strong></p>
+                    `;
+                    break;
+                case 'debit':
+                    paymentDetails.innerHTML = `
+                        <p>Será redirecionado para um ambiente seguro de pagamento</p>
+                        <p><strong>Taxa:</strong> R$ 1,50 por pedido</p>
+                    `;
+                    break;
+                case 'cash':
+                    paymentDetails.innerHTML = `
+                        <p>Pagamento na entrega com troco para:</p>
+                        <input type="text" id="cash-change" placeholder="Valor para troco (opcional)">
+                    `;
+                    break;
+            }
+        });
+    });
+
+    confirmPaymentBtn.addEventListener('click', function() {
+        if (!selectedPaymentMethod) {
+            alert('Por favor, selecione uma forma de pagamento');
+            return;
+        }
+
+        // Obter dados do usuário
+        const user = JSON.parse(localStorage.getItem('user')) || {};
+        const { name, phone, address, cpf } = user;
+
+        // Construir mensagem dos itens do carrinho
+        let cartMessage = '';
+        let subtotal = 0;
+        
+        cart.forEach((item) => {
+            const addOnsPrice = item.addOns.reduce((total, addOn) => total + addOn.price, 0);
+            const itemTotalPrice = (item.basePrice + addOnsPrice) * item.quantity;
+            subtotal += itemTotalPrice;
+            
+            let addOnsText = item.addOns.map(addOn => addOn.name).join(', ');
+            let removedText = item.removedItems ? item.removedItems.map(item => `Sem ${item}`).join(', ') : '';
+            
+            cartMessage += `${item.quantity}x ${item.itemName} - R$ ${formatMoney(itemTotalPrice)}\n`;
+            if (addOnsText) cartMessage += `Adicionais: ${addOnsText}\n`;
+            if (removedText) cartMessage += `Remoções: ${removedText}\n`;
+            cartMessage += `\n`;
+        });
+
+        const deliveryFee = 5.00;
+        const total = subtotal + deliveryFee;
+
+        // Construir mensagem completa para WhatsApp
+        let message = `*NOVO PEDIDO*\n\n`;
+        message += `*DADOS DO CLIENTE*\n`;
+        message += `Nome: ${name || 'Não informado'}\n`;
+        message += `Telefone: ${phone || 'Não informado'}\n`;
+        message += `CPF: ${cpf || 'Não informado'}\n`;
+        message += `Endereço: ${address || 'Não informado'}\n\n`;
+
+        message += `*ITENS DO PEDIDO*\n${cartMessage}`;
+        message += `*TOTAL DO PEDIDO*\n`;
+        message += `Subtotal: R$ ${formatMoney(subtotal)}\n`;
+        message += `Taxa de entrega: R$ ${formatMoney(deliveryFee)}\n`;
+        message += `Total: R$ ${formatMoney(total)}\n\n`;
+
+        message += `*FORMA DE PAGAMENTO*\n`;
+        message += `Método: ${formatPaymentMethod(selectedPaymentMethod)}\n`;
+
+        if (selectedPaymentMethod === 'cash') {
+            const changeFor = document.getElementById('cash-change').value;
+            if (changeFor) message += `Troco para: ${changeFor}\n`;
+        }
+
+        // Função auxiliar para formatar método de pagamento
+        function formatPaymentMethod(method) {
+            const methods = {
+                'pix': 'PIX',
+                'debit': 'Cartão de Débito',
+                'cash': 'Dinheiro',
+                'local': 'Pagamento no Local'
+            };
+            return methods[method] || method.toUpperCase();
+        }
+
+        // Codificar e abrir WhatsApp
+        const whatsappNumber = '5514991761256';
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
         
         paymentModal.style.display = 'none';
     });
