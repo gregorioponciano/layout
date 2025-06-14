@@ -560,7 +560,7 @@ function setupPaymentModal() {
             selectedPaymentMethod = this.getAttribute('data-type');
             
             paymentDetails.style.display = 'block';
-            paymentDetails.style.textAlign = 'center';
+            paymentDetails.style.textAlign = 'block';
             switch(selectedPaymentMethod) {
                 case 'pix':
                     paymentDetails.innerHTML = `
