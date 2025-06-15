@@ -407,15 +407,15 @@ nav ul li a:not(.active):hover {
                         padding: 10px;
         }
 
-                .div-status-loja {
+        .div-status-loja {
                         position: fixed;
-                        top: 148px;
+                        top: 140px;
                         padding-top: 20px;                       
         }
 
         .modal-conteudo {
 
-                                width: 90vw;
+                        width: 90vw;
 
 }
 
