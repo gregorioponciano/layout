@@ -829,15 +829,6 @@ function setupInputMasks() {
     });
 }
 
-// Logout (mantido igual)
-function setupLogout() {
-    document.getElementById('logout').addEventListener('click', function(e) {
-        e.preventDefault();
-        localStorage.removeItem('user');
-        window.location.href = 'inicio.html';
-    });
-}
-
 // Carrinho Sidebar (mantido igual)
 function setupCartSidebar() {
     const cartIcon = document.getElementById('cart-icon');
