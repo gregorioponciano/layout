@@ -25,6 +25,31 @@
 
     </header>
 
+    
+    <!-- status da loja (aberto)(fechado)-->
+    <div class="div-status-loja">    
+        <div class="status-loja" id="status"></div>
+        <p id="ver-mais-status" class="ver-mais-status">ver mais</p>
+    </div>
+     <!-- Modal horarios (status)-->
+     <div id="modal-horario">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <div class="modal-titulo">Horários de Funcionamento</div>
+            <div class="modal-texto">                
+                <strong>SEG</strong>: 18:00 às 23:00<br>
+                <strong>TER</strong>: 18:00 às 23:00<br>
+                <strong>QUA</strong>: 18:00 às 23:00<br>
+                <strong>QUI</strong>: 18:00 às 23:00<br>
+                <strong>SEX</strong>: 18:00 às 23:00<br>
+                <strong>SÁB</strong>: 7:00 às 23:00<br>
+                <strong>DOM</strong>: 7:00 às 23:00<br><br>
+                <strong>Endereço</strong>: Avenida Rio40Graus, 240, Centro - Guaiçara/SP<br><br>
+                <strong>Email</strong>: rio40graus@email.com
+            </div>
+        </div>
+    </div>
+
     <!-- Modal de Login -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -72,6 +97,14 @@
     </div>
 
     <main>
+                <!-- buscador de itens (search) -->
+    <section class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Buscar no cardápio...">
+        </div>
+    </section>
+    <!--menu de opçoes lanches, bebidas etc-->
         <section class="menu-categories">
             <button class="category-btn active" data-section="lanches">Lanches</button>
             <button class="category-btn" data-section="bebidas">Bebidas</button>
@@ -104,5 +137,7 @@
 
 
    <script src="js/inicio.js"></script>
+   <script src="js/status.js"></script>
+   <script src="js/search.js"></script>
 </body>
 </html>
