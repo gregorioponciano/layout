@@ -64,7 +64,7 @@
                     <label for="loginPassword">Senha:</label>
                     <input type="password" id="loginPassword" required>
                 </div>
-                <button type="submit">Entrar</button>
+                <input type="submit" value="Cadastrar" class="cadLogin" id="login">
             </form>
         </div>
     </div>
@@ -80,8 +80,16 @@
                     <input type="text" id="registerName" required>
                 </div>
                 <div class="form-group">
-                    <label for="registerEmail">E-mail:</label>
-                    <input type="email" id="registerEmail" required>
+                    <label for="registerTelefone">Telefone:</label>
+                    <input type="tel" id="registerTelefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEndereco">Endereço:</label>
+                    <input type="text" id="registerEndereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerCPF">CPF:</label>
+                    <input type="text" id="registerCPF" required>
                 </div>
                 <div class="form-group">
                     <label for="registerPassword">Senha:</label>
@@ -91,7 +99,8 @@
                     <label for="registerConfirmPassword">Confirmar Senha:</label>
                     <input type="password" id="registerConfirmPassword" required>
                 </div>
-                <button type="submit">Cadastrar</button>
+                <input type="submit" value="Cadastrar" class="cadLogin" id="cadastrar">
+
             </form>
         </div>
     </div>
@@ -134,7 +143,20 @@
             </div>
         </section>
     </main>
+            <!-- Botão voltar ao topo -->
+  <button id="btnTopo" title="Voltar ao topo">↑</button>
 
+      <footer>
+        <div class="footer-content">
+            <p>&copy; Lanchonete Delícia. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Gregorio ponciano</p>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
 
    <script src="js/index.js"></script>
    <script src="js/status.js"></script>
