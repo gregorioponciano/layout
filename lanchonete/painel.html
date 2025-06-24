@@ -12,70 +12,70 @@
     <header>
         <div class="logo">
             <img src="imagens/logo" alt="Lanchonete" class="img-logo">
-            <h1>Lanchonete Delícia</h1>
-        </div>
-        <nav>
+            <h1 class="h1-logo">Lanchonete Delícia</h1>
             <ul>
                 <li><a href="#" class="active">Cardápio</a></li>
                 <li><a href="#">Pedidos</a></li>
                 <li><a href="#" id="account-settings"><span class="material-symbols-outlined">settings</span></a></li>
                 <li><a href="#" id="logout">Sair</a></li>
             </ul>
-        </nav>
-         <!-- Modal de Configurações da Conta -->
-        <div class="account-modal" id="account-modal">
-            <div class="modal-content">
-                <span class="close-account">&times;</span>
-                <h2>Minha Conta</h2>
-                <form id="account-form">
-                    <div class="form-group">
-                        <label for="account-name">Nome Completo</label>
-                        <input type="text" id="account-name" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="account-phone">Telefone</label>
-                        <input type="text" id="account-phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="account-address">Endereço</label>
-                        <input type="text" id="account-address">
-                    </div>
-                    <div class="form-group">
-                        <label for="account-cpf">CPF</label>
-                        <input type="text" id="account-cpf" placeholder="Opcional">
-                    </div>
-                    <div class="form-group">
-                        <label for="account-password">Nova Senha (deixe em branco para não alterar)</label>
-                        <input type="password" id="account-password">
-                    </div>
-                    <div class="form-group">
-                        <label for="account-confirm-password">Confirmar Nova Senha</label>
-                        <input type="password" id="account-confirm-password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                </form>
-            </div>
-        </div>
-        <div class="carrinho">
-            <div class="cart-icon" id="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </div>
-        </div>
-        
-        <!-- Notificação de Item Adicionado -->
-        <div class="notification" id="notification">
-            <div class="notification-content">
-                <span id="notification-message"></span>
+                <!-- status da loja (aberto)(fechado)-->
+            <div class="div-status-loja">    
+                <div class="status-loja" id="status"></div>
+                <p id="ver-mais-status" class="ver-mais-status">ver mais</p>
             </div>
         </div>
     </header>
 
-    <!-- status da loja (aberto)(fechado)-->
-    <div class="div-status-loja">    
-        <div class="status-loja" id="status"></div>
-        <p id="ver-mais-status" class="ver-mais-status">ver mais</p>
+            <!--carrinho de compra-->
+    <div class="carrinho">
+        <div class="cart-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
     </div>
+            <!-- Notificação de Item Adicionado -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <span id="notification-message"></span>
+        </div>
+    </div>
+
+            <!-- Modal de Configurações da Conta -->
+    <div class="account-modal" id="account-modal">
+        <div class="modal-content">
+            <span class="close-account">&times;</span>
+            <h2>Minha Conta</h2>
+            <form id="account-form">
+                <div class="form-group">
+                    <label for="account-name">Nome Completo</label>
+                    <input type="text" id="account-name" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="account-phone">Telefone</label>
+                    <input type="text" id="account-phone">
+                </div>
+                <div class="form-group">
+                    <label for="account-address">Endereço</label>
+                    <input type="text" id="account-address">
+                </div>
+                <div class="form-group">
+                    <label for="account-cpf">CPF</label>
+                    <input type="text" id="account-cpf" placeholder="Opcional">
+                </div>
+                <div class="form-group">
+                    <label for="account-password">Nova Senha (deixe em branco para não alterar)</label>
+                    <input type="password" id="account-password">
+                </div>
+                <div class="form-group">
+                    <label for="account-confirm-password">Confirmar Nova Senha</label>
+                    <input type="password" id="account-confirm-password">
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
      <!-- Modal horarios (status)-->
      <div id="modal-horario">
         <div class="modal-conteudo">
