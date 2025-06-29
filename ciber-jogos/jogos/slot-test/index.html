@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Caça-Níqueis</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="saldo-display">Saldo: R$ 100,00</div>
+    <div id="win-display"></div>
+
+<!--<div class="paytable">
+        <h3>Tabela de Pagamentos</h3>
+        <table>
+            <tr>
+                <th>Combinação</th>
+                <th>Pagamento</th>
+            </tr>
+            <tr>
+                <td>3x Big Win</td>
+                <td>100x</td>
+            </tr>
+            <tr>
+                <td>3x Lucky Seven</td>
+                <td>50x</td>
+            </tr>
+            <tr>
+                <td>3x Cherry</td>
+                <td>20x</td>
+            </tr>
+            <tr>
+                <td>3x Watermelon</td>
+                <td>10x</td>
+            </tr>
+            <tr>
+                <td>3x Grapes</td>
+                <td>8x</td>
+            </tr>
+            <tr>
+                <td>3x Strawberry</td>
+                <td>5x</td>
+            </tr>
+            <tr>
+                <td>3x outras frutas</td>
+                <td>2x</td>
+            </tr>
+        </table>
+        <p>Pagamentos válidos para 3+ símbolos iguais em qualquer linha de pagamento.</p>
+    </div>-->
+
+    <div id="container">
+        <div class="window-border">
+            <div class="window">
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+                <div class="outer-col">
+                    <div class="col"></div>
+                </div>
+                <div class="outer-spacer"></div>
+            </div>
+        </div>
+
+        <div id="bet-controls">
+            <button id="decrease-bet">-</button>
+            <span id="current-bet">0.40</span>
+            <button id="increase-bet">+</button>
+        </div>
+        <input type="button" onclick="spin(this)" class="start-button" value="Girar"/>
+    </div>
+
+    <!-- Linhas de pagamento (invisíveis por padrão) -->
+    <div class="win-line" id="line1" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, -100px);"></div>
+    <div class="win-line" id="line2" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 0);"></div>
+    <div class="win-line" id="line3" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 100px);"></div>
+    <div class="win-line" id="line4" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 0) rotate(45deg);"></div>
+    <div class="win-line" id="line5" style="width: 500px; height: 4px; top: 50%; left: 50%; transform: translate(-50%, 0) rotate(-45deg);"></div>
+<script src="script.js"></script>
+</body>
+</html>

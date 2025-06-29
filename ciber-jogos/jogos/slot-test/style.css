@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --item-height: 100px;
+}
+
+body {
+    background-color: #222;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100dvh;
+    overflow-x: hidden;
+}
+
+#saldo-display, #win-display {
+    position: fixed;
+    left: 20px;
+    font-size: 1.2em;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 10;
+    max-width: 90%;
+}
+
+#saldo-display {
+    top: 20px;
+}
+
+#win-display {
+    top: 70px;
+    background: rgba(0,200,0,0.7);
+    display: none;
+}
+
+.start-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1em;
+    background: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-button:hover {
+    background: #f39c12;
+}
+
+.start-button:disabled {
+    background: #7f8c8d;
+    cursor: not-allowed;
+}
+
+#container {
+    background-color: #fd9b03;
+    padding: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 120px auto 40px;
+    border-radius: 15px;
+    max-width: 650px; /* para telas grandes */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.window {
+    position: relative;
+    overflow: hidden;
+    height: calc(3 * var(--item-height));
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.window-border {
+    background: linear-gradient(to bottom, #fcf8ad, #f8f3cd, #f9e13d);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 6px 4px -5px #eca654;
+}
+
+.outer-col {
+    width: 100px;
+    background: linear-gradient(#16013c, #741a5e, #430155, #16013c);
+    overflow: hidden;
+    height: calc(var(--item-height) * 3);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.col {
+    padding: 0 5px;
+    transform: translateY(calc(-100% + var(--item-height) * 3));
+    will-change: transform;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.icon {
+    width: 100%;
+    height: var(--item-height);
+    position: relative;
+}
+
+.icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    box-shadow: 0 0 35px 30px rgba(12, 0, 14, 0.69);
+    z-index: 2;
+    border-radius: 50%;
+}
+
+#container.spinning .col {
+    animation-name: scroll;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.65, .97, .72, 1);
+    animation-fill-mode: forwards;
+}
+
+#container.spinning .outer-col:nth-child(2) .col {
+    animation-delay: 0.1s;
+}
+
+#container.spinning .outer-col:nth-child(3) .col {
+    animation-delay: 0.2s;
+}
+
+@keyframes scroll {
+    to {
+        transform: translateY(0);
+    }
+}
+
+#bet-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+#bet-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#bet-controls button:hover {
+    background: #2980b9;
+}
+
+#bet-controls button:disabled {
+    background: #7f8c8d;
+    cursor: not-allowed;
+}
+
+#current-bet {
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+}
+
+.paytable {
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 90%;
+    font-size: 14px;
+}
+
+.paytable h3 {
+    margin-top: 0;
+    color: #f1c40f;
+    text-align: center;
+}
+
+.paytable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.paytable th,
+.paytable td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+.paytable th {
+    color: #f1c40f;
+}
+
+.win-line {
+    position: absolute;
+    background-color: rgba(255, 255, 0, 0.5);
+    z-index: 5;
+    display: none;
+    height: 4px;
+    width: 90%;
+    left: 5%;
+}
+
+@media (max-width: 650px) {
+    :root {
+        --item-height: 80px;
+    }
+
+        #container {
+        /* Tela cheia no mobile */
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .window {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .outer-col {
+        width: 60px;
+    }
+
+    .start-button,
+    #bet-controls button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    #saldo-display,
+    #win-display {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .paytable {
+        font-size: 12px;
+    }
+}
