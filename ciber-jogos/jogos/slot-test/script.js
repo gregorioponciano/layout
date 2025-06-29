@@ -43,7 +43,7 @@ function setInitialItems() {
         // Preenche a coluna com os itens
         for (let x = 0; x < amountOfItems; x++) {
             let icon = getRandomIcon(); // Obtém um ícone aleatório
-            let item = '<div class="icon" data-item="' + icon + '"><img src="simbolos/' + icon + '.png"></div>';
+            let item = '<div class="icon" data-item="' + icon + '"><img src="imagens/simbolos/' + icon + '.png"></div>';
             elms += item; // Adiciona o item ao HTML da coluna
 
             if (x < 3) firstThreeElms += item; // Faz backup dos 3 primeiros itens (serão usados no final)
@@ -101,8 +101,8 @@ function setResult() {
         let icons = col.querySelectorAll('.icon img'); // Seleciona todas as imagens de ícones da coluna
         // Substitui os primeiros e últimos três ícones da coluna pelos ícones gerados
         for (let x = 0; x < 3; x++) {
-            icons[x].setAttribute('src', 'simbolos/' + results[x] + '.png');
-            icons[(icons.length - 3) + x].setAttribute('src', 'simbolos/' + results[x] + '.png');
+            icons[x].setAttribute('src', 'imagens/simbolos/' + results[x] + '.png');
+            icons[(icons.length - 3) + x].setAttribute('src', 'imagens/simbolos/' + results[x] + '.png');
         }
     }
 }
