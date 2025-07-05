@@ -16,6 +16,7 @@
         <div class="menu-superior"> <!--Menu Superior-->
                 <img src="../public/imagens/mariobet.png" alt="fotok" class="img-logo">         
             <div class="links">
+                 <p>Seu saldo é de R$30,00 (fictício).</p>
                 <p class="header-saldo">R$ 100,000.00</p>
                 <span class="material-symbols-outlined" onclick="openModal(1)">account_balance_wallet </span>
                 <span class="material-symbols-outlined" onclick="openModal(4)">person_2</span>
@@ -65,35 +66,6 @@
             </div>
         </div>
 
-        <div id="modal-cadastro" class="modal small"> <!-- Modal Cadastro -->
-            <span class="close-btn" onclick="closeModal('cadastro')">X</span>
-            <h2>Cadastro</h2>
-            <p>Preencha seus dados para se cadastrar.</p>
-            <form action="php/cadastro.php" method="POST">
-                <label for="nome-cad">Nome</label>
-                <input type="text" id="nome-cad" name="nome-cad" class="input" placeholder="Nome" required><br>
-                <label for="email-cad">Email</label>
-                <input type="email" id="email-cad" name="email-cad" class="input" placeholder="Email" required><br>
-                <label for="senha-cad">Senha</label>
-                <input type="password" id="senha-cad" name="senha-cad" class="input" placeholder="Senha" required><br>
-                <button type="submit" class="botao-cad-login">Cadastrar</button>
-            </form>
-            <a href="#" onclick="openModal('login')" class="link-cad-login">Já tem uma conta? Entre aqui</a>
-        </div>
-
-        <div id="modal-login" class="modal small"> <!-- Modal Login -->
-            <span class="close-btn" onclick="closeModal('login')">X</span>
-            <h2>Login</h2>
-            <p>Insira seus dados para entrar.</p>
-            <form action="php/login.php" method="POST">
-                <label for="email-login">Email</label>
-                <input type="email" id="email-login" name="email-login" placeholder="Email" class="input" required><br>
-                <label for="senha-login">Senha</label>
-                <input type="password" id="senha-login" name="senha-login" placeholder="Senha" class="input" required><br>
-                <button type="submit" class="botao-cad-login">Login</button>
-            </form>
-            <a href="#" onclick="openModal('cadastro')" class="link-cad-login">Não tem uma conta? Cadastre-se aqui</a>
-        </div>
         
         <div id="modal-1" class="modal modal-1"> <!-- Modal Depósito -->
             <div class="header-deposito">

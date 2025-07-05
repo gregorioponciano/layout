@@ -3,6 +3,7 @@ function checkInputValue() {
   const value = parseFloat(document.getElementById('valueInput').value);  // Pegando o valor inserido
   const submitButton = document.getElementById('submitButton');
   const errorMessage = document.getElementById('error-message');
+   const botoes = document.querySelectorAll('.valor-botao');
   
   // Verificar se o valor é numérico e habilitar o botão se o valor for maior que 0
   if (!isNaN(value) && value > 0) {
@@ -11,17 +12,33 @@ function checkInputValue() {
   } else {
       submitButton.disabled = true;
       submitButton.classList.remove('enabled');
+        // 👉 Remover fundo verde dos botões se input for apagado/inválido
+    botoes.forEach(botao => botao.classList.remove('selecionado'));
+
   }
 
   // Ocultar a mensagem de erro enquanto o botão não for clicado
   errorMessage.style.display = 'none';
 }
 
-// Função para definir um valor fixo no input
 function setValue(amount) {
+  // Define o valor no input
   document.getElementById('valueInput').value = amount;
-  checkInputValue(); // Revalida o valor ao clicar nos botões de valor fixo
+  
+  // Atualiza o botão de submit
+  checkInputValue(); // Continua validando o valor
+
+  // Remove a classe 'selecionado' de todos os botões
+  const botoes = document.querySelectorAll('.valor-botao');
+  botoes.forEach(botao => botao.classList.remove('selecionado'));
+
+  // Adiciona a classe 'selecionado' apenas ao botão clicado
+  const botaoClicado = Array.from(botoes).find(btn => btn.textContent.includes(amount));
+  if (botaoClicado) {
+    botaoClicado.classList.add('selecionado');
+  }
 }
+
 
 // Função específica para abrir o modal 5 com validação
 function openModal5() {
