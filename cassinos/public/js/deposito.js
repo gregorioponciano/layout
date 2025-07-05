@@ -6,7 +6,7 @@ function checkInputValue() {
    const botoes = document.querySelectorAll('.valor-botao');
   
   // Verificar se o valor é numérico e habilitar o botão se o valor for maior que 0
-  if (!isNaN(value) && value > 0) {
+   if (!isNaN(value) && value >= 10 && value <= 10000) {
       submitButton.disabled = false;
       submitButton.classList.add('enabled');
   } else {
@@ -44,6 +44,8 @@ function setValue(amount) {
 function openModal5() {
   const value = parseFloat(document.getElementById('valueInput').value);
   const errorMessage = document.getElementById('error-message');
+
+
   
   // Verificar se o valor está entre 10 e 10000
   if (value >= 10 && value <= 10000) {
@@ -59,6 +61,11 @@ function openModal5() {
       // Exibe a mensagem de erro se o valor for inválido
       errorMessage.style.display = 'block';
   }
+}
+
+function closeMessage() {
+  const errorMessage = document.getElementById('error-message');
+      errorMessage.style.display =  'none'
 }
 
 // Função para abrir um modal
