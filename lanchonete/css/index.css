@@ -52,6 +52,14 @@ nav ul li a.active, nav ul li a:hover {
                                 background-color: rgba(255,255,255,0.2);
 }
 
+.active {
+                                margin-left: 20px
+}
+
+#cad   {
+                                margin-left: 20px;
+}
+
                 /*status da loja (aberto) e (fechado)*/
 .div-status-loja {
                                 position: fixed;
