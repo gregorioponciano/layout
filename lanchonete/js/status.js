@@ -24,12 +24,12 @@ function verificarStatusFuncionamento() {
   if (status === 'Aberta') {
   statusElement.textContent = 'Aberto';
   statusElement.style.color = '#00ff00';
-  statusElement.style.textDecoration = 'underline';
+
 } else {
   statusElement.textContent = 'Fechado';
   statusElement.style.color = 'red';
   statusElement.style.backgroundColor = '#7e93aa';
-  statusElement.style.textDecoration = 'underline';
+
 }
 
 
