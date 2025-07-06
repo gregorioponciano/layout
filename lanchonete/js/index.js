@@ -88,7 +88,7 @@ const cardapio = {
     ]
 };
 
-// Renderizar o Cardápio
+// Renderizar o Cardápio mostra o cardapio na tela
 function renderizarCardapio() {
     for (const categoria in cardapio) {
         const section = document.getElementById(categoria);
@@ -111,7 +111,7 @@ function renderizarCardapio() {
     }
 }
 
-// Sistema de Filtros
+// Sistema de Filtros modal lanches bebidas
 function setupCategoryFilters() {
     const categoryButtons = document.querySelectorAll('.category-btn');
     
@@ -139,110 +139,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Elementos dos modais e links
-    const loginModal = document.getElementById('loginModal');
-    const registerModal = document.getElementById('registerModal');
-    const loginLink = document.querySelector('a.active');
-    const registerLink = document.getElementById('account-settings');
-    const closeButtons = document.querySelectorAll('.close-modal');
-    
-    // Função para alternar entre modais e atualizar links ativos
-    function toggleModals(hideModal, showModal, activateLink, deactivateLink) {
-        hideModal.style.display = 'none';
-        showModal.style.display = 'block';
-        activateLink.classList.add('active');
-        deactivateLink.classList.remove('active');
-    }
-    
-    // Abrir modal de login
-    loginLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleModals(registerModal, loginModal, loginLink, registerLink);
-    });
-    
-    // Abrir modal de cadastro
-    registerLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleModals(loginModal, registerModal, registerLink, loginLink);
-    });
-    
-    // Fechar modais e resetar links ativos
-    closeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            loginModal.style.display = 'none';
-            registerModal.style.display = 'none';
-            // Volta ao estado original (Entrar ativo)
-            loginLink.classList.add('active');
-            registerLink.classList.remove('active');
-        });
-    });
-    
-    // Fechar ao clicar fora do modal
-    window.addEventListener('click', function(e) {
-        if (e.target === loginModal || e.target === registerModal) {
-            loginModal.style.display = 'none';
-            registerModal.style.display = 'none';
-            // Volta ao estado original (Entrar ativo)
-            loginLink.classList.add('active');
-            registerLink.classList.remove('active');
-        }
-    });
-    
-    // Adicionando links para alternar entre modais
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    
-    // Link "Cadastre-se" no modal de login
-    const registerLinkInLogin = document.createElement('p');
-    registerLinkInLogin.innerHTML = 'Não tem uma conta? <a href="#" id="goToRegister">Cadastre-se</a>';
-    loginForm.appendChild(registerLinkInLogin);
-    
-    // Link "Entrar" no modal de cadastro
-    const loginLinkInRegister = document.createElement('p');
-    loginLinkInRegister.innerHTML = 'Já tem uma conta? <a href="#" id="goToLogin">Entrar</a>';
-    registerForm.appendChild(loginLinkInRegister);
-    
-    // Eventos para alternar entre modais
-    document.getElementById('goToRegister').addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleModals(loginModal, registerModal, registerLink, loginLink);
-    });
-    
-    document.getElementById('goToLogin').addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleModals(registerModal, loginModal, loginLink, registerLink);
-    });
-    
-    // Validação dos formulários (mantido igual)
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
-        
-        console.log('Login attempt:', { email, password });
-        alert('Login realizado com sucesso!');
-        loginModal.style.display = 'none';
-        loginLink.classList.add('active');
-        registerLink.classList.remove('active');
-    });
-    
-    registerForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('registerName').value;
-        const email = document.getElementById('registerEmail').value;
-        const password = document.getElementById('registerPassword').value;
-        const confirmPassword = document.getElementById('registerConfirmPassword').value;
-        
-        if (password !== confirmPassword) {
-            alert('As senhas não coincidem!');
-            return;
-        }
-        
-        console.log('Registration attempt:', { name, email, password });
-        alert('Cadastro realizado com sucesso!');
-        registerModal.style.display = 'none';
-        loginLink.classList.add('active');
-        registerLink.classList.remove('active');
-    });
-});
