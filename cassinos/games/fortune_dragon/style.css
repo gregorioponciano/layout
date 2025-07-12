@@ -10,6 +10,8 @@ body {
                                     margin: 0px;
 }
 
+
+
 /* Estilos para a tela de carregamento */
 .loading-screen {
                                     position: fixed;
@@ -81,11 +83,11 @@ h3 {
 
 .column {
                                     position: relative;
-                                    width: 170px;
-                                    height: 510px;
+                                    width: 175px;
+                                    height: 520px;
                                     overflow: hidden;
                                     background-color: #351049;
-                                    border: 3px solid #6c63e9;
+                                    border: 1px solid #6c63e9;
 }
 
 .images-container {
@@ -252,3 +254,10 @@ to {
                                         cursor: pointer;
 }
 
+/* Add this to your CSS file */
+.reel-symbol.winning-symbol {
+    /* Example: Add a gold glow or border */
+
+    border: 2px solid rgb(255, 0, 0); /* Or a border */
+
+}
