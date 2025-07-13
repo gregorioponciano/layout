@@ -259,5 +259,6 @@ to {
     /* Example: Add a gold glow or border */
 
     border: 2px solid rgb(255, 0, 0); /* Or a border */
+    background-color: #130986;
 
 }
