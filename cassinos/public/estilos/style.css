@@ -1140,6 +1140,13 @@ footer {
                                                         margin-bottom: 70px;
 }
 
+.img-coleta-999 {
+                                                        position: fixed;
+                                                        bottom: 150px;
+                                                        width: 100px;
+                                                        right: 10px;
+}
+
                         /* Estilos para telas maiores que 600px */
 @media (min-width: 600px) {
                     .container {
@@ -1177,6 +1184,9 @@ footer {
                     max-width: 550px;
 }
 
+.img-coleta-999 {
+                                                        display: none;
+}
 }
 
                 /* Estilos para telas menores que 600px */
