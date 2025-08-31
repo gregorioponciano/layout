@@ -21,20 +21,31 @@
             </div>
         </div>
 
-        <div class="menu-inferior"> <!--Menu Inferior-->
-            <ul class="menu-ul-inferior">
-                <!--home-->
-                <li class="li-menu-inferior" onclick="returnToBody(); openRoleta(); closeModal(5); closeModal('login'); closeModal('cadastro')"><span class="material-symbols-outlined" id="home">other_houses <div class="p-span">inicio</div></span></li>
-                <!--carteira-->
-                <li class="li-menu-inferior" onclick="openModal(1)"><span class="material-symbols-outlined">account_balance_wallet <div class="p-span">Depósito</div></span></li>
-                <!--afilado-->
-                <li class="li-menu-inferior" onclick="openModal(2)"><div class="p-span"><img src="imagens/mariobet.png" alt="foto" class="img-afiliado-menu-inferior"><div class="p-span">Afiliados</div></div></li>
-                <!--promoção-->
-                <li class="li-menu-inferior" onclick="openModal(3)"><span class="material-symbols-outlined">featured_seasonal_and_gifts <div class="p-span">Promoção</div></span></li>
-                <!--perfil-->
-                <li class="li-menu-inferior" onclick="openModal(4)"><span class="material-symbols-outlined">account_circle <div class="p-span">Perfil</div></span></li>
-            </ul>
-        </div>
+<div class="menu-inferior">
+    <ul class="menu-ul-inferior">
+        <li class="li-menu-inferior active-menu" data-modal-id="home" onclick="returnToBody(); openRoleta(); closeModal(5); closeModal('login'); closeModal('cadastro');">
+            <img src="imagens/logo-provedor/menu_home_click.png" data-normal-src="imagens/logo-provedor/menu_home_original.png" data-active-src="imagens/logo-provedor/menu_home_click.png" alt="Início" class="img-menu-inferior">
+
+        </li>
+        <li class="li-menu-inferior" data-modal-id="1">
+            <img src="imagens/logo-provedor/menu_wallet_original.png" data-normal-src="imagens/logo-provedor/menu_wallet_original.png" data-active-src="imagens/logo-provedor/menu_wallet_click.png" alt="Depósito" class="img-menu-inferior">
+
+        </li>
+        <li class="li-menu-inferior" data-modal-id="2">
+            <img src="imagens/logo-provedor/menu_agent_original.png" data-normal-src="imagens/logo-provedor/menu_agent_original.png" data-active-src="imagens/logo-provedor/menu_agent_click.png" alt="Afiliados" class="img-menu-inferior">
+
+        </li>
+        <li class="li-menu-inferior" data-modal-id="3">
+            <img src="imagens/logo-provedor/menu_activity_original.png" data-normal-src="imagens/logo-provedor/menu_activity_original.png" data-active-src="imagens/logo-provedor/menu_activity_click.png" alt="Promoção" class="img-menu-inferior">
+
+        </li>
+        <li class="li-menu-inferior" data-modal-id="4">
+            <img src="imagens/logo-provedor/menu_personal_original.png" data-normal-src="imagens/logo-provedor/menu_personal_original.png" data-active-src="imagens/logo-provedor/menu_personal_click.png" alt="Perfil" class="img-menu-inferior">
+
+        </li>
+    </ul>
+</div>
+       
         
         <div id="overlay" class="overlay"> <!--Overlay para roleta -->
             <div class="overlay-content">
@@ -347,7 +358,7 @@
                 <div class="div-img-promocao">
                     <img src="imagens/promocao/vip.jpg" alt="vip" class="img-promocao">
                     <div class="div-vip-promocao">
-                        <p class="p-vip-promocao">Vip</p>
+                        <p class="p-vip-promocao">VIP </p>
                         <button class="button-em-andamento">Em andamento</button>
                     </div>
                 </div>
@@ -512,8 +523,8 @@
                     <button onclick="showSection(5)" class="but-pag">5</button>
                 </div>
         </aside>
-
         <nav class="container-jogos"> <!--Container de jogos-->
+            <img src="imagens/logo-provedor/gg_pg.png" alt="pg-soft" class="img-logo-provedor">
                 <section id="section1" class="active">
                     <div class="div-img"><img src="imagens/all-cassinos/1.jpg" alt="Image 1" class="img-jogos">
                         <a href="https://m.pgsoft-games.com/126/index.html?l=pt&ot=82b8b0f88e17ae53611e6dd7f167bc38&btt=2&language=pt-BR&__refer=m.pg-redirect.net&or=static.pgsoft-games.com" class="link-jogar">jogar</a>
@@ -659,12 +670,11 @@
                     <a href="#" class="link-jogar">jogar</a>
                 </div>
             </section>
-            <footer>
-                <p class="p-footer">&copy;Copyright 2025 Cassino Online</p>
-            </footer>
-        </nav>
+        </nav><br>
+        <footer>
+            <p class="p-footer">&copy;Copyright 2025 Cassino Online</p>
+        </footer>
     </div>
-<br><br><br>
 
 
     <script src="js/script.js"></script>

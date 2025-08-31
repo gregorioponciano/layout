@@ -10,7 +10,7 @@
 }
 
 * {
-                                                        margin: 0;
+                                                        margin: 0px;
                                                         padding: 0px;
                                                         box-sizing: border-box;
 }
@@ -18,8 +18,8 @@
 body {
                                                         justify-content: center;
                                                         font-family: Arial, sans-serif;
-                                                        margin: 0;
-                                                        padding: 0;
+                                                        margin: 0px;
+                                                        padding: 0px;
                                                         background-color: var(--body);
                                                         
 }
@@ -38,8 +38,8 @@ strong {
 }
 
 .content {
-    background-color: var(--header-content);
-    overflow: hidden;
+                                                        background-color: var(--header-content);
+                                                        overflow: hidden;
 }
 
          /* Menus */
@@ -73,29 +73,8 @@ strong {
                                                         list-style: none;
 }
 
-.li-menu-inferior {
-                                                        display: flex;
-                                                        flex-flow: column nowrap;
-
-
-}
-
-.p-span {
-                                                        font-size: 17px;
-                                                        font-family: Arial, Helvetica, sans-serif;
-}
-
 .menu-superior img {
                                                         height: 40px;
-}
-.img-afiliado-menu-inferior {
-                                                        width: 40px; 
-                                                        margin-top: 10px;
-                                                        transition: transform 0.5s ease-in-out; /* Suaviza a rotação */
-}
-
-.img-afiliado-menu-inferior:hover {
-                                                        transform: rotate(360deg); 
 }
 
 .menu-superior .links {
@@ -103,15 +82,29 @@ strong {
                                                         gap: 20px;
 }
 
-.menu-superior a, .menu-inferior a {
+.menu-superior a {
                                                         color: white;
                                                         text-decoration: none;
                                                         font-weight: bold;
 }
 
-.menu-superior a:hover, .menu-inferior a:hover {
+.menu-superior a:hover {
                                                         text-decoration: underline;
 }
+
+/* Estilo geral para os itens do menu */
+
+
+
+.img-menu-inferior {
+                                                        width: 80px; 
+                                                        height: 80px;
+                                                        margin: 3px 0px; 
+                                                        padding: 5px 0px;
+}
+
+
+/* Estilos para o menu superior e modais permanecem os mesmos */
 
                 /*    Roleta   */
 .roleta {
@@ -1059,6 +1052,12 @@ thead {
                                                         text-align: center;
 }
 
+.img-logo-provedor {
+                                                        width: 70px;
+                                                        padding-left: 20px;
+
+}
+
 aside {
                                                         display: flex;
                                                         width: 100%;
@@ -1098,14 +1097,19 @@ aside {
 
 
 .container-jogos {
-                                                        width: 95%; /* Largura de 95% da largura da viewport */
+                                                        width: 99%; /* Largura de 95% da largura da viewport */
                                                         margin: 0 auto; /* Centraliza horizontalmente o conteúdo */
+                                                        background-color: rgb(53, 53, 50);
+                                                        border-radius: 20px;
 }
 
 section {
                                                         display: flex;
                                                         flex-wrap: wrap;
                                                         justify-content: space-between; /* Distribui as seções uniformemente na linha */
+                                                        background-color: rgb(53, 53, 50);
+
+                                                        padding: 10px;
 }
 
 .div-img {
