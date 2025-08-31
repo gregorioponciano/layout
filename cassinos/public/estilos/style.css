@@ -879,6 +879,71 @@ thead {
                                                         width: 100%;
                                                         margin-bottom: 50px;
 }
+
+                    /*modal promocao  Modal 3*/
+.modal-3 {
+                                                        overflow: scroll;
+                                                        background-color: var(--header-content);
+
+}
+
+.header-promocao {
+                                                        color: white;
+                                                        padding: 20px;
+                                                        background-color: var(--menu);
+                                                        position: sticky;
+                                                        top: 0;
+                           
+
+}
+
+.container-img-promocao {
+                                                        display: flex;
+                                                        flex-flow: column nowrap;
+                                                        justify-content: space-around;
+}
+
+.promocao-active {
+                                                        margin-top: 35px;
+}
+
+.div-img-promocao {
+
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        align-items: center;
+}
+
+.img-promocao {
+                                                        max-width: 550px;
+                                                        border-radius: 10px 10px 0px 0px;
+                                                        margin-top: 10px;
+}
+
+.div-vip-promocao { 
+                                                       
+                                                        display: flex;
+                                                        justify-content: space-between;
+                                                        width: 94%;
+                                                        background-image: linear-gradient(to right, #4d664c, #000000);
+                                                        padding: 10px 5px;border-radius: 0px 0px 10px 10px;
+}
+
+.p-vip-promocao {
+                                                        margin: 0;
+                                                        color: white;
+                                                        font-size: 18px;
+                                                        font-weight: bold;
+}
+.button-em-andamento {
+                                                        text-align: right;
+                                                        display: flex;
+                                                        justify-items: end;
+                                                        background-color: green;
+                                                        padding: 5px 10px;
+                                                        border-radius: 50px;
+}
+
                     /*modal perfil  Modal 4*/
 #modal-4 {
                                                         height: 84%;
@@ -1156,6 +1221,14 @@ footer {
 .div-google {
 
     width: 70%;}
+    .img-promocao {
+                                                        max-width: 90vw;
+
+}
+.div-vip-promocao { 
+                                                       
+                                                        width: 95%;
+}
 
 
 }
