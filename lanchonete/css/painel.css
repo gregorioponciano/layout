@@ -702,9 +702,7 @@ footer a:hover {
 
     /* Responsividade */
 @media (max-width: 868px) {
-          .btn_icon_header {
-                            display: flex;
-          }  
+
   
 
         .modal-conteudo {
@@ -713,12 +711,6 @@ footer a:hover {
 
         }
 
-        .navigation-header {
-                        margin: 10px 0;
-                        flex-wrap: nowrap;
-                        justify-content: center;
-                        display: none;
-        }
             
         .cart-sidebar {
                         width: 100%;
@@ -753,6 +745,9 @@ footer a:hover {
 
 
 @media (max-width: 550px) {
+              .btn_icon_header {
+                            display: flex;
+          }  
           .navigation-header {
                 display: none;
           }  
