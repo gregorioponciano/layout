@@ -10,7 +10,7 @@ function verificarStatusFuncionamento() {
       } else {
         return 'Fechado';
       }
-    } else if (hora >= 18 && hora < 24) { // De segunda a sexta
+    } else if (hora >= 18 && hora < 15) { // De segunda a sexta
       return 'Aberta';
     } else {
       return 'Fechado';
@@ -22,19 +22,18 @@ function verificarStatusFuncionamento() {
   statusElement.textContent = `${status}`;
 
   if (status === 'Aberta') {
-  statusElement.textContent = 'Aberto';
-  statusElement.style.color = '#00ff00';
+  statusElement.textContent = '';
+  statusElement.style.background = '#00ff00';
 
 } else {
-  statusElement.textContent = 'Fechado';
-  statusElement.style.color = 'red';
-  statusElement.style.backgroundColor = '#7e93aa';
+  statusElement.textContent = '';
+  statusElement.style.backgroundColor = '#DC2626';
 
 }
 
 
         // Função para abrir o modal
-        document.getElementById("ver-mais-status").onclick = function() {
+        document.getElementById("status").onclick = function() {
           document.getElementById("modal-horario").style.display = "flex";
       }
 

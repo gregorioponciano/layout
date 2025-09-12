@@ -11,13 +11,10 @@ body {
 }
 /* Estilos para o modal de pagamento */
 
-
-
-
-
-/* Header */
-header {
-                                background-image: linear-gradient(to bottom right, #d35400, #d35400);
+            /* Header */
+.header {
+                                background-color: white;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.13);
                                 padding: 15px 20px;
                                 position: sticky;
                                 top: 0;
@@ -27,35 +24,35 @@ header {
 
 .logo {
                                 display: flex;
-                                justify-content: center;
-                                flex-flow: column;
+                                flex-flow: row nowrap;
+                                justify-content: space-between;
                                 align-items: center;
 }
 
-.img-logo {
-                                width: 80px;
-                                height: 80px;
-                                position: fixed;
-                                top: 0;
-                                left: 0;
+.nav-logo {
+                                align-items: center;
+                                gap: 10px;
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                color: #DC2626;
 }
 
-.h1-logo {
-                                color: white;
+.btn_icon_header {
+                                display: none;
 }
 
-ul {
+.navigation-header {
                                 display: flex;
-                                list-style: none;
-                                margin: 10px 0px;
+                                list-style: none; /* tira as bolinha da lista*/
+                                align-items: center;
 }
 
 ul li a {
-                                color: white;
-                                text-decoration: none;
+                                color: rgb(0, 0, 0);
+                                text-decoration: none; /*tira o undeline do link*/
                                 padding: 15px 15px;
-                                border-radius: 5px;
-                                transition: background-color 0.3s;
+
+                       
 }
 
 ul li a:hover {
@@ -64,23 +61,20 @@ ul li a:hover {
 }
     /*carrinho de compra*/
 .cart-icon {
-                                position: fixed;
-                                bottom: 25px;
-                                right: 25px;
-                                background-color: #d35400;
+                                position: sticky;
+                                background-color: #DC2626;
                                 color: white;
-                                padding: 10px;
-                                font-size: 25px;
+                                padding: 5px;
+
                                 border-radius: 50%;
-                                z-index: 11;
-                               
+                                z-index: 11;                            
 }
 
 .cart-count {
                                 position: absolute;
                                 top: -10px;
                                 right: -10px;
-                                background-color: #e74c3c;
+                                background-color: #DC2626;
                                 color: white;
                                 border-radius: 50%;
                                 width: 20px;
@@ -93,43 +87,25 @@ ul li a:hover {
 
                 /*status da loja (aberto) e (fechado)*/
 .div-status-loja {
-
-                                z-index: 10;
-                                display: flex;
-                                justify-content: center;
-                                width: 100vw;
-
+                            
+                                position: fixed;
+                                bottom: 25px;
+                                right:  20px;
+                                z-index: 11;
+                                
 }
 
 .status-loja {
-                                text-align: right;
-                                margin: 10px;
-                                padding: 5px 15px;
-                                font-weight: bold;
-                                text-decoration: none;
+                                padding: 10px;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                box-shadow: 1px 1px 1px 1px black;
 }
 
-.ver-mais-status {
-                                margin: 10px;
-                                cursor: pointer;
-                                padding: 5px 15px;
-                                color: white;
-
-}
-
-.ver-mais-status:hover {
-                                color: orange;
-}
 
         /* Estilos para o botão de abrir o modal */
-#abrirModal {
-                                padding: 10px 20px;
-                                background-color: #fbff00;
-                                color: white;
-                                border: none;
-                                cursor: pointer;
-                                font-size: 16px;
-            }
+
     
 /* Estilos para o fundo e contêiner do modal */
 #modal-horario {
@@ -176,7 +152,7 @@ ul li a:hover {
 .fechar:hover {
                                 scale: 1.5;
                                 transition: 0.5s;
-                               color: red;
+                               color: #DC2626;
                                background-color: rgba(0, 0, 0, 0.733);
                                 border-radius: 50%;
 }
@@ -220,7 +196,7 @@ main {
 .search-box i {
                                 position: relative;
                                 left: 35px;
-                                color: orange;
+                                color: #DC2626;
 }
 
 #search-input {
@@ -233,7 +209,7 @@ main {
 }
 
 #search-input:focus {
-                                border-color: #d35400;
+                                border-color: #DC2626;
                                 outline: none;
                                 box-shadow: 0 0 10px rgba(211, 84, 0, 0.2);
 }
@@ -249,7 +225,7 @@ main {
                                 text-align: center;
                                 padding: 40px;
                                 font-size: 1.2rem;
-                                color: #d35400;
+                                color: #DC2626;
 }
 
 .menu-categorias {
@@ -279,9 +255,9 @@ main {
 }
 
 .category-btn.active {
-                                background-color: #d35400;
+                                background-color: #DC2626;
                                 color: white;
-                                border-color: #d35400;
+                                border-color: #DC2626;
     }
 
 /* Seções do Menu */
@@ -330,7 +306,7 @@ main {
 
 .item-info h3 {
                                 margin-bottom: 5px;
-                                color: #d35400;
+                                color: #DC2626;
 }
 
 .item-price {
@@ -350,17 +326,17 @@ main {
 }
 
 .btn:hover {
-                                background-color: #d35400;
+                                background-color: #DC2626;
                                 color: white;
 }
 
 .btn-primary {
-                                background-color: #d35400;
+                                background-color: #DC2626;
                                 color: white;
 }
 
 .btn-primary:hover {
-                                background-color: #e67e22;
+                                background-color: #DC2626;
 }
 
 /* Modal de Adicionais */
@@ -500,7 +476,7 @@ main {
 }
 
 .cart-item-remove {
-                                color: #e74c3c;
+                                color: #DC2626;
                                 cursor: pointer;
                                 margin-left: 10px;
 }
@@ -634,13 +610,13 @@ main {
 
 .payment-option i {
                                 font-size: 2rem;
-                                color: #d35400;
+                                color: #DC2626;
                                 margin-bottom: 10px;
                                 display: block;
 }
 
 .payment-option.active {
-                                border-color: #d35400;
+                                border-color: #DC2626;
                                 background-color: rgba(211, 84, 0, 0.1);
 }
 
@@ -668,7 +644,7 @@ main {
 .remove-title {
                                 font-weight: bold;
                                 margin-bottom: 10px;
-                                color: #d35400;
+                                color: #DC2626;
 }
 
 .remove-option {
@@ -685,10 +661,10 @@ main {
         /* Estilo básico do botão */
 #btnTopo {
                                 position: fixed;
-                                bottom: 30px;
+                                bottom: 25px;
                                 left: 30px;
                                 display: none; /* Escondido inicialmente */
-                                background-color: #d35400;
+                                background-color: #DC2626;
                                 color: white;
                                 border: none;
                                 padding: 12px 16px;
@@ -716,7 +692,7 @@ footer p {
                                 margin: 0;
 }
 footer a {
-                                color: #d35400;
+                                color: #DC2626;
                                 text-decoration: none;
 }
 footer a:hover {
@@ -726,10 +702,10 @@ footer a:hover {
 
     /* Responsividade */
 @media (max-width: 868px) {
-         header {
-                        flex-direction: column;
-                        padding: 10px;
-        }
+          .btn_icon_header {
+                            display: flex;
+          }  
+  
 
         .modal-conteudo {
 
@@ -737,10 +713,11 @@ footer a:hover {
 
         }
 
-        ul {
+        .navigation-header {
                         margin: 10px 0;
                         flex-wrap: nowrap;
                         justify-content: center;
+                        display: none;
         }
             
         .cart-sidebar {
@@ -776,20 +753,13 @@ footer a:hover {
 
 
 @media (max-width: 550px) {
-
-        .img-logo {
-                        position: fixed;
-                        top: 0;
-                        left: 50%;
-                        transform: translate(-50%, 0);
-        }
-
-        .h1-logo {
-                        margin-top: 80px;
-        }
-
+          .navigation-header {
+                display: none;
+          }  
                 .category-btn {
                                 padding: 10px 7px;
 }
 
     }
+
+    
