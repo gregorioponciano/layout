@@ -37,10 +37,6 @@ body {
                                 color: #DC2626;
 }
 
-.btn_icon_header {
-                                display: none;
-}
-
 .navigation-header {
                                 display: flex;
                                 list-style: none; /* tira as bolinha da lista*/
@@ -748,12 +744,8 @@ footer a:hover {
 
 
 @media (max-width: 550px) {
-              .btn_icon_header {
-                            display: flex;
-          }  
-          .navigation-header {
-                display: none;
-          }  
+
+
                 .category-btn {
                                 padding: 10px 7px;
 }
