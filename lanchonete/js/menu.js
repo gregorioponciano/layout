@@ -1,37 +1,28 @@
-var header = document.getElementById('header');
-var navigationHeader = document.getElementById('navigation-header');
+function toggleMobileMenu() {
+  const nav = document.querySelector(".navigation-header");
 
-var showSidebar = false;
+  // se não existir o botão de fechar, cria
+  if (!nav.querySelector(".close-btn")) {
+    const closeItem = document.createElement("li");
+    closeItem.classList.add("close-btn");
+    closeItem.innerHTML = "&times;"; // X estilizado
+    closeItem.onclick = () => nav.classList.remove("open");
+    nav.prepend(closeItem);
+  }
 
-function toggleMobileMenu() 
-{
-    showSidebar = !showSidebar;
-    if(showSidebar) 
-    {
-        navigationHeader.style.marginLeft = '-10vw';
-        navigationHeader.style.animationName = 'showSidebar';    // animaçao abrir o menu devagar ligado a @keyframe na css
-       // content.style.filter = 'blur(2px)';                      // embassa com filtro embassado
-    }
-    else 
-    {
-        navigationHeader.style.marginLeft = '-100vw';
-        navigationHeader.style.animationName = '';              // remove animaçao abrir o menu devagar ligado a @keyframe na css
-    }
-} 
-
-    //para fechar o menu clicando fora 
-
-function closeSidebar() {
-    if(showSidebar) {
-
-    }
-    toggleSidebar();
+  nav.classList.toggle("open");
 }
 
-     // mudou tamanho da tela tira o filtro da tela grnade
+// Fecha menu se clicar fora
+document.addEventListener("click", (e) => {
+  const nav = document.querySelector(".navigation-header");
+  const logo = document.querySelector(".nav-logo span");
 
-window.addEventListener('resize', function(event) {
-    if(window.innerWidth > 768 && showSidebar) {
-        toggleSidebar();
-    }
+  if (
+    nav.classList.contains("open") &&
+    !nav.contains(e.target) &&
+    e.target !== logo
+  ) {
+    nav.classList.remove("open");
+  }
 });
