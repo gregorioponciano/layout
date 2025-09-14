@@ -44,9 +44,7 @@ body {
                             transform: scale(1.5);
 }
 
-span:hover {
-                            transform: scale(1.1);
-}
+
 
 .navigation-header {
                                 display: flex;
@@ -263,6 +261,9 @@ main {
                                 transition: all 0.3s;
                                 white-space: nowrap;
 }
+.category-btn:hover {
+                                transform: scale(1.1);
+}
 
 .category-btn.active {
                                 background-color: #DC2626;
@@ -284,7 +285,7 @@ main {
 
 .menu-section.active {
                                 display: grid;
-                                animation: fadeIn 0.5s ease;
+                                animation: fadeIn 1s ease;
 }
 
         @keyframes fadeIn {
