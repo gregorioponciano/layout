@@ -18,37 +18,36 @@
             </div>
                <button class="btn_icon_header" id="btn_icon_header" onclick="toggleMobileMenu()">☰</button>
             <ul class="navigation-header">
-            <div class="carrinho">   <!--carrinho de compra-->
-                <div class="cart-icon" id="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </div>
-            </div>            
-            <div class="notification" id="notification">    <!-- Notificação de Item Adicionado -->
-                <div class="notification-content">
-                    <span id="notification-message"></span>
-                </div>
-            </div>
                 <li><a href="#" class="">Cardápio</a></li>
                 <li><a href="#">Pedidos</a></li>
                 <li><a href="#" id="account-settings"><span class="material-symbols-outlined">settings</span></a></li>
                 <li><a href="#" id="logout">Sair</a></li>
             </ul>
-
-         
         </div>
     </header>
 
+    <div class="carrinho">   <!--carrinho de compra-->
+        <div class="cart-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </div>            
+    <div class="notification" id="notification">    <!-- Notificação de Item Adicionado -->
+        <div class="notification-content">
+            <span id="notification-message"></span>
+        </div>
+    </div>
+
      <div class="energy">
-    <div class="content">
-    <div class="div-status-loja">      <!-- status da loja (aberto)(fechado)-->
-        <div class="status-loja" id="status"></div>
+        <div class="content">
+        <div class="div-status-loja">      <!-- status da loja (aberto)(fechado)-->
+            <div class="status-loja" id="status"></div>
+        </div>
+        </div>
     </div>
-    </div>
-  </div>
 
 
-         <div id="modal-horario">    <!-- Modal horarios (status)-->
+    <div id="modal-horario">    <!-- Modal horarios (status)-->
         <div class="modal-conteudo">
             <span class="fechar" onclick="fecharModal()">&times;</span>
             <div class="modal-titulo">Horários de Funcionamento</div>

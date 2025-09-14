@@ -61,10 +61,13 @@ ul li a:hover {
 }
     /*carrinho de compra*/
 .cart-icon {
-                                position: sticky;
+                                position: fixed;
+                                right: 20px;
+                                bottom: 100px;
                                 background-color: #DC2626;
                                 color: white;
-                                padding: 5px;
+                                padding: 10px;
+                                font-size: 25px;
 
                                 border-radius: 50%;
                                 z-index: 11;                            
@@ -713,8 +716,8 @@ footer a:hover {
 
             
         .cart-sidebar {
-                        width: 100%;
-                        right: -100%;
+                        width: 80%;
+                        right: -80%;
         }
         .search-box {
                         width: 100vw;
