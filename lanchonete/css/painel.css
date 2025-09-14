@@ -37,6 +37,17 @@ body {
                                 color: #DC2626;
 }
 
+.fa-hamburger {
+                            cursor: pointer;
+}
+.fa-hamburger:hover {
+                            transform: scale(1.5);
+}
+
+span:hover {
+                            transform: scale(1.1);
+}
+
 .navigation-header {
                                 display: flex;
                                 list-style: none; /* tira as bolinha da lista*/
@@ -702,9 +713,13 @@ footer a:hover {
 
 /* ===== MENU MOBILE ===== */
 @media (max-width: 768px) {
+
+    .nav-logo {
+            z-index: 100;
+    }
   .navigation-header {
     position: fixed;
-    top: 0;
+    top: 0px;
     left: -250px; /* escondido inicialmente */
     width: 250px;
     height: 100%;
@@ -715,7 +730,7 @@ footer a:hover {
     gap: 15px;
     box-shadow: 2px 0 8px rgba(0,0,0,0.2);
     transition: left 0.3s ease;
-    z-index: 1001;
+    z-index: 1;
   }
 
   .navigation-header.open {
@@ -724,7 +739,11 @@ footer a:hover {
 
   /* Links ocupando largura toda */
   .navigation-header li {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid rgba(161, 14, 14, 0.993);
+    text-align: center;
+    border-radius: 5px;
   }
 
   .navigation-header li a {
@@ -732,17 +751,6 @@ footer a:hover {
     width: 100%;
     padding: 15px;
   }
-    .navigation-header .close-btn {
-    width: 100%;
-    text-align: right;
-    padding: 15px;
-    font-size: 22px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-  }
-
-
-  
 
         .modal-conteudo {
 
