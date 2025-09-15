@@ -79,13 +79,13 @@
             <span class="close-btn" onclick="closeModal('cadastro')">X</span>
             <p><strong class="strong-cad"> Bem Vindo ao </strong><img src="imagens/mariobet.png" alt="foto" class="img-logo-cad-login"></p>
             <form action="/register" method="POST" class="form-cad-login">
+                <input type="text" name="nome" id="nome" class="input-cad-login" placeholder="Nome"required>
                 <input type="number" id="tel-cad" name="tel-cad" class="input-cad-login" placeholder="Numero de Celular" required>
-                <input type="password" name="senha-cad" id="senha-cad" required placeholder="Senha" class="input-cad-login">
                 <input type="cpf" id="cpf" name="cpf" class="input-cad-login" placeholder="CPF" required>
-                <input type="email" id="email-cad" name="email-cad" class="input-cad-login" placeholder="Email" required>
-                <input type="number" name="data" id="data" class="input-cad-login" placeholder="Data de nascimento"required>
+                <input type="password" name="senha-cad" id="senha-cad" required placeholder="Senha" class="input-cad-login">
+                <input type="confirmpassword" id="conf-senha-cad" name="conf-senha-cad" class="input-cad-login" placeholder="Confirmar senha" required>
                 <div class="div-checkbox">
-                    <input type="checkbox" name="checkbox" id="checkbox" checked>
+                    <input type="checkbox" name="checkbox" id="checkbox" checked required>
                     <label for="checkbox">Eu concordo com os Acordo Do Usuario e confirmo que tenho pelo menos 18 anos</label>
                 </div>
                 <button type="submit" class="botao-cad-login">Criar conta</button>
